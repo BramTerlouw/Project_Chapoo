@@ -1,0 +1,12 @@
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\bin\Debug\netcoreapp3.1\Model.dll
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\bin\Debug\netcoreapp3.1\Model.pdb
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
