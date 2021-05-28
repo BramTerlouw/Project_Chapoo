@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Service_Chapoo.BestellingRegel_Service">
+    <Position X="2.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestellingRegel_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Bestelling_Service">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bestelling_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Bon_Service">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bon_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Gast_Service">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gast_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.LoginService">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>LoginService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.MedewerkerService">
+    <Position X="2.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAACAAAAAAACABEAgAAAAAAAIAIAEAAAAAAA=</HashCode>
+      <FileName>MedewerkerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.MenuKaartService">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAAAAAAAACgAAAEABAAAAACAAAAAIIAgAQAAAAA=</HashCode>
+      <FileName>MenuKaartService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Opmerking_Service">
+    <Position X="5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Opmerking_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Reservering_Service">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reservering_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.Tafel_Service">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tafel_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service_Chapoo.VoorraadItemService">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAIAAAgBAAACAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>VoorraadItemService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

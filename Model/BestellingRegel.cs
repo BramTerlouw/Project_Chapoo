@@ -8,5 +8,10 @@ namespace Model_Chapoo
 {
     public class BestellingRegel
     {
+        public int BestellingID { get; set; }
+
+        public int RegelNR { get; set; }
+
+        public int MenuItemID { get; set; }
     }
 }
