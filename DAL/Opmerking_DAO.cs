@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL_Chapoo
 {
-    public class Opmerking_DAO
+    public class Opmerking_DAO : Base
     {
     }
 }

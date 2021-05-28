@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DAL_Chapoo.Base">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAEAAAAAAACABAAAQQAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.BestellingRegel_DAO">
+    <Position X="10.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestellingRegel_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Bestelling_DAO">
+    <Position X="13" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bestelling_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Bon_DAO">
+    <Position X="17.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bon_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Gast_DAO">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gast_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.LoginDAO">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoginDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.MedewerkerDAO">
+    <Position X="15.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAYAAgABAAACBAAAABACAAgAAAAAAAAAAAgAA=</HashCode>
+      <FileName>MedewerkerDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.MenuKaartItemDAO">
+    <Position X="19.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAwAhgAAAQAAAARAAAAIAAAAEAAAAAAAAgoAA=</HashCode>
+      <FileName>MenuKaartItemDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Opmerking_DAO">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Opmerking_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Reservering_DAO">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reservering_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.Tafel_DAO">
+    <Position X="17.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tafel_DAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DAL_Chapoo.VoorraadItemDAO">
+    <Position X="13" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAgAACAAAAAAAAAAAAAgAAAAAAAAAEA=</HashCode>
+      <FileName>VoorraadItemDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

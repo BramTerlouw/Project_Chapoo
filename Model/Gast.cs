@@ -8,5 +8,11 @@ namespace Model_Chapoo
 {
     public class Gast
     {
+        public int GastID { get; set; }
+
+        public string Naam { get; set; }
+
+        public int Telefoon { get; set; }
+
     }
 }
