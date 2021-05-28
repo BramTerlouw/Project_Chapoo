@@ -6,3 +6,4 @@ C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.csproj.CoreCompileInputs.cache
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.dll
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.pdb
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.csprojAssemblyReference.cache
