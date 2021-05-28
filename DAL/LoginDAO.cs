@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using Model;
+using Model_Chapoo;
 
 
 namespace DAL_Chapoo

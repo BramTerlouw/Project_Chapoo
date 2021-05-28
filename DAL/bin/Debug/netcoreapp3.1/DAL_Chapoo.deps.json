@@ -6,13 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "UI/1.0.0": {
+      "DAL_Chapoo/1.0.0": {
         "dependencies": {
           "Model_Chapoo": "1.0.0",
-          "Service_Chapoo": "1.0.0"
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
-          "UI.dll": {}
+          "DAL_Chapoo.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/5.0.0": {},
@@ -228,34 +229,15 @@
           }
         }
       },
-      "DAL_Chapoo/1.0.0": {
-        "dependencies": {
-          "Model_Chapoo": "1.0.0",
-          "System.Configuration.ConfigurationManager": "5.0.0",
-          "System.Data.SqlClient": "4.8.2"
-        },
-        "runtime": {
-          "DAL_Chapoo.dll": {}
-        }
-      },
       "Model_Chapoo/1.0.0": {
         "runtime": {
           "Model_Chapoo.dll": {}
-        }
-      },
-      "Service_Chapoo/1.0.0": {
-        "dependencies": {
-          "DAL_Chapoo": "1.0.0",
-          "Model_Chapoo": "1.0.0"
-        },
-        "runtime": {
-          "Service_Chapoo.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "UI/1.0.0": {
+    "DAL_Chapoo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -365,17 +347,7 @@
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
-    "DAL_Chapoo/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Model_Chapoo/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Service_Chapoo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
