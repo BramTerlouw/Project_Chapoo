@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model_Chapoo;
+using Service_Chapoo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,13 @@ namespace UI
 {
     public partial class Keuken_Main : Form
     {
+        private Bestelling _bestelling;
+        private Bestelling_Service _bestellingService;
+        private BestellingRegel_Service _bestellingRegelService;
+        private List<BestellingRegel> _orderDetails;
+
+
+        // constructor
         public Keuken_Main()
         {
             InitializeComponent();
@@ -42,6 +51,34 @@ namespace UI
             dgv_Keuken_BestellingDetails.Show();
             btn_Keuken_Details_Sluiten.Show();
             btn_Keuken_Bestelling_Afmelden.Hide();
+        }
+
+        private void GridBestellingDetailsVullen()
+        {
+            foreach (BestellingRegel regel in _orderDetails)
+            {
+                dgv_Keuken_BestellingDetails.Rows.Add(regel.dataGrid(regel));
+            }
+        }
+
+        private void GridClearDetails()
+        {
+            dgv_Keuken_BestellingDetails.Rows.Clear();
+        }
+
+        private void dgv_Keuken_Bestellingen_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgv_Keuken_Bestellingen.SelectedRows.Count is 1)
+            {
+                int selectedOrderNr = int.Parse(dgv_Keuken_Bestellingen.SelectedRows[0].Cells[0].Value + string.Empty);
+                _bestelling = _bestellingService.GetBestellingByID(selectedOrderNr);
+                GetBestellingDetails();
+            }
+        }
+
+        private void GetBestellingDetails()
+        {
+
         }
     }
 }
