@@ -16,3 +16,12 @@ C:\Users\CeesGribnau\Documents\school\ProjectChapoo\Project_Chapoo\Model\obj\Deb
 C:\Users\CeesGribnau\Documents\school\ProjectChapoo\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.csproj.CoreCompileInputs.cache
 C:\Users\CeesGribnau\Documents\school\ProjectChapoo\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.dll
 C:\Users\CeesGribnau\Documents\school\ProjectChapoo\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.pdb
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\bin\Debug\netcoreapp3.1\Model_Chapoo.deps.json
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\bin\Debug\netcoreapp3.1\Model_Chapoo.dll
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\bin\Debug\netcoreapp3.1\Model_Chapoo.pdb
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.csproj.AssemblyReference.cache
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.AssemblyInfoInputs.cache
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.AssemblyInfo.cs
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.csproj.CoreCompileInputs.cache
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.dll
+C:\Users\ceesg\Documents\GitHub\Project_Chapoo\Model\obj\Debug\netcoreapp3.1\Model_Chapoo.pdb

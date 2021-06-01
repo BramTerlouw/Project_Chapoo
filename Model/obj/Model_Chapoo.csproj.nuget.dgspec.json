@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {}
+    "C:\\Users\\ceesg\\Documents\\GitHub\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {
+    "C:\\Users\\ceesg\\Documents\\GitHub\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj",
+        "projectUniqueName": "C:\\Users\\ceesg\\Documents\\GitHub\\Project_Chapoo\\Model\\Model_Chapoo.csproj",
         "projectName": "Model_Chapoo",
-        "projectPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj",
-        "packagesPath": "C:\\Users\\CeesGribnau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\obj\\",
+        "projectPath": "C:\\Users\\ceesg\\Documents\\GitHub\\Project_Chapoo\\Model\\Model_Chapoo.csproj",
+        "packagesPath": "C:\\Users\\ceesg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ceesg\\Documents\\GitHub\\Project_Chapoo\\Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\CeesGribnau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ceesg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -59,24 +59,38 @@ namespace UI
             {
                 dgv_Keuken_BestellingDetails.Rows.Add(regel.dataGrid(regel));
             }
+            // nadat dgv is gevuld grid laten zien
+            dgv_Keuken_BestellingDetails.Show();
         }
 
         private void GridClearDetails()
         {
+            // dgv leeg maken
             dgv_Keuken_BestellingDetails.Rows.Clear();
         }
 
         private void dgv_Keuken_Bestellingen_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // als 1 bestelling is geselecteerd details laten zien anders details hiden
             if(dgv_Keuken_Bestellingen.SelectedRows.Count is 1)
             {
                 int selectedOrderNr = int.Parse(dgv_Keuken_Bestellingen.SelectedRows[0].Cells[0].Value + string.Empty);
                 _bestelling = _bestellingService.GetBestellingByID(selectedOrderNr);
                 GetBestellingDetails();
+                GridBestellingDetailsVullen();
+            }
+            else
+            {
+                dgv_Keuken_BestellingDetails.Hide();
             }
         }
 
         private void GetBestellingDetails()
+        {
+
+        }
+
+        private void Keuken_Main_Load(object sender, EventArgs e)
         {
 
         }
