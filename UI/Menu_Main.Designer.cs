@@ -29,7 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMenuHeader = new System.Windows.Forms.Label();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
             this.btnToonMenuDrank = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@ namespace UI
             this.btnCloseMenuVerwijderen = new System.Windows.Forms.Button();
             this.cmbVerwijderMenuID = new System.Windows.Forms.ComboBox();
             this.btnExitMenu = new System.Windows.Forms.Button();
+            this.lblMenuAanpassenUitleg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.pnlMenuAanpassen.SuspendLayout();
             this.pnlMenuItemToevoegen.SuspendLayout();
@@ -157,14 +158,14 @@ namespace UI
             this.dgvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMenu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMenu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnMenuItemID,
@@ -254,6 +255,7 @@ namespace UI
             // pnlMenuAanpassen
             // 
             this.pnlMenuAanpassen.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMenuAanpassen.Controls.Add(this.lblMenuAanpassenUitleg);
             this.pnlMenuAanpassen.Controls.Add(this.btnMenuAanpassenExit);
             this.pnlMenuAanpassen.Controls.Add(this.btnCloseMenuAanpassen);
             this.pnlMenuAanpassen.Controls.Add(this.btnMenuAanpassenDB);
@@ -707,6 +709,15 @@ namespace UI
             this.btnExitMenu.UseVisualStyleBackColor = false;
             this.btnExitMenu.Click += new System.EventHandler(this.btnExitMenu_Click);
             // 
+            // lblMenuAanpassenUitleg
+            // 
+            this.lblMenuAanpassenUitleg.AutoSize = true;
+            this.lblMenuAanpassenUitleg.Location = new System.Drawing.Point(234, 276);
+            this.lblMenuAanpassenUitleg.Name = "lblMenuAanpassenUitleg";
+            this.lblMenuAanpassenUitleg.Size = new System.Drawing.Size(164, 15);
+            this.lblMenuAanpassenUitleg.TabIndex = 31;
+            this.lblMenuAanpassenUitleg.Text = "(Kies True/False voor alcohol!)";
+            // 
             // Menu_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -802,5 +813,6 @@ namespace UI
         private System.Windows.Forms.Button btnMenuAanpassenExit;
         private System.Windows.Forms.Button btnMenuToevoegenExit;
         private System.Windows.Forms.Button btnMenuVerwijderenExit;
+        private System.Windows.Forms.Label lblMenuAanpassenUitleg;
     }
 }

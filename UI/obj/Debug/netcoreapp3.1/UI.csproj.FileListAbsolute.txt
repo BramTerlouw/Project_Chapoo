@@ -33,7 +33,6 @@ C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\bin\Debug\netcoreapp3.1\S
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\bin\Debug\netcoreapp3.1\Model_Chapoo.pdb
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\bin\Debug\netcoreapp3.1\Service_Chapoo.pdb
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\bin\Debug\netcoreapp3.1\DAL_Chapoo.pdb
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.csprojAssemblyReference.cache
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.Administratie_Main.resources
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.Login.resources
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.Medewerkers_Main.resources
@@ -48,3 +47,4 @@ C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\U
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.dll
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.pdb
 C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.genruntimeconfig.cache
+C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\UI\obj\Debug\netcoreapp3.1\UI.csproj.AssemblyReference.cache

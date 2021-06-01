@@ -157,7 +157,7 @@ namespace UI
             int stockID, amount;
             if (!int.TryParse(txtAanpassenID.Text, out stockID) || !int.TryParse(txtAanpassenAantal.Text, out amount))
             {
-                MessageBox.Show("Enter a number!");
+                MessageBox.Show("Enter numbers only!");
                 return;
             }
 
