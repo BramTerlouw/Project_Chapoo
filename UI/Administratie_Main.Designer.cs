@@ -33,7 +33,7 @@ namespace UI
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnMedewerkers = new System.Windows.Forms.Button();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
-            this.btnLogOutAdministratie = new System.Windows.Forms.Button();
+            this.btnBackAdministratie = new System.Windows.Forms.Button();
             this.pnlHeaderMedewerkers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,24 +76,24 @@ namespace UI
             // pnlHeaderMedewerkers
             // 
             this.pnlHeaderMedewerkers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.pnlHeaderMedewerkers.Controls.Add(this.btnLogOutAdministratie);
+            this.pnlHeaderMedewerkers.Controls.Add(this.btnBackAdministratie);
             this.pnlHeaderMedewerkers.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderMedewerkers.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
             this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
             this.pnlHeaderMedewerkers.TabIndex = 18;
             // 
-            // btnLogOutAdministratie
+            // btnBackAdministratie
             // 
-            this.btnLogOutAdministratie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.btnLogOutAdministratie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOutAdministratie.Location = new System.Drawing.Point(931, 30);
-            this.btnLogOutAdministratie.Name = "btnLogOutAdministratie";
-            this.btnLogOutAdministratie.Size = new System.Drawing.Size(108, 38);
-            this.btnLogOutAdministratie.TabIndex = 3;
-            this.btnLogOutAdministratie.Text = "Log uit";
-            this.btnLogOutAdministratie.UseVisualStyleBackColor = false;
-            this.btnLogOutAdministratie.Click += new System.EventHandler(this.btnLogOutAdministratie_Click);
+            this.btnBackAdministratie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.btnBackAdministratie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackAdministratie.Location = new System.Drawing.Point(931, 30);
+            this.btnBackAdministratie.Name = "btnBackAdministratie";
+            this.btnBackAdministratie.Size = new System.Drawing.Size(108, 38);
+            this.btnBackAdministratie.TabIndex = 3;
+            this.btnBackAdministratie.Text = "Terug";
+            this.btnBackAdministratie.UseVisualStyleBackColor = false;
+            this.btnBackAdministratie.Click += new System.EventHandler(this.btnLogOutAdministratie_Click);
             // 
             // Administratie_Main
             // 
@@ -117,7 +117,7 @@ namespace UI
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnMedewerkers;
         private System.Windows.Forms.Panel pnlHeaderMedewerkers;
-        private System.Windows.Forms.Button btnLogOutAdministratie;
+        private System.Windows.Forms.Button btnBackAdministratie;
     }
 }
 

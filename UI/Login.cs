@@ -36,7 +36,7 @@ namespace UI
 
             if (_servicelogin.CredentialsLegitimate(id, wachtwoord) == true)
             {
-                new Administratie_Main(this, _serviceMedewerker.GetMedewerker(id)).Show();
+                new HoofdMenu(this, _serviceMedewerker.GetMedewerker(id)).Show();
                 this.Hide();
                 txtLoginID.Clear();
                 txtLoginWachtwoord.Clear();

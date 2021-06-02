@@ -17,11 +17,18 @@ namespace UI
         private BestellingRegel_Service _bestellingRegelService;
         private List<BestellingRegel> _orderDetails;
 
+        private Medewerker _medewerker;
+        private HoofdMenu _menu;
+
 
         // constructor
-        public Keuken_Main()
+        public Keuken_Main(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
+
+            this._medewerker = medewerker;
+            this._menu = menu;
+
             dgv_Keuken_BestellingDetails.Hide();
             btn_Keuken_Details_Sluiten.Hide();
             btn_Keuken_Bestelling_Afmelden.Hide();
@@ -93,6 +100,12 @@ namespace UI
         private void Keuken_Main_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
+        {
+            _menu.Show();
+            this.Close();
         }
     }
 }

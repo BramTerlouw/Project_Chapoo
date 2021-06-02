@@ -12,9 +12,14 @@ namespace UI
 {
     public partial class Afrekenen_Main : Form
     {
-        public Afrekenen_Main()
+        private Medewerker _medewerker;
+        private HoofdMenu _menu;
+
+        public Afrekenen_Main(HoofdMenu menu, Medewerker medewerker)
         {
-            InitializeComponent();         
+            InitializeComponent();
+            this._medewerker = medewerker;
+            this._menu = menu;
         }
 
         private void Afrekenen_Main_Load(object sender, EventArgs e)
@@ -48,10 +53,14 @@ namespace UI
         private void ShowOrderPerTabel(int TafelID)
         {
             this.Hide();
-            new Afrekenen_PerTafel(TafelID).Show();
-            this.Close();       
+            new Afrekenen_PerTafel(this, _medewerker, TafelID).Show();
+            //this.Close();       
         }
 
-        
+        private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
+        {
+            _menu.Show();
+            this.Close();
+        }
     }
 }

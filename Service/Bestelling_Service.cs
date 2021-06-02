@@ -1,6 +1,4 @@
-﻿using DAL_Chapoo;
-using Model_Chapoo;
-using System;
+﻿using System;
 using Model_Chapoo;
 using DAL_Chapoo;
 using System.Collections.Generic;
@@ -19,7 +17,7 @@ namespace Service_Chapoo
         {
             bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
         }
-        
+
         public Bestelling GetBestellingByID(int selectedOrderNr)
         {
             throw new NotImplementedException();

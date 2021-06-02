@@ -14,11 +14,11 @@ namespace UI
     public partial class Administratie_Main : Form
     {
         private Medewerker medewerker;
-        private Login _loginForm;
-        public Administratie_Main(Login loginForm, Medewerker medewerker)
+        private HoofdMenu _hoofdMenu;
+        public Administratie_Main(HoofdMenu hoofdMenu, Medewerker medewerker)
         {
             InitializeComponent();
-            this._loginForm = loginForm;
+            this._hoofdMenu = hoofdMenu;
             this.medewerker = medewerker;
         }
 
@@ -42,7 +42,7 @@ namespace UI
 
         private void btnLogOutAdministratie_Click(object sender, EventArgs e)
         {
-            _loginForm.Show();
+            _hoofdMenu.Show();
             this.Close();
         }
     }

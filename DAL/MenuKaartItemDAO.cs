@@ -247,5 +247,77 @@ namespace DAL_Chapoo
             }
             return soorten;
         }
+
+        public List<MenukaartItem> Db_Get_All_KoffieThee()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Thee' OR Soort='Koffie'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Bier()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Drank Bier'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Wijn()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Drank Wijn'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_GedeDrank()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Drank Gedistilleerd'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_FrisDrank()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Drank Frisdrank'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Voorgerechten()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Lunch Voorgerecht' OR Soort='Diner Voorgerecht'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Tussengerechten()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Diner Tussengerecht'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Hoofdgerechten()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Diner Hoofdgerecht' OR Soort='Lunch Hoofdgerecht'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        public List<MenukaartItem> Db_Get_All_Nagerechten()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Diner Nagerecht' OR Soort='Lunch Nagerecht'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private List<MenukaartItem> ReadTables(DataTable table)
+        {
+            List<MenukaartItem> menu = new List<MenukaartItem>();
+
+            foreach (DataRow row in table.Rows)
+            {
+                MenukaartItem item = new MenukaartItem(
+                    Convert.ToInt32(row["MenuItemID"]),
+                    row["Soort"].ToString(),
+                    row["Naam"].ToString(),
+                    Convert.ToBoolean(row["Alcohol"]),
+                    Convert.ToSingle(row["Prijs"]));
+                menu.Add(item);
+            }
+            return menu;
+        }
     }
 }

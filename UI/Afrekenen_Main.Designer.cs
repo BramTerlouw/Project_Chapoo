@@ -36,6 +36,7 @@ namespace UI
             this.lbl_AfrekenenTitle = new System.Windows.Forms.Label();
             this.btn_KiesTafelConfirm = new System.Windows.Forms.Button();
             this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
+            this.btnTerugHoofdMenu = new System.Windows.Forms.Button();
             this.pnl_AfrekenenMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
@@ -112,12 +113,25 @@ namespace UI
             this.pcbx_LogoChapooAfrekenenMain.TabIndex = 3;
             this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
+            // btnTerugHoofdMenu
+            // 
+            this.btnTerugHoofdMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.btnTerugHoofdMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerugHoofdMenu.Location = new System.Drawing.Point(375, 12);
+            this.btnTerugHoofdMenu.Name = "btnTerugHoofdMenu";
+            this.btnTerugHoofdMenu.Size = new System.Drawing.Size(108, 38);
+            this.btnTerugHoofdMenu.TabIndex = 5;
+            this.btnTerugHoofdMenu.Text = "Terug";
+            this.btnTerugHoofdMenu.UseVisualStyleBackColor = false;
+            this.btnTerugHoofdMenu.Click += new System.EventHandler(this.btnTerugHoofdMenu_Click);
+            // 
             // Afrekenen_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(495, 573);
+            this.Controls.Add(this.btnTerugHoofdMenu);
             this.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.Controls.Add(this.btn_KiesTafelConfirm);
             this.Controls.Add(this.pnl_AfrekenenMain);
@@ -140,5 +154,6 @@ namespace UI
         private System.Windows.Forms.ColumnHeader col_tafelID;
         private System.Windows.Forms.Button btn_KiesTafelConfirm;
         private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
+        private System.Windows.Forms.Button btnTerugHoofdMenu;
     }
 }
