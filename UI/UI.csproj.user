@@ -4,7 +4,10 @@
     <Compile Update="Administratie_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Keuken_Main.cs">
+    <Compile Update="Afrekenen_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Afrekenen_PerTafel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Login.cs">

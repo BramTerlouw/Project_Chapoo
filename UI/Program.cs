@@ -18,7 +18,7 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Administratie_Main());
-            Application.Run(new Keuken_Main());
+            Application.Run(new Afrekenen_Main());
         }
     }
 }

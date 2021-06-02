@@ -7,15 +7,10 @@ namespace Service_Chapoo
 {
     public class Bon_Service
     {
-        private Bon_DAO bon_DAO = new Bon_DAO();
-        public List<Bon> GetOrdersPerTable(int TafelID)
+        Bon_DAO bonDAO = new Bon_DAO();
+        public void Insert_Bon(int BestellingID, int TafelID, float Totaalbedrag, int Fooi, string Betaalmethode)
         {
-            return bon_DAO.Db_Get_Orders_Per_Table(TafelID);
-        }
-
-        public void UpdateOrderStatusAfgerond(int BestellingID)
-        {
-            bon_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
+            bonDAO.Db_Insert_Bon(BestellingID, TafelID, Totaalbedrag, Fooi, Betaalmethode);
         }
     }
 }
