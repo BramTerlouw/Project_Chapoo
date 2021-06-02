@@ -7,7 +7,8 @@ namespace Model_Chapoo
     public class MenukaartItem
     {
         //fields
-        private int _id;
+
+        public int Id { get; set; }
 
         // properties
         private string _soort;
@@ -38,7 +39,7 @@ namespace Model_Chapoo
         // ctor
         public MenukaartItem(int id, string soort, string naam, bool alcohol, float prijs)
         {
-            _id = id;
+            Id = id;
             _soort = soort;
             _naam = naam;
             _alcohol = alcohol;
@@ -50,7 +51,7 @@ namespace Model_Chapoo
         {
             return new string[]
             {
-                _id.ToString(),
+                Id.ToString(),
                 _soort,
                 _naam,
                 _alcohol.ToString(),
@@ -63,7 +64,7 @@ namespace Model_Chapoo
         {
             return new string[]
             {
-                _id.ToString(),
+                Id.ToString(),
                 _soort,
                 _naam,
                 _prijs.ToString("0.00")
