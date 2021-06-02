@@ -10,7 +10,7 @@ namespace DAL_Chapoo
     {
         public List<Bestelling> Db_Get_Orders_Per_Table(int TafelID)
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE TafelID = @TafelID";
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling WHERE TafelID = @TafelID";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@TafelID", TafelID);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -18,7 +18,7 @@ namespace DAL_Chapoo
 
         public void Db_Update_OrderStatus_Afgerond(int BestellingID)
         {
-            string query = "UPDATE Bestelling SET Status = 'afgerond' WHERE BestellingID = @OrderID";
+            string query = "UPDATE Bestelling SET [Status] = 'afgerond' WHERE BestellingID = @OrderID";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@OrderID", BestellingID);
 

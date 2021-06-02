@@ -29,7 +29,7 @@ namespace UI
 
         private void btn_KiesTafelConfirm_Click(object sender, EventArgs e)
         {
-            int TafelID = 1;/*int.Parse(lst_KiesTafel.SelectedItems[0].Text);*/
+            int TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
 
             ShowOrderPerTabel(TafelID);
         }
@@ -38,16 +38,20 @@ namespace UI
         {
             Tafel_Service tafelservice = new Tafel_Service();
 
-            //List<Tafel> tafels = tafelservice.GetTables();
+            string statusBezet = "bezet";
+
+            List<Tafel> tafels = tafelservice.Get_Tables(statusBezet);
 
             lst_KiesTafel.Items.Clear();
 
-            //foreach (var tafel in tafels)
-            //{
-            //    ListViewItem Tafel = new ListViewItem(tafel.TafelID.ToString());
+            foreach (var tafel in tafels)
+            {
+                ListViewItem Tafel = new ListViewItem(tafel.TafelID.ToString());
+                Tafel.SubItems.Add(tafel.AantalStoelen.ToString()) ;
+                Tafel.SubItems.Add(tafel.Status);
 
-            //    lst_KiesTafel.Items.Add(Tafel);
-            //}
+                lst_KiesTafel.Items.Add(Tafel);
+            }
         }
 
         private void ShowOrderPerTabel(int TafelID)

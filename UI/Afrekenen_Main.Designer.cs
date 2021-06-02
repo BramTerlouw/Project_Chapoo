@@ -37,6 +37,8 @@ namespace UI
             this.btn_KiesTafelConfirm = new System.Windows.Forms.Button();
             this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.btnTerugHoofdMenu = new System.Windows.Forms.Button();
+            this.col_AantalStoelen = new System.Windows.Forms.ColumnHeader();
+            this.col_Status = new System.Windows.Forms.ColumnHeader();
             this.pnl_AfrekenenMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +57,14 @@ namespace UI
             // lst_KiesTafel
             // 
             this.lst_KiesTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.col_tafelID});
+            this.col_tafelID,
+            this.col_AantalStoelen,
+            this.col_Status});
             this.lst_KiesTafel.FullRowSelect = true;
             this.lst_KiesTafel.HideSelection = false;
-            this.lst_KiesTafel.Location = new System.Drawing.Point(224, 70);
+            this.lst_KiesTafel.Location = new System.Drawing.Point(167, 70);
             this.lst_KiesTafel.Name = "lst_KiesTafel";
-            this.lst_KiesTafel.Size = new System.Drawing.Size(64, 362);
+            this.lst_KiesTafel.Size = new System.Drawing.Size(185, 362);
             this.lst_KiesTafel.TabIndex = 2;
             this.lst_KiesTafel.UseCompatibleStateImageBehavior = false;
             this.lst_KiesTafel.View = System.Windows.Forms.View.Details;
@@ -125,6 +129,14 @@ namespace UI
             this.btnTerugHoofdMenu.UseVisualStyleBackColor = false;
             this.btnTerugHoofdMenu.Click += new System.EventHandler(this.btnTerugHoofdMenu_Click);
             // 
+            // col_AantalStoelen
+            // 
+            this.col_AantalStoelen.Text = "Stoelen";
+            // 
+            // col_Status
+            // 
+            this.col_Status.Text = "Status";
+            // 
             // Afrekenen_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -155,5 +167,7 @@ namespace UI
         private System.Windows.Forms.Button btn_KiesTafelConfirm;
         private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
         private System.Windows.Forms.Button btnTerugHoofdMenu;
+        private System.Windows.Forms.ColumnHeader col_AantalStoelen;
+        private System.Windows.Forms.ColumnHeader col_Status;
     }
 }
