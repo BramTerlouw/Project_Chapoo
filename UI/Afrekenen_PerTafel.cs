@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using Model_Chapoo;
 using Service_Chapoo;
-using Model_Chapoo;
+using System;
+using System.Globalization;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -61,13 +58,14 @@ namespace UI
         {
             if (lst_BestellingPerTafel.SelectedItems.Count == 1 && cmbx_BetaalMethode.Text != "")
             {
-                DialogResult msbResult = MessageBox.Show("U staat op het punt voor deze tafel een bon aan te maken. \nWeet u dit zeker?", "Afrekenen", MessageBoxButtons.YesNo);
+                DialogResult msbResult = MessageBox.Show("U staat op het punt voor deze tafel een bon aan te maken. \nWeet u dit zeker?", "Bon maken", MessageBoxButtons.YesNo);
                 if (msbResult == DialogResult.Yes)
                 {
                     int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[0].Text);
                     int TafelID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].Text);
                     int fooi = Convert.ToInt32(nup_FooiBedragGeven.Value);
-                    float Totaalbedrag = float.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[3].Text) + fooi;
+                    double SubTotaalbedrag = double.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[3].Text, CultureInfo.InvariantCulture);
+                    double Totaalbedrag = SubTotaalbedrag + fooi;
                     string betaalmethode = cmbx_BetaalMethode.Text;
 
                     string opmerking = rtb_OpmerkingPlaatsen.Text;

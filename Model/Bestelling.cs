@@ -12,7 +12,7 @@ namespace Model_Chapoo
 
         public DateTime BestellingDatum { get; set; }
 
-        public float BestellingSubtotaal { get; set; }
+        public double BestellingSubtotaal { get; set; }
 
         public int TafelID { get; set; }
 

@@ -19,7 +19,7 @@ namespace DAL_Chapoo
         public void Db_Update_OrderStatus_Afgerond(int BestellingID)
         {
             string query = "UPDATE Bestelling SET [Status] = 'afgerond' WHERE BestellingID = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[2];
+            SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@OrderID", BestellingID);
 
             ExecuteEditQuery(query, sqlParameters);
@@ -35,7 +35,7 @@ namespace DAL_Chapoo
                 {
                     BestellingID = (int)dr["BestellingID"],
                     BestellingDatum = (DateTime)dr["BestellingDatum"],
-                    BestellingSubtotaal = (float)dr["BestellingSubTotaal"],
+                    BestellingSubtotaal = (double)dr["BestellingSubTotaal"],
                     TafelID = (int)dr["TafelID"],
                     MedewerkerID = (int)dr["MedewerkerID"],
                     Status = (string)dr["Status"]
