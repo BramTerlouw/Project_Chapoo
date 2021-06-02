@@ -305,6 +305,7 @@ namespace UI
         private void button2_Click(object sender, EventArgs e)
         {
             pnlMedewerkerToevoegen.Hide();
+            this.InitializeComponent();
         }
 
         private void btnClodeMedewerkerVerwijderen_Click(object sender, EventArgs e)
