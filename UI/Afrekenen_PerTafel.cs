@@ -14,11 +14,13 @@ namespace UI
     {
         private int TafelID { get; set; }
         Bestelling_Service bestellingService;
+        Bon_Service bonService;
         public Afrekenen_PerTafel(int TafelID)
         {
             InitializeComponent();
             this.TafelID = TafelID;
             bestellingService = new Bestelling_Service();
+            bonService = new Bon_Service();
         }
 
         private void Afrekenen_PerTafel_Load(object sender, EventArgs e)
@@ -38,12 +40,34 @@ namespace UI
 
                     bestellingService.UpdateOrderStatusAfgerond(BestellingID);
                 }
-            }           
+            }
+            else
+            {
+                MessageBox.Show("Selecteer een bestelling alstublieft!", "Fout bij afrekenen", MessageBoxButtons.OK);
+            }
         }
 
         private void btn_MaakBon_Click(object sender, EventArgs e)
         {
-            //Maak bon object aan en stuur naar de database
+            if (lst_BestellingPerTafel.SelectedItems.Count == 1 && cmbx_BetaalMethode.Text != "")
+            {
+                DialogResult msbResult = MessageBox.Show("U staat op het punt voor deze tafel een bon aan te maken. \nWeet u dit zeker?", "Afrekenen", MessageBoxButtons.YesNo);
+                if (msbResult == DialogResult.Yes)
+                {
+                    int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[0].Text);
+                    int TafelID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].Text);
+                    int fooi = Convert.ToInt32(nup_FooiBedragGeven.Value);
+                    float Totaalbedrag = float.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[3].Text) + fooi;
+                    string betaalmethode = cmbx_BetaalMethode.Text;
+
+                    bonService.Insert_Bon(BestellingID, TafelID, Totaalbedrag, fooi, betaalmethode);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kies een bestelling en vul de betaalmethode in alstublieft!", "Fout bij maken van bon", MessageBoxButtons.OK);
+            }
+
         }
 
         private void FillListView_BestellingPerTafel()
@@ -65,6 +89,12 @@ namespace UI
             }
         }
 
-        
+        private void btn_Annuleren_Click(object sender, EventArgs e)
+        {          
+            this.Hide();
+            new Afrekenen_Main().Show();
+            this.Close();
+            
+        }
     }
 }

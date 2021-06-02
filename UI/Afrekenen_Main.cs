@@ -18,8 +18,7 @@ namespace UI
         }
 
         private void Afrekenen_Main_Load(object sender, EventArgs e)
-        {
-            pnl_AfrekenenMain.Show();
+        {         
             FillListViewTafel();
         }
 
@@ -48,7 +47,9 @@ namespace UI
 
         private void ShowOrderPerTabel(int TafelID)
         {
+            this.Hide();
             new Afrekenen_PerTafel(TafelID).Show();
+            this.Close();       
         }
 
         
