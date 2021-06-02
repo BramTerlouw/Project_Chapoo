@@ -15,6 +15,7 @@ namespace UI
         private int TafelID { get; set; }
         Bestelling_Service bestellingService;
         Bon_Service bonService;
+        Opmerking_Service opmerkingService;
 
         private Medewerker _medewerker;
         private Afrekenen_Main _main;
@@ -29,6 +30,7 @@ namespace UI
             this.TafelID = TafelID;
             bestellingService = new Bestelling_Service();
             bonService = new Bon_Service();
+            opmerkingService = new Opmerking_Service();
         }
 
         private void Afrekenen_PerTafel_Load(object sender, EventArgs e)
@@ -68,7 +70,15 @@ namespace UI
                     float Totaalbedrag = float.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[3].Text) + fooi;
                     string betaalmethode = cmbx_BetaalMethode.Text;
 
+                    string opmerking = rtb_OpmerkingPlaatsen.Text;
+                    DateTime OpmerkingDatumTijd = DateTime.Now;
+                    int medewerkerID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[1].Text);
+
                     bonService.Insert_Bon(BestellingID, TafelID, Totaalbedrag, fooi, betaalmethode);
+
+                    opmerkingService.Insert_Opmerking(TafelID, opmerking, OpmerkingDatumTijd, medewerkerID);
+
+
                 }
             }
             else
@@ -100,6 +110,7 @@ namespace UI
         private void btn_Annuleren_Click(object sender, EventArgs e)
         {
             _main.Show();
+            rtb_OpmerkingPlaatsen.Clear();
             this.Close();
             
         }
