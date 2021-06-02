@@ -1,9 +1,0 @@
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\bin\Debug\netcoreapp3.1\Model.deps.json
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\bin\Debug\netcoreapp3.1\Model.dll
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.csprojAssemblyReference.cache
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfoInputs.cache
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.AssemblyInfo.cs
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.csproj.CoreCompileInputs.cache
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.dll
-C:\Users\Gebruiker\Documents\Projects\ProjectChapoo\Model\obj\Debug\netcoreapp3.1\Model.pdb
