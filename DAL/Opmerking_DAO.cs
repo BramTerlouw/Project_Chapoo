@@ -10,7 +10,7 @@ namespace DAL_Chapoo
             string query = "INSERT INTO Opmerking (GastID, Opmerking, OpmerkingDatum, BehandeltDoor) VALUES (@TafelID, @Opmerking, @OpmerkingDatumTijd, @medewerkerID)";
             SqlParameter[] sqlParameters = new SqlParameter[4];
             sqlParameters[0] = new SqlParameter("@TafelID", TafelID);
-            sqlParameters[1] = new SqlParameter("@Opmerking",Opmerking);
+            sqlParameters[1] = new SqlParameter("@Opmerking", Opmerking);
             sqlParameters[2] = new SqlParameter("@OpmerkingDatumTijd", opmerkingDatumTijd);
             sqlParameters[3] = new SqlParameter("@medewerkerID", medewerkerID);           
 

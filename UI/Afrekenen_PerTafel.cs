@@ -63,8 +63,9 @@ namespace UI
                 {
                     int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[0].Text);
                     int TafelID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].Text);
-                    int fooi = Convert.ToInt32(nup_FooiBedragGeven.Value);
-                    double SubTotaalbedrag = double.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[3].Text, CultureInfo.InvariantCulture);
+                    float fooi = Convert.ToSingle(nup_FooiBedragGeven.Value);
+                    string bedrag = lst_BestellingPerTafel.SelectedItems[0].SubItems[4].Text;
+                    double SubTotaalbedrag = double.Parse(bedrag);
                     double Totaalbedrag = SubTotaalbedrag + fooi;
                     string betaalmethode = cmbx_BetaalMethode.Text;
 
@@ -74,7 +75,15 @@ namespace UI
 
                     bonService.Insert_Bon(BestellingID, TafelID, Totaalbedrag, fooi, betaalmethode);
 
-                    opmerkingService.Insert_Opmerking(TafelID, opmerking, OpmerkingDatumTijd, medewerkerID);
+                    if (opmerking != "")
+                    {
+                        opmerkingService.Insert_Opmerking(TafelID, opmerking, OpmerkingDatumTijd, medewerkerID);
+                    }
+
+                    MessageBox.Show("Bon toegevoegd!", "Bon toevoegen", MessageBoxButtons.OK);
+
+                    _main.Show();
+                    this.Close();
 
 
                 }
