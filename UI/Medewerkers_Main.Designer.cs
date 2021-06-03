@@ -29,9 +29,9 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMedewerkersTerug = new System.Windows.Forms.Button();
             this.dgvMedewerkers = new System.Windows.Forms.DataGridView();
@@ -44,6 +44,8 @@ namespace UI
             this.btnMedewerkerAanpassen = new System.Windows.Forms.Button();
             this.btnMedewerkerVerwijderen = new System.Windows.Forms.Button();
             this.pnlMedewerkerToevoegen = new System.Windows.Forms.Panel();
+            this.cmbToevoegenGeslacht = new System.Windows.Forms.ComboBox();
+            this.cmbToevoegenRol = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lblToevoegenDatum = new System.Windows.Forms.Label();
             this.btnToevoegenControleren = new System.Windows.Forms.Button();
@@ -55,11 +57,21 @@ namespace UI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtToevoegenWW = new System.Windows.Forms.TextBox();
-            this.txtToevoegenRol = new System.Windows.Forms.TextBox();
-            this.txtToevoegenGeslacht = new System.Windows.Forms.TextBox();
             this.txtToevoegenNaam = new System.Windows.Forms.TextBox();
             this.pnlMedewerkerAanpassen = new System.Windows.Forms.Panel();
             this.btnMedewerkerAanpassingDB = new System.Windows.Forms.Button();
+            this.pnlMedewerkerVerwijderen = new System.Windows.Forms.Panel();
+            this.btnVerwijderMedewerkerDB = new System.Windows.Forms.Button();
+            this.btnClodeMedewerkerVerwijderen = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dgvMedewerkerVerwijderen = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbSelectMedewerkerVerwijderen = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNieuweMedewerkerWaarde = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -74,25 +86,13 @@ namespace UI
             this.dgvColumnRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColumnWW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbSelectmedewerker = new System.Windows.Forms.ComboBox();
-            this.pnlMedewerkerVerwijderen = new System.Windows.Forms.Panel();
-            this.btnVerwijderMedewerkerDB = new System.Windows.Forms.Button();
-            this.btnClodeMedewerkerVerwijderen = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dgvMedewerkerVerwijderen = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbSelectMedewerkerVerwijderen = new System.Windows.Forms.ComboBox();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkers)).BeginInit();
             this.pnlMedewerkerToevoegen.SuspendLayout();
             this.pnlMedewerkerAanpassen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerAanpassen)).BeginInit();
             this.pnlMedewerkerVerwijderen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerVerwijderen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerAanpassen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,14 +124,14 @@ namespace UI
             this.dgvMedewerkers.BackgroundColor = System.Drawing.Color.White;
             this.dgvMedewerkers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMedewerkers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMedewerkers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedewerkers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedewerkers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedewerkers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMedewerkerID,
@@ -209,6 +209,8 @@ namespace UI
             // pnlMedewerkerToevoegen
             // 
             this.pnlMedewerkerToevoegen.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMedewerkerToevoegen.Controls.Add(this.cmbToevoegenGeslacht);
+            this.pnlMedewerkerToevoegen.Controls.Add(this.cmbToevoegenRol);
             this.pnlMedewerkerToevoegen.Controls.Add(this.button2);
             this.pnlMedewerkerToevoegen.Controls.Add(this.lblToevoegenDatum);
             this.pnlMedewerkerToevoegen.Controls.Add(this.btnToevoegenControleren);
@@ -220,13 +222,35 @@ namespace UI
             this.pnlMedewerkerToevoegen.Controls.Add(this.label3);
             this.pnlMedewerkerToevoegen.Controls.Add(this.label2);
             this.pnlMedewerkerToevoegen.Controls.Add(this.txtToevoegenWW);
-            this.pnlMedewerkerToevoegen.Controls.Add(this.txtToevoegenRol);
-            this.pnlMedewerkerToevoegen.Controls.Add(this.txtToevoegenGeslacht);
             this.pnlMedewerkerToevoegen.Controls.Add(this.txtToevoegenNaam);
             this.pnlMedewerkerToevoegen.Location = new System.Drawing.Point(420, 136);
             this.pnlMedewerkerToevoegen.Name = "pnlMedewerkerToevoegen";
             this.pnlMedewerkerToevoegen.Size = new System.Drawing.Size(367, 276);
             this.pnlMedewerkerToevoegen.TabIndex = 6;
+            // 
+            // cmbToevoegenGeslacht
+            // 
+            this.cmbToevoegenGeslacht.FormattingEnabled = true;
+            this.cmbToevoegenGeslacht.Items.AddRange(new object[] {
+            "Man",
+            "Vrouw"});
+            this.cmbToevoegenGeslacht.Location = new System.Drawing.Point(121, 116);
+            this.cmbToevoegenGeslacht.Name = "cmbToevoegenGeslacht";
+            this.cmbToevoegenGeslacht.Size = new System.Drawing.Size(200, 23);
+            this.cmbToevoegenGeslacht.TabIndex = 17;
+            // 
+            // cmbToevoegenRol
+            // 
+            this.cmbToevoegenRol.FormattingEnabled = true;
+            this.cmbToevoegenRol.Items.AddRange(new object[] {
+            "Bediende",
+            "Chef",
+            "Kok",
+            "Eigenaar"});
+            this.cmbToevoegenRol.Location = new System.Drawing.Point(121, 173);
+            this.cmbToevoegenRol.Name = "cmbToevoegenRol";
+            this.cmbToevoegenRol.Size = new System.Drawing.Size(200, 23);
+            this.cmbToevoegenRol.TabIndex = 16;
             // 
             // button2
             // 
@@ -325,20 +349,6 @@ namespace UI
             this.txtToevoegenWW.Size = new System.Drawing.Size(200, 23);
             this.txtToevoegenWW.TabIndex = 5;
             // 
-            // txtToevoegenRol
-            // 
-            this.txtToevoegenRol.Location = new System.Drawing.Point(121, 182);
-            this.txtToevoegenRol.Name = "txtToevoegenRol";
-            this.txtToevoegenRol.Size = new System.Drawing.Size(200, 23);
-            this.txtToevoegenRol.TabIndex = 4;
-            // 
-            // txtToevoegenGeslacht
-            // 
-            this.txtToevoegenGeslacht.Location = new System.Drawing.Point(121, 113);
-            this.txtToevoegenGeslacht.Name = "txtToevoegenGeslacht";
-            this.txtToevoegenGeslacht.Size = new System.Drawing.Size(200, 23);
-            this.txtToevoegenGeslacht.TabIndex = 2;
-            // 
             // txtToevoegenNaam
             // 
             this.txtToevoegenNaam.Location = new System.Drawing.Point(121, 55);
@@ -350,6 +360,7 @@ namespace UI
             // 
             this.pnlMedewerkerAanpassen.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMedewerkerAanpassen.Controls.Add(this.btnMedewerkerAanpassingDB);
+            this.pnlMedewerkerAanpassen.Controls.Add(this.pnlMedewerkerVerwijderen);
             this.pnlMedewerkerAanpassen.Controls.Add(this.label7);
             this.pnlMedewerkerAanpassen.Controls.Add(this.txtNieuweMedewerkerWaarde);
             this.pnlMedewerkerAanpassen.Controls.Add(this.button1);
@@ -376,132 +387,6 @@ namespace UI
             this.btnMedewerkerAanpassingDB.UseVisualStyleBackColor = false;
             this.btnMedewerkerAanpassingDB.Click += new System.EventHandler(this.btnMedewerkerAanpassingDB_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 234);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 15);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Nieuwe waarde";
-            // 
-            // txtNieuweMedewerkerWaarde
-            // 
-            this.txtNieuweMedewerkerWaarde.Location = new System.Drawing.Point(31, 252);
-            this.txtNieuweMedewerkerWaarde.Name = "txtNieuweMedewerkerWaarde";
-            this.txtNieuweMedewerkerWaarde.Size = new System.Drawing.Size(162, 23);
-            this.txtNieuweMedewerkerWaarde.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(749, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 161);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 15);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Wat wilt u aanpassen";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Kies medewerker";
-            // 
-            // cmbSelectVeld
-            // 
-            this.cmbSelectVeld.FormattingEnabled = true;
-            this.cmbSelectVeld.Location = new System.Drawing.Point(31, 182);
-            this.cmbSelectVeld.Name = "cmbSelectVeld";
-            this.cmbSelectVeld.Size = new System.Drawing.Size(162, 23);
-            this.cmbSelectVeld.TabIndex = 2;
-            // 
-            // dgvMedewerkerAanpassen
-            // 
-            this.dgvMedewerkerAanpassen.AllowUserToAddRows = false;
-            this.dgvMedewerkerAanpassen.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvMedewerkerAanpassen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMedewerkerAanpassen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMedewerkerAanpassen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvMedewerkerAanpassen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedewerkerAanpassen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvColumnID,
-            this.dgvColumnNaam,
-            this.dgvColumnGeboorte,
-            this.dgvColumnGeslacht,
-            this.dgvColumnRol,
-            this.dgvColumnWW});
-            this.dgvMedewerkerAanpassen.EnableHeadersVisualStyles = false;
-            this.dgvMedewerkerAanpassen.Location = new System.Drawing.Point(31, 88);
-            this.dgvMedewerkerAanpassen.Name = "dgvMedewerkerAanpassen";
-            this.dgvMedewerkerAanpassen.RowHeadersVisible = false;
-            this.dgvMedewerkerAanpassen.RowTemplate.Height = 25;
-            this.dgvMedewerkerAanpassen.Size = new System.Drawing.Size(528, 48);
-            this.dgvMedewerkerAanpassen.TabIndex = 1;
-            // 
-            // dgvColumnID
-            // 
-            this.dgvColumnID.HeaderText = "ID";
-            this.dgvColumnID.Name = "dgvColumnID";
-            this.dgvColumnID.Width = 50;
-            // 
-            // dgvColumnNaam
-            // 
-            this.dgvColumnNaam.HeaderText = "Naam";
-            this.dgvColumnNaam.Name = "dgvColumnNaam";
-            this.dgvColumnNaam.Width = 125;
-            // 
-            // dgvColumnGeboorte
-            // 
-            this.dgvColumnGeboorte.HeaderText = "Geboortedatum";
-            this.dgvColumnGeboorte.Name = "dgvColumnGeboorte";
-            this.dgvColumnGeboorte.Width = 125;
-            // 
-            // dgvColumnGeslacht
-            // 
-            this.dgvColumnGeslacht.HeaderText = "Geslacht";
-            this.dgvColumnGeslacht.Name = "dgvColumnGeslacht";
-            this.dgvColumnGeslacht.Width = 50;
-            // 
-            // dgvColumnRol
-            // 
-            this.dgvColumnRol.HeaderText = "Rol";
-            this.dgvColumnRol.Name = "dgvColumnRol";
-            this.dgvColumnRol.Width = 75;
-            // 
-            // dgvColumnWW
-            // 
-            this.dgvColumnWW.HeaderText = "Wachtwoord";
-            this.dgvColumnWW.Name = "dgvColumnWW";
-            // 
-            // cmbSelectmedewerker
-            // 
-            this.cmbSelectmedewerker.FormattingEnabled = true;
-            this.cmbSelectmedewerker.Location = new System.Drawing.Point(31, 46);
-            this.cmbSelectmedewerker.Name = "cmbSelectmedewerker";
-            this.cmbSelectmedewerker.Size = new System.Drawing.Size(162, 23);
-            this.cmbSelectmedewerker.TabIndex = 0;
-            this.cmbSelectmedewerker.SelectedIndexChanged += new System.EventHandler(this.cmbSelectmedewerker_SelectedIndexChanged);
-            // 
             // pnlMedewerkerVerwijderen
             // 
             this.pnlMedewerkerVerwijderen.BackColor = System.Drawing.SystemColors.Control;
@@ -510,9 +395,9 @@ namespace UI
             this.pnlMedewerkerVerwijderen.Controls.Add(this.label10);
             this.pnlMedewerkerVerwijderen.Controls.Add(this.dgvMedewerkerVerwijderen);
             this.pnlMedewerkerVerwijderen.Controls.Add(this.cmbSelectMedewerkerVerwijderen);
-            this.pnlMedewerkerVerwijderen.Location = new System.Drawing.Point(12, 136);
+            this.pnlMedewerkerVerwijderen.Location = new System.Drawing.Point(-1, 0);
             this.pnlMedewerkerVerwijderen.Name = "pnlMedewerkerVerwijderen";
-            this.pnlMedewerkerVerwijderen.Size = new System.Drawing.Size(775, 312);
+            this.pnlMedewerkerVerwijderen.Size = new System.Drawing.Size(776, 312);
             this.pnlMedewerkerVerwijderen.TabIndex = 16;
             // 
             // btnVerwijderMedewerkerDB
@@ -552,14 +437,14 @@ namespace UI
             this.dgvMedewerkerVerwijderen.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvMedewerkerVerwijderen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMedewerkerVerwijderen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMedewerkerVerwijderen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedewerkerVerwijderen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMedewerkerVerwijderen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedewerkerVerwijderen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -620,6 +505,132 @@ namespace UI
             this.cmbSelectMedewerkerVerwijderen.TabIndex = 8;
             this.cmbSelectMedewerkerVerwijderen.SelectedIndexChanged += new System.EventHandler(this.cmbSelectMedewerkerVerwijderen_SelectedIndexChanged);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 234);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 15);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Nieuwe waarde";
+            // 
+            // txtNieuweMedewerkerWaarde
+            // 
+            this.txtNieuweMedewerkerWaarde.Location = new System.Drawing.Point(31, 252);
+            this.txtNieuweMedewerkerWaarde.Name = "txtNieuweMedewerkerWaarde";
+            this.txtNieuweMedewerkerWaarde.Size = new System.Drawing.Size(162, 23);
+            this.txtNieuweMedewerkerWaarde.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(749, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 161);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Wat wilt u aanpassen";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Kies medewerker";
+            // 
+            // cmbSelectVeld
+            // 
+            this.cmbSelectVeld.FormattingEnabled = true;
+            this.cmbSelectVeld.Location = new System.Drawing.Point(31, 182);
+            this.cmbSelectVeld.Name = "cmbSelectVeld";
+            this.cmbSelectVeld.Size = new System.Drawing.Size(162, 23);
+            this.cmbSelectVeld.TabIndex = 2;
+            // 
+            // dgvMedewerkerAanpassen
+            // 
+            this.dgvMedewerkerAanpassen.AllowUserToAddRows = false;
+            this.dgvMedewerkerAanpassen.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvMedewerkerAanpassen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMedewerkerAanpassen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedewerkerAanpassen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMedewerkerAanpassen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedewerkerAanpassen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvColumnID,
+            this.dgvColumnNaam,
+            this.dgvColumnGeboorte,
+            this.dgvColumnGeslacht,
+            this.dgvColumnRol,
+            this.dgvColumnWW});
+            this.dgvMedewerkerAanpassen.EnableHeadersVisualStyles = false;
+            this.dgvMedewerkerAanpassen.Location = new System.Drawing.Point(31, 88);
+            this.dgvMedewerkerAanpassen.Name = "dgvMedewerkerAanpassen";
+            this.dgvMedewerkerAanpassen.RowHeadersVisible = false;
+            this.dgvMedewerkerAanpassen.RowTemplate.Height = 25;
+            this.dgvMedewerkerAanpassen.Size = new System.Drawing.Size(528, 48);
+            this.dgvMedewerkerAanpassen.TabIndex = 1;
+            // 
+            // dgvColumnID
+            // 
+            this.dgvColumnID.HeaderText = "ID";
+            this.dgvColumnID.Name = "dgvColumnID";
+            this.dgvColumnID.Width = 50;
+            // 
+            // dgvColumnNaam
+            // 
+            this.dgvColumnNaam.HeaderText = "Naam";
+            this.dgvColumnNaam.Name = "dgvColumnNaam";
+            this.dgvColumnNaam.Width = 125;
+            // 
+            // dgvColumnGeboorte
+            // 
+            this.dgvColumnGeboorte.HeaderText = "Geboortedatum";
+            this.dgvColumnGeboorte.Name = "dgvColumnGeboorte";
+            this.dgvColumnGeboorte.Width = 125;
+            // 
+            // dgvColumnGeslacht
+            // 
+            this.dgvColumnGeslacht.HeaderText = "Geslacht";
+            this.dgvColumnGeslacht.Name = "dgvColumnGeslacht";
+            this.dgvColumnGeslacht.Width = 50;
+            // 
+            // dgvColumnRol
+            // 
+            this.dgvColumnRol.HeaderText = "Rol";
+            this.dgvColumnRol.Name = "dgvColumnRol";
+            this.dgvColumnRol.Width = 75;
+            // 
+            // dgvColumnWW
+            // 
+            this.dgvColumnWW.HeaderText = "Wachtwoord";
+            this.dgvColumnWW.Name = "dgvColumnWW";
+            // 
+            // cmbSelectmedewerker
+            // 
+            this.cmbSelectmedewerker.FormattingEnabled = true;
+            this.cmbSelectmedewerker.Location = new System.Drawing.Point(31, 46);
+            this.cmbSelectmedewerker.Name = "cmbSelectmedewerker";
+            this.cmbSelectmedewerker.Size = new System.Drawing.Size(162, 23);
+            this.cmbSelectmedewerker.TabIndex = 0;
+            this.cmbSelectmedewerker.SelectedIndexChanged += new System.EventHandler(this.cmbSelectmedewerker_SelectedIndexChanged);
+            // 
             // pnlHeaderMedewerkers
             // 
             this.pnlHeaderMedewerkers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
@@ -636,7 +647,6 @@ namespace UI
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 628);
             this.Controls.Add(this.pnlHeaderMedewerkers);
-            this.Controls.Add(this.pnlMedewerkerVerwijderen);
             this.Controls.Add(this.pnlMedewerkerAanpassen);
             this.Controls.Add(this.pnlMedewerkerToevoegen);
             this.Controls.Add(this.btnMedewerkerVerwijderen);
@@ -652,10 +662,10 @@ namespace UI
             this.pnlMedewerkerToevoegen.PerformLayout();
             this.pnlMedewerkerAanpassen.ResumeLayout(false);
             this.pnlMedewerkerAanpassen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerAanpassen)).EndInit();
             this.pnlMedewerkerVerwijderen.ResumeLayout(false);
             this.pnlMedewerkerVerwijderen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerVerwijderen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerAanpassen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,8 +692,6 @@ namespace UI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtToevoegenWW;
-        private System.Windows.Forms.TextBox txtToevoegenRol;
-        private System.Windows.Forms.TextBox txtToevoegenGeslacht;
         private System.Windows.Forms.TextBox txtToevoegenNaam;
         private System.Windows.Forms.Button btnAddMedewerker;
         private System.Windows.Forms.Button btnToevoegenControleren;
@@ -718,5 +726,7 @@ namespace UI
         private System.Windows.Forms.Button btnClodeMedewerkerVerwijderen;
         private System.Windows.Forms.Button btnVerwijderMedewerkerDB;
         private System.Windows.Forms.Panel pnlHeaderMedewerkers;
+        private System.Windows.Forms.ComboBox cmbToevoegenGeslacht;
+        private System.Windows.Forms.ComboBox cmbToevoegenRol;
     }
 }

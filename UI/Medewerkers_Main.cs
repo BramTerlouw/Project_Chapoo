@@ -211,7 +211,7 @@ namespace UI
         private void btnMedewerkerToevoegen_Click(object sender, EventArgs e)
         {
             pnlMedewerkerToevoegen.Show();
-            txtToevoegenRol.Hide();
+            cmbToevoegenRol.Hide();
             txtToevoegenWW.Hide();
             btnAddMedewerker.Hide();
             lblToevoegenRol.Hide();
@@ -220,25 +220,19 @@ namespace UI
 
         private void btnToevoegenControleren_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtToevoegenNaam.Text) || String.IsNullOrEmpty(txtToevoegenGeslacht.Text) || dtpToevoegenDatum.Value == null)
+            if (String.IsNullOrEmpty(txtToevoegenNaam.Text) || dtpToevoegenDatum.Value == null)
             {
                 MessageBox.Show("Vul alle velden in!");
-                return;
-            }
-            else if (txtToevoegenGeslacht.Text.ToLower() != "male" && txtToevoegenGeslacht.Text.ToLower() != "female")
-            {
-                MessageBox.Show("foute gender!");
                 return;
             }
             else if (_service.CheckForExistende(txtToevoegenNaam.Text) == false)
             {
                 txtToevoegenNaam.ReadOnly = true;
-                txtToevoegenGeslacht.ReadOnly = true;
                 lblToevoegenDatum.Text = dtpToevoegenDatum.Value.ToString();
                 dtpToevoegenDatum.Hide();
                 btnToevoegenControleren.Hide();
 
-                txtToevoegenRol.Show();
+                cmbToevoegenRol.Show();
                 txtToevoegenWW.Show();
                 btnAddMedewerker.Show();
                 lblToevoegenRol.Show();
@@ -250,18 +244,18 @@ namespace UI
 
         private void btnAddMedewerker_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtToevoegenRol.Text) || String.IsNullOrEmpty(txtToevoegenWW.Text))
+            if (String.IsNullOrEmpty(txtToevoegenWW.Text))
             {
                 MessageBox.Show("Vul alle velden in!");
                 return;
             }
 
-            if (CheckDataAddedEmployee(txtToevoegenRol.Text, txtToevoegenWW.Text) == true)
+            if (CheckWWAddedEmployee(txtToevoegenWW.Text) == true)
             {
                 string name = txtToevoegenNaam.Text;
                 string geboorte = lblToevoegenDatum.Text;
-                string geslacht = txtToevoegenGeslacht.Text;
-                string rol = txtToevoegenRol.Text;
+                string geslacht = cmbToevoegenGeslacht.SelectedItem.ToString();
+                string rol = cmbToevoegenRol.SelectedItem.ToString();
                 string wachtwoord = txtToevoegenWW.Text;
 
                 _service.AddEmployee(name, geboorte, geslacht, rol, wachtwoord);
@@ -269,14 +263,8 @@ namespace UI
             }
         }
 
-        private bool CheckDataAddedEmployee(string rol, string wachtwoord)
+        private bool CheckWWAddedEmployee(string wachtwoord)
         {
-            if (rol.ToLower() != "chef" && rol.ToLower() != "bediende" && rol.ToLower() != "barman" && rol.ToLower() != "eigenaar")
-            {
-                MessageBox.Show("Foute functie!");
-                return false;
-            }
-
             int ww;
             if (!int.TryParse(txtToevoegenWW.Text, out ww))
             {
@@ -305,7 +293,6 @@ namespace UI
         private void button2_Click(object sender, EventArgs e)
         {
             pnlMedewerkerToevoegen.Hide();
-            this.InitializeComponent();
         }
 
         private void btnClodeMedewerkerVerwijderen_Click(object sender, EventArgs e)
