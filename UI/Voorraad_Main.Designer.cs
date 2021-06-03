@@ -29,7 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoorraadTerug = new System.Windows.Forms.Button();
             this.dgv_Voorraad = new System.Windows.Forms.DataGridView();
@@ -55,6 +55,7 @@ namespace UI
             this.btnVoorraadAanpassen = new System.Windows.Forms.Button();
             this.btnFilterVoorraadpnl = new System.Windows.Forms.Button();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
+            this.btnRefreshVoorraad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Voorraad)).BeginInit();
             this.pnlVoorraadAanpassen.SuspendLayout();
             this.pnlFilterVoorraad.SuspendLayout();
@@ -88,14 +89,14 @@ namespace UI
             this.dgv_Voorraad.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Voorraad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Voorraad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Voorraad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Voorraad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
@@ -236,9 +237,9 @@ namespace UI
             this.pnlFilterVoorraad.Controls.Add(this.txtVoorraadFilter);
             this.pnlFilterVoorraad.Controls.Add(this.lblFilterVraag);
             this.pnlFilterVoorraad.Controls.Add(this.lblVoorraadFilterHeader);
-            this.pnlFilterVoorraad.Location = new System.Drawing.Point(461, 174);
+            this.pnlFilterVoorraad.Location = new System.Drawing.Point(461, 173);
             this.pnlFilterVoorraad.Name = "pnlFilterVoorraad";
-            this.pnlFilterVoorraad.Size = new System.Drawing.Size(320, 303);
+            this.pnlFilterVoorraad.Size = new System.Drawing.Size(320, 304);
             this.pnlFilterVoorraad.TabIndex = 10;
             // 
             // btnCloseVoorraadFilter
@@ -321,12 +322,25 @@ namespace UI
             this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
             this.pnlHeaderMedewerkers.TabIndex = 18;
             // 
+            // btnRefreshVoorraad
+            // 
+            this.btnRefreshVoorraad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.btnRefreshVoorraad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshVoorraad.Location = new System.Drawing.Point(243, 483);
+            this.btnRefreshVoorraad.Name = "btnRefreshVoorraad";
+            this.btnRefreshVoorraad.Size = new System.Drawing.Size(108, 38);
+            this.btnRefreshVoorraad.TabIndex = 19;
+            this.btnRefreshVoorraad.Text = "Refresh";
+            this.btnRefreshVoorraad.UseVisualStyleBackColor = false;
+            this.btnRefreshVoorraad.Click += new System.EventHandler(this.btnRefreshVoorraad_Click);
+            // 
             // Voorraad_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 628);
+            this.Controls.Add(this.btnRefreshVoorraad);
             this.Controls.Add(this.pnlHeaderMedewerkers);
             this.Controls.Add(this.pnlFilterVoorraad);
             this.Controls.Add(this.btnFilterVoorraadpnl);
@@ -376,5 +390,6 @@ namespace UI
         private System.Windows.Forms.Button btnCloseVoorraadFilter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlHeaderMedewerkers;
+        private System.Windows.Forms.Button btnRefreshVoorraad;
     }
 }

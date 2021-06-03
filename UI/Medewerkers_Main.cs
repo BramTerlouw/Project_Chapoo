@@ -29,7 +29,6 @@ namespace UI
             this._service = new MedewerkerService();
 
             // populate all
-            _medewerkers = _service.GetAllEmployees();
             PopulateGridEmployees();
             PopulateCMBIds();
             PopulateCMBFields();
@@ -51,6 +50,7 @@ namespace UI
         // Populate and Hide
         private void PopulateGridEmployees()
         {
+            _medewerkers = _service.GetAllEmployees();
             foreach (Medewerker werker in _medewerkers)
             {
                 dgvMedewerkers.Rows.Add(werker.dataGridNoWW(werker));
@@ -90,6 +90,20 @@ namespace UI
             }
         }
 
+        private void btnRefreshMedewerkers_Click(object sender, EventArgs e)
+        {
+            _medewerkers.Clear();
+            cmbSelectmedewerker.Items.Clear();
+            cmbSelectMedewerkerVerwijderen.Items.Clear();
+            cmbSelectVeld.Items.Clear();
+            dgvMedewerkers.Rows.Clear();
+            dgvMedewerkerVerwijderen.Rows.Clear();
+            dgvMedewerkerAanpassen.Rows.Clear();
+            PopulateGridEmployees();
+            PopulateCMBIds();
+            PopulateCMBFields();
+        }
+
 
 
 
@@ -101,6 +115,7 @@ namespace UI
         private void btnMedewerkerAanpassen_Click(object sender, EventArgs e)
         {
             pnlMedewerkerAanpassen.Show();
+            dtpMedewerkerAanpassen.Hide();
         }
 
         private void cmbSelectmedewerker_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,6 +125,20 @@ namespace UI
 
             Medewerker medewerker = _service.GetMedewerker(id);
             dgvMedewerkerAanpassen.Rows.Add(medewerker.dataGridWW(medewerker));
+        }
+
+        private void cmbSelectVeld_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelectVeld.SelectedItem.ToString() == "MedewerkerGeboorteDatum")
+            {
+                dtpMedewerkerAanpassen.Show();
+                txtNieuweMedewerkerWaarde.Hide();
+            }
+            else
+            {
+                dtpMedewerkerAanpassen.Hide();
+                txtNieuweMedewerkerWaarde.Show();
+            }
         }
 
         private void btnMedewerkerAanpassingDB_Click(object sender, EventArgs e)
@@ -122,7 +151,12 @@ namespace UI
 
             int id = (int)cmbSelectmedewerker.SelectedItem;
             string column = (string)cmbSelectVeld.SelectedItem;
-            string waarde = CheckValueEmployeeAdjustment(column, txtNieuweMedewerkerWaarde.Text);
+
+            string waarde;
+            if (column == "MedewerkerGeboorteDatum")
+                waarde = dtpMedewerkerAanpassen.Value.Date.ToString();
+            else
+                waarde = CheckValueEmployeeAdjustment(column, txtNieuweMedewerkerWaarde.Text);
 
             if (waarde == "wrong")
             {
@@ -131,18 +165,17 @@ namespace UI
             }
 
             _service.UpdateEmployee(id, column, waarde);
+            txtNieuweMedewerkerWaarde.Clear();
+            MessageBox.Show("Medewerker aangepast!");
         }
 
         private string CheckValueEmployeeAdjustment(string column, string waarde)
         {
-            DateTime dateTime;
             switch (column)
             {
-                case "MedewerkerGeboorteDatum":
-                    if (DateTime.TryParse(waarde, out dateTime))
-                        return dateTime.Date.ToString();
-                    else
-                        return "wrong";
+                case "MedewerkerNaam":
+                    return waarde;
+                    break;
                 case "MedewerkerGeslacht":
                     string tempGeslacht = waarde.ToLower();
                     if (tempGeslacht == "male" || tempGeslacht == "female")
@@ -220,7 +253,7 @@ namespace UI
 
         private void btnToevoegenControleren_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtToevoegenNaam.Text) || dtpToevoegenDatum.Value == null)
+            if (String.IsNullOrEmpty(txtToevoegenNaam.Text))
             {
                 MessageBox.Show("Vul alle velden in!");
                 return;
@@ -228,8 +261,6 @@ namespace UI
             else if (_service.CheckForExistende(txtToevoegenNaam.Text) == false)
             {
                 txtToevoegenNaam.ReadOnly = true;
-                lblToevoegenDatum.Text = dtpToevoegenDatum.Value.ToString();
-                dtpToevoegenDatum.Hide();
                 btnToevoegenControleren.Hide();
 
                 cmbToevoegenRol.Show();
@@ -253,13 +284,22 @@ namespace UI
             if (CheckWWAddedEmployee(txtToevoegenWW.Text) == true)
             {
                 string name = txtToevoegenNaam.Text;
-                string geboorte = lblToevoegenDatum.Text;
+                string geboorte = dtpToevoegenDatum.Value.Date.ToString();
                 string geslacht = cmbToevoegenGeslacht.SelectedItem.ToString();
                 string rol = cmbToevoegenRol.SelectedItem.ToString();
                 string wachtwoord = txtToevoegenWW.Text;
 
                 _service.AddEmployee(name, geboorte, geslacht, rol, wachtwoord);
                 MessageBox.Show("Medewerker toegevoegd!");
+
+                txtToevoegenNaam.ReadOnly = false;
+                txtToevoegenNaam.Clear();
+                btnToevoegenControleren.Show();
+                cmbToevoegenRol.Hide();
+                txtToevoegenWW.Hide();
+                btnAddMedewerker.Hide();
+                lblToevoegenRol.Hide();
+                lblToevoegenWW.Hide();
             }
         }
 
@@ -288,11 +328,21 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             pnlMedewerkerAanpassen.Hide();
+            dtpMedewerkerAanpassen.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             pnlMedewerkerToevoegen.Hide();
+            txtToevoegenNaam.ReadOnly = false;
+            txtToevoegenNaam.Clear();
+            btnToevoegenControleren.Show();
+
+            cmbToevoegenRol.Hide();
+            txtToevoegenWW.Hide();
+            btnAddMedewerker.Hide();
+            lblToevoegenRol.Hide();
+            lblToevoegenWW.Hide();
         }
 
         private void btnClodeMedewerkerVerwijderen_Click(object sender, EventArgs e)
@@ -305,5 +355,7 @@ namespace UI
             this.Close();
             _main.Show();
         }
+
+        
     }
 }

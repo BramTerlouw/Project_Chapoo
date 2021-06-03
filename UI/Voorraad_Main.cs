@@ -194,5 +194,10 @@ namespace UI
             this.Close();
             _main.Show();
         }
+
+        private void btnRefreshVoorraad_Click(object sender, EventArgs e)
+        {
+            RefreshStock();
+        }
     }
 }

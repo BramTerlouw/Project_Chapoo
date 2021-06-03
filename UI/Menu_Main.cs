@@ -176,9 +176,23 @@ namespace UI
             lblAanpassenPrijs.Text = menuItem.Prijs.ToString("0.00");
         }
 
+        private void cmbAanpassenColumn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbAanpassenColumn.SelectedItem.ToString() == "Alcohol")
+            {
+                ckbMenuAanpassenAlcohol.Show();
+                txtAanpassenNieuw.Hide();
+            }
+            else
+            {
+                ckbMenuAanpassenAlcohol.Hide();
+                txtAanpassenNieuw.Show();
+            }
+        }
+
         private void btnMenuAanpassenDB_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtAanpassenNieuw.Text))
+            if (cmbAanpassenColumn.SelectedItem.ToString() != "Alcohol" && String.IsNullOrEmpty(txtAanpassenNieuw.Text))
             {
                 MessageBox.Show("Vul alle velden!");
                 return;
@@ -186,16 +200,22 @@ namespace UI
 
             int id = (int)cmbMenuAanpassenIDs.SelectedItem;
             string column = cmbAanpassenColumn.SelectedItem.ToString();
+
+            bool alcohol = false;
+            if (column == "Alcohol")
+                if (ckbMenuAanpassenAlcohol.Checked)
+                    alcohol = true;
             var input = txtAanpassenNieuw.Text;
 
             try
             {
                 if (column == "Prijs")
-                    _service.AdjustMenuItem(id, column, float.Parse(input));
+                    _service.AdjustMenuItem(id, column, float.Parse(input.Replace('.', ',')));
                 else if (column == "Alcohol")
-                    _service.AdjustMenuItem(id, column, Convert.ToBoolean(input));
+                    _service.AdjustMenuItem(id, column, alcohol);
                 else
                     _service.AdjustMenuItem(id, column, input.ToString());
+                MessageBox.Show("Menu item aangepast!");
             }
             catch (Exception ex)
             {
@@ -226,7 +246,7 @@ namespace UI
 
             string soort = cmbToevoegenSoort.SelectedItem.ToString();
             string naam = txtMenuToevoegenNaam.Text;
-            float prijs = float.Parse(txtMenuToevoegenPrijs.Text);
+            float prijs = float.Parse(txtMenuToevoegenPrijs.Text.Replace('.', ','));
             bool alcohol;
 
             if (cbMenuToevoegenAlcohol.Checked)
@@ -235,6 +255,7 @@ namespace UI
                 alcohol = false;
 
             _service.AddMenuItem(soort, naam, alcohol, prijs);
+            MessageBox.Show("Menu item toegevoegd!");
 
         }
 
@@ -287,5 +308,7 @@ namespace UI
         {
             pnlMenuAanpassen.Hide();
         }
+
+        
     }
 }
