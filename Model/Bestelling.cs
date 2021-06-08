@@ -16,6 +16,9 @@ namespace Model_Chapoo
 
         public string Status { get; set; }
 
-
+        public object[] dataGrid(Bestelling bestelling)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
