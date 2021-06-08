@@ -20,7 +20,17 @@ namespace Service_Chapoo
 
         public Bestelling GetBestellingByID(int selectedOrderNr)
         {
-            throw new NotImplementedException();
+            return bestelling_DAO.Db_Get_Order_By_ID(selectedOrderNr);
+        }
+
+        public List<Bestelling> GetBestellingGereed()
+        {
+            return bestelling_DAO.Db_Get_Orders_Done();
+        }
+
+        public List<Bestelling> GetBestellingOpen()
+        {
+            return bestelling_DAO.Db_Get_Orders_Open();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace UI
         private Bestelling_Service _bestellingService;
         private BestellingRegel_Service _bestellingRegelService;
         private List<BestellingRegel> _orderDetails;
+        private List<Bestelling> _bestellingen;
 
         private Medewerker _medewerker;
         private HoofdMenu _menu;
@@ -29,22 +30,17 @@ namespace UI
             this._medewerker = medewerker;
             this._menu = menu;
 
-            dgv_Keuken_BestellingDetails.Hide();
-            btn_Keuken_Details_Sluiten.Hide();
-            btn_Keuken_Bestelling_Afmelden.Hide();
+            HideDetails();
         }
 
         private void btn_Keuken_Openstaand_Click(object sender, EventArgs e)
         {
             // kleuren aanpassen van de knoppen
-            btn_Keuken_Openstaand.BackColor = Color.FromArgb(76,42,133);
+            btn_Keuken_Openstaand.BackColor = Color.FromArgb(76, 42, 133);
             btn_Keuken_Gereed.BackColor = Color.White;
             // code uitvoeren om de gdv te vullen
-
-            //dgv en knoppen laten zien
-            dgv_Keuken_BestellingDetails.Show();
-            btn_Keuken_Details_Sluiten.Show();
-            btn_Keuken_Bestelling_Afmelden.Show();
+            dgv_Keuken_Bestellingen.Rows.Clear();
+            GetBestellingen();
         }
 
         private void btn_Keuken_Gereed_Click(object sender, EventArgs e)
@@ -53,11 +49,27 @@ namespace UI
             btn_Keuken_Openstaand.BackColor = Color.White;
             btn_Keuken_Gereed.BackColor = Color.FromArgb(76, 42, 133);
             // code uitvoeren om de gdv te vullen
+            dgv_Keuken_Bestellingen.Rows.Clear();
+            GetBestellingen();
+        }
 
+        private void HideDetails()
+        {
+            //dgv en knoppen laten zien
+            dgv_Keuken_BestellingDetails.Hide();
+            btn_Keuken_Details_Sluiten.Hide();
+            btn_Keuken_Bestelling_Afmelden.Hide();
+        }
+
+        private void ShowDetails()
+        {
             //dgv en knoppen laten zien
             dgv_Keuken_BestellingDetails.Show();
             btn_Keuken_Details_Sluiten.Show();
-            btn_Keuken_Bestelling_Afmelden.Hide();
+            if (btn_Keuken_Openstaand.Enabled)
+            {
+                btn_Keuken_Bestelling_Afmelden.Show();
+            }
         }
 
         private void GridBestellingDetailsVullen()
@@ -66,8 +78,7 @@ namespace UI
             {
                 dgv_Keuken_BestellingDetails.Rows.Add(regel.dataGrid(regel));
             }
-            // nadat dgv is gevuld grid laten zien
-            dgv_Keuken_BestellingDetails.Show();
+            ShowDetails();
         }
 
         private void GridClearDetails()
@@ -79,7 +90,7 @@ namespace UI
         private void dgv_Keuken_Bestellingen_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // als 1 bestelling is geselecteerd details laten zien anders details hiden
-            if(dgv_Keuken_Bestellingen.SelectedRows.Count is 1)
+            if (dgv_Keuken_Bestellingen.SelectedRows.Count is 1)
             {
                 int selectedOrderNr = int.Parse(dgv_Keuken_Bestellingen.SelectedRows[0].Cells[0].Value + string.Empty);
                 _bestelling = _bestellingService.GetBestellingByID(selectedOrderNr);
@@ -89,17 +100,25 @@ namespace UI
             else
             {
                 dgv_Keuken_BestellingDetails.Hide();
+                GridClearDetails();
             }
         }
 
         private void GetBestellingDetails()
         {
-
+            _orderDetails = _bestellingRegelService.GetBestellingDetailsByBestellingID(_bestelling.BestellingID);
         }
 
-        private void Keuken_Main_Load(object sender, EventArgs e)
+        private void GetBestellingen()
         {
-
+            if (btn_Keuken_Gereed.Enabled)
+            {
+                _bestellingen = _bestellingService.GetBestellingGereed();
+            }
+            else
+            {
+                _bestellingen = _bestellingService.GetBestellingOpen();
+            }
         }
 
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
