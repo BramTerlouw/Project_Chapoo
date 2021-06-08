@@ -18,6 +18,8 @@ namespace UI
         private List<BestellingRegel> _orderDetails;
         private List<Bestelling> _bestellingen;
 
+        private bool _btnGereedWasClicked = false;
+
         private Medewerker _medewerker;
         private HoofdMenu _menu;
 
@@ -35,6 +37,8 @@ namespace UI
 
         private void btn_Keuken_Openstaand_Click(object sender, EventArgs e)
         {
+            // bool setten voor ophalen bestelling
+            _btnGereedWasClicked = false;
             // kleuren aanpassen van de knoppen
             btn_Keuken_Openstaand.BackColor = Color.FromArgb(76, 42, 133);
             btn_Keuken_Gereed.BackColor = Color.White;
@@ -45,12 +49,15 @@ namespace UI
 
         private void btn_Keuken_Gereed_Click(object sender, EventArgs e)
         {
+            // bool setten voor ophalen bestelling
+            _btnGereedWasClicked = true;
             // kleuren aanpassen van de knoppen
             btn_Keuken_Openstaand.BackColor = Color.White;
             btn_Keuken_Gereed.BackColor = Color.FromArgb(76, 42, 133);
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
             GetBestellingen();
+            
         }
 
         private void HideDetails()
@@ -111,7 +118,9 @@ namespace UI
 
         private void GetBestellingen()
         {
-            if (btn_Keuken_Gereed.Enabled)
+            // als button gereed is geklikt moeten de gereed bestellingen worden opgehaald anders is de andere knop ingedrukt
+            // en moeten de openstaander bestellingen worden opgehaald
+            if (_btnGereedWasClicked is true)
             {
                 _bestellingen = _bestellingService.GetBestellingGereed();
             }
