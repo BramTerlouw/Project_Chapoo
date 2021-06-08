@@ -119,6 +119,11 @@ namespace UI
             {
                 _bestellingen = _bestellingService.GetBestellingOpen();
             }
+
+            foreach(Bestelling bestelling in _bestellingen)
+            {
+                dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
+            }
         }
 
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
