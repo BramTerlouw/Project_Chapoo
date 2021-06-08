@@ -35,7 +35,10 @@ namespace DAL_Chapoo
 
         public List<Bestelling> Db_Get_Orders_Open()
         {
-            throw new NotImplementedException();
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE Status = @Status";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@Status", "open");
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public Bestelling Db_Get_Order_By_ID(int selectedOrderNr)
