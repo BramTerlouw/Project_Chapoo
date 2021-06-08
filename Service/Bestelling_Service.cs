@@ -6,30 +6,30 @@ namespace Service_Chapoo
 {
     public class Bestelling_Service
     {
-        private Bestelling_DAO bestelling_DAO = new Bestelling_DAO();
+        private Bestelling_DAO _bestelling_DAO = new Bestelling_DAO();
         public List<Bestelling> GetOrdersPerTable(int TafelID)
         {
-            return bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
+            return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
         }
 
         public void UpdateOrderStatusAfgerond(int BestellingID)
         {
-            bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
+            _bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
         }
 
         public Bestelling GetBestellingByID(int selectedOrderNr)
         {
-            return bestelling_DAO.Db_Get_Order_By_ID(selectedOrderNr);
+            return _bestelling_DAO.Db_Get_Order_By_ID(selectedOrderNr);
         }
 
         public List<Bestelling> GetBestellingGereed()
         {
-            return bestelling_DAO.Db_Get_Orders_Done();
+            return _bestelling_DAO.Db_Get_Orders_Done();
         }
 
         public List<Bestelling> GetBestellingOpen()
         {
-            return bestelling_DAO.Db_Get_Orders_Open();
+            return _bestelling_DAO.Db_Get_Orders_Open();
         }
     }
 }
