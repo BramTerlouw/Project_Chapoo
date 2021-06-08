@@ -27,9 +27,8 @@ namespace Model_Chapoo
         {
             return new string[]
             {
-                BestellingID.ToString(),
-                RegelNR.ToString(),
-                MenuItemID.ToString()
+                Aantal.ToString(),
+                MenuItemID.ToString(),
             };
         }
     }

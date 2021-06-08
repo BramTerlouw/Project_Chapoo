@@ -251,7 +251,6 @@ namespace UI
             this.Controls.Add(this.pnlHeaderMedewerkers);
             this.Name = "Keuken_Main";
             this.Text = "Keuken";
-            this.Load += new System.EventHandler(this.Keuken_Main_Load);
             this.pnlHeaderMedewerkers.ResumeLayout(false);
             this.pnlHeaderMedewerkers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_Bestellingen)).EndInit();
