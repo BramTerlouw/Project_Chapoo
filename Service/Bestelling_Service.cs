@@ -1,5 +1,6 @@
 ﻿using DAL_Chapoo;
 using Model_Chapoo;
+using System;
 using System.Collections.Generic;
 
 namespace Service_Chapoo
@@ -24,12 +25,48 @@ namespace Service_Chapoo
 
         public List<Bestelling> GetBestellingGereed()
         {
-            return _bestelling_DAO.Db_Get_Orders_Done();
+            try
+            {
+                return _bestelling_DAO.Db_Get_Orders_Done();
+            }
+            catch (Exception e)
+            {
+                List<Bestelling> lijst = new List<Bestelling>();
+
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.TafelID = 0;
+                bestelling.BestellingID = 0;
+                bestelling.BestellingDatum = DateTime.Now;
+
+
+                lijst.Add(bestelling);
+
+                return lijst;
+            }
         }
 
         public List<Bestelling> GetBestellingOpen()
         {
-            return _bestelling_DAO.Db_Get_Orders_Open();
+            try
+            {
+                return _bestelling_DAO.Db_Get_Orders_Open();
+            }
+            catch(Exception e)
+            {
+                List<Bestelling> lijst = new List<Bestelling>();
+
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.TafelID = 0;
+                bestelling.BestellingID = 0;
+                bestelling.BestellingDatum = DateTime.Now;
+                
+
+                lijst.Add(bestelling);
+
+                return lijst;
+            }
         }
     }
 }
