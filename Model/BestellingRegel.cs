@@ -32,6 +32,7 @@ namespace Model_Chapoo
             {
                 Aantal.ToString(),
                 MenuItemID.ToString(),
+                Opmerking
             };
         }
     }
