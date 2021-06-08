@@ -1,6 +1,5 @@
-﻿using System;
+﻿using DAL_Chapoo;
 using Model_Chapoo;
-using DAL_Chapoo;
 using System.Collections.Generic;
 
 namespace Service_Chapoo
