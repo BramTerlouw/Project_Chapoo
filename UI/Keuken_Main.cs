@@ -33,6 +33,9 @@ namespace UI
             this._menu = menu;
 
             HideDetails();
+
+            _bestellingRegelService = new BestellingRegel_Service();
+            _bestellingService = new Bestelling_Service();
         }
 
         private void btn_Keuken_Openstaand_Click(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace UI
             // bool setten voor ophalen bestelling
             _btnGereedWasClicked = false;
             // kleuren aanpassen van de knoppen
-            btn_Keuken_Openstaand.BackColor = Color.FromArgb(76, 42, 133);
+            btn_Keuken_Openstaand.BackColor = Color.FromArgb(120, 139, 255);
             btn_Keuken_Gereed.BackColor = Color.White;
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
@@ -53,7 +56,7 @@ namespace UI
             _btnGereedWasClicked = true;
             // kleuren aanpassen van de knoppen
             btn_Keuken_Openstaand.BackColor = Color.White;
-            btn_Keuken_Gereed.BackColor = Color.FromArgb(76, 42, 133);
+            btn_Keuken_Gereed.BackColor = Color.FromArgb(120, 139, 255);
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
             GetBestellingen();
