@@ -37,7 +37,7 @@ namespace DAL_Chapoo
         {
             string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE Status = @Status";
             SqlParameter[] sqlParameters = new SqlParameter[1];
-            sqlParameters[0] = new SqlParameter("@Status", "open");
+            sqlParameters[0] = new SqlParameter("@Status", "bezig");
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
