@@ -16,11 +16,14 @@ namespace Model_Chapoo
 
         public int Aantal { get; set; }
 
-        public BestellingRegel(int id, int nr, int itemid)
+        public string Opmerking { get; set; }
+
+        public BestellingRegel(int id, int nr, int itemid, string opmerking)
         {
             BestellingID = id;
             RegelNR = nr;
             MenuItemID = itemid;
+            Opmerking = opmerking;
         }
 
         public string[] dataGrid(BestellingRegel regel)
