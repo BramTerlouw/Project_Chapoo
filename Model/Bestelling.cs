@@ -16,9 +16,14 @@ namespace Model_Chapoo
 
         public string Status { get; set; }
 
-        public object[] dataGrid(Bestelling bestelling)
+        public string[] dataGrid(Bestelling bestelling)
         {
-            throw new NotImplementedException();
+            return new string[]
+            {
+                TafelID.ToString(),
+                BestellingID.ToString(),
+                BestellingDatum.ToString()
+            };
         }
     }
 }
