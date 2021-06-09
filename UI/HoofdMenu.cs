@@ -50,5 +50,11 @@ namespace UI
             new Afrekenen_Main(this, _medewerker).Show();
             this.Hide();
         }
+
+        private void btnTafelOverzicht_Click(object sender, EventArgs e)
+        {
+            new Tafels_Main(this, _medewerker).Show();
+            this.Hide();
+        }
     }
 }

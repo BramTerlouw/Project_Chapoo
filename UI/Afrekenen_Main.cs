@@ -40,7 +40,7 @@ namespace UI
 
             string statusBezet = "bezet";
 
-            List<Tafel> tafels = tafelservice.Get_Tables(statusBezet);
+            List<Tafel> tafels = tafelservice.Get_Tables_Occupied(statusBezet);
 
             lst_KiesTafel.Items.Clear();
 

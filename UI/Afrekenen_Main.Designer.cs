@@ -32,13 +32,13 @@ namespace UI
             this.pnl_AfrekenenMain = new System.Windows.Forms.Panel();
             this.lst_KiesTafel = new System.Windows.Forms.ListView();
             this.col_tafelID = new System.Windows.Forms.ColumnHeader();
+            this.col_AantalStoelen = new System.Windows.Forms.ColumnHeader();
+            this.col_Status = new System.Windows.Forms.ColumnHeader();
             this.lbl_KiesTafelSubTitle = new System.Windows.Forms.Label();
             this.lbl_AfrekenenTitle = new System.Windows.Forms.Label();
             this.btn_KiesTafelConfirm = new System.Windows.Forms.Button();
             this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.btnTerugHoofdMenu = new System.Windows.Forms.Button();
-            this.col_AantalStoelen = new System.Windows.Forms.ColumnHeader();
-            this.col_Status = new System.Windows.Forms.ColumnHeader();
             this.pnl_AfrekenenMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,14 @@ namespace UI
             // col_tafelID
             // 
             this.col_tafelID.Text = "Tafel_ID";
+            // 
+            // col_AantalStoelen
+            // 
+            this.col_AantalStoelen.Text = "Stoelen";
+            // 
+            // col_Status
+            // 
+            this.col_Status.Text = "Status";
             // 
             // lbl_KiesTafelSubTitle
             // 
@@ -128,14 +136,6 @@ namespace UI
             this.btnTerugHoofdMenu.Text = "Terug";
             this.btnTerugHoofdMenu.UseVisualStyleBackColor = false;
             this.btnTerugHoofdMenu.Click += new System.EventHandler(this.btnTerugHoofdMenu_Click);
-            // 
-            // col_AantalStoelen
-            // 
-            this.col_AantalStoelen.Text = "Stoelen";
-            // 
-            // col_Status
-            // 
-            this.col_Status.Text = "Status";
             // 
             // Afrekenen_Main
             // 
