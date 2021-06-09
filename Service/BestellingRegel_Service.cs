@@ -17,9 +17,9 @@ namespace Service_Chapoo
             bestellingRegel_DAO.Db_VoegBestellingToe(MenuItemID, Aantal);
         }
 
-        public List<BestellingRegel> GetBestellingDetailsByBestellingID(int bestellingID)
+        public List<BestellingRegel> GetEetBestellingDetailsByBestellingID(int bestellingID)
         {
-            throw new NotImplementedException();
+            return bestellingRegel_DAO.Db_EetBestellingRegelOphalenByID(bestellingID);
         }
     }
 }
