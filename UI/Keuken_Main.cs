@@ -23,7 +23,7 @@ namespace UI
         private Medewerker _medewerker;
         private HoofdMenu _menu;
 
-
+        
         // constructor
         public Keuken_Main(HoofdMenu menu, Medewerker medewerker)
         {
@@ -31,6 +31,14 @@ namespace UI
 
             this._medewerker = medewerker;
             this._menu = menu;
+            if (_medewerker.Rol == "Chef")
+            {
+
+            }
+            else if (_medewerker.Rol == "Barman")
+            {
+
+            }
 
             HideDetails();
 
@@ -60,12 +68,11 @@ namespace UI
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
             GetBestellingen();
-            
         }
 
         private void HideDetails()
         {
-            //dgv en knoppen laten zien
+            //dgv en knoppen verbergen
             dgv_Keuken_BestellingDetails.Hide();
             btn_Keuken_Details_Sluiten.Hide();
             btn_Keuken_Bestelling_Afmelden.Hide();
@@ -132,10 +139,7 @@ namespace UI
                 _bestellingen = _bestellingService.GetEetBestellingOpen();
             }
 
-            foreach(Bestelling bestelling in _bestellingen)
-            {
-                dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
-            }
+            Update_BestellingGrid();
         }
 
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
@@ -147,6 +151,29 @@ namespace UI
         private void btn_Keuken_Bestelling_Afmelden_Click(object sender, EventArgs e)
         {
             _bestellingService.GereedMelden(_bestelling.BestellingID);
+            Update_BestellingGrid();
+        }
+
+        private void btn_Keuken_Details_Sluiten_Click(object sender, EventArgs e)
+        {
+            HideDetails();
+            GridClearDetails();
+            dgv_Keuken_Bestellingen.ClearSelection();
+            Update_BestellingGrid();
+        }
+
+        private void Update_BestellingGrid()
+        {
+            //eerst grid legen daarna opnieuw vullen
+            dgv_Keuken_Bestellingen.Rows.Clear();
+
+            if (_bestellingen != null)
+            {
+                foreach (Bestelling bestelling in _bestellingen)
+                {
+                    dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
+                }
+            }
         }
     }
 }
