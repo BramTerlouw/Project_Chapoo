@@ -19,6 +19,7 @@ namespace Model_Chapoo
         public int MedewerkerID { get; set; }
 
         public string Status { get; set; }
+        public double BTW { get; set; }
 
 
     }

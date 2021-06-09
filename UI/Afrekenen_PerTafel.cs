@@ -109,6 +109,7 @@ namespace UI
                 Bestelling.SubItems.Add(bestelling.MedewerkerID.ToString());
                 Bestelling.SubItems.Add(bestelling.Status);
                 Bestelling.SubItems.Add(bestelling.BestellingSubtotaal.ToString());
+                Bestelling.SubItems.Add(bestelling.BTW.ToString());
 
                 lst_BestellingPerTafel.Items.Add(Bestelling);
             }

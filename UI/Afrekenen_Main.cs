@@ -48,7 +48,7 @@ namespace UI
             {
                 ListViewItem Tafel = new ListViewItem(tafel.TafelID.ToString());
                 Tafel.SubItems.Add(tafel.AantalStoelen.ToString()) ;
-                Tafel.SubItems.Add(tafel.Status);
+                Tafel.SubItems.Add(tafel.Status);               
 
                 lst_KiesTafel.Items.Add(Tafel);
             }
