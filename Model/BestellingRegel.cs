@@ -18,14 +18,6 @@ namespace Model_Chapoo
 
         public string Opmerking { get; set; }
 
-        public BestellingRegel(int id, int nr, int itemid, string opmerking)
-        {
-            BestellingID = id;
-            RegelNR = nr;
-            MenuItemID = itemid;
-            Opmerking = opmerking;
-        }
-
         public string[] dataGrid(BestellingRegel regel)
         {
             return new string[]
