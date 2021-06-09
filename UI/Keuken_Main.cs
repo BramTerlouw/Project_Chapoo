@@ -116,7 +116,7 @@ namespace UI
 
         private void GetBestellingDetails()
         {
-            _orderDetails = _bestellingRegelService.GetBestellingDetailsByBestellingID(_bestelling.BestellingID);
+            _orderDetails = _bestellingRegelService.GetEetBestellingDetailsByBestellingID(_bestelling.BestellingID);
         }
 
         private void GetBestellingen()
