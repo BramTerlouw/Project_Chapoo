@@ -25,20 +25,29 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<Bestelling> Db_Get_Orders_Done()
+        public List<Bestelling> Db_Get_Eet_Orders_Done()
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE Status = @Status AND BestellingDatum = GETDATE()";
+            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum = GETDATE() AND BR.MenuItemID IN ( SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@Status", "afgerond");
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<Bestelling> Db_Get_Orders_Open()
+        public List<Bestelling> Db_Get_Eet_Orders_Open()
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE Status = @Status";
+            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BR.MenuItemID IN ( SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@Status", "bezig");
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public void Db_Update_OrderStatus_Gereed(int bestellingID)
+        {
+            string query = "UPDATE Bestelling SET Status = 'gereed' WHERE BestellingID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@OrderID", bestellingID);
+
+            ExecuteEditQuery(query, sqlParameters);
         }
 
         public Bestelling Db_Get_Order_By_ID(int selectedOrderNr)
