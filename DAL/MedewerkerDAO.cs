@@ -18,7 +18,7 @@ namespace DAL_Chapoo
             return ReadItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<Medewerker> ReadItems(DataTable table)
+        private List<Medewerker> ReadItems(DataTable table)
         {
             List<Medewerker> medewerkers = new List<Medewerker>();
 
@@ -93,7 +93,7 @@ namespace DAL_Chapoo
             return ReadIds(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<int> ReadIds(DataTable table)
+        private List<int> ReadIds(DataTable table)
         {
             List<int> medewerkerIds = new List<int>();
 
@@ -118,7 +118,7 @@ namespace DAL_Chapoo
             return ReadEmployee(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public Medewerker ReadEmployee(DataTable table)
+        private Medewerker ReadEmployee(DataTable table)
         {
             DataRow row = table.Rows[0];
             int id = (int)row["MedewerkerID"];
@@ -139,7 +139,7 @@ namespace DAL_Chapoo
             return ReadColumns(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<string> ReadColumns(DataTable table)
+        private List<string> ReadColumns(DataTable table)
         {
             List<string> columns = new List<string>();
             foreach (DataColumn c in table.Columns)

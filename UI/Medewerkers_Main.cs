@@ -175,7 +175,6 @@ namespace UI
             {
                 case "MedewerkerNaam":
                     return waarde;
-                    break;
                 case "MedewerkerGeslacht":
                     string tempGeslacht = waarde.ToLower();
                     if (tempGeslacht == "male" || tempGeslacht == "female")

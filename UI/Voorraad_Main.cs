@@ -16,6 +16,7 @@ namespace UI
         private Administratie_Main _main;
         private VoorraadItemService _service;
         private List<VoorraadItem> _voorraadItems;
+        private List<int> _voorraadIDs;
         private Medewerker _medewerker;
 
 
@@ -30,6 +31,7 @@ namespace UI
             this._main = main;
             this._service = new VoorraadItemService();
             this._medewerker = medewerker;
+            this._voorraadIDs = _service.GetAllIds();
             
             // hide panels and buttons
             HideItems();
@@ -37,6 +39,7 @@ namespace UI
             // get all stock and fill datagridview with the stock
             GetFullStock();
             PopulateGridStock();
+            PopulateCMBId();
         }
 
 
@@ -77,7 +80,14 @@ namespace UI
             _voorraadItems = _service.GetStock();
         }
 
-
+        public void PopulateCMBId()
+        {
+            foreach (int id in _voorraadIDs)
+            {
+                cmdAanpassenID.Items.Add(id);
+            }
+            cmdAanpassenID.SelectedIndex = 0;
+        }
 
 
 
@@ -147,26 +157,27 @@ namespace UI
         private void btnNieuweVoorraad_Click(object sender, EventArgs e)
         {
             // check if fields are filled
-            if (String.IsNullOrEmpty(txtAanpassenID.Text) || String.IsNullOrEmpty(txtAanpassenAantal.Text))
+            if (String.IsNullOrEmpty(txtAanpassenAantal.Text))
             {
                 MessageBox.Show("Vul alle velden in!");
                 return;
             }
 
             // check input
-            int stockID, amount;
-            if (!int.TryParse(txtAanpassenID.Text, out stockID) || !int.TryParse(txtAanpassenAantal.Text, out amount))
+            int amount;
+            if (!int.TryParse(txtAanpassenAantal.Text, out amount))
             {
                 MessageBox.Show("Enter a number!");
                 return;
             }
 
             // send id and amount to service layer
+            int stockID = (int)cmdAanpassenID.SelectedItem;
             _service.AdjustStock(stockID, amount);
 
             // empty txtboxes, hide panel and refresh dgv and list
             txtAanpassenAantal.Clear();
-            txtAanpassenID.Clear();
+            cmdAanpassenID.SelectedIndex = 0;
             pnlVoorraadAanpassen.Hide();
             RefreshStock();
         }

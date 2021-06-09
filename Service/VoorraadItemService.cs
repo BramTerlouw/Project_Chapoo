@@ -43,5 +43,10 @@ namespace Service_Chapoo
         {
             return _dao.FilterStockDB(input);
         }
+
+        public List<int> GetAllIds()
+        {
+            return _dao.GetAllIDsDB();
+        }
     }
 }

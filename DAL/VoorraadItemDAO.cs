@@ -16,7 +16,7 @@ namespace DAL_Chapoo
             return ReadItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<VoorraadItem> ReadItems(DataTable table)
+        private List<VoorraadItem> ReadItems(DataTable table)
         {
             List<VoorraadItem> items = new List<VoorraadItem>();
 
@@ -75,5 +75,23 @@ namespace DAL_Chapoo
             return ReadItems(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        public List<int> GetAllIDsDB()
+        {
+            string query = "SELECT MenuItemID FROM Voorraad";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+
+            return ReadIDs(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        private List<int> ReadIDs(DataTable table)
+        {
+            List<int> ids = new List<int>();
+
+            foreach (DataRow row in table.Rows)
+            {
+                ids.Add((int)row["MenuItemId"]);
+            }
+            return ids;
+        }
     }
 }
