@@ -13,7 +13,7 @@ namespace Service_Chapoo
         // ctor
         public VoorraadItemService()
         {
-            _dao = new VoorraadItemDAO();
+            _dao = new VoorraadItemDAO(); // connection to DAL layer
         }
         
 
@@ -21,32 +21,32 @@ namespace Service_Chapoo
         // methods
         public List<VoorraadItem> GetStock()
         {
-            return _dao.GetAllDBStock();
+            return _dao.GetAllDBStock(); // return whole stock
         }
 
         public List<VoorraadItem> GetDrinks()
         {
-            return _dao.GetAllDBDrinks();
+            return _dao.GetAllDBDrinks(); // return drinks only
         }
 
         public List<VoorraadItem> GetFoods()
         {
-            return _dao.GetAllDBFood();
+            return _dao.GetAllDBFood(); // return foods only
         }
 
         public void AdjustStock(int stockID, int amount)
         {
-            _dao.AdjustStockDB(stockID, amount);
+            _dao.AdjustStockDB(stockID, amount); // send id and amount to DAL layer for adjustment
         }
 
         public List<VoorraadItem> FilterStock(string input)
         {
-            return _dao.FilterStockDB(input);
+            return _dao.FilterStockDB(input); // return filtered items
         }
 
         public List<int> GetAllIds()
         {
-            return _dao.GetAllIDsDB();
+            return _dao.GetAllIDsDB(); // return all ids
         }
     }
 }

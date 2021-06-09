@@ -27,7 +27,7 @@ namespace UI
         {
             InitializeComponent();
 
-            // set main form and service layer
+            // set main form, service layer, logged employee and fill combobox
             this._main = main;
             this._service = new VoorraadItemService();
             this._medewerker = medewerker;
@@ -36,7 +36,7 @@ namespace UI
             // hide panels and buttons
             HideItems();
 
-            // get all stock and fill datagridview with the stock
+            // get all stock and fill datagridview with the stock, populate cmb
             GetFullStock();
             PopulateGridStock();
             PopulateCMBId();
@@ -62,7 +62,7 @@ namespace UI
             pnlVoorraadAanpassen.Hide();
             pnlFilterVoorraad.Hide();
 
-            if (_medewerker.Rol != "Eigenaar")
+            if (_medewerker.Rol != "Eigenaar") // when logged in as owner, show adjustment buttons
                 btnVoorraadAanpassen.Hide();
         }
 
@@ -77,11 +77,13 @@ namespace UI
 
         public void GetFullStock()
         {
+            // get all stock items
             _voorraadItems = _service.GetStock();
         }
 
         public void PopulateCMBId()
         {
+            // populate cmb with id's
             foreach (int id in _voorraadIDs)
             {
                 cmdAanpassenID.Items.Add(id);
@@ -197,17 +199,20 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // hide panel
             pnlVoorraadAanpassen.Hide();
         }
 
         private void btnVoorraadTerug_Click(object sender, EventArgs e)
         {
+            // close stockmenu and open main menu
             this.Close();
             _main.Show();
         }
 
         private void btnRefreshVoorraad_Click(object sender, EventArgs e)
         {
+            // refresh stock
             RefreshStock();
         }
     }

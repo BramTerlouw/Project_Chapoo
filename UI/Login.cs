@@ -28,13 +28,13 @@ namespace UI
         // login button
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (VerifyLoginAttempt() == false)
+            if (VerifyLoginAttempt() == false) // use method to verify the user input
                 return;
             
             int id = int.Parse(txtLoginID.Text);
-            int wachtwoord = int.Parse(txtLoginWachtwoord.Text);
+            int wachtwoord = int.Parse(txtLoginWachtwoord.Text); // parse input to integer values
 
-            if (_servicelogin.CredentialsLegitimate(id, wachtwoord) == true)
+            if (_servicelogin.CredentialsLegitimate(id, wachtwoord) == true) // check credentials, when true pass login screen to new main menu, clear fields and hide loginscreen
             {
                 new HoofdMenu(this, _serviceMedewerker.GetMedewerker(id)).Show();
                 this.Hide();
@@ -43,7 +43,7 @@ namespace UI
             }
             else
             {
-                MessageBox.Show("Wrong!");
+                MessageBox.Show("Wrong!"); // give error when credentials are wrong
             }
         }
 
@@ -78,6 +78,7 @@ namespace UI
         // individual methods for checking the logging in
         public bool CheckAllFieldsFilled()
         {
+            // if the textfields are empty, return false
             if (String.IsNullOrEmpty(txtLoginID.Text) || String.IsNullOrEmpty(txtLoginWachtwoord.Text))
                 return false;
             else
@@ -86,7 +87,7 @@ namespace UI
 
         public bool CheckID()
         {
-            int id;
+            int id; // if it won't parse, it is not a valid id (letters etc.)
             if (!int.TryParse(txtLoginID.Text, out id))
                 return false;
             else
@@ -95,7 +96,7 @@ namespace UI
 
         public bool CheckPassword()
         {
-            int wachtwoord;
+            int wachtwoord; // password can only contain numbers and must be 4 digits long
             if (!int.TryParse(txtLoginWachtwoord.Text, out wachtwoord) || wachtwoord.ToString().Length != 4)
                 return false;
             else
