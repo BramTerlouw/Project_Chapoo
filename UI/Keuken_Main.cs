@@ -125,11 +125,11 @@ namespace UI
             // en moeten de openstaander bestellingen worden opgehaald
             if (_btnGereedWasClicked is true)
             {
-                _bestellingen = _bestellingService.GetBestellingGereed();
+                _bestellingen = _bestellingService.GetEetBestellingGereed();
             }
             else
             {
-                _bestellingen = _bestellingService.GetBestellingOpen();
+                _bestellingen = _bestellingService.GetEetBestellingOpen();
             }
 
             foreach(Bestelling bestelling in _bestellingen)
@@ -142,6 +142,11 @@ namespace UI
         {
             _menu.Show();
             this.Close();
+        }
+
+        private void btn_Keuken_Bestelling_Afmelden_Click(object sender, EventArgs e)
+        {
+            _bestellingService.GereedMelden(_bestelling.BestellingID);
         }
     }
 }

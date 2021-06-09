@@ -227,6 +227,7 @@ namespace UI
             this.btn_Keuken_Bestelling_Afmelden.TabIndex = 23;
             this.btn_Keuken_Bestelling_Afmelden.Text = "Gereed Melden";
             this.btn_Keuken_Bestelling_Afmelden.UseVisualStyleBackColor = true;
+            this.btn_Keuken_Bestelling_Afmelden.Click += new System.EventHandler(this.btn_Keuken_Bestelling_Afmelden_Click);
             // 
             // btn_Keuken_Details_Sluiten
             // 
