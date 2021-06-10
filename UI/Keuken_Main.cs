@@ -185,7 +185,7 @@ namespace UI
 
         private void StartTimer()
         {
-            t = new System.Windows.Forms.Timer();
+            t = new Timer();
             t.Interval = 1000;
             t.Tick += new EventHandler(t_Tick);
             t.Enabled = true;
