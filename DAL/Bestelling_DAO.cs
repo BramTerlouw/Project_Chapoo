@@ -27,17 +27,21 @@ namespace DAL_Chapoo
 
         public List<Bestelling> Db_Get_Eet_Orders_Done()
         {
-            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum = GETDATE() AND BR.MenuItemID IN ( SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
-            sqlParameters[0] = new SqlParameter("@Status", "afgerond");
+            DateTime dag = DateTime.Today.Date;
+            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@Status", "gereed");
+            sqlParameters[1] = new SqlParameter("@dag", dag);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public List<Bestelling> Db_Get_Eet_Orders_Open()
         {
-            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BR.MenuItemID IN ( SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
-            SqlParameter[] sqlParameters = new SqlParameter[1];
+            DateTime dag = DateTime.Today.Date;
+            string query = "SELECT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@Status", "bezig");
+            sqlParameters[1] = new SqlParameter("@dag", dag);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
@@ -52,7 +56,7 @@ namespace DAL_Chapoo
 
         public Bestelling Db_Get_Order_By_ID(int selectedOrderNr)
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE BestellingID = @BestellingID";
+            string query = "SELECT BestellingID, BestellingDatum, TafelID, MedewerkerID, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling WHERE BestellingID = @BestellingID";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BestellingID", selectedOrderNr);
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
@@ -66,7 +70,7 @@ namespace DAL_Chapoo
                 {
                     bestelling.BestellingID = (int)dr["BestellingID"];
                     bestelling.BestellingDatum = (DateTime)dr["BestellingDatum"];
-                    bestelling.BestellingSubtotaal = (float)dr["BestellingSubTotaal"];
+                    bestelling.BestellingSubtotaal = (double)dr["BestellingSubTotaal"];
                     bestelling.TafelID = (int)dr["TafelID"];
                     bestelling.MedewerkerID = (int)dr["MedewerkerID"];
                     bestelling.Status = (string)dr["Status"];
@@ -85,11 +89,11 @@ namespace DAL_Chapoo
                 {
                     BestellingID = (int)dr["BestellingID"],
                     BestellingDatum = (DateTime)dr["BestellingDatum"],
-                    BestellingSubtotaal = (float)dr["BestellingSubTotaal"],
+                    BestellingSubtotaal = (double)dr["BestellingSubTotaal"],
                     TafelID = (int)dr["TafelID"],
                     MedewerkerID = (int)dr["MedewerkerID"],
                     Status = (string)dr["Status"]
-                };
+                }; 
                 bestellingLijst.Add(bestelling);
             }
             return bestellingLijst;

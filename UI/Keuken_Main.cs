@@ -44,6 +44,10 @@ namespace UI
             {
                 lbl_Locatie.Text = "Bar";
             }
+            else
+            {
+
+            }
 
             HideDetails();
 
@@ -118,10 +122,11 @@ namespace UI
                 _bestelling = _bestellingService.GetBestellingByID(selectedOrderNr);
                 GetBestellingDetails();
                 GridBestellingDetailsVullen();
+                ShowDetails();
             }
             else
             {
-                dgv_Keuken_BestellingDetails.Hide();
+                HideDetails();
                 GridClearDetails();
             }
         }
@@ -172,7 +177,7 @@ namespace UI
             //eerst grid legen daarna opnieuw vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
 
-            if (_bestellingen != null)
+            if (_bestellingen.Count != null)
             {
                 foreach (Bestelling bestelling in _bestellingen)
                 {
@@ -191,7 +196,7 @@ namespace UI
 
         private void t_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
         }
     }
 }
