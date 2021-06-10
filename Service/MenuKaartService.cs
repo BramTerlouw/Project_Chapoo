@@ -77,14 +77,6 @@ namespace Service_Chapoo
 
 
 
-        // get all menu ids
-        public List<int> GetMenuIDs()
-        {
-            return _dao.GetMenuIDsDB();
-        }
-
-
-
         // get all menukaart columns db
         public List<string> GetColumns()
         {

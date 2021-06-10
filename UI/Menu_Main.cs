@@ -61,11 +61,10 @@ namespace UI
 
         private void PopulateCMBMenuIDs()
         {
-            List<int> ids = _service.GetMenuIDs();
-            foreach (int id in ids)
+            foreach (MenukaartItem item in menu)
             {
-                cmbMenuAanpassenIDs.Items.Add(id);
-                cmbVerwijderMenuID.Items.Add(id);
+                cmbMenuAanpassenIDs.Items.Add(item.Id);
+                cmbVerwijderMenuID.Items.Add(item.Id);
             }
             cmbMenuAanpassenIDs.SelectedIndex = 0;
             cmbVerwijderMenuID.SelectedIndex = 0;

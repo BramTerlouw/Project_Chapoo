@@ -187,24 +187,6 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<int> GetMenuIDsDB()
-        {
-            string query = "SELECT MenuItemID FROM MenuItem";
-            SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadMenuIDs(ExecuteSelectQuery(query, sqlParameters));
-        }
-
-        private List<int> ReadMenuIDs(DataTable table)
-        {
-            List<int> menuIDs = new List<int>();
-
-            foreach (DataRow row in table.Rows)
-            {
-                menuIDs.Add((int)row["MenuItemID"]);
-            }
-            return menuIDs;
-        }
-
 
 
         // Get all columns

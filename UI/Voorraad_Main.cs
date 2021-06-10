@@ -16,7 +16,6 @@ namespace UI
         private Administratie_Main _main;
         private VoorraadItemService _service;
         private List<VoorraadItem> _voorraadItems;
-        private List<int> _voorraadIDs;
         private Medewerker _medewerker;
 
 
@@ -31,7 +30,6 @@ namespace UI
             this._main = main;
             this._service = new VoorraadItemService();
             this._medewerker = medewerker;
-            this._voorraadIDs = _service.GetAllIds();
             
             // hide panels and buttons
             HideItems();
@@ -84,9 +82,9 @@ namespace UI
         public void PopulateCMBId()
         {
             // populate cmb with id's
-            foreach (int id in _voorraadIDs)
+            foreach (VoorraadItem item in _voorraadItems)
             {
-                cmdAanpassenID.Items.Add(id);
+                cmdAanpassenID.Items.Add(item._id);
             }
             cmdAanpassenID.SelectedIndex = 0;
         }
@@ -152,6 +150,7 @@ namespace UI
         private void btnVoorraadAanpassen_Click(object sender, EventArgs e)
         {
             // show adjust panel
+            RefreshStock();
             pnlFilterVoorraad.Hide();
             pnlVoorraadAanpassen.Show();
         }

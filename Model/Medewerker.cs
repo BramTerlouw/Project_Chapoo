@@ -7,7 +7,7 @@ namespace Model_Chapoo
     public class Medewerker
     {
         // fields
-        private int _medewerkerID;
+        public int _medewerkerID;
         private string _naam;
         private string _geboorteDatum;
         private string _geslacht;

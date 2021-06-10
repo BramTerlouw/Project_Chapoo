@@ -33,11 +33,6 @@ namespace Service_Chapoo
             _dao.AddEmployee(name, date, gender, function, ww); // add a employee
         }
 
-        public List<int> GetEmployeeIds()
-        {
-            return _dao.GetEmployeeIdsDB(); // return a list of ids
-        }
-
         public Medewerker GetMedewerker(int id)
         {
             return _dao.GetEmployeeDB(id); // return a single employee
