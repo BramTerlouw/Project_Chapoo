@@ -47,6 +47,8 @@ namespace UI
             this.btn_AfrekenenConfirm = new System.Windows.Forms.Button();
             this.btn_MaakBon = new System.Windows.Forms.Button();
             this.btn_Annuleren = new System.Windows.Forms.Button();
+            this.rtb_OpmerkingPlaatsen = new System.Windows.Forms.RichTextBox();
+            this.lbl_Opmerking = new System.Windows.Forms.Label();
             this.pnl_AfrekenenPerTafel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_FooiBedragGeven)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
@@ -55,6 +57,8 @@ namespace UI
             // pnl_AfrekenenPerTafel
             // 
             this.pnl_AfrekenenPerTafel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_Opmerking);
+            this.pnl_AfrekenenPerTafel.Controls.Add(this.rtb_OpmerkingPlaatsen);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_BetaalMehode);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.cmbx_BetaalMethode);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.nup_FooiBedragGeven);
@@ -235,6 +239,26 @@ namespace UI
             this.btn_Annuleren.UseVisualStyleBackColor = false;
             this.btn_Annuleren.Click += new System.EventHandler(this.btn_Annuleren_Click);
             // 
+            // rtb_OpmerkingPlaatsen
+            // 
+            this.rtb_OpmerkingPlaatsen.Location = new System.Drawing.Point(205, 380);
+            this.rtb_OpmerkingPlaatsen.Name = "rtb_OpmerkingPlaatsen";
+            this.rtb_OpmerkingPlaatsen.Size = new System.Drawing.Size(100, 68);
+            this.rtb_OpmerkingPlaatsen.TabIndex = 11;
+            this.rtb_OpmerkingPlaatsen.Text = "";
+            // 
+            // lbl_Opmerking
+            // 
+            this.lbl_Opmerking.AutoSize = true;
+            this.lbl_Opmerking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Opmerking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.lbl_Opmerking.Location = new System.Drawing.Point(205, 356);
+            this.lbl_Opmerking.Name = "lbl_Opmerking";
+            this.lbl_Opmerking.Size = new System.Drawing.Size(96, 21);
+            this.lbl_Opmerking.TabIndex = 12;
+            this.lbl_Opmerking.Text = "Opmerking";
+            this.lbl_Opmerking.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Afrekenen_PerTafel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -277,5 +301,7 @@ namespace UI
         private System.Windows.Forms.Label lbl_BetaalMehode;
         private System.Windows.Forms.ComboBox cmbx_BetaalMethode;
         private System.Windows.Forms.Button btn_Annuleren;
+        private System.Windows.Forms.Label lbl_Opmerking;
+        private System.Windows.Forms.RichTextBox rtb_OpmerkingPlaatsen;
     }
 }

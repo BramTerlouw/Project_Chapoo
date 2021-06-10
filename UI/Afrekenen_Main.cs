@@ -12,9 +12,11 @@ namespace UI
 {
     public partial class Afrekenen_Main : Form
     {
+        //fields
         private Medewerker _medewerker;
         private HoofdMenu _menu;
 
+        //constructor
         public Afrekenen_Main(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
@@ -22,34 +24,50 @@ namespace UI
             this._menu = menu;
         }
 
+        //Vul de listview als de Form geladen word
         private void Afrekenen_Main_Load(object sender, EventArgs e)
         {         
             FillListViewTafel();
         }
 
+        //Haal het TafelID op van de gelecteerde tafel, laad Form 'Afrekenen_PerTafel' en geef het TafelID mee als op de knop word geklikt 
         private void btn_KiesTafelConfirm_Click(object sender, EventArgs e)
         {
-            int TafelID = 1;/*int.Parse(lst_KiesTafel.SelectedItems[0].Text);*/
+            if (lst_KiesTafel.SelectedItems.Count == 1)
+            {
+                int TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
 
-            ShowOrderPerTabel(TafelID);
+                ShowOrderPerTabel(TafelID);
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een tafel alstublieft!", "Fout bij tafel kiezen", MessageBoxButtons.OK);
+            }
+            
         }
 
+        //Vul de listview
         private void FillListViewTafel()
         {
             Tafel_Service tafelservice = new Tafel_Service();
 
-            //List<Tafel> tafels = tafelservice.GetTables();
+            string statusBezet = "bezet";
+
+            List<Tafel> tafels = tafelservice.Get_Tables_Occupied(statusBezet);
 
             lst_KiesTafel.Items.Clear();
 
-            //foreach (var tafel in tafels)
-            //{
-            //    ListViewItem Tafel = new ListViewItem(tafel.TafelID.ToString());
+            foreach (var tafel in tafels)
+            {
+                ListViewItem Tafel = new ListViewItem(tafel.TafelID.ToString());
+                Tafel.SubItems.Add(tafel.AantalStoelen.ToString()) ;
+                Tafel.SubItems.Add(tafel.Status);               
 
-            //    lst_KiesTafel.Items.Add(Tafel);
-            //}
+                lst_KiesTafel.Items.Add(Tafel);
+            }
         }
 
+        //Laad Form 'Afrekenen_PerTafel'
         private void ShowOrderPerTabel(int TafelID)
         {
             this.Hide();
@@ -57,6 +75,7 @@ namespace UI
             //this.Close();       
         }
 
+        //Ga terug naar het hoofdmenu als op de knop word geklikt
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
         {
             _menu.Show();

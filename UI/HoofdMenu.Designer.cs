@@ -36,6 +36,7 @@ namespace UI
             this.btnBar = new System.Windows.Forms.Button();
             this.btnAdministratie = new System.Windows.Forms.Button();
             this.btnBestellingAfrekenen = new System.Windows.Forms.Button();
+            this.btnTafelOverzicht = new System.Windows.Forms.Button();
             this.pnlHeaderHoofdmenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,11 +120,24 @@ namespace UI
             this.btnBestellingAfrekenen.UseVisualStyleBackColor = false;
             this.btnBestellingAfrekenen.Click += new System.EventHandler(this.btnBestellingAfrekenen_Click);
             // 
+            // btnTafelOverzicht
+            // 
+            this.btnTafelOverzicht.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.btnTafelOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTafelOverzicht.Location = new System.Drawing.Point(697, 351);
+            this.btnTafelOverzicht.Name = "btnTafelOverzicht";
+            this.btnTafelOverzicht.Size = new System.Drawing.Size(198, 77);
+            this.btnTafelOverzicht.TabIndex = 25;
+            this.btnTafelOverzicht.Text = "Tafeloverzicht";
+            this.btnTafelOverzicht.UseVisualStyleBackColor = false;
+            this.btnTafelOverzicht.Click += new System.EventHandler(this.btnTafelOverzicht_Click);
+            // 
             // HoofdMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 628);
+            this.Controls.Add(this.btnTafelOverzicht);
             this.Controls.Add(this.btnBestellingAfrekenen);
             this.Controls.Add(this.btnAdministratie);
             this.Controls.Add(this.btnBar);
@@ -146,5 +160,6 @@ namespace UI
         private System.Windows.Forms.Button btnBar;
         private System.Windows.Forms.Button btnAdministratie;
         private System.Windows.Forms.Button btnBestellingAfrekenen;
+        private System.Windows.Forms.Button btnTafelOverzicht;
     }
 }

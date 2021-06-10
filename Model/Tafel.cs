@@ -14,7 +14,5 @@ namespace Model_Chapoo
 
         public string Status { get; set; }
 
-
-
     }
 }

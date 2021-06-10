@@ -8,23 +8,26 @@ namespace DAL_Chapoo
 {
     public class Bestelling_DAO : Base
     {
+        //Haal alle bestellingen uit de database van de gegeven tafel
         public List<Bestelling> Db_Get_Orders_Per_Table(int TafelID)
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling WHERE TafelID = @TafelID";
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE TafelID = @TafelID";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@TafelID", TafelID);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        //Verander de status van de bestelling met het gegeven bestellingID in 'afgerond'
         public void Db_Update_OrderStatus_Afgerond(int BestellingID)
         {
-            string query = "UPDATE Bestelling SET Status = 'afgerond' WHERE BestellingID = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[2];
+            string query = "UPDATE Bestelling SET [Status] = 'afgerond' WHERE BestellingID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@OrderID", BestellingID);
 
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        //Lees de resultaten van de query en sla op in list
         private List<Bestelling> ReadTables(DataTable dataTable)
         {
             List<Bestelling> bestellingLijst = new List<Bestelling>();
@@ -35,7 +38,7 @@ namespace DAL_Chapoo
                 {
                     BestellingID = (int)dr["BestellingID"],
                     BestellingDatum = (DateTime)dr["BestellingDatum"],
-                    BestellingSubtotaal = (float)dr["BestellingSubTotaal"],
+                    BestellingSubtotaal = (double)dr["BestellingSubTotaal"],
                     TafelID = (int)dr["TafelID"],
                     MedewerkerID = (int)dr["MedewerkerID"],
                     Status = (string)dr["Status"]
