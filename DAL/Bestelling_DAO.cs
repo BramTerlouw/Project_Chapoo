@@ -48,7 +48,7 @@ namespace DAL_Chapoo
         public void Db_Update_OrderStatus_Gereed(int bestellingID)
         {
             string query = "UPDATE Bestelling SET Status = 'gereed' WHERE BestellingID = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[2];
+            SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@OrderID", bestellingID);
 
             ExecuteEditQuery(query, sqlParameters);

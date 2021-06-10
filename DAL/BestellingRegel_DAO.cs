@@ -19,7 +19,7 @@ namespace DAL_Chapoo
 
         public List<BestellingRegel> Db_EetBestellingRegelOphalenByID(int ID)
         {
-            string query = "SELECT BestellingID, RegelNR, MenuItemID, Aantal, Opmerking FROM BestellingRegel WHERE BestellingID = @BestellingID AND MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
+            string query = "SELECT BestellingID, RegelNR, BestellingRegel.MenuItemID, Naam, Aantal, Opmerking FROM BestellingRegel JOIN MenuItem ON BestellingRegel.MenuItemID = MenuItem.MenuItemID WHERE BestellingID = @BestellingID AND BestellingRegel.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BestellingID", ID);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
@@ -52,9 +52,18 @@ namespace DAL_Chapoo
                     BestellingID = (int)dr["BestellingID"],
                     RegelNR = (int)dr["RegelNR"],
                     MenuItemID = (int)dr["MenuItemID"],
-                    Opmerking = (string)dr["Opmerking"],
-                    Aantal = (int)dr["Aantal"]
+                    Aantal = (int)dr["Aantal"],
+                    Naam = (string)dr["Naam"]
                 };
+                if (dr["Opmerking"] is System.DBNull)
+                {
+                    bestelling.Opmerking = "";
+                }
+                else
+                {
+                    bestelling.Opmerking = (string)dr["Opmerking"];
+                }
+
                 bestellingLijst.Add(bestelling);
             }
             return bestellingLijst;

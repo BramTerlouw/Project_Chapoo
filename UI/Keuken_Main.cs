@@ -62,6 +62,9 @@ namespace UI
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
             GetBestellingen();
+
+            HideDetails();
+            GridClearDetails();
         }
 
         private void btn_Keuken_Gereed_Click(object sender, EventArgs e)
@@ -74,6 +77,9 @@ namespace UI
             // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
             GetBestellingen();
+
+            HideDetails();
+            GridClearDetails();
         }
 
         private void HideDetails()
@@ -115,7 +121,8 @@ namespace UI
             // als 1 bestelling is geselecteerd details laten zien anders details hiden
             if (dgv_Keuken_Bestellingen.SelectedRows.Count is 1)
             {
-                int selectedOrderNr = int.Parse(dgv_Keuken_Bestellingen.SelectedRows[0].Cells[0].Value + string.Empty);
+                GridClearDetails();
+                int selectedOrderNr = int.Parse(dgv_Keuken_Bestellingen.SelectedRows[0].Cells[1].Value + string.Empty);
                 _bestelling = _bestellingService.GetBestellingByID(selectedOrderNr);
                 GetBestellingDetails();
                 GridBestellingDetailsVullen();
@@ -136,7 +143,7 @@ namespace UI
         private void GetBestellingen()
         {
             // als button gereed is geklikt moeten de gereed bestellingen worden opgehaald anders is de andere knop ingedrukt
-            // en moeten de openstaander bestellingen worden opgehaald
+            // en moeten de openstaande bestellingen worden opgehaald
             if (_btnGereedWasClicked is true)
             {
                 _bestellingen = _bestellingService.GetEetBestellingGereed();
@@ -158,6 +165,9 @@ namespace UI
         private void btn_Keuken_Bestelling_Afmelden_Click(object sender, EventArgs e)
         {
             _bestellingService.GereedMelden(_bestelling.BestellingID);
+            HideDetails();
+            GridClearDetails();
+            GetBestellingen();
             Update_BestellingGrid();
         }
 
@@ -165,7 +175,6 @@ namespace UI
         {
             HideDetails();
             GridClearDetails();
-            dgv_Keuken_Bestellingen.ClearSelection();
             Update_BestellingGrid();
         }
 
