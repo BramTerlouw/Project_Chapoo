@@ -29,9 +29,17 @@ namespace UI
 
         private void btn_KiesTafelConfirm_Click(object sender, EventArgs e)
         {
-            int TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
+            if (lst_KiesTafel.SelectedItems.Count == 1)
+            {
+                int TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
 
-            ShowOrderPerTabel(TafelID);
+                ShowOrderPerTabel(TafelID);
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een tafel alstublieft!", "Fout bij tafel kiezen", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void FillListViewTafel()

@@ -30,28 +30,52 @@ namespace UI
 
         private void btn_StatusBezet_Click(object sender, EventArgs e)
         {
-            TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
-            Status = "bezet";
-            tafelService.Update_TableStatus(TafelID, Status);
+            if (lst_KiesTafel.SelectedItems.Count == 1)
+            {
+                TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
+                Status = "bezet";
+                tafelService.Update_TableStatus(TafelID, Status);
 
-            FillListViewTafel();
+                FillListViewTafel();
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst tafel alstublieft!", "Fout bij tafel kiezen", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void btn_StatusVrij_Click(object sender, EventArgs e)
         {
-            TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
-            Status = "vrij";
-            tafelService.Update_TableStatus(TafelID, Status);
-          
-            FillListViewTafel();
+            if (lst_KiesTafel.SelectedItems.Count == 1)
+            {
+                TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
+                Status = "vrij";
+                tafelService.Update_TableStatus(TafelID, Status);
+
+                FillListViewTafel();
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst tafel alstublieft!", "Fout bij tafel kiezen", MessageBoxButtons.OK);
+            }
+            
         }
 
 
         private void btn_BestellingPerTafel_Click(object sender, EventArgs e)
         {
-            TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
+            if (lst_KiesTafel.SelectedItems.Count == 1)
+            {
+                TafelID = int.Parse(lst_KiesTafel.SelectedItems[0].Text);
 
-            ShowOrderPerTabel(TafelID);
+                ShowOrderPerTabel(TafelID);
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst tafel alstublieft!", "Fout bij tafel kiezen", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void ShowOrderPerTabel(int TafelID)
