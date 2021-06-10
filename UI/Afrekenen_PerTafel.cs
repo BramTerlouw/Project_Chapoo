@@ -15,9 +15,17 @@ namespace UI
         private int TafelID { get; set; }
         Bestelling_Service bestellingService;
         Bon_Service bonService;
-        public Afrekenen_PerTafel(int TafelID)
+
+        private Medewerker _medewerker;
+        private Afrekenen_Main _main;
+
+        public Afrekenen_PerTafel(Afrekenen_Main main, Medewerker medewerker, int TafelID)
         {
             InitializeComponent();
+
+            this._medewerker = medewerker;
+            this._main = main;
+
             this.TafelID = TafelID;
             bestellingService = new Bestelling_Service();
             bonService = new Bon_Service();
@@ -90,9 +98,8 @@ namespace UI
         }
 
         private void btn_Annuleren_Click(object sender, EventArgs e)
-        {          
-            this.Hide();
-            new Afrekenen_Main().Show();
+        {
+            _main.Show();
             this.Close();
             
         }

@@ -16,7 +16,7 @@ namespace UI
         private List<MenukaartItem> menu;
         private MenuKaartService _service;
         private Medewerker _medewerker;
-        
+
         public Menu_Main(Administratie_Main main, Medewerker medewerker)
         {
             InitializeComponent();
@@ -59,7 +59,8 @@ namespace UI
             }
         }
 
-        private void PopulateCMBMenuIDs() {
+        private void PopulateCMBMenuIDs()
+        {
             List<int> ids = _service.GetMenuIDs();
             foreach (int id in ids)
             {
@@ -126,6 +127,10 @@ namespace UI
             menu.Clear();
             menu = _service.GetMenu();
             PopulateDGVMenu();
+
+            cmbMenuAanpassenIDs.Items.Clear();
+            cmbVerwijderMenuID.Items.Clear();
+            PopulateCMBMenuIDs();
         }
 
         private void btnCloseMenuAanpassen_Click(object sender, EventArgs e)
@@ -173,16 +178,30 @@ namespace UI
 
         private void btnMenuAanpassenDB_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtAanpassenNieuw.Text))
+            {
+                MessageBox.Show("Vul alle velden!");
+                return;
+            }
+
             int id = (int)cmbMenuAanpassenIDs.SelectedItem;
             string column = cmbAanpassenColumn.SelectedItem.ToString();
             var input = txtAanpassenNieuw.Text;
 
-            if (column == "Prijs")
-                _service.AdjustMenuItem(id, column, float.Parse(input));
-            else if (column == "Alcohol")
-                _service.AdjustMenuItem(id, column, Convert.ToBoolean(input));
-            else
-                _service.AdjustMenuItem(id, column, input.ToString());
+            try
+            {
+                if (column == "Prijs")
+                    _service.AdjustMenuItem(id, column, float.Parse(input));
+                else if (column == "Alcohol")
+                    _service.AdjustMenuItem(id, column, Convert.ToBoolean(input));
+                else
+                    _service.AdjustMenuItem(id, column, input.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wrong value");
+                return;
+            }
         }
 
 
@@ -199,6 +218,12 @@ namespace UI
 
         private void btnMenuToevoegenDb_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtMenuToevoegenNaam.Text) || String.IsNullOrEmpty(txtMenuToevoegenPrijs.Text))
+            {
+                MessageBox.Show("Vul alle velden in!");
+                return;
+            }
+
             string soort = cmbToevoegenSoort.SelectedItem.ToString();
             string naam = txtMenuToevoegenNaam.Text;
             float prijs = float.Parse(txtMenuToevoegenPrijs.Text);

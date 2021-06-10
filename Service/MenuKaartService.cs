@@ -99,5 +99,51 @@ namespace Service_Chapoo
         {
             return _dao.GetAllKindsDB();
         }
+
+        public List<MenukaartItem> GetKoffieThee()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_KoffieThee();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetBier()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Bier();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetWijn()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Wijn();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetGedeDrink()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_GedeDrank();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetFrisdrank()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_FrisDrank();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetVoorgerecht()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Voorgerechten();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetTussengerecht()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Tussengerechten();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetHoofdgerecht()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Hoofdgerechten();
+            return menuItems;
+        }
+        public List<MenukaartItem> GetNagerecht()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Nagerechten();
+            return menuItems;
+        }
     }
 }
