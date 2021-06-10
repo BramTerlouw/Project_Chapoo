@@ -29,7 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoorraadTerug = new System.Windows.Forms.Button();
             this.dgv_Voorraad = new System.Windows.Forms.DataGridView();
@@ -42,7 +42,6 @@ namespace UI
             this.button1 = new System.Windows.Forms.Button();
             this.lblPnlHeaderAanpassen = new System.Windows.Forms.Label();
             this.txtAanpassenAantal = new System.Windows.Forms.TextBox();
-            this.txtAanpassenID = new System.Windows.Forms.TextBox();
             this.lblAanpassenVoorraadText2 = new System.Windows.Forms.Label();
             this.lblAanpassenVoorraadText1 = new System.Windows.Forms.Label();
             this.btnNieuweVoorraad = new System.Windows.Forms.Button();
@@ -55,6 +54,8 @@ namespace UI
             this.btnVoorraadAanpassen = new System.Windows.Forms.Button();
             this.btnFilterVoorraadpnl = new System.Windows.Forms.Button();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
+            this.btnRefreshVoorraad = new System.Windows.Forms.Button();
+            this.cmdAanpassenID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Voorraad)).BeginInit();
             this.pnlVoorraadAanpassen.SuspendLayout();
             this.pnlFilterVoorraad.SuspendLayout();
@@ -88,14 +89,14 @@ namespace UI
             this.dgv_Voorraad.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Voorraad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Voorraad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Voorraad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Voorraad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
@@ -153,10 +154,10 @@ namespace UI
             // pnlVoorraadAanpassen
             // 
             this.pnlVoorraadAanpassen.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlVoorraadAanpassen.Controls.Add(this.cmdAanpassenID);
             this.pnlVoorraadAanpassen.Controls.Add(this.button1);
             this.pnlVoorraadAanpassen.Controls.Add(this.lblPnlHeaderAanpassen);
             this.pnlVoorraadAanpassen.Controls.Add(this.txtAanpassenAantal);
-            this.pnlVoorraadAanpassen.Controls.Add(this.txtAanpassenID);
             this.pnlVoorraadAanpassen.Controls.Add(this.lblAanpassenVoorraadText2);
             this.pnlVoorraadAanpassen.Controls.Add(this.lblAanpassenVoorraadText1);
             this.pnlVoorraadAanpassen.Controls.Add(this.btnNieuweVoorraad);
@@ -192,13 +193,6 @@ namespace UI
             this.txtAanpassenAantal.Name = "txtAanpassenAantal";
             this.txtAanpassenAantal.Size = new System.Drawing.Size(222, 23);
             this.txtAanpassenAantal.TabIndex = 4;
-            // 
-            // txtAanpassenID
-            // 
-            this.txtAanpassenID.Location = new System.Drawing.Point(38, 115);
-            this.txtAanpassenID.Name = "txtAanpassenID";
-            this.txtAanpassenID.Size = new System.Drawing.Size(222, 23);
-            this.txtAanpassenID.TabIndex = 3;
             // 
             // lblAanpassenVoorraadText2
             // 
@@ -321,12 +315,34 @@ namespace UI
             this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
             this.pnlHeaderMedewerkers.TabIndex = 18;
             // 
+            // btnRefreshVoorraad
+            // 
+            this.btnRefreshVoorraad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.btnRefreshVoorraad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshVoorraad.Location = new System.Drawing.Point(243, 483);
+            this.btnRefreshVoorraad.Name = "btnRefreshVoorraad";
+            this.btnRefreshVoorraad.Size = new System.Drawing.Size(108, 38);
+            this.btnRefreshVoorraad.TabIndex = 19;
+            this.btnRefreshVoorraad.Text = "Refresh";
+            this.btnRefreshVoorraad.UseVisualStyleBackColor = false;
+            this.btnRefreshVoorraad.Click += new System.EventHandler(this.btnRefreshVoorraad_Click);
+            // 
+            // cmdAanpassenID
+            // 
+            this.cmdAanpassenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmdAanpassenID.FormattingEnabled = true;
+            this.cmdAanpassenID.Location = new System.Drawing.Point(39, 115);
+            this.cmdAanpassenID.Name = "cmdAanpassenID";
+            this.cmdAanpassenID.Size = new System.Drawing.Size(222, 23);
+            this.cmdAanpassenID.TabIndex = 11;
+            // 
             // Voorraad_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 628);
+            this.Controls.Add(this.btnRefreshVoorraad);
             this.Controls.Add(this.pnlHeaderMedewerkers);
             this.Controls.Add(this.pnlFilterVoorraad);
             this.Controls.Add(this.btnFilterVoorraadpnl);
@@ -361,7 +377,6 @@ namespace UI
         private System.Windows.Forms.Button btnFilterDrinken;
         private System.Windows.Forms.Panel pnlVoorraadAanpassen;
         private System.Windows.Forms.TextBox txtAanpassenAantal;
-        private System.Windows.Forms.TextBox txtAanpassenID;
         private System.Windows.Forms.Label lblAanpassenVoorraadText2;
         private System.Windows.Forms.Label lblAanpassenVoorraadText1;
         private System.Windows.Forms.Button btnNieuweVoorraad;
@@ -376,5 +391,7 @@ namespace UI
         private System.Windows.Forms.Button btnCloseVoorraadFilter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlHeaderMedewerkers;
+        private System.Windows.Forms.Button btnRefreshVoorraad;
+        private System.Windows.Forms.ComboBox cmdAanpassenID;
     }
 }

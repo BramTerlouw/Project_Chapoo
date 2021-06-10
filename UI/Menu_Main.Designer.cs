@@ -45,6 +45,7 @@ namespace UI
             this.btnMenuItemVerwijderen = new System.Windows.Forms.Button();
             this.btnMenuItemToevoegen = new System.Windows.Forms.Button();
             this.pnlMenuAanpassen = new System.Windows.Forms.Panel();
+            this.ckbMenuAanpassenAlcohol = new System.Windows.Forms.CheckBox();
             this.btnMenuAanpassenExit = new System.Windows.Forms.Button();
             this.btnCloseMenuAanpassen = new System.Windows.Forms.Button();
             this.btnMenuAanpassenDB = new System.Windows.Forms.Button();
@@ -254,6 +255,7 @@ namespace UI
             // pnlMenuAanpassen
             // 
             this.pnlMenuAanpassen.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlMenuAanpassen.Controls.Add(this.ckbMenuAanpassenAlcohol);
             this.pnlMenuAanpassen.Controls.Add(this.btnMenuAanpassenExit);
             this.pnlMenuAanpassen.Controls.Add(this.btnCloseMenuAanpassen);
             this.pnlMenuAanpassen.Controls.Add(this.btnMenuAanpassenDB);
@@ -275,6 +277,16 @@ namespace UI
             this.pnlMenuAanpassen.Name = "pnlMenuAanpassen";
             this.pnlMenuAanpassen.Size = new System.Drawing.Size(803, 385);
             this.pnlMenuAanpassen.TabIndex = 27;
+            // 
+            // ckbMenuAanpassenAlcohol
+            // 
+            this.ckbMenuAanpassenAlcohol.AutoSize = true;
+            this.ckbMenuAanpassenAlcohol.Location = new System.Drawing.Point(32, 269);
+            this.ckbMenuAanpassenAlcohol.Name = "ckbMenuAanpassenAlcohol";
+            this.ckbMenuAanpassenAlcohol.Size = new System.Drawing.Size(67, 19);
+            this.ckbMenuAanpassenAlcohol.TabIndex = 31;
+            this.ckbMenuAanpassenAlcohol.Text = "Alcohol";
+            this.ckbMenuAanpassenAlcohol.UseVisualStyleBackColor = true;
             // 
             // btnMenuAanpassenExit
             // 
@@ -335,11 +347,13 @@ namespace UI
             // 
             // cmbAanpassenColumn
             // 
+            this.cmbAanpassenColumn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAanpassenColumn.FormattingEnabled = true;
             this.cmbAanpassenColumn.Location = new System.Drawing.Point(32, 215);
             this.cmbAanpassenColumn.Name = "cmbAanpassenColumn";
             this.cmbAanpassenColumn.Size = new System.Drawing.Size(136, 23);
             this.cmbAanpassenColumn.TabIndex = 10;
+            this.cmbAanpassenColumn.SelectedIndexChanged += new System.EventHandler(this.cmbAanpassenColumn_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -425,6 +439,7 @@ namespace UI
             // 
             // cmbMenuAanpassenIDs
             // 
+            this.cmbMenuAanpassenIDs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMenuAanpassenIDs.FormattingEnabled = true;
             this.cmbMenuAanpassenIDs.Location = new System.Drawing.Point(32, 39);
             this.cmbMenuAanpassenIDs.Name = "cmbMenuAanpassenIDs";
@@ -545,6 +560,7 @@ namespace UI
             // 
             // cmbToevoegenSoort
             // 
+            this.cmbToevoegenSoort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbToevoegenSoort.FormattingEnabled = true;
             this.cmbToevoegenSoort.Location = new System.Drawing.Point(139, 77);
             this.cmbToevoegenSoort.Name = "cmbToevoegenSoort";
@@ -688,6 +704,7 @@ namespace UI
             // 
             // cmbVerwijderMenuID
             // 
+            this.cmbVerwijderMenuID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVerwijderMenuID.FormattingEnabled = true;
             this.cmbVerwijderMenuID.Location = new System.Drawing.Point(71, 68);
             this.cmbVerwijderMenuID.Name = "cmbVerwijderMenuID";
@@ -802,5 +819,6 @@ namespace UI
         private System.Windows.Forms.Button btnMenuAanpassenExit;
         private System.Windows.Forms.Button btnMenuToevoegenExit;
         private System.Windows.Forms.Button btnMenuVerwijderenExit;
+        private System.Windows.Forms.CheckBox ckbMenuAanpassenAlcohol;
     }
 }

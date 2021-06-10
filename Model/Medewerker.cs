@@ -20,6 +20,7 @@ namespace Model_Chapoo
             get { return _rol; }
         }
 
+        // ctor
         public Medewerker(int id, string naam, string geboorte, string geslacht, string rol, string wachtwoord)
         {
             _medewerkerID = id;
@@ -30,6 +31,7 @@ namespace Model_Chapoo
             _wachtwoord = wachtwoord;
         }
 
+        // make a array of th properties and fields of employee for dgv
         public string[] dataGridWW(Medewerker medewerker)
         {
             return new string[]

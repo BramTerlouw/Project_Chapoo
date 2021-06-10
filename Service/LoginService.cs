@@ -20,8 +20,8 @@ namespace Service_Chapoo
         // check if there is a user with the id and password
         public bool CredentialsLegitimate(int id, int wachtwoord)
         {
-            int users = _dao.VerifyLoginAttemptDB(id, wachtwoord);
-            if (users == 1)
+            int users = _dao.VerifyLoginAttemptDB(id, wachtwoord); // get the amount of users with the credentials
+            if (users == 1) // when a user exists return true
                 return true;
             else
                 return false;

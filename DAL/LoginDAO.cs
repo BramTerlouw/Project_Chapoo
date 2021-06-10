@@ -12,8 +12,10 @@ namespace DAL_Chapoo
     {
         public int VerifyLoginAttemptDB(int id, int wachtwoord)
         {
+            // count all employees with the id and password
             string query = "SELECT COUNT(MedewerkerID) FROM Medewerker WHERE MedewerkerID = @ID AND Wachtwoord = @WW";
 
+            // add id and password as parameters
             SqlParameter[] sqlParameters = new SqlParameter[2];
 
             SqlParameter paraId = new SqlParameter("@ID", SqlDbType.Int);
@@ -24,6 +26,7 @@ namespace DAL_Chapoo
             paraWW.Value = wachtwoord;
             sqlParameters[1] = paraWW;
 
+            // use ExecuteCount to return an integer
             return ExecuteCount(query, sqlParameters);
         }
     }

@@ -16,6 +16,7 @@ namespace UI
         private Administratie_Main _main;
         private VoorraadItemService _service;
         private List<VoorraadItem> _voorraadItems;
+        private List<int> _voorraadIDs;
         private Medewerker _medewerker;
 
 
@@ -26,17 +27,19 @@ namespace UI
         {
             InitializeComponent();
 
-            // set main form and service layer
+            // set main form, service layer, logged employee and fill combobox
             this._main = main;
             this._service = new VoorraadItemService();
             this._medewerker = medewerker;
+            this._voorraadIDs = _service.GetAllIds();
             
             // hide panels and buttons
             HideItems();
 
-            // get all stock and fill datagridview with the stock
+            // get all stock and fill datagridview with the stock, populate cmb
             GetFullStock();
             PopulateGridStock();
+            PopulateCMBId();
         }
 
 
@@ -59,7 +62,7 @@ namespace UI
             pnlVoorraadAanpassen.Hide();
             pnlFilterVoorraad.Hide();
 
-            if (_medewerker.Rol != "Eigenaar")
+            if (_medewerker.Rol != "Eigenaar") // when logged in as owner, show adjustment buttons
                 btnVoorraadAanpassen.Hide();
         }
 
@@ -74,10 +77,19 @@ namespace UI
 
         public void GetFullStock()
         {
+            // get all stock items
             _voorraadItems = _service.GetStock();
         }
 
-
+        public void PopulateCMBId()
+        {
+            // populate cmb with id's
+            foreach (int id in _voorraadIDs)
+            {
+                cmdAanpassenID.Items.Add(id);
+            }
+            cmdAanpassenID.SelectedIndex = 0;
+        }
 
 
 
@@ -147,26 +159,27 @@ namespace UI
         private void btnNieuweVoorraad_Click(object sender, EventArgs e)
         {
             // check if fields are filled
-            if (String.IsNullOrEmpty(txtAanpassenID.Text) || String.IsNullOrEmpty(txtAanpassenAantal.Text))
+            if (String.IsNullOrEmpty(txtAanpassenAantal.Text))
             {
                 MessageBox.Show("Vul alle velden in!");
                 return;
             }
 
             // check input
-            int stockID, amount;
-            if (!int.TryParse(txtAanpassenID.Text, out stockID) || !int.TryParse(txtAanpassenAantal.Text, out amount))
+            int amount;
+            if (!int.TryParse(txtAanpassenAantal.Text, out amount))
             {
                 MessageBox.Show("Enter a number!");
                 return;
             }
 
             // send id and amount to service layer
+            int stockID = (int)cmdAanpassenID.SelectedItem;
             _service.AdjustStock(stockID, amount);
 
             // empty txtboxes, hide panel and refresh dgv and list
             txtAanpassenAantal.Clear();
-            txtAanpassenID.Clear();
+            cmdAanpassenID.SelectedIndex = 0;
             pnlVoorraadAanpassen.Hide();
             RefreshStock();
         }
@@ -186,13 +199,21 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // hide panel
             pnlVoorraadAanpassen.Hide();
         }
 
         private void btnVoorraadTerug_Click(object sender, EventArgs e)
         {
+            // close stockmenu and open main menu
             this.Close();
             _main.Show();
+        }
+
+        private void btnRefreshVoorraad_Click(object sender, EventArgs e)
+        {
+            // refresh stock
+            RefreshStock();
         }
     }
 }
