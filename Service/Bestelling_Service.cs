@@ -23,11 +23,11 @@ namespace Service_Chapoo
             return _bestelling_DAO.Db_Get_Order_By_ID(selectedOrderNr);
         }
 
-        public List<Bestelling> GetEetBestellingGereed()
+        public List<Bestelling> GetEetBestelling(string status)
         {
             try
             {
-                return _bestelling_DAO.Db_Get_Eet_Orders_Done();
+                return _bestelling_DAO.Db_Get_Eet_Orders(status);
             }
             catch (Exception e)
             {
@@ -46,11 +46,11 @@ namespace Service_Chapoo
             }
         }
 
-        public List<Bestelling> GetEetBestellingOpen()
+        public List<Bestelling> GetDrinkBestelling(string status)
         {
             try
             {
-                return _bestelling_DAO.Db_Get_Eet_Orders_Open();
+                return _bestelling_DAO.Db_Get_Drink_Orders(status);
             }
             catch(Exception e)
             {
