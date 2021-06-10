@@ -25,22 +25,22 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<Bestelling> Db_Get_Eet_Orders_Done()
+        public List<Bestelling> Db_Get_Eet_Orders(string status)
         {
             DateTime dag = DateTime.Today.Date;
             string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[2];
-            sqlParameters[0] = new SqlParameter("@Status", "gereed");
+            sqlParameters[0] = new SqlParameter("@Status", status);
             sqlParameters[1] = new SqlParameter("@dag", dag);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        public List<Bestelling> Db_Get_Eet_Orders_Open()
+        public List<Bestelling> Db_Get_Drink_Orders(string status)
         {
             DateTime dag = DateTime.Today.Date;
-            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
+            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[2];
-            sqlParameters[0] = new SqlParameter("@Status", "bezig");
+            sqlParameters[0] = new SqlParameter("@Status", status);
             sqlParameters[1] = new SqlParameter("@dag", dag);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
