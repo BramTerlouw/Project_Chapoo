@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DAL_Chapoo;
 using Model_Chapoo;
-using DAL_Chapoo;
+using System;
 using System.Collections.Generic;
 
 namespace Service_Chapoo
@@ -12,19 +12,70 @@ namespace Service_Chapoo
         //Haal een lijst op met alle bestellingen van de gegeven tafel
         public List<Bestelling> GetOrdersPerTable(int TafelID)
         {
-            return bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
+            return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
         }
 
         //Zet de status van de bestelling met het gegeven bestellingID op 'afgerond'
 
         public void UpdateOrderStatusAfgerond(int BestellingID)
         {
-            bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
+            _bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
         }
 
         public Bestelling GetBestellingByID(int selectedOrderNr)
         {
-            throw new NotImplementedException();
+            return _bestelling_DAO.Db_Get_Order_By_ID(selectedOrderNr);
+        }
+
+        public List<Bestelling> GetEetBestelling(string status)
+        {
+            try
+            {
+                return _bestelling_DAO.Db_Get_Eet_Orders(status);
+            }
+            catch (Exception e)
+            {
+                List<Bestelling> lijst = new List<Bestelling>();
+
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.TafelID = 0;
+                bestelling.BestellingID = 0;
+                bestelling.BestellingDatum = DateTime.Now;
+
+
+                lijst.Add(bestelling);
+
+                return lijst;
+            }
+        }
+
+        public List<Bestelling> GetDrinkBestelling(string status)
+        {
+            try
+            {
+                return _bestelling_DAO.Db_Get_Drink_Orders(status);
+            }
+            catch(Exception e)
+            {
+                List<Bestelling> lijst = new List<Bestelling>();
+
+                Bestelling bestelling = new Bestelling();
+
+                bestelling.TafelID = 0;
+                bestelling.BestellingID = 0;
+                bestelling.BestellingDatum = DateTime.Now;
+                
+
+                lijst.Add(bestelling);
+
+                return lijst;
+            }
+        }
+
+        public void GereedMelden(int _bestelling)
+        {
+            _bestelling_DAO.Db_Update_OrderStatus_Gereed(_bestelling);
         }
     }
 }

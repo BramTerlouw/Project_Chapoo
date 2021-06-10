@@ -14,22 +14,19 @@ namespace Model_Chapoo
 
         public int MenuItemID { get; set; }
 
+        public string Naam { get; set; }
+
         public int Aantal { get; set; }
 
-        public BestellingRegel(int id, int nr, int itemid)
-        {
-            BestellingID = id;
-            RegelNR = nr;
-            MenuItemID = itemid;
-        }
+        public string Opmerking { get; set; }
 
         public string[] dataGrid(BestellingRegel regel)
         {
             return new string[]
             {
-                BestellingID.ToString(),
-                RegelNR.ToString(),
-                MenuItemID.ToString()
+                Aantal.ToString(),
+                Naam,
+                Opmerking
             };
         }
     }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model_Chapoo
 {
@@ -21,6 +17,14 @@ namespace Model_Chapoo
         public string Status { get; set; }
         public double BTW { get; set; }
 
-
+        public string[] dataGrid(Bestelling bestelling)
+        {
+            return new string[]
+            {
+                TafelID.ToString(),
+                BestellingID.ToString(),
+                BestellingDatum.ToString("HH:mm")
+            };
+        }
     }
 }
