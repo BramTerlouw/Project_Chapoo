@@ -27,7 +27,7 @@ namespace DAL_Chapoo
 
         public List<BestellingRegel> Db_DrankBestellingRegelOphalenByID(int ID)
         {
-            string query = "SELECT BestellingID, RegelNR, MenuItemID, Aantal, Opmerking FROM BestellingRegel WHERE BestellingID = @BestellingID AND MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
+            string query = "SELECT BestellingID, RegelNR, BestellingRegel.MenuItemID, Naam, Aantal, Opmerking FROM BestellingRegel JOIN MenuItem ON BestellingRegel.MenuItemID = MenuItem.MenuItemID WHERE BestellingID = @BestellingID AND BestellingRegel.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BestellingID", ID);
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
