@@ -23,21 +23,26 @@ namespace UI
         private Medewerker _medewerker;
         private HoofdMenu _menu;
 
-        
+        // voor de klok
+        private Timer t = null;
+
+
         // constructor
         public Keuken_Main(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
+            StartTimer();
 
             this._medewerker = medewerker;
             this._menu = menu;
+
             if (_medewerker.Rol == "Chef")
             {
-
+                lbl_Locatie.Text = "Keuken";
             }
             else if (_medewerker.Rol == "Barman")
             {
-
+                lbl_Locatie.Text = "Bar";
             }
 
             HideDetails();
@@ -174,6 +179,19 @@ namespace UI
                     dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
                 }
             }
+        }
+
+        private void StartTimer()
+        {
+            t = new System.Windows.Forms.Timer();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(t_Tick);
+            t.Enabled = true;
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString();
         }
     }
 }
