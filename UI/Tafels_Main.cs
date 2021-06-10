@@ -8,12 +8,15 @@ namespace UI
 {
     public partial class Tafels_Main : Form
     {
+        //fields
         private Medewerker _medewerker;
         private HoofdMenu _menu;
         private Bestelling_Service bestellingService;
         private Tafel_Service tafelService;
         private int TafelID { get; set; }
         public string Status { get; set; }
+
+        //constructor
         public Tafels_Main(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
@@ -23,11 +26,13 @@ namespace UI
             tafelService = new Tafel_Service();
         }
 
+        //Vul de listview als de Form geladen word
         private void Tafels_Main_Load(object sender, EventArgs e)
         {
             FillListViewTafel();
         }
 
+        //Zet de status van de geselecteerde tafel op 'bezet' als er op de knop word geklikt
         private void btn_StatusBezet_Click(object sender, EventArgs e)
         {
             if (lst_KiesTafel.SelectedItems.Count == 1)
@@ -45,6 +50,7 @@ namespace UI
             
         }
 
+        //Zet de status van de geselecteerde tafel op 'vrij' als er op de knop word geklikt
         private void btn_StatusVrij_Click(object sender, EventArgs e)
         {
             if (lst_KiesTafel.SelectedItems.Count == 1)
@@ -62,7 +68,7 @@ namespace UI
             
         }
 
-
+        //Haal het TafelID op van de geselecteerde tafel, laad Form 'Tafels_BestellingenPerTafel' en geef het TafelID mee
         private void btn_BestellingPerTafel_Click(object sender, EventArgs e)
         {
             if (lst_KiesTafel.SelectedItems.Count == 1)
@@ -78,6 +84,7 @@ namespace UI
             
         }
 
+        //Laad Form 'Tafels_BestellingenPerTafel'
         private void ShowOrderPerTabel(int TafelID)
         {
             this.Hide();
@@ -85,12 +92,14 @@ namespace UI
             //this.Close();       
         }
 
+        //Ga terug naar het hoofdmenu als er op de knop word geklikt
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
         {
             _menu.Show();
             this.Close();
         }
 
+        //Vul de listview
         private void FillListViewTafel()
         {        
             string status = "vrij";

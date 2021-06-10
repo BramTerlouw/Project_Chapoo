@@ -132,7 +132,6 @@ namespace UI
             // btn_StatusBezet
             // 
             this.btn_StatusBezet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.btn_StatusBezet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StatusBezet.Location = new System.Drawing.Point(12, 528);
             this.btn_StatusBezet.Name = "btn_StatusBezet";
             this.btn_StatusBezet.Size = new System.Drawing.Size(108, 38);
@@ -144,7 +143,6 @@ namespace UI
             // btn_StatusVrij
             // 
             this.btn_StatusVrij.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.btn_StatusVrij.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_StatusVrij.Location = new System.Drawing.Point(137, 528);
             this.btn_StatusVrij.Name = "btn_StatusVrij";
             this.btn_StatusVrij.Size = new System.Drawing.Size(108, 38);
@@ -156,7 +154,6 @@ namespace UI
             // btn_BestellingPerTafel
             // 
             this.btn_BestellingPerTafel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.btn_BestellingPerTafel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BestellingPerTafel.Location = new System.Drawing.Point(375, 528);
             this.btn_BestellingPerTafel.Name = "btn_BestellingPerTafel";
             this.btn_BestellingPerTafel.Size = new System.Drawing.Size(108, 38);

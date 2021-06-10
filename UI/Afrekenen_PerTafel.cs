@@ -9,6 +9,7 @@ namespace UI
 {
     public partial class Afrekenen_PerTafel : Form
     {
+        //fields
         private int TafelID { get; set; }
         Bestelling_Service bestellingService;
         Bon_Service bonService;
@@ -17,6 +18,7 @@ namespace UI
         private Medewerker _medewerker;
         private Afrekenen_Main _main;
 
+        //constructor
         public Afrekenen_PerTafel(Afrekenen_Main main, Medewerker medewerker, int TafelID)
         {
             InitializeComponent();
@@ -30,12 +32,14 @@ namespace UI
             opmerkingService = new Opmerking_Service();
         }
 
+        //Vul de listview als de Form geladen word en vul de Text van de 'Gekozen Tafel' lbl met het TafelID
         private void Afrekenen_PerTafel_Load(object sender, EventArgs e)
         {
             lbl_GekozenTafel.Text = $"Tafel {TafelID}";
             FillListView_BestellingPerTafel();
         }
 
+        //Verander de status van de geselecteerde bestelling in 'afgerond' als op de knop word geklikt en een bevestiging word gegegeven
         private void btn_AfrekenenConfirm_Click(object sender, EventArgs e)
         {
             if (lst_BestellingPerTafel.SelectedItems.Count == 1)
@@ -53,6 +57,8 @@ namespace UI
                 MessageBox.Show("Selecteer een bestelling alstublieft!", "Fout bij afrekenen", MessageBoxButtons.OK);
             }
         }
+
+        //Maak een bon van de geselecteerde bestelling als op de knop word geklikt en een bevestiging word gegegeven
 
         private void btn_MaakBon_Click(object sender, EventArgs e)
         {
@@ -95,6 +101,7 @@ namespace UI
 
         }
 
+        //Vul de listview
         private void FillListView_BestellingPerTafel()
         {      
             List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID);
@@ -115,11 +122,17 @@ namespace UI
             }
         }
 
+        //Clear de RichTextBox voor de opmerking en ga terug naar Form 'Afrekenen_Main' als op de knop word geklikt en een bevestiging word gegeven
         private void btn_Annuleren_Click(object sender, EventArgs e)
         {
-            _main.Show();
-            rtb_OpmerkingPlaatsen.Clear();
-            this.Close();
+            DialogResult msbResult = MessageBox.Show("U staat op het punt het afrekenen te annuleren. \nWeet u dit zeker?", "Afrekenen annuleren", MessageBoxButtons.YesNo);
+            if (msbResult == DialogResult.Yes)
+            {
+                _main.Show();
+                rtb_OpmerkingPlaatsen.Clear();
+                this.Close();
+            }
+            
             
         }
     }

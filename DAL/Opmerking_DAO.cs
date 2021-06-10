@@ -5,6 +5,7 @@ namespace DAL_Chapoo
 {
     public class Opmerking_DAO : Base
     {
+        //Voeg een opmerking toe aan de DB
         public void Db_Insert_Opmerking(int TafelID, string Opmerking, DateTime opmerkingDatumTijd, int medewerkerID)
         {
             string query = "INSERT INTO Opmerking (GastID, Opmerking, OpmerkingDatum, BehandeltDoor) VALUES (@TafelID, @Opmerking, @OpmerkingDatumTijd, @medewerkerID)";

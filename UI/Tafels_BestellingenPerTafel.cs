@@ -14,10 +14,13 @@ namespace UI
 {
     public partial class Tafels_BestellingenPerTafel : Form
     {
+        //fields
         private Tafels_Main _tafelsMain;
         private Medewerker _medewerker;
         private Bestelling_Service bestellingService;
         private int TafelID { get; set; }
+
+        //constructor
         public Tafels_BestellingenPerTafel(Tafels_Main main, Medewerker medewerker, int TafelID)
         {
             InitializeComponent();
@@ -27,12 +30,14 @@ namespace UI
             bestellingService = new Bestelling_Service();
         }
 
+        //Vul de listview als de Form geladen word en vul de Text van de 'Gekozen Tafel' lbl met het TafelID
         private void Tafels_BestellingenPerTafel_Load(object sender, EventArgs e)
         {
             FillListView_BestellingPerTafel();
             lbl_GekozenTafel.Text = $"Tafel {TafelID}";
         }
 
+        //Vul de listview
         private void FillListView_BestellingPerTafel()
         {
             List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID);
@@ -53,6 +58,7 @@ namespace UI
             }
         }
 
+        //Ga terug naar Form 'Tafels_Main' als op de knop word geklikt
         private void btnTerugTafelsMain_Click(object sender, EventArgs e)
         {
             this.Hide();

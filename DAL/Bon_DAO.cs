@@ -4,6 +4,7 @@ namespace DAL_Chapoo
 {
     public class Bon_DAO : Base
     {
+        //Voeg een bon toe aan de DB
         public void Db_Insert_Bon(int BestellingID, int TafelID, double Totaalbedrag, float Fooi, string Betaalmethode)
         {
             string query = "INSERT INTO Bon (BestellingID, TafelID, Totaalbedrag, Fooi, Betaalmethode) VALUES (@BestellingID, @TafelID, @Totaalbedrag, @Fooi, @Betaalmethode)";

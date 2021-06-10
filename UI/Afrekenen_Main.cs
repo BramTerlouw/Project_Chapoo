@@ -12,9 +12,11 @@ namespace UI
 {
     public partial class Afrekenen_Main : Form
     {
+        //fields
         private Medewerker _medewerker;
         private HoofdMenu _menu;
 
+        //constructor
         public Afrekenen_Main(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
@@ -22,11 +24,13 @@ namespace UI
             this._menu = menu;
         }
 
+        //Vul de listview als de Form geladen word
         private void Afrekenen_Main_Load(object sender, EventArgs e)
         {         
             FillListViewTafel();
         }
 
+        //Haal het TafelID op van de gelecteerde tafel, laad Form 'Afrekenen_PerTafel' en geef het TafelID mee als op de knop word geklikt 
         private void btn_KiesTafelConfirm_Click(object sender, EventArgs e)
         {
             if (lst_KiesTafel.SelectedItems.Count == 1)
@@ -42,6 +46,7 @@ namespace UI
             
         }
 
+        //Vul de listview
         private void FillListViewTafel()
         {
             Tafel_Service tafelservice = new Tafel_Service();
@@ -62,6 +67,7 @@ namespace UI
             }
         }
 
+        //Laad Form 'Afrekenen_PerTafel'
         private void ShowOrderPerTabel(int TafelID)
         {
             this.Hide();
@@ -69,6 +75,7 @@ namespace UI
             //this.Close();       
         }
 
+        //Ga terug naar het hoofdmenu als op de knop word geklikt
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
         {
             _menu.Show();

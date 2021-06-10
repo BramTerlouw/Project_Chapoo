@@ -8,6 +8,7 @@ namespace DAL_Chapoo
 {
     public class Bestelling_DAO : Base
     {
+        //Haal alle bestellingen uit de database van de gegeven tafel
         public List<Bestelling> Db_Get_Orders_Per_Table(int TafelID)
         {
             string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE TafelID = @TafelID";
@@ -16,6 +17,7 @@ namespace DAL_Chapoo
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
+        //Verander de status van de bestelling met het gegeven bestellingID in 'afgerond'
         public void Db_Update_OrderStatus_Afgerond(int BestellingID)
         {
             string query = "UPDATE Bestelling SET [Status] = 'afgerond' WHERE BestellingID = @OrderID";
@@ -25,6 +27,7 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        //Lees de resultaten van de query en sla op in list
         private List<Bestelling> ReadTables(DataTable dataTable)
         {
             List<Bestelling> bestellingLijst = new List<Bestelling>();
