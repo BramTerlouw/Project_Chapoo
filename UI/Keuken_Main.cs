@@ -15,6 +15,7 @@ namespace UI
         private List<BestellingRegel> _orderDetails;
         private List<Bestelling> _bestellingen;
 
+        private string _keuze;
         private bool _btnGereedWasClicked = false;
 
         private Medewerker _medewerker;
@@ -36,14 +37,16 @@ namespace UI
             if (_medewerker.Rol == "Chef")
             {
                 lbl_Locatie.Text = "Keuken";
+                _keuze = "keuken";
             }
             else if (_medewerker.Rol == "Barman")
             {
                 lbl_Locatie.Text = "Bar";
+                _keuze = "bar";
             }
             else
             {
-
+                pnl_Keuze.Show();
             }
 
             HideDetails();
@@ -52,36 +55,7 @@ namespace UI
             _bestellingService = new Bestelling_Service();
         }
 
-        private void btn_Keuken_Openstaand_Click(object sender, EventArgs e)
-        {
-            // bool setten voor ophalen bestelling
-            _btnGereedWasClicked = false;
-            // kleuren aanpassen van de knoppen
-            btn_Keuken_Openstaand.BackColor = Color.FromArgb(120, 139, 255);
-            btn_Keuken_Gereed.BackColor = Color.White;
-            // code uitvoeren om de gdv te vullen
-            dgv_Keuken_Bestellingen.Rows.Clear();
-            GetBestellingen();
-
-            HideDetails();
-            GridClearDetails();
-        }
-
-        private void btn_Keuken_Gereed_Click(object sender, EventArgs e)
-        {
-            // bool setten voor ophalen bestelling
-            _btnGereedWasClicked = true;
-            // kleuren aanpassen van de knoppen
-            btn_Keuken_Openstaand.BackColor = Color.White;
-            btn_Keuken_Gereed.BackColor = Color.FromArgb(120, 139, 255);
-            // code uitvoeren om de gdv te vullen
-            dgv_Keuken_Bestellingen.Rows.Clear();
-            GetBestellingen();
-
-            HideDetails();
-            GridClearDetails();
-        }
-
+        // DataGrid
         private void HideDetails()
         {
             //dgv en knoppen verbergen
@@ -131,29 +105,95 @@ namespace UI
             else
             {
                 HideDetails();
-                GridClearDetails(); 
+                GridClearDetails();
             }
         }
 
         private void GetBestellingDetails()
         {
-            _orderDetails = _bestellingRegelService.GetEetBestellingDetailsByBestellingID(_bestelling.BestellingID);
+            if (_keuze == "keuken")
+            {
+                _orderDetails = _bestellingRegelService.GetEetBestellingDetailsByBestellingID(_bestelling.BestellingID);
+            }
+            else
+            {
+                _orderDetails = _bestellingRegelService.GetDrinkBestellingDetailsByBestellinID(_bestelling.BestellingID);
+            }
         }
 
         private void GetBestellingen()
         {
-            // als button gereed is geklikt moeten de gereed bestellingen worden opgehaald anders is de andere knop ingedrukt
-            // en moeten de openstaande bestellingen worden opgehaald
-            if (_btnGereedWasClicked is true)
+            if (_keuze == "keuken")
             {
-                _bestellingen = _bestellingService.GetEetBestellingGereed();
+                // als button gereed is geklikt moeten de gereed bestellingen worden opgehaald anders is de andere knop ingedrukt
+                // en moeten de openstaande bestellingen worden opgehaald
+                if (_btnGereedWasClicked is true)
+                {
+                    _bestellingen = _bestellingService.GetEetBestelling("gereed");
+                }
+                else
+                {
+                    _bestellingen = _bestellingService.GetEetBestelling("bezig");
+                }
             }
             else
             {
-                _bestellingen = _bestellingService.GetEetBestellingOpen();
+                if (_btnGereedWasClicked is true)
+                {
+                    _bestellingen = _bestellingService.GetDrinkBestelling("gereed");
+                }
+                else
+                {
+                    _bestellingen = _bestellingService.GetDrinkBestelling("bezig");
+                }
             }
 
             Update_BestellingGrid();
+        }
+
+        private void Update_BestellingGrid()
+        {
+            //eerst grid legen daarna opnieuw vullen
+            dgv_Keuken_Bestellingen.Rows.Clear();
+
+            if (_bestellingen.Count != 0)
+            {
+                foreach (Bestelling bestelling in _bestellingen)
+                {
+                    dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
+                }
+            }
+            // selectie ongedaan maken
+            dgv_Keuken_Bestellingen.ClearSelection();
+        }
+
+        // functies voor klok
+        private void StartTimer()
+        {
+            t = new Timer();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(t_Tick);
+            t.Enabled = true;
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        // Knoppen
+        private void btn_Keuze_Keuken_Click(object sender, EventArgs e)
+        {
+            _keuze = "keuken";
+            pnl_Keuze.Hide();
+            lbl_Locatie.Text = "Keuken";
+        }
+
+        private void btn_Keuze_Bar_Click(object sender, EventArgs e)
+        {
+            _keuze = "bar";
+            pnl_Keuze.Hide();
+            lbl_Locatie.Text = "Bar";
         }
 
         private void btnTerugHoofdMenu_Click(object sender, EventArgs e)
@@ -178,33 +218,34 @@ namespace UI
             Update_BestellingGrid();
         }
 
-        private void Update_BestellingGrid()
+        private void btn_Keuken_Openstaand_Click(object sender, EventArgs e)
         {
-            //eerst grid legen daarna opnieuw vullen
+            // bool setten voor ophalen bestelling
+            _btnGereedWasClicked = false;
+            // kleuren aanpassen van de knoppen
+            btn_Keuken_Openstaand.BackColor = Color.FromArgb(120, 139, 255);
+            btn_Keuken_Gereed.BackColor = Color.White;
+            // code uitvoeren om de gdv te vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
-
-            if (_bestellingen.Count != 0)
-            {
-                foreach (Bestelling bestelling in _bestellingen)
-                {
-                    dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
-                }
-            }
-            // selectie ongedaan maken
-            dgv_Keuken_Bestellingen.ClearSelection();
+            GetBestellingen();
+            // details verbergen en grid legen van details
+            HideDetails();
+            GridClearDetails();
         }
 
-        private void StartTimer()
+        private void btn_Keuken_Gereed_Click(object sender, EventArgs e)
         {
-            t = new Timer();
-            t.Interval = 1000;
-            t.Tick += new EventHandler(t_Tick);
-            t.Enabled = true;
-        }
-
-        private void t_Tick(object sender, EventArgs e)
-        {
-            lblTime.Text = DateTime.Now.ToString("HH:mm");
+            // bool setten voor ophalen bestelling
+            _btnGereedWasClicked = true;
+            // kleuren aanpassen van de knoppen
+            btn_Keuken_Openstaand.BackColor = Color.White;
+            btn_Keuken_Gereed.BackColor = Color.FromArgb(120, 139, 255);
+            // code uitvoeren om de gdv te vullen
+            dgv_Keuken_Bestellingen.Rows.Clear();
+            GetBestellingen();
+            // details verbergen en grid legen van details
+            HideDetails();
+            GridClearDetails();
         }
     }
 }
