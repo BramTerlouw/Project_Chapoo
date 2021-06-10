@@ -41,6 +41,7 @@ namespace UI
             cmbSelectmedewerker.SelectedIndex = 0;
             cmbSelectVeld.SelectedIndex = 0;
             cmbSelectMedewerkerVerwijderen.SelectedIndex = 0;
+            cmbToevoegenGeslacht.SelectedIndex = 0;
         }
 
 
@@ -231,6 +232,7 @@ namespace UI
             {
                 int id = (int)cmbSelectMedewerkerVerwijderen.SelectedItem;
                 _service.RemoveEmployee(id);
+                dgvMedewerkerVerwijderen.Rows.Clear();
             }
             else if (dialogResult == DialogResult.No) // when user presses no, dont do anything
             {
