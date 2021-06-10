@@ -88,27 +88,6 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        public List<int> GetEmployeeIdsDB()
-        {
-            // select all ids
-            string query = "SELECT MedewerkerID FROM Medewerker";
-
-            SqlParameter[] sqlParameters = new SqlParameter[0]; // 0 parameters
-            return ReadIds(ExecuteSelectQuery(query, sqlParameters)); // use method ReadIds to read and return a list with integer ids
-        }
-
-        private List<int> ReadIds(DataTable table)
-        {
-            List<int> medewerkerIds = new List<int>(); // make a new list
-
-            foreach (DataRow row in table.Rows) // for each row, add the id to the list
-            {
-                medewerkerIds.Add((int)row["MedewerkerID"]);
-            }
-            return medewerkerIds; // return list
-        }
-
-
         public Medewerker GetEmployeeDB(int id)
         {
             // query for selecting a id and filter on ID

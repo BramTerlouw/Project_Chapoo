@@ -79,25 +79,5 @@ namespace DAL_Chapoo
 
             return ReadItems(ExecuteSelectQuery(query, sqlParameters)); // use method ReadItems to read and return list with items
         }
-
-        public List<int> GetAllIDsDB()
-        {
-            // get all ids
-            string query = "SELECT MenuItemID FROM Voorraad";
-            SqlParameter[] sqlParameters = new SqlParameter[0]; // 0 parameters
-
-            return ReadIDs(ExecuteSelectQuery(query, sqlParameters)); // use method ReadIDs to read and return list with ids
-        }
-
-        private List<int> ReadIDs(DataTable table)
-        {
-            List<int> ids = new List<int>(); // make new list
-
-            foreach (DataRow row in table.Rows) // foreach row, convert the row to an integer and add to list
-            {
-                ids.Add((int)row["MenuItemId"]);
-            }
-            return ids; // return list
-        }
     }
 }

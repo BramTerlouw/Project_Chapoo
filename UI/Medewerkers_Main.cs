@@ -60,11 +60,10 @@ namespace UI
 
         public void PopulateCMBIds()
         {
-            List<int> medewerkerIDs = _service.GetEmployeeIds(); // get all ids and populate cmbs
-            foreach (int id in medewerkerIDs)
+            foreach (Medewerker werker in _medewerkers) // fill cmbs with id's
             {
-                cmbSelectmedewerker.Items.Add(id);
-                cmbSelectMedewerkerVerwijderen.Items.Add(id);
+                cmbSelectmedewerker.Items.Add(werker._medewerkerID);
+                cmbSelectMedewerkerVerwijderen.Items.Add(werker._medewerkerID);
             }
         }
 
@@ -94,6 +93,11 @@ namespace UI
         private void btnRefreshMedewerkers_Click(object sender, EventArgs e)
         {
             // refresh and clear
+            RefreshMedewerker();
+        }
+
+        private void RefreshMedewerker()
+        {
             _medewerkers.Clear();
             cmbSelectmedewerker.Items.Clear();
             cmbSelectMedewerkerVerwijderen.Items.Clear();
@@ -105,8 +109,6 @@ namespace UI
             PopulateCMBIds();
             PopulateCMBFields();
         }
-
-
 
 
 

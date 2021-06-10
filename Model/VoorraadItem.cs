@@ -5,7 +5,7 @@ namespace Model_Chapoo
     public class VoorraadItem
     {
         // fields
-        private int _id;
+        public int _id;
         private string _naam;
         private int _aantal;
 
