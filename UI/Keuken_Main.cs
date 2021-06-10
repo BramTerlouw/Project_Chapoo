@@ -174,7 +174,7 @@ namespace UI
             //eerst grid legen daarna opnieuw vullen
             dgv_Keuken_Bestellingen.Rows.Clear();
 
-            if (_bestellingen.Count != null)
+            if (_bestellingen.Count != 0)
             {
                 foreach (Bestelling bestelling in _bestellingen)
                 {
