@@ -32,9 +32,13 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnTerugHoofdMenu = new System.Windows.Forms.Button();
             this.lbl_Locatie = new System.Windows.Forms.Label();
             this.dgv_Keuken_Bestellingen = new System.Windows.Forms.DataGridView();
+            this.ColumnTafelNR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBestellingNR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Keuken_Open_Gereed = new System.Windows.Forms.Panel();
             this.btn_Keuken_Gereed = new System.Windows.Forms.Button();
             this.btn_Keuken_Openstaand = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@ namespace UI
             this.col_Opmerkingen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Keuken_Bestelling_Afmelden = new System.Windows.Forms.Button();
             this.btn_Keuken_Details_Sluiten = new System.Windows.Forms.Button();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.ColumnTafelNR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBestellingNR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTijd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeaderMedewerkers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_Bestellingen)).BeginInit();
             this.pnl_Keuken_Open_Gereed.SuspendLayout();
@@ -65,6 +65,17 @@ namespace UI
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
             this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
             this.pnlHeaderMedewerkers.TabIndex = 19;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(485, 24);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(99, 46);
+            this.lblTime.TabIndex = 5;
+            this.lblTime.Text = "00:00";
             // 
             // btnTerugHoofdMenu
             // 
@@ -92,6 +103,7 @@ namespace UI
             // dgv_Keuken_Bestellingen
             // 
             this.dgv_Keuken_Bestellingen.AllowUserToAddRows = false;
+            this.dgv_Keuken_Bestellingen.AllowUserToResizeRows = false;
             this.dgv_Keuken_Bestellingen.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Keuken_Bestellingen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Keuken_Bestellingen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -111,13 +123,36 @@ namespace UI
             this.dgv_Keuken_Bestellingen.EnableHeadersVisualStyles = false;
             this.dgv_Keuken_Bestellingen.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_Keuken_Bestellingen.Location = new System.Drawing.Point(0, 161);
+            this.dgv_Keuken_Bestellingen.MultiSelect = false;
             this.dgv_Keuken_Bestellingen.Name = "dgv_Keuken_Bestellingen";
             this.dgv_Keuken_Bestellingen.RowHeadersVisible = false;
             this.dgv_Keuken_Bestellingen.RowHeadersWidth = 51;
             this.dgv_Keuken_Bestellingen.RowTemplate.Height = 25;
+            this.dgv_Keuken_Bestellingen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Keuken_Bestellingen.Size = new System.Drawing.Size(532, 465);
             this.dgv_Keuken_Bestellingen.TabIndex = 20;
-            this.dgv_Keuken_Bestellingen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Keuken_Bestellingen_CellContentClick);
+            this.dgv_Keuken_Bestellingen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Keuken_Bestellingen_CellContentClick);
+            // 
+            // ColumnTafelNR
+            // 
+            this.ColumnTafelNR.HeaderText = "TafelNR";
+            this.ColumnTafelNR.MinimumWidth = 6;
+            this.ColumnTafelNR.Name = "ColumnTafelNR";
+            this.ColumnTafelNR.Width = 75;
+            // 
+            // ColumnBestellingNR
+            // 
+            this.ColumnBestellingNR.HeaderText = "Bestelling NR";
+            this.ColumnBestellingNR.MinimumWidth = 6;
+            this.ColumnBestellingNR.Name = "ColumnBestellingNR";
+            this.ColumnBestellingNR.Width = 225;
+            // 
+            // ColumnTijd
+            // 
+            this.ColumnTijd.HeaderText = "Tijd Opname";
+            this.ColumnTijd.MinimumWidth = 6;
+            this.ColumnTijd.Name = "ColumnTijd";
+            this.ColumnTijd.Width = 125;
             // 
             // pnl_Keuken_Open_Gereed
             // 
@@ -219,38 +254,6 @@ namespace UI
             this.btn_Keuken_Details_Sluiten.Text = "Sluiten";
             this.btn_Keuken_Details_Sluiten.UseVisualStyleBackColor = true;
             this.btn_Keuken_Details_Sluiten.Click += new System.EventHandler(this.btn_Keuken_Details_Sluiten_Click);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(485, 24);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(99, 46);
-            this.lblTime.TabIndex = 5;
-            this.lblTime.Text = "00:00";
-            // 
-            // ColumnTafelNR
-            // 
-            this.ColumnTafelNR.HeaderText = "TafelNR";
-            this.ColumnTafelNR.MinimumWidth = 6;
-            this.ColumnTafelNR.Name = "ColumnTafelNR";
-            this.ColumnTafelNR.Width = 75;
-            // 
-            // ColumnBestellingNR
-            // 
-            this.ColumnBestellingNR.HeaderText = "Bestelling NR";
-            this.ColumnBestellingNR.MinimumWidth = 6;
-            this.ColumnBestellingNR.Name = "ColumnBestellingNR";
-            this.ColumnBestellingNR.Width = 225;
-            // 
-            // ColumnTijd
-            // 
-            this.ColumnTijd.HeaderText = "Tijd Opname";
-            this.ColumnTijd.MinimumWidth = 6;
-            this.ColumnTijd.Name = "ColumnTijd";
-            this.ColumnTijd.Width = 125;
             // 
             // Keuken_Main
             // 

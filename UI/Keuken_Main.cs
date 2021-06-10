@@ -124,7 +124,7 @@ namespace UI
             else
             {
                 HideDetails();
-                GridClearDetails();
+                GridClearDetails(); 
             }
         }
 
@@ -181,6 +181,8 @@ namespace UI
                     dgv_Keuken_Bestellingen.Rows.Add(bestelling.dataGrid(bestelling));
                 }
             }
+            // selectie ongedaan maken
+            dgv_Keuken_Bestellingen.ClearSelection();
         }
 
         private void StartTimer()
