@@ -7,7 +7,7 @@ namespace Service_Chapoo
 {
     public class Bestelling_Service
     {
-        private Bestelling_DAO bestelling_DAO = new Bestelling_DAO();
+        private Bestelling_DAO _bestelling_DAO = new Bestelling_DAO();
 
         //Haal een lijst op met alle bestellingen van de gegeven tafel
         public List<Bestelling> GetOrdersPerTable(int TafelID)
