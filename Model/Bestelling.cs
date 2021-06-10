@@ -22,7 +22,7 @@ namespace Model_Chapoo
             {
                 TafelID.ToString(),
                 BestellingID.ToString(),
-                BestellingDatum.ToString()
+                BestellingDatum.ToString("HH:mm")
             };
         }
     }
