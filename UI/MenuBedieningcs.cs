@@ -69,7 +69,7 @@ namespace UI_Chapoo
             {
                 ListViewItem taf = new ListViewItem(T.TafelID.ToString());
                 taf.Tag = T;
-                taf.SubItems.Add(T.Aantal_Stoelen.ToString());
+                taf.SubItems.Add(T.AantalStoelen.ToString());
                 taf.SubItems.Add(T.Status);
                 LSV_BestellingAanmaken.Items.Add(taf);
             }
@@ -100,7 +100,7 @@ namespace UI_Chapoo
             Bestelling_Service bestelling_Service = new Bestelling_Service();
             Model_Chapoo.Bestelling bestelling = new Bestelling();
 
-            bestelling.BestellingSubTotaal = 0;
+            bestelling.BestellingSubtotaal = 0;
             bestelling.TafelID = int.Parse(LSV_BestellingAanmaken.SelectedItems[0].Text.ToString());
             bestelling.Status = "bezig";
 
@@ -250,7 +250,7 @@ namespace UI_Chapoo
                 Vgerechten.SubItems.Add(m.Prijs.ToString());
                 LSV_Voorgerechten.Items.Add(Vgerechten);
             }
-        }
+        
 
             // Fill with bestellingen
             Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();

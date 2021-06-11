@@ -37,6 +37,13 @@ namespace DAL_Chapoo
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        public List<Tafel> Db_Get_All_tafels()
+        {
+            string query = "SELECT TafelID, Aantal_Stoelen, Status FROM Tafel";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
         //Lees de resultaten van de query en sla op in list
         private List<Tafel> ReadTables(DataTable dataTable)
         {

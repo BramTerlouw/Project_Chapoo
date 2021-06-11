@@ -25,5 +25,11 @@ namespace Service_Chapoo
         {
             tafel_DAO.Db_Update_TableStatus(TafelID, Status);
         }
+
+        public List<Tafel> GetTafels()
+        {
+            List<Tafel> tafels = tafel_DAO.Db_Get_All_tafels();
+            return tafels;
+        }
     }
 }

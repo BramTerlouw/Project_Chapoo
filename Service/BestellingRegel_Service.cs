@@ -6,25 +6,32 @@ namespace Service_Chapoo
 {
     public class BestellingRegel_Service
     {
-        BestellingRegel_DAO bestellingRegel_DAO = new BestellingRegel_DAO();
+        private BestellingRegel_DAO _bestellingRegel_DAO = new BestellingRegel_DAO();
 
         public void Db_VoegBestellingToe(BestellingRegel bestellingRegel)
         {
-            bestellingRegel_DAO.Db_VoegBestellingToe(bestellingRegel);
+            _bestellingRegel_DAO.Db_VoegBestellingToe(bestellingRegel);
+        }
+        public void Db_OpmerkingToevoegen(BestellingRegel bestellingRegel)
+        {
+            _bestellingRegel_DAO.Db_VoegOpmerkingToe(bestellingRegel);
         }
         public void Db_VerwijderBestelling(BestellingRegel bestellingRegel)
         {
-            bestellingRegel_DAO.Db_VerwijderBestelling(bestellingRegel);
+            _bestellingRegel_DAO.Db_VerwijderBestelling(bestellingRegel);
         }
         public void Db_WijzigBestelling(BestellingRegel bestellingRegel)
         {
-            bestellingRegel_DAO.Db_WijzigBestelling(bestellingRegel);
+            _bestellingRegel_DAO.Db_WijzigBestelling(bestellingRegel);
         }
-        private BestellingRegel_DAO _bestellingRegel_DAO = new BestellingRegel_DAO();
-
-        public void Db_VoegBestellingToe(int MenuItemID, int Aantal)
+        public int DB_TelRegels(BestellingRegel bestellingRegel)
         {
-            _bestellingRegel_DAO.Db_VoegBestellingToe(MenuItemID, Aantal);
+            return _bestellingRegel_DAO.Db_TelRegels(bestellingRegel);
+        }
+        public List<BestellingRegel> Db_GetBestellingen()
+        {
+            List<BestellingRegel> bestellingRegels = _bestellingRegel_DAO.Db_Get_All_bestellingen();
+            return bestellingRegels;
         }
 
         public List<BestellingRegel> GetEetBestellingDetailsByBestellingID(int bestellingID)
