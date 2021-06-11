@@ -33,7 +33,6 @@ namespace UI
             this.btnLogOutHoofdMenu = new System.Windows.Forms.Button();
             this.btnKeuken = new System.Windows.Forms.Button();
             this.btnBestellingOpnemen = new System.Windows.Forms.Button();
-            this.btnBar = new System.Windows.Forms.Button();
             this.btnAdministratie = new System.Windows.Forms.Button();
             this.btnBestellingAfrekenen = new System.Windows.Forms.Button();
             this.btnTafelOverzicht = new System.Windows.Forms.Button();
@@ -66,11 +65,11 @@ namespace UI
             // 
             this.btnKeuken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
             this.btnKeuken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKeuken.Location = new System.Drawing.Point(192, 221);
+            this.btnKeuken.Location = new System.Drawing.Point(194, 289);
             this.btnKeuken.Name = "btnKeuken";
             this.btnKeuken.Size = new System.Drawing.Size(198, 77);
             this.btnKeuken.TabIndex = 20;
-            this.btnKeuken.Text = "Keuken";
+            this.btnKeuken.Text = "Keuken/Bar";
             this.btnKeuken.UseVisualStyleBackColor = false;
             this.btnKeuken.Click += new System.EventHandler(this.btnKeuken_Click);
             // 
@@ -84,17 +83,7 @@ namespace UI
             this.btnBestellingOpnemen.TabIndex = 21;
             this.btnBestellingOpnemen.Text = "Bestelling opnemen";
             this.btnBestellingOpnemen.UseVisualStyleBackColor = false;
-            // 
-            // btnBar
-            // 
-            this.btnBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.btnBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBar.Location = new System.Drawing.Point(192, 351);
-            this.btnBar.Name = "btnBar";
-            this.btnBar.Size = new System.Drawing.Size(198, 77);
-            this.btnBar.TabIndex = 22;
-            this.btnBar.Text = "Bar";
-            this.btnBar.UseVisualStyleBackColor = false;
+            this.btnBestellingOpnemen.Click += new System.EventHandler(this.btnBestellingOpnemen_Click);
             // 
             // btnAdministratie
             // 
@@ -140,7 +129,6 @@ namespace UI
             this.Controls.Add(this.btnTafelOverzicht);
             this.Controls.Add(this.btnBestellingAfrekenen);
             this.Controls.Add(this.btnAdministratie);
-            this.Controls.Add(this.btnBar);
             this.Controls.Add(this.btnBestellingOpnemen);
             this.Controls.Add(this.btnKeuken);
             this.Controls.Add(this.pnlHeaderHoofdmenu);
@@ -157,7 +145,6 @@ namespace UI
         private System.Windows.Forms.Button btnLogOutHoofdMenu;
         private System.Windows.Forms.Button btnKeuken;
         private System.Windows.Forms.Button btnBestellingOpnemen;
-        private System.Windows.Forms.Button btnBar;
         private System.Windows.Forms.Button btnAdministratie;
         private System.Windows.Forms.Button btnBestellingAfrekenen;
         private System.Windows.Forms.Button btnTafelOverzicht;

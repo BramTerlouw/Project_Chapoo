@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UI_Chapoo;
+using UI;
 
 namespace UI
 {
@@ -19,7 +19,7 @@ namespace UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Administratie_Main());
-            Application.Run(new MenuBediening());
+            Application.Run(new Login());
         }
     }
 }

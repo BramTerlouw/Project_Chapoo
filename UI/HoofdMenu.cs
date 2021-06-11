@@ -56,5 +56,11 @@ namespace UI
             new Tafels_Main(this, _medewerker).Show();
             this.Hide();
         }
+
+        private void btnBestellingOpnemen_Click(object sender, EventArgs e)
+        {
+            new MenuBediening(this, _medewerker).Show();
+            this.Hide();
+        }
     }
 }

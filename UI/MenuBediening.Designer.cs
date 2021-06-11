@@ -1,5 +1,5 @@
 ﻿
-namespace UI_Chapoo
+namespace UI
 {
     partial class MenuBediening
     {
@@ -158,6 +158,7 @@ namespace UI_Chapoo
             this.BTN_Bevestig = new System.Windows.Forms.Button();
             this.BTN_Loguit = new System.Windows.Forms.Button();
             this.PNL_BevestigBestelling = new System.Windows.Forms.Panel();
+            this.BTN_NieuweBestelling = new System.Windows.Forms.Button();
             this.BTN_BestelItemWijzigen = new System.Windows.Forms.Button();
             this.BTN_BestelItemVerwijderen = new System.Windows.Forms.Button();
             this.LBL_Opmerking = new System.Windows.Forms.Label();
@@ -177,7 +178,7 @@ namespace UI_Chapoo
             this.columnHeader36 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader37 = new System.Windows.Forms.ColumnHeader();
             this.BTN_BestellingAanmaken = new System.Windows.Forms.Button();
-            this.BTN_NieuweBestelling = new System.Windows.Forms.Button();
+            this.BTN_Hoofdmenu = new System.Windows.Forms.Button();
             this.PNL_MenuStart.SuspendLayout();
             this.PNL_GerechtenMenu.SuspendLayout();
             this.PNL_DrankenMenu.SuspendLayout();
@@ -1353,7 +1354,7 @@ namespace UI_Chapoo
             this.BTN_Loguit.Name = "BTN_Loguit";
             this.BTN_Loguit.Size = new System.Drawing.Size(96, 42);
             this.BTN_Loguit.TabIndex = 13;
-            this.BTN_Loguit.Text = "Log uit";
+            this.BTN_Loguit.Text = "Loguit";
             this.BTN_Loguit.UseVisualStyleBackColor = false;
             this.BTN_Loguit.Click += new System.EventHandler(this.BTN_Loguit_Click);
             // 
@@ -1374,6 +1375,17 @@ namespace UI_Chapoo
             this.PNL_BevestigBestelling.Size = new System.Drawing.Size(447, 459);
             this.PNL_BevestigBestelling.TabIndex = 14;
             this.PNL_BevestigBestelling.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_BevestigBestelling_Paint);
+            // 
+            // BTN_NieuweBestelling
+            // 
+            this.BTN_NieuweBestelling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.BTN_NieuweBestelling.Location = new System.Drawing.Point(295, 401);
+            this.BTN_NieuweBestelling.Name = "BTN_NieuweBestelling";
+            this.BTN_NieuweBestelling.Size = new System.Drawing.Size(103, 50);
+            this.BTN_NieuweBestelling.TabIndex = 19;
+            this.BTN_NieuweBestelling.Text = "Nieuwe bestelling";
+            this.BTN_NieuweBestelling.UseVisualStyleBackColor = false;
+            this.BTN_NieuweBestelling.Click += new System.EventHandler(this.BTN_NieuweBestelling_Click);
             // 
             // BTN_BestelItemWijzigen
             // 
@@ -1536,16 +1548,16 @@ namespace UI_Chapoo
             this.BTN_BestellingAanmaken.UseVisualStyleBackColor = false;
             this.BTN_BestellingAanmaken.Click += new System.EventHandler(this.BTN_BestellingAanmaken_Click);
             // 
-            // BTN_NieuweBestelling
+            // BTN_Hoofdmenu
             // 
-            this.BTN_NieuweBestelling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_NieuweBestelling.Location = new System.Drawing.Point(295, 401);
-            this.BTN_NieuweBestelling.Name = "BTN_NieuweBestelling";
-            this.BTN_NieuweBestelling.Size = new System.Drawing.Size(103, 50);
-            this.BTN_NieuweBestelling.TabIndex = 19;
-            this.BTN_NieuweBestelling.Text = "Nieuwe bestelling";
-            this.BTN_NieuweBestelling.UseVisualStyleBackColor = false;
-            this.BTN_NieuweBestelling.Click += new System.EventHandler(this.BTN_NieuweBestelling_Click);
+            this.BTN_Hoofdmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.BTN_Hoofdmenu.Location = new System.Drawing.Point(335, 3);
+            this.BTN_Hoofdmenu.Name = "BTN_Hoofdmenu";
+            this.BTN_Hoofdmenu.Size = new System.Drawing.Size(96, 42);
+            this.BTN_Hoofdmenu.TabIndex = 16;
+            this.BTN_Hoofdmenu.Text = "Hoofdmenu";
+            this.BTN_Hoofdmenu.UseVisualStyleBackColor = false;
+            this.BTN_Hoofdmenu.Click += new System.EventHandler(this.BTN_Hoofdmenu_Click);
             // 
             // MenuBediening
             // 
@@ -1553,13 +1565,12 @@ namespace UI_Chapoo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(443, 561);
+            this.Controls.Add(this.BTN_Hoofdmenu);
             this.Controls.Add(this.PNL_BevestigBestelling);
             this.Controls.Add(this.PNL_Hardlopers);
             this.Controls.Add(this.PNL_Voorgerechten);
             this.Controls.Add(this.PNL_Wijn);
             this.Controls.Add(this.PNL_BestellingMaken);
-            this.Controls.Add(this.PNL_GerechtenMenu);
-            this.Controls.Add(this.PNL_MenuStart);
             this.Controls.Add(this.PNL_Tussengerechten);
             this.Controls.Add(this.PNL_Hoofdgerechten);
             this.Controls.Add(this.PNL_Nagerechten);
@@ -1769,5 +1780,6 @@ namespace UI_Chapoo
         private System.Windows.Forms.ColumnHeader columnHeader40;
         private System.Windows.Forms.ColumnHeader columnHeader43;
         private System.Windows.Forms.Button BTN_NieuweBestelling;
+        private System.Windows.Forms.Button BTN_Hoofdmenu;
     }
 }

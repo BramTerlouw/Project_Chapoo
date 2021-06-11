@@ -2,21 +2,19 @@
 using Service_Chapoo;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI_Chapoo
+namespace UI
 {
     public partial class MenuBediening : Form
     {
-        public MenuBediening()
+        private Medewerker _medewerker;
+        private HoofdMenu _menu;
+        public MenuBediening(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
+            this._medewerker = medewerker;
+            this._menu = menu;
         }
 
         // Fullrowselect method
@@ -78,33 +76,41 @@ namespace UI_Chapoo
         // Bestelling aanmaken
         private void BTN_BestellingAanmaken_Click(object sender, EventArgs e)
         {
-            // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            if (LSV_BestellingAanmaken.SelectedItems.Count == 1)
+            {
+                // Hide other panels
+                PNL_Bier.Hide();
+                PNL_Frisdrank.Hide();
+                PNL_GedeDrank.Hide();
+                PNL_Hardlopers.Hide();
+                PNL_Hoofdgerechten.Hide();
+                PNL_KoffieThee.Hide();
+                PNL_Nagerechten.Hide();
+                PNL_Tussengerechten.Hide();
+                PNL_Voorgerechten.Hide();
+                PNL_Wijn.Hide();
+                PNL_GerechtenMenu.Hide();
+                PNL_DrankenMenu.Hide();
+                PNL_BevestigBestelling.Hide();
+                PNL_BestellingMaken.Hide();
+
+                // Show start
+                PNL_MenuStart.Show();
+
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
+                bestelling.BestellingSubtotaal = 0;
+                bestelling.TafelID = int.Parse(LSV_BestellingAanmaken.SelectedItems[0].Text.ToString());
+                bestelling.Status = "bezig";
+
+                bestelling_Service.Db_VoegBestellingToe(bestelling);
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een tafel alstublieft!", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
+            }
             
-            // Show start
-            PNL_MenuStart.Show();
-
-            Bestelling_Service bestelling_Service = new Bestelling_Service();
-            Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-            bestelling.BestellingSubtotaal = 0;
-            bestelling.TafelID = int.Parse(LSV_BestellingAanmaken.SelectedItems[0].Text.ToString());
-            bestelling.Status = "bezig";
-
-            bestelling_Service.Db_VoegBestellingToe(bestelling);
         }
 
         // Hardlopers menu
@@ -1350,6 +1356,10 @@ namespace UI_Chapoo
             PNL_MenuStart.Show();
         }
 
-        
+        private void BTN_Hoofdmenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _menu.Show();
+        }
     }
 }
