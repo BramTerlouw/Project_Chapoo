@@ -493,15 +493,16 @@ namespace UI_Chapoo
         private void BTN_VoorgerechtenPlus_Click(object sender, EventArgs e)
         {
             // Haal alles op
-            int MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Voorgerechten.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Voorgerechten.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -512,15 +513,16 @@ namespace UI_Chapoo
 
         private void BTN_TussengerechtenPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Tussengerechten.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Tussengerechten.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Tussengerechten.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Tussengerechten.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -531,15 +533,16 @@ namespace UI_Chapoo
 
         private void BTN_HoofdgerechtenPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Hoofdgerechten.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Hoofdgerechten.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Hoofdgerechten.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Hoofdgerechten.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -551,15 +554,16 @@ namespace UI_Chapoo
 
         private void BTN_NagerechtenPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Nagerechten.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Nagerechten.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Nagerechten.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Nagerechten.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -570,15 +574,16 @@ namespace UI_Chapoo
 
         private void BTN_FrisdrankPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Frisdrank.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Frisdrank.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Frisdrank.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Frisdrank.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -589,15 +594,16 @@ namespace UI_Chapoo
 
         private void BTN_KoffieTheePlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_KoffieThee.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_KoffieThee.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_KoffieThee.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_KoffieThee.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -608,15 +614,16 @@ namespace UI_Chapoo
 
         private void BTN_BierPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Bier.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Bier.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Bier.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Bier.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -628,15 +635,16 @@ namespace UI_Chapoo
         
         private void BTN_WijnPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_Wijn.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_Wijn.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_Wijn.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_Wijn.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            if (Aantal > 0)
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -647,16 +655,17 @@ namespace UI_Chapoo
 
         private void BTN_GedeDrankPlus_Click(object sender, EventArgs e)
         {
-            int MenuItemID = int.Parse(LSV_GedeDrank.SelectedItems[0].Text.ToString());
-            int Aantal = int.Parse(NUP_GedeDrank.Value.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.MenuItemID = int.Parse(LSV_GedeDrank.SelectedItems[0].Text.ToString());
+            bestellingRegel.Aantal = int.Parse(NUP_GedeDrank.Value.ToString());
 
             BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
 
             // Geef de variable mee naar methode in service laag
-            
-            if (Aantal > 0)
+
+            if (bestellingRegel.Aantal > 0)
             {
-                bestellingRegel_Service.Db_VoegBestellingToe(MenuItemID, Aantal);
+                bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                 MessageBox.Show("Item is toegevoegd aan bestelling!");
             }
             else
@@ -667,6 +676,7 @@ namespace UI_Chapoo
 
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
         {
+
             DialogResult msbresult = MessageBox.Show("Bestelling bevestigen?", "Bestelling bevestigen", MessageBoxButtons.YesNo);
             if (msbresult == DialogResult.Yes)
             {
@@ -682,9 +692,12 @@ namespace UI_Chapoo
         private void BTN_BestelItemVerwijderen_Click_1(object sender, EventArgs e)
         {
             // id ophalen
-            int ID = int.Parse(LSV_BestellingOverzicht.SelectedItems[1].Text.ToString());
+            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel;
+            bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[1].Text.ToString());
 
             // ID meegeven naar "Item verwijderen" methode in service laag
+            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+            bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
         }
 
         private void BTN_BestelItemWijzigen_Click(object sender, EventArgs e)
