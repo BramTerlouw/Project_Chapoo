@@ -42,7 +42,7 @@ namespace UI
         {
             List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID);
 
-            lst_BestellingPerTafel.Items.Clear();
+            lst_BestellingPerTafel.Items.Clear();        
 
             foreach (var bestelling in bestellingPerTafel)
             {
