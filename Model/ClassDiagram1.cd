@@ -3,14 +3,14 @@
   <Class Name="Model_Chapoo.Bestelling">
     <Position X="1.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEACAAAAAAAIAAAQAAEAAAAAAAAAQAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAEACAAAAAAAIAAAQAAEAAAEAAAAAQAAAAAAAA=</HashCode>
       <FileName>Bestelling.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Model_Chapoo.BestellingRegel">
-    <Position X="1.25" Y="4.5" Width="1.5" />
+    <Position X="1.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIABABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIABBBAAAAAAMgAAAAAAAAAAAAA=</HashCode>
       <FileName>BestellingRegel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="Model_Chapoo.MenukaartItem">
     <Position X="8.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAACAAAgAAAABEBEAAAAAAMAAAgAAAAAAAAAI=</HashCode>
+      <HashCode>AAASAAAAACAAAgAAAAAEBEAAAAAAMAAAgAAAAAAAAAI=</HashCode>
       <FileName>MenukaartItem.cs</FileName>
     </TypeIdentifier>
   </Class>

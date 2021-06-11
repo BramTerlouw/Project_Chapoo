@@ -1,79 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Service_Chapoo.BestellingRegel_Service">
-    <Position X="2.75" Y="0.75" Width="2" />
+    <Position X="7.5" Y="1" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACACAAAAIIAAAAAAAAAAAAgAAAAAAIAEEAAAAQAAAA=</HashCode>
       <FileName>BestellingRegel_Service.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.Bestelling_Service">
-    <Position X="1" Y="0.75" Width="1.5" />
+    <Position X="5" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAACiAAAAAAAEAAAAAQAAAAAAAAgAAAAAACACAQAAAA=</HashCode>
       <FileName>Bestelling_Service.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.Bon_Service">
-    <Position X="1" Y="3.75" Width="1.5" />
+    <Position X="12.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACCAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bon_Service.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Service_Chapoo.Gast_Service">
-    <Position X="7.25" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gast_Service.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Service_Chapoo.LoginService">
-    <Position X="1" Y="1.75" Width="1.5" />
+    <Position X="12.75" Y="1" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>LoginService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.MedewerkerService">
-    <Position X="2.75" Y="1.75" Width="2" />
+    <Position X="7.5" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAACAAAAAAACABEAgAAAAAAAIAIAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAACAAAAAAACABEAgAAAAAAAIAIAAAAAAAAA=</HashCode>
       <FileName>MedewerkerService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.MenuKaartService">
-    <Position X="5" Y="1.75" Width="1.5" />
+    <Position X="2.25" Y="1" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAFAAAAAAAACgAAAEABAAAAACAAAAAIIAgAQAAAAA=</HashCode>
+      <HashCode>AAAAFAIAEAACACgAAAkAhAAAAACAgAAAAIAkAQAAAAI=</HashCode>
       <FileName>MenuKaartService.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.Opmerking_Service">
-    <Position X="5" Y="0.75" Width="2" />
+    <Position X="10.5" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Opmerking_Service.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Service_Chapoo.Reservering_Service">
-    <Position X="6.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Reservering_Service.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Service_Chapoo.Tafel_Service">
-    <Position X="2.75" Y="5" Width="1.5" />
+    <Position X="5.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAEAAAAIAAAACAAAABAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tafel_Service.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Service_Chapoo.VoorraadItemService">
-    <Position X="6.75" Y="2.75" Width="1.5" />
+    <Position X="10.5" Y="2.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAIAAAgBAAACAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAIAAAgBAAACAAQAAAAAAAAAAQgAAA=</HashCode>
       <FileName>VoorraadItemService.cs</FileName>
     </TypeIdentifier>
   </Class>
