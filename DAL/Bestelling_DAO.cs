@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Model_Chapoo;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using Model_Chapoo;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL_Chapoo
 {

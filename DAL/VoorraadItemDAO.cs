@@ -79,5 +79,21 @@ namespace DAL_Chapoo
 
             return ReadItems(ExecuteSelectQuery(query, sqlParameters)); // use method ReadItems to read and return list with items
         }
+        public int Db_CheckVoorraad(BestellingRegel bestellingRegel)
+        {
+            string query = "SELECT Aantal FROM Voorraad WHERE MenuItemID = @MenuItemID";
+            SqlParameter[] sqlParameters = new SqlParameter[1];
+            sqlParameters[0] = new SqlParameter("@MenuItemID", bestellingRegel.MenuItemID);
+            int voorraad = ExecuteCount(query, sqlParameters);
+            return voorraad;
+        }
+        public void Db_WijzigVoorraadNaBestelling(BestellingRegel bestellingRegel)
+        {
+            string query = "UPDATE Voorraad SET Aantal = Aantal - @Aantal WHERE MenuItemID = @MenuItemID";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@Aantal", bestellingRegel.Aantal);
+            sqlParameters[1] = new SqlParameter("@MenuItemID", bestellingRegel.MenuItemID);
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

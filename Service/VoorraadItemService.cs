@@ -43,5 +43,13 @@ namespace Service_Chapoo
         {
             return _dao.FilterStockDB(input); // return filtered items
         }
+        public void WijzigStockNaOrder(BestellingRegel bestellingRegel)
+        {
+            _dao.Db_WijzigVoorraadNaBestelling(bestellingRegel);
+        }
+        public int CheckVoorraad(BestellingRegel bestellingRegel)
+        {
+          return  _dao.Db_CheckVoorraad(bestellingRegel);
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace UI
         {
             if (VerifyLoginAttempt() == false) // use method to verify the user input
                 return;
-            
+            Bestelling bestelling = new Bestelling();
             int id = int.Parse(txtLoginID.Text);
             int wachtwoord = int.Parse(txtLoginWachtwoord.Text); // parse input to integer values
 
