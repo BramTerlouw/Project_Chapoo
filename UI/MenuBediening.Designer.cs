@@ -1517,6 +1517,7 @@ namespace UI
             this.columnHeader35,
             this.columnHeader36,
             this.columnHeader37});
+            this.LSV_BestellingAanmaken.FullRowSelect = true;
             this.LSV_BestellingAanmaken.HideSelection = false;
             this.LSV_BestellingAanmaken.Location = new System.Drawing.Point(38, 73);
             this.LSV_BestellingAanmaken.Name = "LSV_BestellingAanmaken";

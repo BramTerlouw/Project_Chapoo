@@ -803,421 +803,500 @@ namespace UI
         // Items toevoegen aan bestelling
         private void BTN_HardlopersPlus_Click(object sender, EventArgs e)
         {
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-
-            // Haal alles op
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            string menuitemid = (LSV_Hardlopers.SelectedItems[0].Text);
-            bestellingRegel.MenuItemID = int.Parse(menuitemid);
-            //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Hardlopers.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_HardlopersTafel.SelectedItems.Count == 1 && LSV_Hardlopers.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+
+                // Haal alles op
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                string menuitemid = (LSV_Hardlopers.SelectedItems[0].Text);
+                bestellingRegel.MenuItemID = int.Parse(menuitemid);
+                //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Hardlopers.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
         private void BTN_VoorgerechtenPlus_Click(object sender, EventArgs e)
         {
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-
-            // Haal alles op
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            string menuitemid = (LSV_Voorgerechten.SelectedItems[0].Text);
-            bestellingRegel.MenuItemID = int.Parse(menuitemid);
-            //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Voorgerechten.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_VoorgerechtenTafel.SelectedItems.Count == 1 && LSV_Voorgerechten.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+
+                // Haal alles op
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                string menuitemid = (LSV_Voorgerechten.SelectedItems[0].Text);
+                bestellingRegel.MenuItemID = int.Parse(menuitemid);
+                //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Voorgerechten.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_TussengerechtenPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Tussengerechten.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Tussengerechten.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_Tussengerechten.SelectedItems.Count == 1 && LSV_TussengerechtenTafel.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Tussengerechten.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Tussengerechten.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_HoofdgerechtenPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Hoofdgerechten.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Hoofdgerechten.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_HoofdgerechtTafel.SelectedItems.Count == 1 && LSV_Hoofdgerechten.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Hoofdgerechten.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Hoofdgerechten.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_NagerechtenPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Nagerechten.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Nagerechten.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_NagerechtTafel.SelectedItems.Count == 1 && LSV_Nagerechten.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Nagerechten.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Nagerechten.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_FrisdrankPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Frisdrank.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Frisdrank.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_FrisdrankTafel.SelectedItems.Count == 1 && LSV_Frisdrank.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Frisdrank.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Frisdrank.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_KoffieTheePlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_KoffieThee.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_KoffieThee.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_KoffieTheeTafel.SelectedItems.Count == 1 && LSV_KoffieThee.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_KoffieThee.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_KoffieThee.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_BierPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Bier.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Bier.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_BierTafel.SelectedItems.Count == 1 && LSV_Bier.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Bier.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Bier.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
-
-        
+  
         private void BTN_WijnPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_Wijn.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_Wijn.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_WijnTafel.SelectedItems.Count == 1 && LSV_Wijn.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_Wijn.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_Wijn.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         private void BTN_GedeDrankPlus_Click(object sender, EventArgs e)
         {
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            // Bestelling id uit lsv tafel
-            bestellingRegel.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text.ToString());
-
-            // RegelNR via COUNT
-            int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
-            bestellingRegel.RegelNR = RegelNummer + 1;
-            // MenuItem uit lsv
-            bestellingRegel.MenuItemID = int.Parse(LSV_GedeDrank.SelectedItems[0].Text.ToString());
-
-            // Aantal uit nup
-            bestellingRegel.Aantal = int.Parse(NUP_GedeDrank.Value.ToString());
-
-            int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
-            int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
-            // Geef de variable mee naar methode in service laag
-            if (voorraadMinBestelling > 0)
+            if (LSV_GedeTafel.SelectedItems.Count == 1 && LSV_GedeDrank.SelectedItems.Count == 1)
             {
-                if (bestellingRegel.Aantal > 0)
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                // Bestelling id uit lsv tafel
+                bestellingRegel.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text.ToString());
+
+                // RegelNR via COUNT
+                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                bestellingRegel.RegelNR = RegelNummer + 1;
+                // MenuItem uit lsv
+                bestellingRegel.MenuItemID = int.Parse(LSV_GedeDrank.SelectedItems[0].Text.ToString());
+
+                // Aantal uit nup
+                bestellingRegel.Aantal = int.Parse(NUP_GedeDrank.Value.ToString());
+
+                int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
+
+                int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Geef de variable mee naar methode in service laag
+                if (voorraadMinBestelling > 0)
                 {
-                    bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
-                    voorraadItemService.WijzigStockNaOrder(bestellingRegel);
-                    MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    if (bestellingRegel.Aantal > 0)
+                    {
+                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        MessageBox.Show("Item is toegevoegd aan bestelling!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Voer een juist aantal in!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Voer een juist aantal in!");
+                    MessageBox.Show($"Niet op voorraad.. ({voorraad})");
                 }
             }
             else
             {
-                MessageBox.Show($"Niet op voorraad.. ({voorraad})");
+                MessageBox.Show("Selecteer eerst een product en een tafel alstublieft", "Fout bij bestelling opnemen", MessageBoxButtons.OK);
             }
+            
         }
 
         // Bestelling bevestigen
