@@ -101,6 +101,11 @@ namespace Service_Chapoo
         }
 
         // Get the whole menu for the bediening
+        public List<MenukaartItem> GetHardlopers()
+        {
+            List<MenukaartItem> menuItems = _dao.Db_Get_All_Hardlopers();
+            return menuItems;
+        }
         public List<MenukaartItem> GetKoffieThee()
         {
             List<MenukaartItem> menuItems = _dao.Db_Get_All_KoffieThee();

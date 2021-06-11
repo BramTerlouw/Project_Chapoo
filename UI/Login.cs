@@ -30,9 +30,10 @@ namespace UI
         {
             if (VerifyLoginAttempt() == false)
                 return;
-            
+            Bestelling bestelling = new Bestelling();
             int id = int.Parse(txtLoginID.Text);
             int wachtwoord = int.Parse(txtLoginWachtwoord.Text);
+            bestelling.MedewerkerID = int.Parse(txtLoginID.Text);
 
             if (_servicelogin.CredentialsLegitimate(id, wachtwoord) == true)
             {

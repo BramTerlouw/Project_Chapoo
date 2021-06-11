@@ -45,6 +45,9 @@ namespace UI_Chapoo
             this.BTN_KoffieThee = new System.Windows.Forms.Button();
             this.BTN_Frisdrank = new System.Windows.Forms.Button();
             this.PNL_Hardlopers = new System.Windows.Forms.Panel();
+            this.LSV_HardlopersTafel = new System.Windows.Forms.ListView();
+            this.columnHeader40 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader43 = new System.Windows.Forms.ColumnHeader();
             this.NUP_Hardlopers = new System.Windows.Forms.NumericUpDown();
             this.BTN_HardlopersPlus = new System.Windows.Forms.Button();
             this.LBL_Hardlopers = new System.Windows.Forms.Label();
@@ -53,6 +56,9 @@ namespace UI_Chapoo
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Voorgerechten = new System.Windows.Forms.Panel();
+            this.LSV_VoorgerechtenTafel = new System.Windows.Forms.ListView();
+            this.columnHeader62 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader63 = new System.Windows.Forms.ColumnHeader();
             this.BTN_VoorgerechtenPlus = new System.Windows.Forms.Button();
             this.LBL_Voorgerechten = new System.Windows.Forms.Label();
             this.NUP_Voorgerechten = new System.Windows.Forms.NumericUpDown();
@@ -61,6 +67,9 @@ namespace UI_Chapoo
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Tussengerechten = new System.Windows.Forms.Panel();
+            this.LSV_TussengerechtenTafel = new System.Windows.Forms.ListView();
+            this.columnHeader59 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader60 = new System.Windows.Forms.ColumnHeader();
             this.BTN_TussengerechtenPlus = new System.Windows.Forms.Button();
             this.LBL_Tussengerechten = new System.Windows.Forms.Label();
             this.NUP_Tussengerechten = new System.Windows.Forms.NumericUpDown();
@@ -69,6 +78,9 @@ namespace UI_Chapoo
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Hoofdgerechten = new System.Windows.Forms.Panel();
+            this.LSV_HoofdgerechtTafel = new System.Windows.Forms.ListView();
+            this.columnHeader56 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader57 = new System.Windows.Forms.ColumnHeader();
             this.BTN_HoofdgerechtenPlus = new System.Windows.Forms.Button();
             this.LBL_Hoofdgerechten = new System.Windows.Forms.Label();
             this.NUP_Hoofdgerechten = new System.Windows.Forms.NumericUpDown();
@@ -77,6 +89,9 @@ namespace UI_Chapoo
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Nagerechten = new System.Windows.Forms.Panel();
+            this.LSV_NagerechtTafel = new System.Windows.Forms.ListView();
+            this.columnHeader53 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader54 = new System.Windows.Forms.ColumnHeader();
             this.BTN_NagerechtenPlus = new System.Windows.Forms.Button();
             this.LBL_Nagerechten = new System.Windows.Forms.Label();
             this.NUP_Nagerechten = new System.Windows.Forms.NumericUpDown();
@@ -85,6 +100,9 @@ namespace UI_Chapoo
             this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Frisdrank = new System.Windows.Forms.Panel();
+            this.LSV_FrisdrankTafel = new System.Windows.Forms.ListView();
+            this.columnHeader50 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader51 = new System.Windows.Forms.ColumnHeader();
             this.BTN_FrisdrankPlus = new System.Windows.Forms.Button();
             this.LBL_Frisdrank = new System.Windows.Forms.Label();
             this.NUP_Frisdrank = new System.Windows.Forms.NumericUpDown();
@@ -93,6 +111,9 @@ namespace UI_Chapoo
             this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
             this.PNL_KoffieThee = new System.Windows.Forms.Panel();
+            this.LSV_KoffieTheeTafel = new System.Windows.Forms.ListView();
+            this.columnHeader47 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader48 = new System.Windows.Forms.ColumnHeader();
             this.BTN_KoffieTheePlus = new System.Windows.Forms.Button();
             this.LBL_KoffieThee = new System.Windows.Forms.Label();
             this.NUP_KoffieThee = new System.Windows.Forms.NumericUpDown();
@@ -101,6 +122,9 @@ namespace UI_Chapoo
             this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
             this.PNL_Bier = new System.Windows.Forms.Panel();
+            this.LSV_BierTafel = new System.Windows.Forms.ListView();
+            this.columnHeader44 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader45 = new System.Windows.Forms.ColumnHeader();
             this.BTN_BierPlus = new System.Windows.Forms.Button();
             this.LSV_Bier = new System.Windows.Forms.ListView();
             this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
@@ -109,6 +133,9 @@ namespace UI_Chapoo
             this.LBL_Bier = new System.Windows.Forms.Label();
             this.NUP_Bier = new System.Windows.Forms.NumericUpDown();
             this.PNL_Wijn = new System.Windows.Forms.Panel();
+            this.LSV_WijnTafel = new System.Windows.Forms.ListView();
+            this.columnHeader41 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader42 = new System.Windows.Forms.ColumnHeader();
             this.BTN_WijnPlus = new System.Windows.Forms.Button();
             this.LBL_Wijn = new System.Windows.Forms.Label();
             this.NUP_Wijn = new System.Windows.Forms.NumericUpDown();
@@ -117,13 +144,15 @@ namespace UI_Chapoo
             this.columnHeader26 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader27 = new System.Windows.Forms.ColumnHeader();
             this.PNL_GedeDrank = new System.Windows.Forms.Panel();
+            this.LSV_GedeTafel = new System.Windows.Forms.ListView();
+            this.columnHeader38 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader39 = new System.Windows.Forms.ColumnHeader();
             this.BTN_GedeDrankPlus = new System.Windows.Forms.Button();
             this.LBL_GedeDrank = new System.Windows.Forms.Label();
             this.NUP_GedeDrank = new System.Windows.Forms.NumericUpDown();
             this.LSV_GedeDrank = new System.Windows.Forms.ListView();
             this.columnHeader28 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.BTN_Terug = new System.Windows.Forms.Button();
             this.BTN_Bevestig = new System.Windows.Forms.Button();
             this.BTN_Loguit = new System.Windows.Forms.Button();
@@ -140,6 +169,14 @@ namespace UI_Chapoo
             this.columnHeader32 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader33 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader34 = new System.Windows.Forms.ColumnHeader();
+            this.PNL_BestellingMaken = new System.Windows.Forms.Panel();
+            this.LBL_BestellingAanmaken = new System.Windows.Forms.Label();
+            this.LSV_BestellingAanmaken = new System.Windows.Forms.ListView();
+            this.columnHeader35 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader36 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader37 = new System.Windows.Forms.ColumnHeader();
+            this.BTN_BestellingAanmaken = new System.Windows.Forms.Button();
+            this.BTN_NieuweBestelling = new System.Windows.Forms.Button();
             this.PNL_MenuStart.SuspendLayout();
             this.PNL_GerechtenMenu.SuspendLayout();
             this.PNL_DrankenMenu.SuspendLayout();
@@ -165,6 +202,7 @@ namespace UI_Chapoo
             ((System.ComponentModel.ISupportInitialize)(this.NUP_GedeDrank)).BeginInit();
             this.PNL_BevestigBestelling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUP_BestellingOverzicht)).BeginInit();
+            this.PNL_BestellingMaken.SuspendLayout();
             this.SuspendLayout();
             // 
             // PNL_MenuStart
@@ -338,6 +376,7 @@ namespace UI_Chapoo
             // PNL_Hardlopers
             // 
             this.PNL_Hardlopers.BackColor = System.Drawing.Color.White;
+            this.PNL_Hardlopers.Controls.Add(this.LSV_HardlopersTafel);
             this.PNL_Hardlopers.Controls.Add(this.NUP_Hardlopers);
             this.PNL_Hardlopers.Controls.Add(this.BTN_HardlopersPlus);
             this.PNL_Hardlopers.Controls.Add(this.LBL_Hardlopers);
@@ -346,6 +385,27 @@ namespace UI_Chapoo
             this.PNL_Hardlopers.Name = "PNL_Hardlopers";
             this.PNL_Hardlopers.Size = new System.Drawing.Size(447, 459);
             this.PNL_Hardlopers.TabIndex = 3;
+            // 
+            // LSV_HardlopersTafel
+            // 
+            this.LSV_HardlopersTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader40,
+            this.columnHeader43});
+            this.LSV_HardlopersTafel.HideSelection = false;
+            this.LSV_HardlopersTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_HardlopersTafel.Name = "LSV_HardlopersTafel";
+            this.LSV_HardlopersTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_HardlopersTafel.TabIndex = 7;
+            this.LSV_HardlopersTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_HardlopersTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "ID";
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "Tafel";
             // 
             // NUP_Hardlopers
             // 
@@ -363,12 +423,13 @@ namespace UI_Chapoo
             this.BTN_HardlopersPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_HardlopersPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_HardlopersPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_HardlopersPlus.Location = new System.Drawing.Point(257, 347);
+            this.BTN_HardlopersPlus.Location = new System.Drawing.Point(260, 356);
             this.BTN_HardlopersPlus.Name = "BTN_HardlopersPlus";
             this.BTN_HardlopersPlus.Size = new System.Drawing.Size(68, 53);
             this.BTN_HardlopersPlus.TabIndex = 4;
             this.BTN_HardlopersPlus.Text = "+";
             this.BTN_HardlopersPlus.UseVisualStyleBackColor = false;
+            this.BTN_HardlopersPlus.Click += new System.EventHandler(this.BTN_HardlopersPlus_Click);
             // 
             // LBL_Hardlopers
             // 
@@ -390,7 +451,7 @@ namespace UI_Chapoo
             this.LSV_Hardlopers.HideSelection = false;
             this.LSV_Hardlopers.Location = new System.Drawing.Point(11, 85);
             this.LSV_Hardlopers.Name = "LSV_Hardlopers";
-            this.LSV_Hardlopers.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Hardlopers.Size = new System.Drawing.Size(243, 250);
             this.LSV_Hardlopers.TabIndex = 0;
             this.LSV_Hardlopers.UseCompatibleStateImageBehavior = false;
             this.LSV_Hardlopers.View = System.Windows.Forms.View.Details;
@@ -410,6 +471,7 @@ namespace UI_Chapoo
             // PNL_Voorgerechten
             // 
             this.PNL_Voorgerechten.BackColor = System.Drawing.Color.White;
+            this.PNL_Voorgerechten.Controls.Add(this.LSV_VoorgerechtenTafel);
             this.PNL_Voorgerechten.Controls.Add(this.BTN_VoorgerechtenPlus);
             this.PNL_Voorgerechten.Controls.Add(this.LBL_Voorgerechten);
             this.PNL_Voorgerechten.Controls.Add(this.NUP_Voorgerechten);
@@ -418,6 +480,27 @@ namespace UI_Chapoo
             this.PNL_Voorgerechten.Name = "PNL_Voorgerechten";
             this.PNL_Voorgerechten.Size = new System.Drawing.Size(447, 459);
             this.PNL_Voorgerechten.TabIndex = 4;
+            // 
+            // LSV_VoorgerechtenTafel
+            // 
+            this.LSV_VoorgerechtenTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader62,
+            this.columnHeader63});
+            this.LSV_VoorgerechtenTafel.HideSelection = false;
+            this.LSV_VoorgerechtenTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_VoorgerechtenTafel.Name = "LSV_VoorgerechtenTafel";
+            this.LSV_VoorgerechtenTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_VoorgerechtenTafel.TabIndex = 7;
+            this.LSV_VoorgerechtenTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_VoorgerechtenTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader62
+            // 
+            this.columnHeader62.Text = "ID";
+            // 
+            // columnHeader63
+            // 
+            this.columnHeader63.Text = "Tafel";
             // 
             // BTN_VoorgerechtenPlus
             // 
@@ -463,7 +546,7 @@ namespace UI_Chapoo
             this.LSV_Voorgerechten.HideSelection = false;
             this.LSV_Voorgerechten.Location = new System.Drawing.Point(11, 85);
             this.LSV_Voorgerechten.Name = "LSV_Voorgerechten";
-            this.LSV_Voorgerechten.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Voorgerechten.Size = new System.Drawing.Size(243, 250);
             this.LSV_Voorgerechten.TabIndex = 0;
             this.LSV_Voorgerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Voorgerechten.View = System.Windows.Forms.View.Details;
@@ -483,6 +566,7 @@ namespace UI_Chapoo
             // PNL_Tussengerechten
             // 
             this.PNL_Tussengerechten.BackColor = System.Drawing.Color.White;
+            this.PNL_Tussengerechten.Controls.Add(this.LSV_TussengerechtenTafel);
             this.PNL_Tussengerechten.Controls.Add(this.BTN_TussengerechtenPlus);
             this.PNL_Tussengerechten.Controls.Add(this.LBL_Tussengerechten);
             this.PNL_Tussengerechten.Controls.Add(this.NUP_Tussengerechten);
@@ -491,6 +575,27 @@ namespace UI_Chapoo
             this.PNL_Tussengerechten.Name = "PNL_Tussengerechten";
             this.PNL_Tussengerechten.Size = new System.Drawing.Size(447, 459);
             this.PNL_Tussengerechten.TabIndex = 5;
+            // 
+            // LSV_TussengerechtenTafel
+            // 
+            this.LSV_TussengerechtenTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader59,
+            this.columnHeader60});
+            this.LSV_TussengerechtenTafel.HideSelection = false;
+            this.LSV_TussengerechtenTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_TussengerechtenTafel.Name = "LSV_TussengerechtenTafel";
+            this.LSV_TussengerechtenTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_TussengerechtenTafel.TabIndex = 7;
+            this.LSV_TussengerechtenTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_TussengerechtenTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader59
+            // 
+            this.columnHeader59.Text = "ID";
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Text = "Tafel";
             // 
             // BTN_TussengerechtenPlus
             // 
@@ -536,7 +641,7 @@ namespace UI_Chapoo
             this.LSV_Tussengerechten.HideSelection = false;
             this.LSV_Tussengerechten.Location = new System.Drawing.Point(11, 85);
             this.LSV_Tussengerechten.Name = "LSV_Tussengerechten";
-            this.LSV_Tussengerechten.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Tussengerechten.Size = new System.Drawing.Size(243, 250);
             this.LSV_Tussengerechten.TabIndex = 0;
             this.LSV_Tussengerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Tussengerechten.View = System.Windows.Forms.View.Details;
@@ -556,6 +661,7 @@ namespace UI_Chapoo
             // PNL_Hoofdgerechten
             // 
             this.PNL_Hoofdgerechten.BackColor = System.Drawing.Color.White;
+            this.PNL_Hoofdgerechten.Controls.Add(this.LSV_HoofdgerechtTafel);
             this.PNL_Hoofdgerechten.Controls.Add(this.BTN_HoofdgerechtenPlus);
             this.PNL_Hoofdgerechten.Controls.Add(this.LBL_Hoofdgerechten);
             this.PNL_Hoofdgerechten.Controls.Add(this.NUP_Hoofdgerechten);
@@ -564,6 +670,27 @@ namespace UI_Chapoo
             this.PNL_Hoofdgerechten.Name = "PNL_Hoofdgerechten";
             this.PNL_Hoofdgerechten.Size = new System.Drawing.Size(447, 459);
             this.PNL_Hoofdgerechten.TabIndex = 5;
+            // 
+            // LSV_HoofdgerechtTafel
+            // 
+            this.LSV_HoofdgerechtTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader56,
+            this.columnHeader57});
+            this.LSV_HoofdgerechtTafel.HideSelection = false;
+            this.LSV_HoofdgerechtTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_HoofdgerechtTafel.Name = "LSV_HoofdgerechtTafel";
+            this.LSV_HoofdgerechtTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_HoofdgerechtTafel.TabIndex = 7;
+            this.LSV_HoofdgerechtTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_HoofdgerechtTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Text = "ID";
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Text = "Tafel";
             // 
             // BTN_HoofdgerechtenPlus
             // 
@@ -609,7 +736,7 @@ namespace UI_Chapoo
             this.LSV_Hoofdgerechten.HideSelection = false;
             this.LSV_Hoofdgerechten.Location = new System.Drawing.Point(11, 85);
             this.LSV_Hoofdgerechten.Name = "LSV_Hoofdgerechten";
-            this.LSV_Hoofdgerechten.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Hoofdgerechten.Size = new System.Drawing.Size(243, 250);
             this.LSV_Hoofdgerechten.TabIndex = 0;
             this.LSV_Hoofdgerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Hoofdgerechten.View = System.Windows.Forms.View.Details;
@@ -629,6 +756,7 @@ namespace UI_Chapoo
             // PNL_Nagerechten
             // 
             this.PNL_Nagerechten.BackColor = System.Drawing.Color.White;
+            this.PNL_Nagerechten.Controls.Add(this.LSV_NagerechtTafel);
             this.PNL_Nagerechten.Controls.Add(this.BTN_NagerechtenPlus);
             this.PNL_Nagerechten.Controls.Add(this.LBL_Nagerechten);
             this.PNL_Nagerechten.Controls.Add(this.NUP_Nagerechten);
@@ -637,6 +765,27 @@ namespace UI_Chapoo
             this.PNL_Nagerechten.Name = "PNL_Nagerechten";
             this.PNL_Nagerechten.Size = new System.Drawing.Size(447, 459);
             this.PNL_Nagerechten.TabIndex = 5;
+            // 
+            // LSV_NagerechtTafel
+            // 
+            this.LSV_NagerechtTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader53,
+            this.columnHeader54});
+            this.LSV_NagerechtTafel.HideSelection = false;
+            this.LSV_NagerechtTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_NagerechtTafel.Name = "LSV_NagerechtTafel";
+            this.LSV_NagerechtTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_NagerechtTafel.TabIndex = 7;
+            this.LSV_NagerechtTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_NagerechtTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "ID";
+            // 
+            // columnHeader54
+            // 
+            this.columnHeader54.Text = "Tafel";
             // 
             // BTN_NagerechtenPlus
             // 
@@ -682,7 +831,7 @@ namespace UI_Chapoo
             this.LSV_Nagerechten.HideSelection = false;
             this.LSV_Nagerechten.Location = new System.Drawing.Point(11, 85);
             this.LSV_Nagerechten.Name = "LSV_Nagerechten";
-            this.LSV_Nagerechten.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Nagerechten.Size = new System.Drawing.Size(243, 250);
             this.LSV_Nagerechten.TabIndex = 0;
             this.LSV_Nagerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Nagerechten.View = System.Windows.Forms.View.Details;
@@ -702,6 +851,7 @@ namespace UI_Chapoo
             // PNL_Frisdrank
             // 
             this.PNL_Frisdrank.BackColor = System.Drawing.Color.White;
+            this.PNL_Frisdrank.Controls.Add(this.LSV_FrisdrankTafel);
             this.PNL_Frisdrank.Controls.Add(this.BTN_FrisdrankPlus);
             this.PNL_Frisdrank.Controls.Add(this.LBL_Frisdrank);
             this.PNL_Frisdrank.Controls.Add(this.NUP_Frisdrank);
@@ -710,6 +860,27 @@ namespace UI_Chapoo
             this.PNL_Frisdrank.Name = "PNL_Frisdrank";
             this.PNL_Frisdrank.Size = new System.Drawing.Size(447, 459);
             this.PNL_Frisdrank.TabIndex = 6;
+            // 
+            // LSV_FrisdrankTafel
+            // 
+            this.LSV_FrisdrankTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader50,
+            this.columnHeader51});
+            this.LSV_FrisdrankTafel.HideSelection = false;
+            this.LSV_FrisdrankTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_FrisdrankTafel.Name = "LSV_FrisdrankTafel";
+            this.LSV_FrisdrankTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_FrisdrankTafel.TabIndex = 6;
+            this.LSV_FrisdrankTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_FrisdrankTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "ID";
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Tafel";
             // 
             // BTN_FrisdrankPlus
             // 
@@ -755,7 +926,7 @@ namespace UI_Chapoo
             this.LSV_Frisdrank.HideSelection = false;
             this.LSV_Frisdrank.Location = new System.Drawing.Point(11, 85);
             this.LSV_Frisdrank.Name = "LSV_Frisdrank";
-            this.LSV_Frisdrank.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Frisdrank.Size = new System.Drawing.Size(243, 250);
             this.LSV_Frisdrank.TabIndex = 0;
             this.LSV_Frisdrank.UseCompatibleStateImageBehavior = false;
             this.LSV_Frisdrank.View = System.Windows.Forms.View.Details;
@@ -775,6 +946,7 @@ namespace UI_Chapoo
             // PNL_KoffieThee
             // 
             this.PNL_KoffieThee.BackColor = System.Drawing.Color.White;
+            this.PNL_KoffieThee.Controls.Add(this.LSV_KoffieTheeTafel);
             this.PNL_KoffieThee.Controls.Add(this.BTN_KoffieTheePlus);
             this.PNL_KoffieThee.Controls.Add(this.LBL_KoffieThee);
             this.PNL_KoffieThee.Controls.Add(this.NUP_KoffieThee);
@@ -783,6 +955,27 @@ namespace UI_Chapoo
             this.PNL_KoffieThee.Name = "PNL_KoffieThee";
             this.PNL_KoffieThee.Size = new System.Drawing.Size(447, 459);
             this.PNL_KoffieThee.TabIndex = 7;
+            // 
+            // LSV_KoffieTheeTafel
+            // 
+            this.LSV_KoffieTheeTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader47,
+            this.columnHeader48});
+            this.LSV_KoffieTheeTafel.HideSelection = false;
+            this.LSV_KoffieTheeTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_KoffieTheeTafel.Name = "LSV_KoffieTheeTafel";
+            this.LSV_KoffieTheeTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_KoffieTheeTafel.TabIndex = 6;
+            this.LSV_KoffieTheeTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_KoffieTheeTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "ID";
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Tafel";
             // 
             // BTN_KoffieTheePlus
             // 
@@ -828,7 +1021,7 @@ namespace UI_Chapoo
             this.LSV_KoffieThee.HideSelection = false;
             this.LSV_KoffieThee.Location = new System.Drawing.Point(11, 85);
             this.LSV_KoffieThee.Name = "LSV_KoffieThee";
-            this.LSV_KoffieThee.Size = new System.Drawing.Size(419, 250);
+            this.LSV_KoffieThee.Size = new System.Drawing.Size(243, 250);
             this.LSV_KoffieThee.TabIndex = 0;
             this.LSV_KoffieThee.UseCompatibleStateImageBehavior = false;
             this.LSV_KoffieThee.View = System.Windows.Forms.View.Details;
@@ -848,6 +1041,7 @@ namespace UI_Chapoo
             // PNL_Bier
             // 
             this.PNL_Bier.BackColor = System.Drawing.Color.White;
+            this.PNL_Bier.Controls.Add(this.LSV_BierTafel);
             this.PNL_Bier.Controls.Add(this.BTN_BierPlus);
             this.PNL_Bier.Controls.Add(this.LSV_Bier);
             this.PNL_Bier.Controls.Add(this.LBL_Bier);
@@ -856,6 +1050,27 @@ namespace UI_Chapoo
             this.PNL_Bier.Name = "PNL_Bier";
             this.PNL_Bier.Size = new System.Drawing.Size(447, 459);
             this.PNL_Bier.TabIndex = 8;
+            // 
+            // LSV_BierTafel
+            // 
+            this.LSV_BierTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader44,
+            this.columnHeader45});
+            this.LSV_BierTafel.HideSelection = false;
+            this.LSV_BierTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_BierTafel.Name = "LSV_BierTafel";
+            this.LSV_BierTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_BierTafel.TabIndex = 6;
+            this.LSV_BierTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_BierTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "ID";
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "Tafel";
             // 
             // BTN_BierPlus
             // 
@@ -880,7 +1095,7 @@ namespace UI_Chapoo
             this.LSV_Bier.HideSelection = false;
             this.LSV_Bier.Location = new System.Drawing.Point(11, 85);
             this.LSV_Bier.Name = "LSV_Bier";
-            this.LSV_Bier.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Bier.Size = new System.Drawing.Size(243, 250);
             this.LSV_Bier.TabIndex = 0;
             this.LSV_Bier.UseCompatibleStateImageBehavior = false;
             this.LSV_Bier.View = System.Windows.Forms.View.Details;
@@ -921,6 +1136,7 @@ namespace UI_Chapoo
             // PNL_Wijn
             // 
             this.PNL_Wijn.BackColor = System.Drawing.Color.White;
+            this.PNL_Wijn.Controls.Add(this.LSV_WijnTafel);
             this.PNL_Wijn.Controls.Add(this.BTN_WijnPlus);
             this.PNL_Wijn.Controls.Add(this.LBL_Wijn);
             this.PNL_Wijn.Controls.Add(this.NUP_Wijn);
@@ -929,6 +1145,27 @@ namespace UI_Chapoo
             this.PNL_Wijn.Name = "PNL_Wijn";
             this.PNL_Wijn.Size = new System.Drawing.Size(447, 459);
             this.PNL_Wijn.TabIndex = 9;
+            // 
+            // LSV_WijnTafel
+            // 
+            this.LSV_WijnTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader41,
+            this.columnHeader42});
+            this.LSV_WijnTafel.HideSelection = false;
+            this.LSV_WijnTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_WijnTafel.Name = "LSV_WijnTafel";
+            this.LSV_WijnTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_WijnTafel.TabIndex = 6;
+            this.LSV_WijnTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_WijnTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "ID";
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "Tafel";
             // 
             // BTN_WijnPlus
             // 
@@ -974,7 +1211,7 @@ namespace UI_Chapoo
             this.LSV_Wijn.HideSelection = false;
             this.LSV_Wijn.Location = new System.Drawing.Point(11, 85);
             this.LSV_Wijn.Name = "LSV_Wijn";
-            this.LSV_Wijn.Size = new System.Drawing.Size(419, 250);
+            this.LSV_Wijn.Size = new System.Drawing.Size(243, 250);
             this.LSV_Wijn.TabIndex = 0;
             this.LSV_Wijn.UseCompatibleStateImageBehavior = false;
             this.LSV_Wijn.View = System.Windows.Forms.View.Details;
@@ -994,6 +1231,7 @@ namespace UI_Chapoo
             // PNL_GedeDrank
             // 
             this.PNL_GedeDrank.BackColor = System.Drawing.Color.White;
+            this.PNL_GedeDrank.Controls.Add(this.LSV_GedeTafel);
             this.PNL_GedeDrank.Controls.Add(this.BTN_GedeDrankPlus);
             this.PNL_GedeDrank.Controls.Add(this.LBL_GedeDrank);
             this.PNL_GedeDrank.Controls.Add(this.NUP_GedeDrank);
@@ -1002,6 +1240,27 @@ namespace UI_Chapoo
             this.PNL_GedeDrank.Name = "PNL_GedeDrank";
             this.PNL_GedeDrank.Size = new System.Drawing.Size(447, 459);
             this.PNL_GedeDrank.TabIndex = 10;
+            // 
+            // LSV_GedeTafel
+            // 
+            this.LSV_GedeTafel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader38,
+            this.columnHeader39});
+            this.LSV_GedeTafel.HideSelection = false;
+            this.LSV_GedeTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_GedeTafel.Name = "LSV_GedeTafel";
+            this.LSV_GedeTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_GedeTafel.TabIndex = 5;
+            this.LSV_GedeTafel.UseCompatibleStateImageBehavior = false;
+            this.LSV_GedeTafel.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "ID";
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "Tafel";
             // 
             // BTN_GedeDrankPlus
             // 
@@ -1043,12 +1302,11 @@ namespace UI_Chapoo
             // 
             this.LSV_GedeDrank.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader28,
-            this.columnHeader29,
-            this.columnHeader30});
+            this.columnHeader29});
             this.LSV_GedeDrank.HideSelection = false;
             this.LSV_GedeDrank.Location = new System.Drawing.Point(11, 85);
             this.LSV_GedeDrank.Name = "LSV_GedeDrank";
-            this.LSV_GedeDrank.Size = new System.Drawing.Size(419, 250);
+            this.LSV_GedeDrank.Size = new System.Drawing.Size(243, 250);
             this.LSV_GedeDrank.TabIndex = 0;
             this.LSV_GedeDrank.UseCompatibleStateImageBehavior = false;
             this.LSV_GedeDrank.View = System.Windows.Forms.View.Details;
@@ -1060,10 +1318,6 @@ namespace UI_Chapoo
             // columnHeader29
             // 
             this.columnHeader29.Text = "Naam";
-            // 
-            // columnHeader30
-            // 
-            this.columnHeader30.Text = "Prijs";
             // 
             // BTN_Terug
             // 
@@ -1101,6 +1355,7 @@ namespace UI_Chapoo
             // PNL_BevestigBestelling
             // 
             this.PNL_BevestigBestelling.BackColor = System.Drawing.Color.White;
+            this.PNL_BevestigBestelling.Controls.Add(this.BTN_NieuweBestelling);
             this.PNL_BevestigBestelling.Controls.Add(this.BTN_BestelItemWijzigen);
             this.PNL_BevestigBestelling.Controls.Add(this.BTN_BestelItemVerwijderen);
             this.PNL_BevestigBestelling.Controls.Add(this.LBL_Opmerking);
@@ -1113,13 +1368,14 @@ namespace UI_Chapoo
             this.PNL_BevestigBestelling.Name = "PNL_BevestigBestelling";
             this.PNL_BevestigBestelling.Size = new System.Drawing.Size(447, 459);
             this.PNL_BevestigBestelling.TabIndex = 14;
+            this.PNL_BevestigBestelling.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_BevestigBestelling_Paint);
             // 
             // BTN_BestelItemWijzigen
             // 
             this.BTN_BestelItemWijzigen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestelItemWijzigen.Location = new System.Drawing.Point(174, 392);
+            this.BTN_BestelItemWijzigen.Location = new System.Drawing.Point(14, 403);
             this.BTN_BestelItemWijzigen.Name = "BTN_BestelItemWijzigen";
-            this.BTN_BestelItemWijzigen.Size = new System.Drawing.Size(101, 56);
+            this.BTN_BestelItemWijzigen.Size = new System.Drawing.Size(120, 50);
             this.BTN_BestelItemWijzigen.TabIndex = 18;
             this.BTN_BestelItemWijzigen.Text = "Aantal wijzigen";
             this.BTN_BestelItemWijzigen.UseVisualStyleBackColor = false;
@@ -1128,9 +1384,9 @@ namespace UI_Chapoo
             // BTN_BestelItemVerwijderen
             // 
             this.BTN_BestelItemVerwijderen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestelItemVerwijderen.Location = new System.Drawing.Point(290, 392);
+            this.BTN_BestelItemVerwijderen.Location = new System.Drawing.Point(14, 350);
             this.BTN_BestelItemVerwijderen.Name = "BTN_BestelItemVerwijderen";
-            this.BTN_BestelItemVerwijderen.Size = new System.Drawing.Size(101, 56);
+            this.BTN_BestelItemVerwijderen.Size = new System.Drawing.Size(120, 50);
             this.BTN_BestelItemVerwijderen.TabIndex = 17;
             this.BTN_BestelItemVerwijderen.Text = "Item verwijderen";
             this.BTN_BestelItemVerwijderen.UseVisualStyleBackColor = false;
@@ -1156,11 +1412,11 @@ namespace UI_Chapoo
             // BTN_BestellingBevestigen
             // 
             this.BTN_BestellingBevestigen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestellingBevestigen.Location = new System.Drawing.Point(60, 392);
+            this.BTN_BestellingBevestigen.Location = new System.Drawing.Point(14, 298);
             this.BTN_BestellingBevestigen.Name = "BTN_BestellingBevestigen";
-            this.BTN_BestellingBevestigen.Size = new System.Drawing.Size(101, 56);
+            this.BTN_BestellingBevestigen.Size = new System.Drawing.Size(120, 50);
             this.BTN_BestellingBevestigen.TabIndex = 13;
-            this.BTN_BestellingBevestigen.Text = "Bestelling bevestigen";
+            this.BTN_BestellingBevestigen.Text = "Opmerking toevoegen";
             this.BTN_BestellingBevestigen.UseVisualStyleBackColor = false;
             this.BTN_BestellingBevestigen.Click += new System.EventHandler(this.BTN_BestellingBevestigen_Click);
             // 
@@ -1168,7 +1424,7 @@ namespace UI_Chapoo
             // 
             this.NUP_BestellingOverzicht.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_BestellingOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_BestellingOverzicht.Location = new System.Drawing.Point(189, 340);
+            this.NUP_BestellingOverzicht.Location = new System.Drawing.Point(140, 401);
             this.NUP_BestellingOverzicht.Name = "NUP_BestellingOverzicht";
             this.NUP_BestellingOverzicht.Size = new System.Drawing.Size(68, 52);
             this.NUP_BestellingOverzicht.TabIndex = 3;
@@ -1179,7 +1435,7 @@ namespace UI_Chapoo
             this.lbl_bestellingoverzicht.AutoSize = true;
             this.lbl_bestellingoverzicht.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_bestellingoverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.lbl_bestellingoverzicht.Location = new System.Drawing.Point(81, 41);
+            this.lbl_bestellingoverzicht.Location = new System.Drawing.Point(76, 30);
             this.lbl_bestellingoverzicht.Name = "lbl_bestellingoverzicht";
             this.lbl_bestellingoverzicht.Size = new System.Drawing.Size(271, 37);
             this.lbl_bestellingoverzicht.TabIndex = 2;
@@ -1195,26 +1451,96 @@ namespace UI_Chapoo
             this.LSV_BestellingOverzicht.HideSelection = false;
             this.LSV_BestellingOverzicht.Location = new System.Drawing.Point(11, 85);
             this.LSV_BestellingOverzicht.Name = "LSV_BestellingOverzicht";
-            this.LSV_BestellingOverzicht.Size = new System.Drawing.Size(419, 157);
+            this.LSV_BestellingOverzicht.Size = new System.Drawing.Size(419, 178);
             this.LSV_BestellingOverzicht.TabIndex = 0;
             this.LSV_BestellingOverzicht.UseCompatibleStateImageBehavior = false;
             this.LSV_BestellingOverzicht.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader31
             // 
-            this.columnHeader31.Text = "ID";
+            this.columnHeader31.Text = "Bestelling";
             // 
             // columnHeader32
             // 
-            this.columnHeader32.Text = "Naam";
+            this.columnHeader32.Text = "Regel";
             // 
             // columnHeader33
             // 
-            this.columnHeader33.Text = "Prijs";
+            this.columnHeader33.Text = "Menu item";
             // 
             // columnHeader34
             // 
             this.columnHeader34.Text = "Aantal";
+            // 
+            // PNL_BestellingMaken
+            // 
+            this.PNL_BestellingMaken.BackColor = System.Drawing.Color.White;
+            this.PNL_BestellingMaken.Controls.Add(this.LBL_BestellingAanmaken);
+            this.PNL_BestellingMaken.Controls.Add(this.LSV_BestellingAanmaken);
+            this.PNL_BestellingMaken.Controls.Add(this.BTN_BestellingAanmaken);
+            this.PNL_BestellingMaken.Location = new System.Drawing.Point(1, 48);
+            this.PNL_BestellingMaken.Name = "PNL_BestellingMaken";
+            this.PNL_BestellingMaken.Size = new System.Drawing.Size(447, 459);
+            this.PNL_BestellingMaken.TabIndex = 15;
+            // 
+            // LBL_BestellingAanmaken
+            // 
+            this.LBL_BestellingAanmaken.AutoSize = true;
+            this.LBL_BestellingAanmaken.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LBL_BestellingAanmaken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.LBL_BestellingAanmaken.Location = new System.Drawing.Point(73, 17);
+            this.LBL_BestellingAanmaken.Name = "LBL_BestellingAanmaken";
+            this.LBL_BestellingAanmaken.Size = new System.Drawing.Size(283, 37);
+            this.LBL_BestellingAanmaken.TabIndex = 3;
+            this.LBL_BestellingAanmaken.Text = "Bestelling aanmaken";
+            // 
+            // LSV_BestellingAanmaken
+            // 
+            this.LSV_BestellingAanmaken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37});
+            this.LSV_BestellingAanmaken.HideSelection = false;
+            this.LSV_BestellingAanmaken.Location = new System.Drawing.Point(38, 73);
+            this.LSV_BestellingAanmaken.Name = "LSV_BestellingAanmaken";
+            this.LSV_BestellingAanmaken.Size = new System.Drawing.Size(352, 231);
+            this.LSV_BestellingAanmaken.TabIndex = 1;
+            this.LSV_BestellingAanmaken.UseCompatibleStateImageBehavior = false;
+            this.LSV_BestellingAanmaken.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "Tafel";
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "Aantal stoelen";
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "Status";
+            // 
+            // BTN_BestellingAanmaken
+            // 
+            this.BTN_BestellingAanmaken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.BTN_BestellingAanmaken.Location = new System.Drawing.Point(95, 331);
+            this.BTN_BestellingAanmaken.Name = "BTN_BestellingAanmaken";
+            this.BTN_BestellingAanmaken.Size = new System.Drawing.Size(237, 71);
+            this.BTN_BestellingAanmaken.TabIndex = 0;
+            this.BTN_BestellingAanmaken.Text = "Bestelling aanmaken";
+            this.BTN_BestellingAanmaken.UseVisualStyleBackColor = false;
+            this.BTN_BestellingAanmaken.Click += new System.EventHandler(this.BTN_BestellingAanmaken_Click);
+            // 
+            // BTN_NieuweBestelling
+            // 
+            this.BTN_NieuweBestelling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
+            this.BTN_NieuweBestelling.Location = new System.Drawing.Point(295, 401);
+            this.BTN_NieuweBestelling.Name = "BTN_NieuweBestelling";
+            this.BTN_NieuweBestelling.Size = new System.Drawing.Size(103, 50);
+            this.BTN_NieuweBestelling.TabIndex = 19;
+            this.BTN_NieuweBestelling.Text = "Nieuwe bestelling";
+            this.BTN_NieuweBestelling.UseVisualStyleBackColor = false;
+            this.BTN_NieuweBestelling.Click += new System.EventHandler(this.BTN_NieuweBestelling_Click);
             // 
             // MenuBediening
             // 
@@ -1223,22 +1549,23 @@ namespace UI_Chapoo
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(443, 561);
             this.Controls.Add(this.PNL_BevestigBestelling);
-            this.Controls.Add(this.PNL_GedeDrank);
-            this.Controls.Add(this.PNL_Wijn);
-            this.Controls.Add(this.PNL_Bier);
-            this.Controls.Add(this.PNL_KoffieThee);
-            this.Controls.Add(this.PNL_Frisdrank);
-            this.Controls.Add(this.PNL_Nagerechten);
-            this.Controls.Add(this.PNL_Hoofdgerechten);
-            this.Controls.Add(this.PNL_Tussengerechten);
-            this.Controls.Add(this.PNL_Voorgerechten);
             this.Controls.Add(this.PNL_Hardlopers);
+            this.Controls.Add(this.PNL_Voorgerechten);
+            this.Controls.Add(this.PNL_Wijn);
+            this.Controls.Add(this.PNL_BestellingMaken);
+            this.Controls.Add(this.PNL_GerechtenMenu);
+            this.Controls.Add(this.PNL_MenuStart);
+            this.Controls.Add(this.PNL_Tussengerechten);
+            this.Controls.Add(this.PNL_Hoofdgerechten);
+            this.Controls.Add(this.PNL_Nagerechten);
+            this.Controls.Add(this.PNL_Frisdrank);
+            this.Controls.Add(this.PNL_KoffieThee);
+            this.Controls.Add(this.PNL_Bier);
+            this.Controls.Add(this.PNL_GedeDrank);
             this.Controls.Add(this.BTN_Bevestig);
             this.Controls.Add(this.BTN_Loguit);
             this.Controls.Add(this.BTN_Terug);
             this.Controls.Add(this.PNL_DrankenMenu);
-            this.Controls.Add(this.PNL_GerechtenMenu);
-            this.Controls.Add(this.PNL_MenuStart);
             this.Name = "MenuBediening";
             this.Text = "MenuBediening";
             this.Load += new System.EventHandler(this.MenuBediening_Load);
@@ -1278,6 +1605,8 @@ namespace UI_Chapoo
             this.PNL_BevestigBestelling.ResumeLayout(false);
             this.PNL_BevestigBestelling.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUP_BestellingOverzicht)).EndInit();
+            this.PNL_BestellingMaken.ResumeLayout(false);
+            this.PNL_BestellingMaken.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1368,7 +1697,6 @@ namespace UI_Chapoo
         private System.Windows.Forms.ListView LSV_GedeDrank;
         private System.Windows.Forms.ColumnHeader columnHeader28;
         private System.Windows.Forms.ColumnHeader columnHeader29;
-        private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.Button BTN_Terug;
         private System.Windows.Forms.Button BTN_Bevestig;
         private System.Windows.Forms.Button BTN_Loguit;
@@ -1395,5 +1723,43 @@ namespace UI_Chapoo
         private System.Windows.Forms.TextBox TXTBOX_Opmerking;
         private System.Windows.Forms.Button BTN_BestelItemVerwijderen;
         private System.Windows.Forms.Button BTN_BestelItemWijzigen;
+        private System.Windows.Forms.Panel PNL_BestellingMaken;
+        private System.Windows.Forms.Label LBL_BestellingAanmaken;
+        private System.Windows.Forms.ListView LSV_BestellingAanmaken;
+        private System.Windows.Forms.Button BTN_BestellingAanmaken;
+        private System.Windows.Forms.ColumnHeader columnHeader35;
+        private System.Windows.Forms.ColumnHeader columnHeader36;
+        private System.Windows.Forms.ColumnHeader columnHeader37;
+        private System.Windows.Forms.ListView LSV_VoorgerechtenTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader62;
+        private System.Windows.Forms.ColumnHeader columnHeader63;
+        private System.Windows.Forms.ListView LSV_TussengerechtenTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader59;
+        private System.Windows.Forms.ColumnHeader columnHeader60;
+        private System.Windows.Forms.ListView LSV_HoofdgerechtTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader56;
+        private System.Windows.Forms.ColumnHeader columnHeader57;
+        private System.Windows.Forms.ListView LSV_NagerechtTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader53;
+        private System.Windows.Forms.ColumnHeader columnHeader54;
+        private System.Windows.Forms.ListView LSV_FrisdrankTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader50;
+        private System.Windows.Forms.ColumnHeader columnHeader51;
+        private System.Windows.Forms.ListView LSV_KoffieTheeTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader48;
+        private System.Windows.Forms.ListView LSV_BierTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader44;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
+        private System.Windows.Forms.ListView LSV_WijnTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader41;
+        private System.Windows.Forms.ColumnHeader columnHeader42;
+        private System.Windows.Forms.ListView LSV_GedeTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader38;
+        private System.Windows.Forms.ColumnHeader columnHeader39;
+        private System.Windows.Forms.ListView LSV_HardlopersTafel;
+        private System.Windows.Forms.ColumnHeader columnHeader40;
+        private System.Windows.Forms.ColumnHeader columnHeader43;
+        private System.Windows.Forms.Button BTN_NieuweBestelling;
     }
 }

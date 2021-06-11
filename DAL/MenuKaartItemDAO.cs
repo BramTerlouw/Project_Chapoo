@@ -249,9 +249,15 @@ namespace DAL_Chapoo
         }
 
         // Show menu for handheld/Bediening
+        public List<MenukaartItem> Db_Get_All_Hardlopers()
+        {
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE MenuItemID ='43' OR MenuItemID='46' OR MenuItemID='24' OR MenuItemID='29' OR MenuItemID='1' OR MenuItemID='9'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
         public List<MenukaartItem> Db_Get_All_KoffieThee()
         {
-            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Thee' OR Soort='Koffie'";
+            string query = "SELECT MenuItemID, Soort, Naam, Alcohol, Prijs FROM MenuItem WHERE Soort='Warme Drank'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

@@ -8,5 +8,9 @@ namespace Model_Chapoo
 {
     public class Tafel
     {
+        public int TafelID { get; set; }
+        public int Aantal_Stoelen { get; set; }
+        public string Status { get; set; }
+
     }
 }

@@ -786,24 +786,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jesse\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\CeesGribnau\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\Service\\Service_Chapoo.csproj",
+      "projectUniqueName": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Service\\Service_Chapoo.csproj",
       "projectName": "Service_Chapoo",
-      "projectPath": "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\Service\\Service_Chapoo.csproj",
-      "packagesPath": "C:\\Users\\jesse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\Service\\obj\\",
+      "projectPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Service\\Service_Chapoo.csproj",
+      "packagesPath": "C:\\Users\\CeesGribnau\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Service\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jesse\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\CeesGribnau\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -817,11 +812,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\DAL\\DAL_Chapoo.csproj": {
-              "projectPath": "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\DAL\\DAL_Chapoo.csproj"
+            "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\DAL\\DAL_Chapoo.csproj": {
+              "projectPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\DAL\\DAL_Chapoo.csproj"
             },
-            "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {
-              "projectPath": "C:\\Users\\jesse\\Source\\Repos\\Project_Chapoo\\Model\\Model_Chapoo.csproj"
+            "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj": {
+              "projectPath": "C:\\Users\\CeesGribnau\\Documents\\school\\ProjectChapoo\\Project_Chapoo\\Model\\Model_Chapoo.csproj"
             }
           }
         }
@@ -850,7 +845,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

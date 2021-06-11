@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\DAL",
+    "\\Model",
+    "\\Service",
     "\\UI"
   ],
   "SelectedNode": "\\UI\\MenuBedieningcs.cs",

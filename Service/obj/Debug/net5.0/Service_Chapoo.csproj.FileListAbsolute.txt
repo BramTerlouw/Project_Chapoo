@@ -1,0 +1,17 @@
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\Service_Chapoo.deps.json
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\Service_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\ref\Service_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\Service_Chapoo.pdb
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\DAL_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\Model_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\DAL_Chapoo.pdb
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\bin\Debug\net5.0\Model_Chapoo.pdb
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.csproj.AssemblyReference.cache
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.AssemblyInfoInputs.cache
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.AssemblyInfo.cs
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.csproj.CoreCompileInputs.cache
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.csproj.CopyComplete
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\ref\Service_Chapoo.dll
+C:\Users\jesse\Source\Repos\Project_Chapoo\Service\obj\Debug\net5.0\Service_Chapoo.pdb
