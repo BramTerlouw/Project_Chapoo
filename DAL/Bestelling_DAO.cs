@@ -14,23 +14,25 @@ namespace DAL_Chapoo
         //Maak een bestelling aan in de DB
         public void Db_VoegBestellingToe(Bestelling bestelling)
         {
-            string query = "INSERT INTO Bestelling (BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status) VALUES (@BestellingDatum, @BestellingSubTotaal, @TafelID, @MedewerkerID, @Status)";
-            SqlParameter[] sqlParameters = new SqlParameter[5];
+            string query = "INSERT INTO Bestelling (BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status, BTW) VALUES (@BestellingDatum, @BestellingSubTotaal, @TafelID, @MedewerkerID, @Status, @BTW)";
+            SqlParameter[] sqlParameters = new SqlParameter[6];
             sqlParameters[0] = new SqlParameter("@BestellingDatum", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff"));
             sqlParameters[1] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
             sqlParameters[2] = new SqlParameter("@TafelID", bestelling.TafelID);
             sqlParameters[3] = new SqlParameter("@MedewerkerID", 3);
             sqlParameters[4] = new SqlParameter("@Status", bestelling.Status);
+            sqlParameters[5] = new SqlParameter("@BTW", bestelling.BTW);
             ExecuteEditQuery(query, sqlParameters);
         }
 
-        // Update subtotaal van bestelling
+        // Update subtotaal en BTW van bestelling
         public void Db_Update_Subtotaal(Bestelling bestelling)
         {
-            string query = "UPDATE Bestelling SET [BestellingSubTotaal] = BestellingSubTotaal + @BestellingSubTotaal WHERE BestellingID = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[2];
+            string query = "UPDATE Bestelling SET [BestellingSubTotaal] = BestellingSubTotaal + @BestellingSubTotaal, [BTW] = BTW + @BTW WHERE BestellingID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[3];
             sqlParameters[0] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
             sqlParameters[1] = new SqlParameter("@OrderID", bestelling.BestellingID);
+            sqlParameters[2] = new SqlParameter("@BTW", bestelling.BTW);
             ExecuteEditQuery(query, sqlParameters);
         }
         public void Db_Update_SubtotaalMin(Bestelling bestelling)

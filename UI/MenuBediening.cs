@@ -831,10 +831,13 @@ namespace UI
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
 
-                // Bereken prijs
+                // Bereken prijs 
                 double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
+
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
@@ -899,6 +902,9 @@ namespace UI
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
 
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -956,6 +962,9 @@ namespace UI
                 double prijs = double.Parse(LSV_Tussengerechten.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text);
+
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
@@ -1015,6 +1024,9 @@ namespace UI
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text);
 
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1072,6 +1084,9 @@ namespace UI
                 double prijs = double.Parse(LSV_Nagerechten.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text);
+
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
@@ -1131,6 +1146,9 @@ namespace UI
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text);
 
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1188,6 +1206,9 @@ namespace UI
                 double prijs = double.Parse(LSV_KoffieThee.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text);
+
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
@@ -1247,6 +1268,9 @@ namespace UI
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text);
 
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1305,6 +1329,9 @@ namespace UI
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text);
 
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1361,6 +1388,9 @@ namespace UI
                 double prijs = double.Parse(LSV_GedeDrank.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
                 bestelling.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text);
+
+                // Bereken BTW
+                bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
 
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)

@@ -156,7 +156,6 @@ namespace UI
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.BTN_Terug = new System.Windows.Forms.Button();
             this.BTN_Bevestig = new System.Windows.Forms.Button();
-            this.BTN_Loguit = new System.Windows.Forms.Button();
             this.PNL_BevestigBestelling = new System.Windows.Forms.Panel();
             this.BTN_NieuweBestelling = new System.Windows.Forms.Button();
             this.BTN_BestelItemWijzigen = new System.Windows.Forms.Button();
@@ -1393,10 +1392,10 @@ namespace UI
             // BTN_Terug
             // 
             this.BTN_Terug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Terug.Location = new System.Drawing.Point(50, 688);
+            this.BTN_Terug.Location = new System.Drawing.Point(14, 688);
             this.BTN_Terug.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Terug.Name = "BTN_Terug";
-            this.BTN_Terug.Size = new System.Drawing.Size(110, 56);
+            this.BTN_Terug.Size = new System.Drawing.Size(190, 56);
             this.BTN_Terug.TabIndex = 11;
             this.BTN_Terug.Text = "Terug";
             this.BTN_Terug.UseVisualStyleBackColor = false;
@@ -1405,26 +1404,14 @@ namespace UI
             // BTN_Bevestig
             // 
             this.BTN_Bevestig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Bevestig.Location = new System.Drawing.Point(197, 688);
+            this.BTN_Bevestig.Location = new System.Drawing.Point(286, 688);
             this.BTN_Bevestig.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Bevestig.Name = "BTN_Bevestig";
-            this.BTN_Bevestig.Size = new System.Drawing.Size(110, 56);
+            this.BTN_Bevestig.Size = new System.Drawing.Size(190, 56);
             this.BTN_Bevestig.TabIndex = 12;
             this.BTN_Bevestig.Text = "Bevestig";
             this.BTN_Bevestig.UseVisualStyleBackColor = false;
             this.BTN_Bevestig.Click += new System.EventHandler(this.BTN_Bevestig_Click);
-            // 
-            // BTN_Loguit
-            // 
-            this.BTN_Loguit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Loguit.Location = new System.Drawing.Point(343, 688);
-            this.BTN_Loguit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTN_Loguit.Name = "BTN_Loguit";
-            this.BTN_Loguit.Size = new System.Drawing.Size(110, 56);
-            this.BTN_Loguit.TabIndex = 13;
-            this.BTN_Loguit.Text = "Loguit";
-            this.BTN_Loguit.UseVisualStyleBackColor = false;
-            this.BTN_Loguit.Click += new System.EventHandler(this.BTN_Loguit_Click);
             // 
             // PNL_BevestigBestelling
             // 
@@ -1657,7 +1644,6 @@ namespace UI
             this.Controls.Add(this.PNL_Bier);
             this.Controls.Add(this.PNL_GedeDrank);
             this.Controls.Add(this.BTN_Bevestig);
-            this.Controls.Add(this.BTN_Loguit);
             this.Controls.Add(this.BTN_Terug);
             this.Controls.Add(this.PNL_DrankenMenu);
             this.Controls.Add(this.PNL_GerechtenMenu);
@@ -1797,7 +1783,6 @@ namespace UI
         private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.Button BTN_Terug;
         private System.Windows.Forms.Button BTN_Bevestig;
-        private System.Windows.Forms.Button BTN_Loguit;
         private System.Windows.Forms.Panel PNL_BevestigBestelling;
         private System.Windows.Forms.NumericUpDown NUP_BestellingOverzicht;
         private System.Windows.Forms.Label lbl_bestellingoverzicht;
