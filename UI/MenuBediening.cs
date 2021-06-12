@@ -752,7 +752,6 @@ namespace UI
             PNL_Wijn.Hide();
             PNL_GerechtenMenu.Hide();
             PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
             PNL_MenuStart.Hide();
             PNL_BestellingMaken.Hide();
             BTN_Bevestig.Hide();
@@ -806,10 +805,12 @@ namespace UI
             if (LSV_HardlopersTafel.SelectedItems.Count == 1 && LSV_Hardlopers.SelectedItems.Count == 1)
             {
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
 
                 // Haal alles op
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
 
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
@@ -829,6 +830,12 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -836,6 +843,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -854,15 +862,18 @@ namespace UI
             }
             
         }
+
         private void BTN_VoorgerechtenPlus_Click(object sender, EventArgs e)
         {
             if (LSV_VoorgerechtenTafel.SelectedItems.Count == 1 && LSV_Voorgerechten.SelectedItems.Count == 1)
             {
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
 
                 // Haal alles op
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
 
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
@@ -882,6 +893,12 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Voorgerechten.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -889,6 +906,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -915,6 +933,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text.ToString());
 
@@ -931,6 +952,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Tussengerechten.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -938,6 +964,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -964,6 +991,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text.ToString());
 
@@ -980,6 +1010,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Hoofdgerechten.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -987,6 +1022,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1013,6 +1049,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text.ToString());
 
@@ -1029,6 +1068,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Nagerechten.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1036,6 +1080,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1062,6 +1107,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text.ToString());
 
@@ -1078,6 +1126,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Frisdrank.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1085,6 +1138,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1111,6 +1165,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text.ToString());
 
@@ -1127,6 +1184,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_KoffieThee.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1134,6 +1196,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1160,6 +1223,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text.ToString());
 
@@ -1176,6 +1242,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Bier.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1183,6 +1254,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1209,6 +1281,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text.ToString());
 
@@ -1225,6 +1300,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_Wijn.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1232,6 +1312,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1258,6 +1339,9 @@ namespace UI
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
                 VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Bestelling_Service bestelling_Service = new Bestelling_Service();
+                Model_Chapoo.Bestelling bestelling = new Bestelling();
+
                 // Bestelling id uit lsv tafel
                 bestellingRegel.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text.ToString());
 
@@ -1273,6 +1357,11 @@ namespace UI
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
 
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+                // Bereken prijs
+                double prijs = double.Parse(LSV_GedeDrank.SelectedItems[0].SubItems[2].Text);
+                bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                bestelling.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text);
+
                 // Geef de variable mee naar methode in service laag
                 if (voorraadMinBestelling > 0)
                 {
@@ -1280,6 +1369,7 @@ namespace UI
                     {
                         bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1299,7 +1389,7 @@ namespace UI
             
         }
 
-        // Bestelling bevestigen
+        // Opmerking toevoegen
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
         {
             // id ophalen
@@ -1308,7 +1398,7 @@ namespace UI
             // regel ophalen
             bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
-            DialogResult msbresult = MessageBox.Show("Bestelling bevestigen?", "Bestelling bevestigen", MessageBoxButtons.YesNo);
+            DialogResult msbresult = MessageBox.Show("Opmerking toevoegen?", "Opmerking toevoegen", MessageBoxButtons.YesNo);
             if (msbresult == DialogResult.Yes)
             {
                 // Opmerking uit textbox halen
@@ -1328,14 +1418,25 @@ namespace UI
             // id ophalen
             Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
             bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
+
             VoorraadItemService voorraadItemService = new VoorraadItemService();
+            Model_Chapoo.Bestelling Bestelling = new Bestelling();
+
             // regel ophalen
             bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
-            // ID en regel meegeven naar "Item verwijderen" methode in service laag
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+            // Bereken prijs
+            //double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
+            //Bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+            //Bestelling.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text);
 
+            DialogResult msbresult = MessageBox.Show("item verwijderen?", "Item verwijderen", MessageBoxButtons.YesNo);
+            if (msbresult == DialogResult.Yes)
+            {
+                // ID en regel meegeven naar "Item verwijderen" methode in service laag
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+            }
             FullRowSelect();
             // Fill bestellingoverzicht listview with a list of bestellingen
             Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
@@ -1414,26 +1515,7 @@ namespace UI
             // Show start
             PNL_BestellingMaken.Show();
         }
-        private void PNL_BevestigBestelling_Paint(object sender, PaintEventArgs e)
-        {
-            // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-
-            // Show start
-            PNL_MenuStart.Show();
-        }
+        
 
         private void BTN_Hoofdmenu_Click(object sender, EventArgs e)
         {

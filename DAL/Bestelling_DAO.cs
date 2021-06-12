@@ -19,11 +19,28 @@ namespace DAL_Chapoo
             sqlParameters[0] = new SqlParameter("@BestellingDatum", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff"));
             sqlParameters[1] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
             sqlParameters[2] = new SqlParameter("@TafelID", bestelling.TafelID);
-            sqlParameters[3] = new SqlParameter("@MedewerkerID", 1);
+            sqlParameters[3] = new SqlParameter("@MedewerkerID", 3);
             sqlParameters[4] = new SqlParameter("@Status", bestelling.Status);
             ExecuteEditQuery(query, sqlParameters);
         }
 
+        // Update subtotaal van bestelling
+        public void Db_Update_Subtotaal(Bestelling bestelling)
+        {
+            string query = "UPDATE Bestelling SET [BestellingSubTotaal] = BestellingSubTotaal + @BestellingSubTotaal WHERE BestellingID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
+            sqlParameters[1] = new SqlParameter("@OrderID", bestelling.BestellingID);
+            ExecuteEditQuery(query, sqlParameters);
+        }
+        public void Db_Update_SubtotaalMin(Bestelling bestelling)
+        {
+            string query = "UPDATE Bestelling SET [BestellingSubTotaal] = BestellingSubTotaal - @BestellingSubTotaal WHERE BestellingID = @OrderID";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
+            sqlParameters[1] = new SqlParameter("@OrderID", bestelling.BestellingID);
+            ExecuteEditQuery(query, sqlParameters);
+        }
         //Haal een lijst van alle bestellingen op uit de DB
         public List<Bestelling> Db_Get_All_Bestellingen()
         {

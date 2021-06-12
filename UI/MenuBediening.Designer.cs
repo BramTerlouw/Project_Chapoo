@@ -213,17 +213,19 @@ namespace UI
             this.PNL_MenuStart.Controls.Add(this.BTN_Dranken);
             this.PNL_MenuStart.Controls.Add(this.BTN_Gerechten);
             this.PNL_MenuStart.Controls.Add(this.BTN_Hardlopers);
-            this.PNL_MenuStart.Location = new System.Drawing.Point(1, 51);
+            this.PNL_MenuStart.Location = new System.Drawing.Point(1, 68);
+            this.PNL_MenuStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_MenuStart.Name = "PNL_MenuStart";
-            this.PNL_MenuStart.Size = new System.Drawing.Size(447, 459);
+            this.PNL_MenuStart.Size = new System.Drawing.Size(511, 612);
             this.PNL_MenuStart.TabIndex = 0;
             // 
             // BTN_Dranken
             // 
             this.BTN_Dranken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Dranken.Location = new System.Drawing.Point(100, 298);
+            this.BTN_Dranken.Location = new System.Drawing.Point(114, 397);
+            this.BTN_Dranken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Dranken.Name = "BTN_Dranken";
-            this.BTN_Dranken.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Dranken.Size = new System.Drawing.Size(271, 95);
             this.BTN_Dranken.TabIndex = 2;
             this.BTN_Dranken.Text = "Dranken";
             this.BTN_Dranken.UseVisualStyleBackColor = false;
@@ -232,9 +234,10 @@ namespace UI
             // BTN_Gerechten
             // 
             this.BTN_Gerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Gerechten.Location = new System.Drawing.Point(100, 192);
+            this.BTN_Gerechten.Location = new System.Drawing.Point(114, 256);
+            this.BTN_Gerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Gerechten.Name = "BTN_Gerechten";
-            this.BTN_Gerechten.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Gerechten.Size = new System.Drawing.Size(271, 95);
             this.BTN_Gerechten.TabIndex = 1;
             this.BTN_Gerechten.Text = "Gerechten";
             this.BTN_Gerechten.UseVisualStyleBackColor = false;
@@ -243,9 +246,10 @@ namespace UI
             // BTN_Hardlopers
             // 
             this.BTN_Hardlopers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Hardlopers.Location = new System.Drawing.Point(100, 81);
+            this.BTN_Hardlopers.Location = new System.Drawing.Point(114, 108);
+            this.BTN_Hardlopers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Hardlopers.Name = "BTN_Hardlopers";
-            this.BTN_Hardlopers.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Hardlopers.Size = new System.Drawing.Size(271, 95);
             this.BTN_Hardlopers.TabIndex = 0;
             this.BTN_Hardlopers.Text = "Hardlopers";
             this.BTN_Hardlopers.UseVisualStyleBackColor = false;
@@ -258,17 +262,19 @@ namespace UI
             this.PNL_GerechtenMenu.Controls.Add(this.BTN_Hoofdgerechten);
             this.PNL_GerechtenMenu.Controls.Add(this.BTN_Tussengerechten);
             this.PNL_GerechtenMenu.Controls.Add(this.BTN_Voorgerechten);
-            this.PNL_GerechtenMenu.Location = new System.Drawing.Point(1, 51);
+            this.PNL_GerechtenMenu.Location = new System.Drawing.Point(1, 68);
+            this.PNL_GerechtenMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_GerechtenMenu.Name = "PNL_GerechtenMenu";
-            this.PNL_GerechtenMenu.Size = new System.Drawing.Size(447, 459);
+            this.PNL_GerechtenMenu.Size = new System.Drawing.Size(511, 612);
             this.PNL_GerechtenMenu.TabIndex = 1;
             // 
             // BTN_Nagerecht
             // 
             this.BTN_Nagerecht.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Nagerecht.Location = new System.Drawing.Point(100, 354);
+            this.BTN_Nagerecht.Location = new System.Drawing.Point(114, 472);
+            this.BTN_Nagerecht.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Nagerecht.Name = "BTN_Nagerecht";
-            this.BTN_Nagerecht.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Nagerecht.Size = new System.Drawing.Size(271, 95);
             this.BTN_Nagerecht.TabIndex = 3;
             this.BTN_Nagerecht.Text = "Nagerechten";
             this.BTN_Nagerecht.UseVisualStyleBackColor = false;
@@ -277,9 +283,10 @@ namespace UI
             // BTN_Hoofdgerechten
             // 
             this.BTN_Hoofdgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Hoofdgerechten.Location = new System.Drawing.Point(100, 255);
+            this.BTN_Hoofdgerechten.Location = new System.Drawing.Point(114, 340);
+            this.BTN_Hoofdgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Hoofdgerechten.Name = "BTN_Hoofdgerechten";
-            this.BTN_Hoofdgerechten.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Hoofdgerechten.Size = new System.Drawing.Size(271, 95);
             this.BTN_Hoofdgerechten.TabIndex = 2;
             this.BTN_Hoofdgerechten.Text = "Hoofdgerechten";
             this.BTN_Hoofdgerechten.UseVisualStyleBackColor = false;
@@ -288,9 +295,10 @@ namespace UI
             // BTN_Tussengerechten
             // 
             this.BTN_Tussengerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Tussengerechten.Location = new System.Drawing.Point(100, 149);
+            this.BTN_Tussengerechten.Location = new System.Drawing.Point(114, 199);
+            this.BTN_Tussengerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Tussengerechten.Name = "BTN_Tussengerechten";
-            this.BTN_Tussengerechten.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Tussengerechten.Size = new System.Drawing.Size(271, 95);
             this.BTN_Tussengerechten.TabIndex = 1;
             this.BTN_Tussengerechten.Text = "Tussengerechten";
             this.BTN_Tussengerechten.UseVisualStyleBackColor = false;
@@ -299,9 +307,10 @@ namespace UI
             // BTN_Voorgerechten
             // 
             this.BTN_Voorgerechten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Voorgerechten.Location = new System.Drawing.Point(100, 38);
+            this.BTN_Voorgerechten.Location = new System.Drawing.Point(114, 51);
+            this.BTN_Voorgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Voorgerechten.Name = "BTN_Voorgerechten";
-            this.BTN_Voorgerechten.Size = new System.Drawing.Size(237, 71);
+            this.BTN_Voorgerechten.Size = new System.Drawing.Size(271, 95);
             this.BTN_Voorgerechten.TabIndex = 0;
             this.BTN_Voorgerechten.Text = "Voorgerechten";
             this.BTN_Voorgerechten.UseVisualStyleBackColor = false;
@@ -315,17 +324,19 @@ namespace UI
             this.PNL_DrankenMenu.Controls.Add(this.BTN_Bier);
             this.PNL_DrankenMenu.Controls.Add(this.BTN_KoffieThee);
             this.PNL_DrankenMenu.Controls.Add(this.BTN_Frisdrank);
-            this.PNL_DrankenMenu.Location = new System.Drawing.Point(1, 51);
+            this.PNL_DrankenMenu.Location = new System.Drawing.Point(1, 68);
+            this.PNL_DrankenMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_DrankenMenu.Name = "PNL_DrankenMenu";
-            this.PNL_DrankenMenu.Size = new System.Drawing.Size(447, 459);
+            this.PNL_DrankenMenu.Size = new System.Drawing.Size(511, 612);
             this.PNL_DrankenMenu.TabIndex = 2;
             // 
             // BTN_GedeDrank
             // 
             this.BTN_GedeDrank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_GedeDrank.Location = new System.Drawing.Point(100, 354);
+            this.BTN_GedeDrank.Location = new System.Drawing.Point(114, 472);
+            this.BTN_GedeDrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_GedeDrank.Name = "BTN_GedeDrank";
-            this.BTN_GedeDrank.Size = new System.Drawing.Size(237, 53);
+            this.BTN_GedeDrank.Size = new System.Drawing.Size(271, 71);
             this.BTN_GedeDrank.TabIndex = 4;
             this.BTN_GedeDrank.Text = "Gedestileerde dranken";
             this.BTN_GedeDrank.UseVisualStyleBackColor = false;
@@ -334,9 +345,10 @@ namespace UI
             // BTN_Wijn
             // 
             this.BTN_Wijn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Wijn.Location = new System.Drawing.Point(100, 273);
+            this.BTN_Wijn.Location = new System.Drawing.Point(114, 364);
+            this.BTN_Wijn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Wijn.Name = "BTN_Wijn";
-            this.BTN_Wijn.Size = new System.Drawing.Size(237, 53);
+            this.BTN_Wijn.Size = new System.Drawing.Size(271, 71);
             this.BTN_Wijn.TabIndex = 3;
             this.BTN_Wijn.Text = "Wijn";
             this.BTN_Wijn.UseVisualStyleBackColor = false;
@@ -345,9 +357,10 @@ namespace UI
             // BTN_Bier
             // 
             this.BTN_Bier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Bier.Location = new System.Drawing.Point(100, 196);
+            this.BTN_Bier.Location = new System.Drawing.Point(114, 261);
+            this.BTN_Bier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Bier.Name = "BTN_Bier";
-            this.BTN_Bier.Size = new System.Drawing.Size(237, 53);
+            this.BTN_Bier.Size = new System.Drawing.Size(271, 71);
             this.BTN_Bier.TabIndex = 2;
             this.BTN_Bier.Text = "Bier";
             this.BTN_Bier.UseVisualStyleBackColor = false;
@@ -356,9 +369,10 @@ namespace UI
             // BTN_KoffieThee
             // 
             this.BTN_KoffieThee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_KoffieThee.Location = new System.Drawing.Point(100, 115);
+            this.BTN_KoffieThee.Location = new System.Drawing.Point(114, 153);
+            this.BTN_KoffieThee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_KoffieThee.Name = "BTN_KoffieThee";
-            this.BTN_KoffieThee.Size = new System.Drawing.Size(237, 53);
+            this.BTN_KoffieThee.Size = new System.Drawing.Size(271, 71);
             this.BTN_KoffieThee.TabIndex = 1;
             this.BTN_KoffieThee.Text = "Koffie/Thee";
             this.BTN_KoffieThee.UseVisualStyleBackColor = false;
@@ -367,9 +381,10 @@ namespace UI
             // BTN_Frisdrank
             // 
             this.BTN_Frisdrank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Frisdrank.Location = new System.Drawing.Point(100, 38);
+            this.BTN_Frisdrank.Location = new System.Drawing.Point(114, 51);
+            this.BTN_Frisdrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Frisdrank.Name = "BTN_Frisdrank";
-            this.BTN_Frisdrank.Size = new System.Drawing.Size(237, 53);
+            this.BTN_Frisdrank.Size = new System.Drawing.Size(271, 71);
             this.BTN_Frisdrank.TabIndex = 0;
             this.BTN_Frisdrank.Text = "Frisdrank";
             this.BTN_Frisdrank.UseVisualStyleBackColor = false;
@@ -383,9 +398,10 @@ namespace UI
             this.PNL_Hardlopers.Controls.Add(this.BTN_HardlopersPlus);
             this.PNL_Hardlopers.Controls.Add(this.LBL_Hardlopers);
             this.PNL_Hardlopers.Controls.Add(this.LSV_Hardlopers);
-            this.PNL_Hardlopers.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Hardlopers.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Hardlopers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Hardlopers.Name = "PNL_Hardlopers";
-            this.PNL_Hardlopers.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Hardlopers.Size = new System.Drawing.Size(511, 612);
             this.PNL_Hardlopers.TabIndex = 3;
             // 
             // LSV_HardlopersTafel
@@ -394,9 +410,10 @@ namespace UI
             this.columnHeader40,
             this.columnHeader43});
             this.LSV_HardlopersTafel.HideSelection = false;
-            this.LSV_HardlopersTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_HardlopersTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_HardlopersTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_HardlopersTafel.Name = "LSV_HardlopersTafel";
-            this.LSV_HardlopersTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_HardlopersTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_HardlopersTafel.TabIndex = 7;
             this.LSV_HardlopersTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_HardlopersTafel.View = System.Windows.Forms.View.Details;
@@ -413,9 +430,10 @@ namespace UI
             // 
             this.NUP_Hardlopers.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Hardlopers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Hardlopers.Location = new System.Drawing.Point(186, 356);
+            this.NUP_Hardlopers.Location = new System.Drawing.Point(213, 475);
+            this.NUP_Hardlopers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Hardlopers.Name = "NUP_Hardlopers";
-            this.NUP_Hardlopers.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Hardlopers.Size = new System.Drawing.Size(78, 63);
             this.NUP_Hardlopers.TabIndex = 1;
             this.NUP_Hardlopers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -425,9 +443,10 @@ namespace UI
             this.BTN_HardlopersPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_HardlopersPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_HardlopersPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_HardlopersPlus.Location = new System.Drawing.Point(260, 356);
+            this.BTN_HardlopersPlus.Location = new System.Drawing.Point(297, 475);
+            this.BTN_HardlopersPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_HardlopersPlus.Name = "BTN_HardlopersPlus";
-            this.BTN_HardlopersPlus.Size = new System.Drawing.Size(68, 53);
+            this.BTN_HardlopersPlus.Size = new System.Drawing.Size(78, 71);
             this.BTN_HardlopersPlus.TabIndex = 4;
             this.BTN_HardlopersPlus.Text = "+";
             this.BTN_HardlopersPlus.UseVisualStyleBackColor = false;
@@ -438,9 +457,9 @@ namespace UI
             this.LBL_Hardlopers.AutoSize = true;
             this.LBL_Hardlopers.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Hardlopers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Hardlopers.Location = new System.Drawing.Point(137, 38);
+            this.LBL_Hardlopers.Location = new System.Drawing.Point(157, 51);
             this.LBL_Hardlopers.Name = "LBL_Hardlopers";
-            this.LBL_Hardlopers.Size = new System.Drawing.Size(161, 37);
+            this.LBL_Hardlopers.Size = new System.Drawing.Size(198, 46);
             this.LBL_Hardlopers.TabIndex = 2;
             this.LBL_Hardlopers.Text = "Hardlopers";
             // 
@@ -451,9 +470,10 @@ namespace UI
             this.columnHeader2,
             this.columnHeader3});
             this.LSV_Hardlopers.HideSelection = false;
-            this.LSV_Hardlopers.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Hardlopers.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Hardlopers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Hardlopers.Name = "LSV_Hardlopers";
-            this.LSV_Hardlopers.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Hardlopers.Size = new System.Drawing.Size(277, 332);
             this.LSV_Hardlopers.TabIndex = 0;
             this.LSV_Hardlopers.UseCompatibleStateImageBehavior = false;
             this.LSV_Hardlopers.View = System.Windows.Forms.View.Details;
@@ -478,9 +498,10 @@ namespace UI
             this.PNL_Voorgerechten.Controls.Add(this.LBL_Voorgerechten);
             this.PNL_Voorgerechten.Controls.Add(this.NUP_Voorgerechten);
             this.PNL_Voorgerechten.Controls.Add(this.LSV_Voorgerechten);
-            this.PNL_Voorgerechten.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Voorgerechten.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Voorgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Voorgerechten.Name = "PNL_Voorgerechten";
-            this.PNL_Voorgerechten.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Voorgerechten.Size = new System.Drawing.Size(511, 612);
             this.PNL_Voorgerechten.TabIndex = 4;
             // 
             // LSV_VoorgerechtenTafel
@@ -489,9 +510,10 @@ namespace UI
             this.columnHeader62,
             this.columnHeader63});
             this.LSV_VoorgerechtenTafel.HideSelection = false;
-            this.LSV_VoorgerechtenTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_VoorgerechtenTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_VoorgerechtenTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_VoorgerechtenTafel.Name = "LSV_VoorgerechtenTafel";
-            this.LSV_VoorgerechtenTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_VoorgerechtenTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_VoorgerechtenTafel.TabIndex = 7;
             this.LSV_VoorgerechtenTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_VoorgerechtenTafel.View = System.Windows.Forms.View.Details;
@@ -510,9 +532,10 @@ namespace UI
             this.BTN_VoorgerechtenPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_VoorgerechtenPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_VoorgerechtenPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_VoorgerechtenPlus.Location = new System.Drawing.Point(225, 346);
+            this.BTN_VoorgerechtenPlus.Location = new System.Drawing.Point(257, 461);
+            this.BTN_VoorgerechtenPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_VoorgerechtenPlus.Name = "BTN_VoorgerechtenPlus";
-            this.BTN_VoorgerechtenPlus.Size = new System.Drawing.Size(68, 49);
+            this.BTN_VoorgerechtenPlus.Size = new System.Drawing.Size(78, 65);
             this.BTN_VoorgerechtenPlus.TabIndex = 4;
             this.BTN_VoorgerechtenPlus.Text = "+";
             this.BTN_VoorgerechtenPlus.UseVisualStyleBackColor = false;
@@ -523,9 +546,9 @@ namespace UI
             this.LBL_Voorgerechten.AutoSize = true;
             this.LBL_Voorgerechten.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Voorgerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Voorgerechten.Location = new System.Drawing.Point(102, 41);
+            this.LBL_Voorgerechten.Location = new System.Drawing.Point(117, 55);
             this.LBL_Voorgerechten.Name = "LBL_Voorgerechten";
-            this.LBL_Voorgerechten.Size = new System.Drawing.Size(207, 37);
+            this.LBL_Voorgerechten.Size = new System.Drawing.Size(256, 46);
             this.LBL_Voorgerechten.TabIndex = 2;
             this.LBL_Voorgerechten.Text = "Voorgerechten";
             // 
@@ -533,9 +556,10 @@ namespace UI
             // 
             this.NUP_Voorgerechten.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Voorgerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Voorgerechten.Location = new System.Drawing.Point(144, 346);
+            this.NUP_Voorgerechten.Location = new System.Drawing.Point(165, 461);
+            this.NUP_Voorgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Voorgerechten.Name = "NUP_Voorgerechten";
-            this.NUP_Voorgerechten.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Voorgerechten.Size = new System.Drawing.Size(78, 63);
             this.NUP_Voorgerechten.TabIndex = 1;
             this.NUP_Voorgerechten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -546,9 +570,10 @@ namespace UI
             this.columnHeader5,
             this.columnHeader6});
             this.LSV_Voorgerechten.HideSelection = false;
-            this.LSV_Voorgerechten.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Voorgerechten.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Voorgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Voorgerechten.Name = "LSV_Voorgerechten";
-            this.LSV_Voorgerechten.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Voorgerechten.Size = new System.Drawing.Size(277, 332);
             this.LSV_Voorgerechten.TabIndex = 0;
             this.LSV_Voorgerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Voorgerechten.View = System.Windows.Forms.View.Details;
@@ -573,9 +598,10 @@ namespace UI
             this.PNL_Tussengerechten.Controls.Add(this.LBL_Tussengerechten);
             this.PNL_Tussengerechten.Controls.Add(this.NUP_Tussengerechten);
             this.PNL_Tussengerechten.Controls.Add(this.LSV_Tussengerechten);
-            this.PNL_Tussengerechten.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Tussengerechten.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Tussengerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Tussengerechten.Name = "PNL_Tussengerechten";
-            this.PNL_Tussengerechten.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Tussengerechten.Size = new System.Drawing.Size(511, 612);
             this.PNL_Tussengerechten.TabIndex = 5;
             // 
             // LSV_TussengerechtenTafel
@@ -584,9 +610,10 @@ namespace UI
             this.columnHeader59,
             this.columnHeader60});
             this.LSV_TussengerechtenTafel.HideSelection = false;
-            this.LSV_TussengerechtenTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_TussengerechtenTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_TussengerechtenTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_TussengerechtenTafel.Name = "LSV_TussengerechtenTafel";
-            this.LSV_TussengerechtenTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_TussengerechtenTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_TussengerechtenTafel.TabIndex = 7;
             this.LSV_TussengerechtenTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_TussengerechtenTafel.View = System.Windows.Forms.View.Details;
@@ -605,9 +632,10 @@ namespace UI
             this.BTN_TussengerechtenPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_TussengerechtenPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_TussengerechtenPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_TussengerechtenPlus.Location = new System.Drawing.Point(225, 346);
+            this.BTN_TussengerechtenPlus.Location = new System.Drawing.Point(257, 461);
+            this.BTN_TussengerechtenPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_TussengerechtenPlus.Name = "BTN_TussengerechtenPlus";
-            this.BTN_TussengerechtenPlus.Size = new System.Drawing.Size(68, 47);
+            this.BTN_TussengerechtenPlus.Size = new System.Drawing.Size(78, 63);
             this.BTN_TussengerechtenPlus.TabIndex = 4;
             this.BTN_TussengerechtenPlus.Text = "+";
             this.BTN_TussengerechtenPlus.UseVisualStyleBackColor = false;
@@ -618,9 +646,9 @@ namespace UI
             this.LBL_Tussengerechten.AutoSize = true;
             this.LBL_Tussengerechten.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Tussengerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Tussengerechten.Location = new System.Drawing.Point(100, 41);
+            this.LBL_Tussengerechten.Location = new System.Drawing.Point(114, 55);
             this.LBL_Tussengerechten.Name = "LBL_Tussengerechten";
-            this.LBL_Tussengerechten.Size = new System.Drawing.Size(231, 37);
+            this.LBL_Tussengerechten.Size = new System.Drawing.Size(287, 46);
             this.LBL_Tussengerechten.TabIndex = 2;
             this.LBL_Tussengerechten.Text = "Tussengerechten";
             // 
@@ -628,9 +656,10 @@ namespace UI
             // 
             this.NUP_Tussengerechten.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Tussengerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Tussengerechten.Location = new System.Drawing.Point(137, 346);
+            this.NUP_Tussengerechten.Location = new System.Drawing.Point(157, 461);
+            this.NUP_Tussengerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Tussengerechten.Name = "NUP_Tussengerechten";
-            this.NUP_Tussengerechten.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Tussengerechten.Size = new System.Drawing.Size(78, 63);
             this.NUP_Tussengerechten.TabIndex = 1;
             this.NUP_Tussengerechten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -641,9 +670,10 @@ namespace UI
             this.columnHeader8,
             this.columnHeader9});
             this.LSV_Tussengerechten.HideSelection = false;
-            this.LSV_Tussengerechten.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Tussengerechten.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Tussengerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Tussengerechten.Name = "LSV_Tussengerechten";
-            this.LSV_Tussengerechten.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Tussengerechten.Size = new System.Drawing.Size(277, 332);
             this.LSV_Tussengerechten.TabIndex = 0;
             this.LSV_Tussengerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Tussengerechten.View = System.Windows.Forms.View.Details;
@@ -668,9 +698,10 @@ namespace UI
             this.PNL_Hoofdgerechten.Controls.Add(this.LBL_Hoofdgerechten);
             this.PNL_Hoofdgerechten.Controls.Add(this.NUP_Hoofdgerechten);
             this.PNL_Hoofdgerechten.Controls.Add(this.LSV_Hoofdgerechten);
-            this.PNL_Hoofdgerechten.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Hoofdgerechten.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Hoofdgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Hoofdgerechten.Name = "PNL_Hoofdgerechten";
-            this.PNL_Hoofdgerechten.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Hoofdgerechten.Size = new System.Drawing.Size(511, 612);
             this.PNL_Hoofdgerechten.TabIndex = 5;
             // 
             // LSV_HoofdgerechtTafel
@@ -679,9 +710,10 @@ namespace UI
             this.columnHeader56,
             this.columnHeader57});
             this.LSV_HoofdgerechtTafel.HideSelection = false;
-            this.LSV_HoofdgerechtTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_HoofdgerechtTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_HoofdgerechtTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_HoofdgerechtTafel.Name = "LSV_HoofdgerechtTafel";
-            this.LSV_HoofdgerechtTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_HoofdgerechtTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_HoofdgerechtTafel.TabIndex = 7;
             this.LSV_HoofdgerechtTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_HoofdgerechtTafel.View = System.Windows.Forms.View.Details;
@@ -700,9 +732,10 @@ namespace UI
             this.BTN_HoofdgerechtenPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_HoofdgerechtenPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_HoofdgerechtenPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_HoofdgerechtenPlus.Location = new System.Drawing.Point(218, 349);
+            this.BTN_HoofdgerechtenPlus.Location = new System.Drawing.Point(249, 465);
+            this.BTN_HoofdgerechtenPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_HoofdgerechtenPlus.Name = "BTN_HoofdgerechtenPlus";
-            this.BTN_HoofdgerechtenPlus.Size = new System.Drawing.Size(68, 48);
+            this.BTN_HoofdgerechtenPlus.Size = new System.Drawing.Size(78, 64);
             this.BTN_HoofdgerechtenPlus.TabIndex = 4;
             this.BTN_HoofdgerechtenPlus.Text = "+";
             this.BTN_HoofdgerechtenPlus.UseVisualStyleBackColor = false;
@@ -713,9 +746,9 @@ namespace UI
             this.LBL_Hoofdgerechten.AutoSize = true;
             this.LBL_Hoofdgerechten.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Hoofdgerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Hoofdgerechten.Location = new System.Drawing.Point(100, 38);
+            this.LBL_Hoofdgerechten.Location = new System.Drawing.Point(114, 51);
             this.LBL_Hoofdgerechten.Name = "LBL_Hoofdgerechten";
-            this.LBL_Hoofdgerechten.Size = new System.Drawing.Size(228, 37);
+            this.LBL_Hoofdgerechten.Size = new System.Drawing.Size(280, 46);
             this.LBL_Hoofdgerechten.TabIndex = 2;
             this.LBL_Hoofdgerechten.Text = "Hoofdgerechten";
             // 
@@ -723,9 +756,10 @@ namespace UI
             // 
             this.NUP_Hoofdgerechten.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Hoofdgerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Hoofdgerechten.Location = new System.Drawing.Point(133, 349);
+            this.NUP_Hoofdgerechten.Location = new System.Drawing.Point(152, 465);
+            this.NUP_Hoofdgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Hoofdgerechten.Name = "NUP_Hoofdgerechten";
-            this.NUP_Hoofdgerechten.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Hoofdgerechten.Size = new System.Drawing.Size(78, 63);
             this.NUP_Hoofdgerechten.TabIndex = 1;
             this.NUP_Hoofdgerechten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -736,9 +770,10 @@ namespace UI
             this.columnHeader11,
             this.columnHeader12});
             this.LSV_Hoofdgerechten.HideSelection = false;
-            this.LSV_Hoofdgerechten.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Hoofdgerechten.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Hoofdgerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Hoofdgerechten.Name = "LSV_Hoofdgerechten";
-            this.LSV_Hoofdgerechten.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Hoofdgerechten.Size = new System.Drawing.Size(277, 332);
             this.LSV_Hoofdgerechten.TabIndex = 0;
             this.LSV_Hoofdgerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Hoofdgerechten.View = System.Windows.Forms.View.Details;
@@ -763,9 +798,10 @@ namespace UI
             this.PNL_Nagerechten.Controls.Add(this.LBL_Nagerechten);
             this.PNL_Nagerechten.Controls.Add(this.NUP_Nagerechten);
             this.PNL_Nagerechten.Controls.Add(this.LSV_Nagerechten);
-            this.PNL_Nagerechten.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Nagerechten.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Nagerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Nagerechten.Name = "PNL_Nagerechten";
-            this.PNL_Nagerechten.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Nagerechten.Size = new System.Drawing.Size(511, 612);
             this.PNL_Nagerechten.TabIndex = 5;
             // 
             // LSV_NagerechtTafel
@@ -774,9 +810,10 @@ namespace UI
             this.columnHeader53,
             this.columnHeader54});
             this.LSV_NagerechtTafel.HideSelection = false;
-            this.LSV_NagerechtTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_NagerechtTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_NagerechtTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_NagerechtTafel.Name = "LSV_NagerechtTafel";
-            this.LSV_NagerechtTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_NagerechtTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_NagerechtTafel.TabIndex = 7;
             this.LSV_NagerechtTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_NagerechtTafel.View = System.Windows.Forms.View.Details;
@@ -795,9 +832,10 @@ namespace UI
             this.BTN_NagerechtenPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_NagerechtenPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_NagerechtenPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_NagerechtenPlus.Location = new System.Drawing.Point(218, 347);
+            this.BTN_NagerechtenPlus.Location = new System.Drawing.Point(249, 463);
+            this.BTN_NagerechtenPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_NagerechtenPlus.Name = "BTN_NagerechtenPlus";
-            this.BTN_NagerechtenPlus.Size = new System.Drawing.Size(68, 50);
+            this.BTN_NagerechtenPlus.Size = new System.Drawing.Size(78, 67);
             this.BTN_NagerechtenPlus.TabIndex = 4;
             this.BTN_NagerechtenPlus.Text = "+";
             this.BTN_NagerechtenPlus.UseVisualStyleBackColor = false;
@@ -808,9 +846,9 @@ namespace UI
             this.LBL_Nagerechten.AutoSize = true;
             this.LBL_Nagerechten.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Nagerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Nagerechten.Location = new System.Drawing.Point(118, 38);
+            this.LBL_Nagerechten.Location = new System.Drawing.Point(135, 51);
             this.LBL_Nagerechten.Name = "LBL_Nagerechten";
-            this.LBL_Nagerechten.Size = new System.Drawing.Size(182, 37);
+            this.LBL_Nagerechten.Size = new System.Drawing.Size(224, 46);
             this.LBL_Nagerechten.TabIndex = 2;
             this.LBL_Nagerechten.Text = "Nagerechten";
             // 
@@ -818,9 +856,10 @@ namespace UI
             // 
             this.NUP_Nagerechten.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Nagerechten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Nagerechten.Location = new System.Drawing.Point(133, 349);
+            this.NUP_Nagerechten.Location = new System.Drawing.Point(152, 465);
+            this.NUP_Nagerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Nagerechten.Name = "NUP_Nagerechten";
-            this.NUP_Nagerechten.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Nagerechten.Size = new System.Drawing.Size(78, 63);
             this.NUP_Nagerechten.TabIndex = 1;
             this.NUP_Nagerechten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -831,9 +870,10 @@ namespace UI
             this.columnHeader14,
             this.columnHeader15});
             this.LSV_Nagerechten.HideSelection = false;
-            this.LSV_Nagerechten.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Nagerechten.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Nagerechten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Nagerechten.Name = "LSV_Nagerechten";
-            this.LSV_Nagerechten.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Nagerechten.Size = new System.Drawing.Size(277, 332);
             this.LSV_Nagerechten.TabIndex = 0;
             this.LSV_Nagerechten.UseCompatibleStateImageBehavior = false;
             this.LSV_Nagerechten.View = System.Windows.Forms.View.Details;
@@ -858,9 +898,10 @@ namespace UI
             this.PNL_Frisdrank.Controls.Add(this.LBL_Frisdrank);
             this.PNL_Frisdrank.Controls.Add(this.NUP_Frisdrank);
             this.PNL_Frisdrank.Controls.Add(this.LSV_Frisdrank);
-            this.PNL_Frisdrank.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Frisdrank.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Frisdrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Frisdrank.Name = "PNL_Frisdrank";
-            this.PNL_Frisdrank.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Frisdrank.Size = new System.Drawing.Size(511, 612);
             this.PNL_Frisdrank.TabIndex = 6;
             // 
             // LSV_FrisdrankTafel
@@ -869,9 +910,10 @@ namespace UI
             this.columnHeader50,
             this.columnHeader51});
             this.LSV_FrisdrankTafel.HideSelection = false;
-            this.LSV_FrisdrankTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_FrisdrankTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_FrisdrankTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_FrisdrankTafel.Name = "LSV_FrisdrankTafel";
-            this.LSV_FrisdrankTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_FrisdrankTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_FrisdrankTafel.TabIndex = 6;
             this.LSV_FrisdrankTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_FrisdrankTafel.View = System.Windows.Forms.View.Details;
@@ -890,9 +932,10 @@ namespace UI
             this.BTN_FrisdrankPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_FrisdrankPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_FrisdrankPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_FrisdrankPlus.Location = new System.Drawing.Point(211, 352);
+            this.BTN_FrisdrankPlus.Location = new System.Drawing.Point(241, 469);
+            this.BTN_FrisdrankPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_FrisdrankPlus.Name = "BTN_FrisdrankPlus";
-            this.BTN_FrisdrankPlus.Size = new System.Drawing.Size(68, 47);
+            this.BTN_FrisdrankPlus.Size = new System.Drawing.Size(78, 63);
             this.BTN_FrisdrankPlus.TabIndex = 4;
             this.BTN_FrisdrankPlus.Text = "+";
             this.BTN_FrisdrankPlus.UseVisualStyleBackColor = false;
@@ -903,9 +946,9 @@ namespace UI
             this.LBL_Frisdrank.AutoSize = true;
             this.LBL_Frisdrank.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Frisdrank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Frisdrank.Location = new System.Drawing.Point(137, 41);
+            this.LBL_Frisdrank.Location = new System.Drawing.Point(157, 55);
             this.LBL_Frisdrank.Name = "LBL_Frisdrank";
-            this.LBL_Frisdrank.Size = new System.Drawing.Size(136, 37);
+            this.LBL_Frisdrank.Size = new System.Drawing.Size(170, 46);
             this.LBL_Frisdrank.TabIndex = 2;
             this.LBL_Frisdrank.Text = "Frisdrank";
             // 
@@ -913,9 +956,10 @@ namespace UI
             // 
             this.NUP_Frisdrank.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Frisdrank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Frisdrank.Location = new System.Drawing.Point(133, 350);
+            this.NUP_Frisdrank.Location = new System.Drawing.Point(152, 467);
+            this.NUP_Frisdrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Frisdrank.Name = "NUP_Frisdrank";
-            this.NUP_Frisdrank.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Frisdrank.Size = new System.Drawing.Size(78, 63);
             this.NUP_Frisdrank.TabIndex = 1;
             this.NUP_Frisdrank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -926,9 +970,10 @@ namespace UI
             this.columnHeader17,
             this.columnHeader18});
             this.LSV_Frisdrank.HideSelection = false;
-            this.LSV_Frisdrank.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Frisdrank.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Frisdrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Frisdrank.Name = "LSV_Frisdrank";
-            this.LSV_Frisdrank.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Frisdrank.Size = new System.Drawing.Size(277, 332);
             this.LSV_Frisdrank.TabIndex = 0;
             this.LSV_Frisdrank.UseCompatibleStateImageBehavior = false;
             this.LSV_Frisdrank.View = System.Windows.Forms.View.Details;
@@ -953,9 +998,10 @@ namespace UI
             this.PNL_KoffieThee.Controls.Add(this.LBL_KoffieThee);
             this.PNL_KoffieThee.Controls.Add(this.NUP_KoffieThee);
             this.PNL_KoffieThee.Controls.Add(this.LSV_KoffieThee);
-            this.PNL_KoffieThee.Location = new System.Drawing.Point(1, 51);
+            this.PNL_KoffieThee.Location = new System.Drawing.Point(1, 68);
+            this.PNL_KoffieThee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_KoffieThee.Name = "PNL_KoffieThee";
-            this.PNL_KoffieThee.Size = new System.Drawing.Size(447, 459);
+            this.PNL_KoffieThee.Size = new System.Drawing.Size(511, 612);
             this.PNL_KoffieThee.TabIndex = 7;
             // 
             // LSV_KoffieTheeTafel
@@ -964,9 +1010,10 @@ namespace UI
             this.columnHeader47,
             this.columnHeader48});
             this.LSV_KoffieTheeTafel.HideSelection = false;
-            this.LSV_KoffieTheeTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_KoffieTheeTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_KoffieTheeTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_KoffieTheeTafel.Name = "LSV_KoffieTheeTafel";
-            this.LSV_KoffieTheeTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_KoffieTheeTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_KoffieTheeTafel.TabIndex = 6;
             this.LSV_KoffieTheeTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_KoffieTheeTafel.View = System.Windows.Forms.View.Details;
@@ -985,9 +1032,10 @@ namespace UI
             this.BTN_KoffieTheePlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_KoffieTheePlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_KoffieTheePlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_KoffieTheePlus.Location = new System.Drawing.Point(218, 349);
+            this.BTN_KoffieTheePlus.Location = new System.Drawing.Point(249, 465);
+            this.BTN_KoffieTheePlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_KoffieTheePlus.Name = "BTN_KoffieTheePlus";
-            this.BTN_KoffieTheePlus.Size = new System.Drawing.Size(68, 47);
+            this.BTN_KoffieTheePlus.Size = new System.Drawing.Size(78, 63);
             this.BTN_KoffieTheePlus.TabIndex = 4;
             this.BTN_KoffieTheePlus.Text = "+";
             this.BTN_KoffieTheePlus.UseVisualStyleBackColor = false;
@@ -998,9 +1046,9 @@ namespace UI
             this.LBL_KoffieThee.AutoSize = true;
             this.LBL_KoffieThee.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_KoffieThee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_KoffieThee.Location = new System.Drawing.Point(108, 38);
+            this.LBL_KoffieThee.Location = new System.Drawing.Point(123, 51);
             this.LBL_KoffieThee.Name = "LBL_KoffieThee";
-            this.LBL_KoffieThee.Size = new System.Drawing.Size(202, 37);
+            this.LBL_KoffieThee.Size = new System.Drawing.Size(249, 46);
             this.LBL_KoffieThee.TabIndex = 2;
             this.LBL_KoffieThee.Text = "Koffie en Thee";
             // 
@@ -1008,9 +1056,10 @@ namespace UI
             // 
             this.NUP_KoffieThee.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_KoffieThee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_KoffieThee.Location = new System.Drawing.Point(144, 349);
+            this.NUP_KoffieThee.Location = new System.Drawing.Point(165, 465);
+            this.NUP_KoffieThee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_KoffieThee.Name = "NUP_KoffieThee";
-            this.NUP_KoffieThee.Size = new System.Drawing.Size(68, 52);
+            this.NUP_KoffieThee.Size = new System.Drawing.Size(78, 63);
             this.NUP_KoffieThee.TabIndex = 1;
             this.NUP_KoffieThee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1021,9 +1070,10 @@ namespace UI
             this.columnHeader20,
             this.columnHeader21});
             this.LSV_KoffieThee.HideSelection = false;
-            this.LSV_KoffieThee.Location = new System.Drawing.Point(11, 85);
+            this.LSV_KoffieThee.Location = new System.Drawing.Point(13, 113);
+            this.LSV_KoffieThee.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_KoffieThee.Name = "LSV_KoffieThee";
-            this.LSV_KoffieThee.Size = new System.Drawing.Size(243, 250);
+            this.LSV_KoffieThee.Size = new System.Drawing.Size(277, 332);
             this.LSV_KoffieThee.TabIndex = 0;
             this.LSV_KoffieThee.UseCompatibleStateImageBehavior = false;
             this.LSV_KoffieThee.View = System.Windows.Forms.View.Details;
@@ -1048,9 +1098,10 @@ namespace UI
             this.PNL_Bier.Controls.Add(this.LSV_Bier);
             this.PNL_Bier.Controls.Add(this.LBL_Bier);
             this.PNL_Bier.Controls.Add(this.NUP_Bier);
-            this.PNL_Bier.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Bier.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Bier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Bier.Name = "PNL_Bier";
-            this.PNL_Bier.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Bier.Size = new System.Drawing.Size(511, 612);
             this.PNL_Bier.TabIndex = 8;
             // 
             // LSV_BierTafel
@@ -1059,9 +1110,10 @@ namespace UI
             this.columnHeader44,
             this.columnHeader45});
             this.LSV_BierTafel.HideSelection = false;
-            this.LSV_BierTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_BierTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_BierTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_BierTafel.Name = "LSV_BierTafel";
-            this.LSV_BierTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_BierTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_BierTafel.TabIndex = 6;
             this.LSV_BierTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_BierTafel.View = System.Windows.Forms.View.Details;
@@ -1080,9 +1132,10 @@ namespace UI
             this.BTN_BierPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_BierPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_BierPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_BierPlus.Location = new System.Drawing.Point(207, 350);
+            this.BTN_BierPlus.Location = new System.Drawing.Point(237, 467);
+            this.BTN_BierPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_BierPlus.Name = "BTN_BierPlus";
-            this.BTN_BierPlus.Size = new System.Drawing.Size(68, 50);
+            this.BTN_BierPlus.Size = new System.Drawing.Size(78, 67);
             this.BTN_BierPlus.TabIndex = 4;
             this.BTN_BierPlus.Text = "+";
             this.BTN_BierPlus.UseVisualStyleBackColor = false;
@@ -1095,9 +1148,10 @@ namespace UI
             this.columnHeader23,
             this.columnHeader24});
             this.LSV_Bier.HideSelection = false;
-            this.LSV_Bier.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Bier.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Bier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Bier.Name = "LSV_Bier";
-            this.LSV_Bier.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Bier.Size = new System.Drawing.Size(277, 332);
             this.LSV_Bier.TabIndex = 0;
             this.LSV_Bier.UseCompatibleStateImageBehavior = false;
             this.LSV_Bier.View = System.Windows.Forms.View.Details;
@@ -1119,9 +1173,9 @@ namespace UI
             this.LBL_Bier.AutoSize = true;
             this.LBL_Bier.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Bier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Bier.Location = new System.Drawing.Point(172, 41);
+            this.LBL_Bier.Location = new System.Drawing.Point(197, 55);
             this.LBL_Bier.Name = "LBL_Bier";
-            this.LBL_Bier.Size = new System.Drawing.Size(68, 37);
+            this.LBL_Bier.Size = new System.Drawing.Size(84, 46);
             this.LBL_Bier.TabIndex = 2;
             this.LBL_Bier.Text = "Bier";
             // 
@@ -1129,9 +1183,10 @@ namespace UI
             // 
             this.NUP_Bier.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Bier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Bier.Location = new System.Drawing.Point(133, 350);
+            this.NUP_Bier.Location = new System.Drawing.Point(152, 467);
+            this.NUP_Bier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Bier.Name = "NUP_Bier";
-            this.NUP_Bier.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Bier.Size = new System.Drawing.Size(78, 63);
             this.NUP_Bier.TabIndex = 1;
             this.NUP_Bier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1143,9 +1198,10 @@ namespace UI
             this.PNL_Wijn.Controls.Add(this.LBL_Wijn);
             this.PNL_Wijn.Controls.Add(this.NUP_Wijn);
             this.PNL_Wijn.Controls.Add(this.LSV_Wijn);
-            this.PNL_Wijn.Location = new System.Drawing.Point(1, 51);
+            this.PNL_Wijn.Location = new System.Drawing.Point(1, 68);
+            this.PNL_Wijn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_Wijn.Name = "PNL_Wijn";
-            this.PNL_Wijn.Size = new System.Drawing.Size(447, 459);
+            this.PNL_Wijn.Size = new System.Drawing.Size(511, 612);
             this.PNL_Wijn.TabIndex = 9;
             // 
             // LSV_WijnTafel
@@ -1154,9 +1210,10 @@ namespace UI
             this.columnHeader41,
             this.columnHeader42});
             this.LSV_WijnTafel.HideSelection = false;
-            this.LSV_WijnTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_WijnTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_WijnTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_WijnTafel.Name = "LSV_WijnTafel";
-            this.LSV_WijnTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_WijnTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_WijnTafel.TabIndex = 6;
             this.LSV_WijnTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_WijnTafel.View = System.Windows.Forms.View.Details;
@@ -1175,9 +1232,10 @@ namespace UI
             this.BTN_WijnPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_WijnPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_WijnPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_WijnPlus.Location = new System.Drawing.Point(206, 350);
+            this.BTN_WijnPlus.Location = new System.Drawing.Point(235, 467);
+            this.BTN_WijnPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_WijnPlus.Name = "BTN_WijnPlus";
-            this.BTN_WijnPlus.Size = new System.Drawing.Size(68, 49);
+            this.BTN_WijnPlus.Size = new System.Drawing.Size(78, 65);
             this.BTN_WijnPlus.TabIndex = 3;
             this.BTN_WijnPlus.Text = "+";
             this.BTN_WijnPlus.UseVisualStyleBackColor = false;
@@ -1188,9 +1246,9 @@ namespace UI
             this.LBL_Wijn.AutoSize = true;
             this.LBL_Wijn.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_Wijn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_Wijn.Location = new System.Drawing.Point(162, 38);
+            this.LBL_Wijn.Location = new System.Drawing.Point(185, 51);
             this.LBL_Wijn.Name = "LBL_Wijn";
-            this.LBL_Wijn.Size = new System.Drawing.Size(76, 37);
+            this.LBL_Wijn.Size = new System.Drawing.Size(95, 46);
             this.LBL_Wijn.TabIndex = 2;
             this.LBL_Wijn.Text = "Wijn";
             // 
@@ -1198,9 +1256,10 @@ namespace UI
             // 
             this.NUP_Wijn.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_Wijn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_Wijn.Location = new System.Drawing.Point(132, 352);
+            this.NUP_Wijn.Location = new System.Drawing.Point(151, 469);
+            this.NUP_Wijn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_Wijn.Name = "NUP_Wijn";
-            this.NUP_Wijn.Size = new System.Drawing.Size(68, 52);
+            this.NUP_Wijn.Size = new System.Drawing.Size(78, 63);
             this.NUP_Wijn.TabIndex = 1;
             this.NUP_Wijn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1211,9 +1270,10 @@ namespace UI
             this.columnHeader26,
             this.columnHeader27});
             this.LSV_Wijn.HideSelection = false;
-            this.LSV_Wijn.Location = new System.Drawing.Point(11, 85);
+            this.LSV_Wijn.Location = new System.Drawing.Point(13, 113);
+            this.LSV_Wijn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_Wijn.Name = "LSV_Wijn";
-            this.LSV_Wijn.Size = new System.Drawing.Size(243, 250);
+            this.LSV_Wijn.Size = new System.Drawing.Size(277, 332);
             this.LSV_Wijn.TabIndex = 0;
             this.LSV_Wijn.UseCompatibleStateImageBehavior = false;
             this.LSV_Wijn.View = System.Windows.Forms.View.Details;
@@ -1238,9 +1298,10 @@ namespace UI
             this.PNL_GedeDrank.Controls.Add(this.LBL_GedeDrank);
             this.PNL_GedeDrank.Controls.Add(this.NUP_GedeDrank);
             this.PNL_GedeDrank.Controls.Add(this.LSV_GedeDrank);
-            this.PNL_GedeDrank.Location = new System.Drawing.Point(1, 51);
+            this.PNL_GedeDrank.Location = new System.Drawing.Point(1, 68);
+            this.PNL_GedeDrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_GedeDrank.Name = "PNL_GedeDrank";
-            this.PNL_GedeDrank.Size = new System.Drawing.Size(447, 459);
+            this.PNL_GedeDrank.Size = new System.Drawing.Size(511, 612);
             this.PNL_GedeDrank.TabIndex = 10;
             // 
             // LSV_GedeTafel
@@ -1249,9 +1310,10 @@ namespace UI
             this.columnHeader38,
             this.columnHeader39});
             this.LSV_GedeTafel.HideSelection = false;
-            this.LSV_GedeTafel.Location = new System.Drawing.Point(299, 85);
+            this.LSV_GedeTafel.Location = new System.Drawing.Point(342, 113);
+            this.LSV_GedeTafel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_GedeTafel.Name = "LSV_GedeTafel";
-            this.LSV_GedeTafel.Size = new System.Drawing.Size(117, 250);
+            this.LSV_GedeTafel.Size = new System.Drawing.Size(133, 332);
             this.LSV_GedeTafel.TabIndex = 5;
             this.LSV_GedeTafel.UseCompatibleStateImageBehavior = false;
             this.LSV_GedeTafel.View = System.Windows.Forms.View.Details;
@@ -1270,9 +1332,10 @@ namespace UI
             this.BTN_GedeDrankPlus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BTN_GedeDrankPlus.Cursor = System.Windows.Forms.Cursors.No;
             this.BTN_GedeDrankPlus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BTN_GedeDrankPlus.Location = new System.Drawing.Point(218, 352);
+            this.BTN_GedeDrankPlus.Location = new System.Drawing.Point(249, 469);
+            this.BTN_GedeDrankPlus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_GedeDrankPlus.Name = "BTN_GedeDrankPlus";
-            this.BTN_GedeDrankPlus.Size = new System.Drawing.Size(68, 49);
+            this.BTN_GedeDrankPlus.Size = new System.Drawing.Size(78, 65);
             this.BTN_GedeDrankPlus.TabIndex = 4;
             this.BTN_GedeDrankPlus.Text = "+";
             this.BTN_GedeDrankPlus.UseVisualStyleBackColor = false;
@@ -1283,9 +1346,9 @@ namespace UI
             this.LBL_GedeDrank.AutoSize = true;
             this.LBL_GedeDrank.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_GedeDrank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_GedeDrank.Location = new System.Drawing.Point(56, 38);
+            this.LBL_GedeDrank.Location = new System.Drawing.Point(64, 51);
             this.LBL_GedeDrank.Name = "LBL_GedeDrank";
-            this.LBL_GedeDrank.Size = new System.Drawing.Size(307, 37);
+            this.LBL_GedeDrank.Size = new System.Drawing.Size(379, 46);
             this.LBL_GedeDrank.TabIndex = 2;
             this.LBL_GedeDrank.Text = "Gedestileerde dranken";
             this.LBL_GedeDrank.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1294,9 +1357,10 @@ namespace UI
             // 
             this.NUP_GedeDrank.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_GedeDrank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_GedeDrank.Location = new System.Drawing.Point(144, 352);
+            this.NUP_GedeDrank.Location = new System.Drawing.Point(165, 469);
+            this.NUP_GedeDrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_GedeDrank.Name = "NUP_GedeDrank";
-            this.NUP_GedeDrank.Size = new System.Drawing.Size(68, 52);
+            this.NUP_GedeDrank.Size = new System.Drawing.Size(78, 63);
             this.NUP_GedeDrank.TabIndex = 1;
             this.NUP_GedeDrank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1306,9 +1370,10 @@ namespace UI
             this.columnHeader28,
             this.columnHeader29});
             this.LSV_GedeDrank.HideSelection = false;
-            this.LSV_GedeDrank.Location = new System.Drawing.Point(11, 85);
+            this.LSV_GedeDrank.Location = new System.Drawing.Point(13, 113);
+            this.LSV_GedeDrank.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_GedeDrank.Name = "LSV_GedeDrank";
-            this.LSV_GedeDrank.Size = new System.Drawing.Size(243, 250);
+            this.LSV_GedeDrank.Size = new System.Drawing.Size(277, 332);
             this.LSV_GedeDrank.TabIndex = 0;
             this.LSV_GedeDrank.UseCompatibleStateImageBehavior = false;
             this.LSV_GedeDrank.View = System.Windows.Forms.View.Details;
@@ -1328,9 +1393,10 @@ namespace UI
             // BTN_Terug
             // 
             this.BTN_Terug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Terug.Location = new System.Drawing.Point(44, 516);
+            this.BTN_Terug.Location = new System.Drawing.Point(50, 688);
+            this.BTN_Terug.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Terug.Name = "BTN_Terug";
-            this.BTN_Terug.Size = new System.Drawing.Size(96, 42);
+            this.BTN_Terug.Size = new System.Drawing.Size(110, 56);
             this.BTN_Terug.TabIndex = 11;
             this.BTN_Terug.Text = "Terug";
             this.BTN_Terug.UseVisualStyleBackColor = false;
@@ -1339,9 +1405,10 @@ namespace UI
             // BTN_Bevestig
             // 
             this.BTN_Bevestig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Bevestig.Location = new System.Drawing.Point(172, 516);
+            this.BTN_Bevestig.Location = new System.Drawing.Point(197, 688);
+            this.BTN_Bevestig.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Bevestig.Name = "BTN_Bevestig";
-            this.BTN_Bevestig.Size = new System.Drawing.Size(96, 42);
+            this.BTN_Bevestig.Size = new System.Drawing.Size(110, 56);
             this.BTN_Bevestig.TabIndex = 12;
             this.BTN_Bevestig.Text = "Bevestig";
             this.BTN_Bevestig.UseVisualStyleBackColor = false;
@@ -1350,9 +1417,10 @@ namespace UI
             // BTN_Loguit
             // 
             this.BTN_Loguit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Loguit.Location = new System.Drawing.Point(300, 516);
+            this.BTN_Loguit.Location = new System.Drawing.Point(343, 688);
+            this.BTN_Loguit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Loguit.Name = "BTN_Loguit";
-            this.BTN_Loguit.Size = new System.Drawing.Size(96, 42);
+            this.BTN_Loguit.Size = new System.Drawing.Size(110, 56);
             this.BTN_Loguit.TabIndex = 13;
             this.BTN_Loguit.Text = "Loguit";
             this.BTN_Loguit.UseVisualStyleBackColor = false;
@@ -1370,18 +1438,19 @@ namespace UI
             this.PNL_BevestigBestelling.Controls.Add(this.NUP_BestellingOverzicht);
             this.PNL_BevestigBestelling.Controls.Add(this.lbl_bestellingoverzicht);
             this.PNL_BevestigBestelling.Controls.Add(this.LSV_BestellingOverzicht);
-            this.PNL_BevestigBestelling.Location = new System.Drawing.Point(-2, 51);
+            this.PNL_BevestigBestelling.Location = new System.Drawing.Point(-2, 68);
+            this.PNL_BevestigBestelling.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_BevestigBestelling.Name = "PNL_BevestigBestelling";
-            this.PNL_BevestigBestelling.Size = new System.Drawing.Size(447, 459);
+            this.PNL_BevestigBestelling.Size = new System.Drawing.Size(511, 612);
             this.PNL_BevestigBestelling.TabIndex = 14;
-            this.PNL_BevestigBestelling.Paint += new System.Windows.Forms.PaintEventHandler(this.PNL_BevestigBestelling_Paint);
             // 
             // BTN_NieuweBestelling
             // 
             this.BTN_NieuweBestelling.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_NieuweBestelling.Location = new System.Drawing.Point(295, 401);
+            this.BTN_NieuweBestelling.Location = new System.Drawing.Point(337, 535);
+            this.BTN_NieuweBestelling.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_NieuweBestelling.Name = "BTN_NieuweBestelling";
-            this.BTN_NieuweBestelling.Size = new System.Drawing.Size(103, 50);
+            this.BTN_NieuweBestelling.Size = new System.Drawing.Size(118, 67);
             this.BTN_NieuweBestelling.TabIndex = 19;
             this.BTN_NieuweBestelling.Text = "Nieuwe bestelling";
             this.BTN_NieuweBestelling.UseVisualStyleBackColor = false;
@@ -1390,9 +1459,10 @@ namespace UI
             // BTN_BestelItemWijzigen
             // 
             this.BTN_BestelItemWijzigen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestelItemWijzigen.Location = new System.Drawing.Point(14, 403);
+            this.BTN_BestelItemWijzigen.Location = new System.Drawing.Point(16, 537);
+            this.BTN_BestelItemWijzigen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_BestelItemWijzigen.Name = "BTN_BestelItemWijzigen";
-            this.BTN_BestelItemWijzigen.Size = new System.Drawing.Size(120, 50);
+            this.BTN_BestelItemWijzigen.Size = new System.Drawing.Size(137, 67);
             this.BTN_BestelItemWijzigen.TabIndex = 18;
             this.BTN_BestelItemWijzigen.Text = "Aantal wijzigen";
             this.BTN_BestelItemWijzigen.UseVisualStyleBackColor = false;
@@ -1401,9 +1471,10 @@ namespace UI
             // BTN_BestelItemVerwijderen
             // 
             this.BTN_BestelItemVerwijderen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestelItemVerwijderen.Location = new System.Drawing.Point(14, 350);
+            this.BTN_BestelItemVerwijderen.Location = new System.Drawing.Point(16, 467);
+            this.BTN_BestelItemVerwijderen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_BestelItemVerwijderen.Name = "BTN_BestelItemVerwijderen";
-            this.BTN_BestelItemVerwijderen.Size = new System.Drawing.Size(120, 50);
+            this.BTN_BestelItemVerwijderen.Size = new System.Drawing.Size(137, 67);
             this.BTN_BestelItemVerwijderen.TabIndex = 17;
             this.BTN_BestelItemVerwijderen.Text = "Item verwijderen";
             this.BTN_BestelItemVerwijderen.UseVisualStyleBackColor = false;
@@ -1412,26 +1483,26 @@ namespace UI
             // LBL_Opmerking
             // 
             this.LBL_Opmerking.AutoSize = true;
-            this.LBL_Opmerking.Location = new System.Drawing.Point(14, 271);
+            this.LBL_Opmerking.Location = new System.Drawing.Point(16, 361);
             this.LBL_Opmerking.Name = "LBL_Opmerking";
-            this.LBL_Opmerking.Size = new System.Drawing.Size(70, 15);
+            this.LBL_Opmerking.Size = new System.Drawing.Size(86, 20);
             this.LBL_Opmerking.TabIndex = 16;
             this.LBL_Opmerking.Text = "Opmerking:";
             // 
             // TXTBOX_Opmerking
             // 
-            this.TXTBOX_Opmerking.Location = new System.Drawing.Point(94, 268);
-            this.TXTBOX_Opmerking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TXTBOX_Opmerking.Location = new System.Drawing.Point(107, 357);
             this.TXTBOX_Opmerking.Name = "TXTBOX_Opmerking";
-            this.TXTBOX_Opmerking.Size = new System.Drawing.Size(336, 23);
+            this.TXTBOX_Opmerking.Size = new System.Drawing.Size(383, 27);
             this.TXTBOX_Opmerking.TabIndex = 15;
             // 
             // BTN_BestellingBevestigen
             // 
             this.BTN_BestellingBevestigen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestellingBevestigen.Location = new System.Drawing.Point(14, 298);
+            this.BTN_BestellingBevestigen.Location = new System.Drawing.Point(16, 397);
+            this.BTN_BestellingBevestigen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_BestellingBevestigen.Name = "BTN_BestellingBevestigen";
-            this.BTN_BestellingBevestigen.Size = new System.Drawing.Size(120, 50);
+            this.BTN_BestellingBevestigen.Size = new System.Drawing.Size(137, 67);
             this.BTN_BestellingBevestigen.TabIndex = 13;
             this.BTN_BestellingBevestigen.Text = "Opmerking toevoegen";
             this.BTN_BestellingBevestigen.UseVisualStyleBackColor = false;
@@ -1441,9 +1512,10 @@ namespace UI
             // 
             this.NUP_BestellingOverzicht.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NUP_BestellingOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.NUP_BestellingOverzicht.Location = new System.Drawing.Point(140, 401);
+            this.NUP_BestellingOverzicht.Location = new System.Drawing.Point(160, 535);
+            this.NUP_BestellingOverzicht.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NUP_BestellingOverzicht.Name = "NUP_BestellingOverzicht";
-            this.NUP_BestellingOverzicht.Size = new System.Drawing.Size(68, 52);
+            this.NUP_BestellingOverzicht.Size = new System.Drawing.Size(78, 63);
             this.NUP_BestellingOverzicht.TabIndex = 3;
             this.NUP_BestellingOverzicht.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1452,9 +1524,9 @@ namespace UI
             this.lbl_bestellingoverzicht.AutoSize = true;
             this.lbl_bestellingoverzicht.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_bestellingoverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.lbl_bestellingoverzicht.Location = new System.Drawing.Point(76, 30);
+            this.lbl_bestellingoverzicht.Location = new System.Drawing.Point(87, 40);
             this.lbl_bestellingoverzicht.Name = "lbl_bestellingoverzicht";
-            this.lbl_bestellingoverzicht.Size = new System.Drawing.Size(271, 37);
+            this.lbl_bestellingoverzicht.Size = new System.Drawing.Size(334, 46);
             this.lbl_bestellingoverzicht.TabIndex = 2;
             this.lbl_bestellingoverzicht.Text = "Bestelling overzicht";
             // 
@@ -1466,9 +1538,10 @@ namespace UI
             this.columnHeader33,
             this.columnHeader34});
             this.LSV_BestellingOverzicht.HideSelection = false;
-            this.LSV_BestellingOverzicht.Location = new System.Drawing.Point(11, 85);
+            this.LSV_BestellingOverzicht.Location = new System.Drawing.Point(13, 113);
+            this.LSV_BestellingOverzicht.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_BestellingOverzicht.Name = "LSV_BestellingOverzicht";
-            this.LSV_BestellingOverzicht.Size = new System.Drawing.Size(419, 178);
+            this.LSV_BestellingOverzicht.Size = new System.Drawing.Size(478, 236);
             this.LSV_BestellingOverzicht.TabIndex = 0;
             this.LSV_BestellingOverzicht.UseCompatibleStateImageBehavior = false;
             this.LSV_BestellingOverzicht.View = System.Windows.Forms.View.Details;
@@ -1495,9 +1568,10 @@ namespace UI
             this.PNL_BestellingMaken.Controls.Add(this.LBL_BestellingAanmaken);
             this.PNL_BestellingMaken.Controls.Add(this.LSV_BestellingAanmaken);
             this.PNL_BestellingMaken.Controls.Add(this.BTN_BestellingAanmaken);
-            this.PNL_BestellingMaken.Location = new System.Drawing.Point(1, 48);
+            this.PNL_BestellingMaken.Location = new System.Drawing.Point(1, 64);
+            this.PNL_BestellingMaken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PNL_BestellingMaken.Name = "PNL_BestellingMaken";
-            this.PNL_BestellingMaken.Size = new System.Drawing.Size(447, 459);
+            this.PNL_BestellingMaken.Size = new System.Drawing.Size(511, 612);
             this.PNL_BestellingMaken.TabIndex = 15;
             // 
             // LBL_BestellingAanmaken
@@ -1505,9 +1579,9 @@ namespace UI
             this.LBL_BestellingAanmaken.AutoSize = true;
             this.LBL_BestellingAanmaken.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LBL_BestellingAanmaken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.LBL_BestellingAanmaken.Location = new System.Drawing.Point(73, 17);
+            this.LBL_BestellingAanmaken.Location = new System.Drawing.Point(83, 23);
             this.LBL_BestellingAanmaken.Name = "LBL_BestellingAanmaken";
-            this.LBL_BestellingAanmaken.Size = new System.Drawing.Size(283, 37);
+            this.LBL_BestellingAanmaken.Size = new System.Drawing.Size(351, 46);
             this.LBL_BestellingAanmaken.TabIndex = 3;
             this.LBL_BestellingAanmaken.Text = "Bestelling aanmaken";
             // 
@@ -1519,9 +1593,10 @@ namespace UI
             this.columnHeader37});
             this.LSV_BestellingAanmaken.FullRowSelect = true;
             this.LSV_BestellingAanmaken.HideSelection = false;
-            this.LSV_BestellingAanmaken.Location = new System.Drawing.Point(38, 73);
+            this.LSV_BestellingAanmaken.Location = new System.Drawing.Point(43, 97);
+            this.LSV_BestellingAanmaken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LSV_BestellingAanmaken.Name = "LSV_BestellingAanmaken";
-            this.LSV_BestellingAanmaken.Size = new System.Drawing.Size(352, 231);
+            this.LSV_BestellingAanmaken.Size = new System.Drawing.Size(402, 307);
             this.LSV_BestellingAanmaken.TabIndex = 1;
             this.LSV_BestellingAanmaken.UseCompatibleStateImageBehavior = false;
             this.LSV_BestellingAanmaken.View = System.Windows.Forms.View.Details;
@@ -1541,9 +1616,10 @@ namespace UI
             // BTN_BestellingAanmaken
             // 
             this.BTN_BestellingAanmaken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_BestellingAanmaken.Location = new System.Drawing.Point(95, 331);
+            this.BTN_BestellingAanmaken.Location = new System.Drawing.Point(109, 441);
+            this.BTN_BestellingAanmaken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_BestellingAanmaken.Name = "BTN_BestellingAanmaken";
-            this.BTN_BestellingAanmaken.Size = new System.Drawing.Size(237, 71);
+            this.BTN_BestellingAanmaken.Size = new System.Drawing.Size(271, 95);
             this.BTN_BestellingAanmaken.TabIndex = 0;
             this.BTN_BestellingAanmaken.Text = "Bestelling aanmaken";
             this.BTN_BestellingAanmaken.UseVisualStyleBackColor = false;
@@ -1552,9 +1628,10 @@ namespace UI
             // BTN_Hoofdmenu
             // 
             this.BTN_Hoofdmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
-            this.BTN_Hoofdmenu.Location = new System.Drawing.Point(335, 3);
+            this.BTN_Hoofdmenu.Location = new System.Drawing.Point(383, 4);
+            this.BTN_Hoofdmenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Hoofdmenu.Name = "BTN_Hoofdmenu";
-            this.BTN_Hoofdmenu.Size = new System.Drawing.Size(96, 42);
+            this.BTN_Hoofdmenu.Size = new System.Drawing.Size(110, 56);
             this.BTN_Hoofdmenu.TabIndex = 16;
             this.BTN_Hoofdmenu.Text = "Hoofdmenu";
             this.BTN_Hoofdmenu.UseVisualStyleBackColor = false;
@@ -1562,13 +1639,13 @@ namespace UI
             // 
             // MenuBediening
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.ClientSize = new System.Drawing.Size(443, 561);
+            this.ClientSize = new System.Drawing.Size(506, 748);
+            this.Controls.Add(this.PNL_Hardlopers);
             this.Controls.Add(this.BTN_Hoofdmenu);
             this.Controls.Add(this.PNL_BevestigBestelling);
-            this.Controls.Add(this.PNL_Hardlopers);
             this.Controls.Add(this.PNL_Voorgerechten);
             this.Controls.Add(this.PNL_Wijn);
             this.Controls.Add(this.PNL_BestellingMaken);
@@ -1585,6 +1662,7 @@ namespace UI
             this.Controls.Add(this.PNL_DrankenMenu);
             this.Controls.Add(this.PNL_GerechtenMenu);
             this.Controls.Add(this.PNL_MenuStart);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MenuBediening";
             this.Text = "MenuBediening";
             this.Load += new System.EventHandler(this.MenuBediening_Load);

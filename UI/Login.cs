@@ -33,7 +33,6 @@ namespace UI
             Bestelling bestelling = new Bestelling();
             int id = int.Parse(txtLoginID.Text);
             int wachtwoord = int.Parse(txtLoginWachtwoord.Text); // parse input to integer values
-
             if (_servicelogin.CredentialsLegitimate(id, wachtwoord) == true) // check credentials, when true pass login screen to new main menu, clear fields and hide loginscreen
             {
                 new HoofdMenu(this, _serviceMedewerker.GetMedewerker(id)).Show();

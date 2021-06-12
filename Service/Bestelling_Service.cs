@@ -15,6 +15,10 @@ namespace Service_Chapoo
             return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
         }
 
+        public void UpdateSubtotaal(Bestelling bestelling)
+        {
+            _bestelling_DAO.Db_Update_Subtotaal(bestelling);
+        }
         //Zet de status van de bestelling met het gegeven bestellingID op 'afgerond'
 
         public void UpdateOrderStatusAfgerond(int BestellingID)

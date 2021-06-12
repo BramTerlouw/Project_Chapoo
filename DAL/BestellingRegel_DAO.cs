@@ -82,7 +82,7 @@ namespace DAL_Chapoo
         {
             string query = "SELECT BestellingID, RegelNR, MenuItemID, Aantal FROM BestellingRegel ORDER BY BestellingID DESC, RegelNR ASC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }
         public void Db_VoegOpmerkingToe(BestellingRegel bestellingRegel)
         {
@@ -116,6 +116,24 @@ namespace DAL_Chapoo
                 {
                     bestelling.Opmerking = (string)dr["Opmerking"];
                 }
+
+                bestellingLijst.Add(bestelling);
+            }
+            return bestellingLijst;
+        }
+        private List<BestellingRegel> ReadTable(DataTable dataTable)
+        {
+            List<BestellingRegel> bestellingLijst = new List<BestellingRegel>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                BestellingRegel bestelling = new BestellingRegel()
+                {
+                    BestellingID = (int)dr["BestellingID"],
+                    RegelNR = (int)dr["RegelNR"],
+                    MenuItemID = (int)dr["MenuItemID"],
+                    Aantal = (int)dr["Aantal"],
+                };
 
                 bestellingLijst.Add(bestelling);
             }
