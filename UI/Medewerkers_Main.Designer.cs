@@ -58,6 +58,8 @@ namespace UI
             this.txtToevoegenWW = new System.Windows.Forms.TextBox();
             this.txtToevoegenNaam = new System.Windows.Forms.TextBox();
             this.pnlMedewerkerAanpassen = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.dtpMedewerkerAanpassen = new System.Windows.Forms.DateTimePicker();
             this.btnMedewerkerAanpassingDB = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -88,14 +90,15 @@ namespace UI
             this.cmbSelectMedewerkerVerwijderen = new System.Windows.Forms.ComboBox();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
             this.btnRefreshMedewerkers = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkers)).BeginInit();
             this.pnlMedewerkerToevoegen.SuspendLayout();
             this.pnlMedewerkerAanpassen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerAanpassen)).BeginInit();
             this.pnlMedewerkerVerwijderen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerVerwijderen)).BeginInit();
+            this.pnlHeaderMedewerkers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -372,6 +375,26 @@ namespace UI
             this.pnlMedewerkerAanpassen.Size = new System.Drawing.Size(775, 312);
             this.pnlMedewerkerAanpassen.TabIndex = 15;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(253, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(185, 15);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Bediende, Chef, Barman, Eigenaar";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(253, 212);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 15);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Male/Female";
+            // 
             // dtpMedewerkerAanpassen
             // 
             this.dtpMedewerkerAanpassen.Location = new System.Drawing.Point(31, 221);
@@ -643,6 +666,7 @@ namespace UI
             // pnlHeaderMedewerkers
             // 
             this.pnlHeaderMedewerkers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.pnlHeaderMedewerkers.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.pnlHeaderMedewerkers.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderMedewerkers.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
@@ -661,25 +685,16 @@ namespace UI
             this.btnRefreshMedewerkers.UseVisualStyleBackColor = false;
             this.btnRefreshMedewerkers.Click += new System.EventHandler(this.btnRefreshMedewerkers_Click);
             // 
-            // label8
+            // pcbx_LogoChapooAfrekenenMain
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(253, 212);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 15);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Male/Female";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(253, 229);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(185, 15);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Bediende, Chef, Barman, Eigenaar";
+            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(16, 12);
+            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(137, 73);
+            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 6;
+            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
             // Medewerkers_Main
             // 
@@ -709,6 +724,8 @@ namespace UI
             this.pnlMedewerkerVerwijderen.ResumeLayout(false);
             this.pnlMedewerkerVerwijderen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedewerkerVerwijderen)).EndInit();
+            this.pnlHeaderMedewerkers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,5 +791,6 @@ namespace UI
         private System.Windows.Forms.Button btnRefreshMedewerkers;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
     }
 }

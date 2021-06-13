@@ -121,7 +121,7 @@ namespace UI
             this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(12, 2);
             this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
-            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(100, 58);
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(83, 49);
             this.pcbx_LogoChapooAfrekenenMain.TabIndex = 3;
             this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 

@@ -52,7 +52,7 @@ namespace UI
             this.pcbx_LogoChapooTafelsMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbx_LogoChapooTafelsMain.Location = new System.Drawing.Point(12, 2);
             this.pcbx_LogoChapooTafelsMain.Name = "pcbx_LogoChapooTafelsMain";
-            this.pcbx_LogoChapooTafelsMain.Size = new System.Drawing.Size(100, 58);
+            this.pcbx_LogoChapooTafelsMain.Size = new System.Drawing.Size(83, 49);
             this.pcbx_LogoChapooTafelsMain.TabIndex = 4;
             this.pcbx_LogoChapooTafelsMain.TabStop = false;
             // 

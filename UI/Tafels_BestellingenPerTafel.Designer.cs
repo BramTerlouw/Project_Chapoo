@@ -51,7 +51,7 @@ namespace UI
             this.pcbx_LogoChapooTafelsMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbx_LogoChapooTafelsMain.Location = new System.Drawing.Point(12, 2);
             this.pcbx_LogoChapooTafelsMain.Name = "pcbx_LogoChapooTafelsMain";
-            this.pcbx_LogoChapooTafelsMain.Size = new System.Drawing.Size(100, 58);
+            this.pcbx_LogoChapooTafelsMain.Size = new System.Drawing.Size(83, 49);
             this.pcbx_LogoChapooTafelsMain.TabIndex = 5;
             this.pcbx_LogoChapooTafelsMain.TabStop = false;
             // 
@@ -61,7 +61,7 @@ namespace UI
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lst_BestellingPerTafel);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_GekozenTafel);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_BestellingPerTafelTitle);
-            this.pnl_AfrekenenPerTafel.Location = new System.Drawing.Point(-2, 54);
+            this.pnl_AfrekenenPerTafel.Location = new System.Drawing.Point(0, 57);
             this.pnl_AfrekenenPerTafel.Name = "pnl_AfrekenenPerTafel";
             this.pnl_AfrekenenPerTafel.Size = new System.Drawing.Size(498, 465);
             this.pnl_AfrekenenPerTafel.TabIndex = 6;

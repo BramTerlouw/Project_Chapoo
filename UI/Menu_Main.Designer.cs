@@ -32,6 +32,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMenuHeader = new System.Windows.Forms.Label();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
+            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.btnToonMenuDrank = new System.Windows.Forms.Button();
             this.btnToonMenuDiner = new System.Windows.Forms.Button();
             this.btnToonMenuLunch = new System.Windows.Forms.Button();
@@ -90,6 +91,8 @@ namespace UI
             this.btnCloseMenuVerwijderen = new System.Windows.Forms.Button();
             this.cmbVerwijderMenuID = new System.Windows.Forms.ComboBox();
             this.btnExitMenu = new System.Windows.Forms.Button();
+            this.pnlHeaderMedewerkers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.pnlMenuAanpassen.SuspendLayout();
             this.pnlMenuItemToevoegen.SuspendLayout();
@@ -109,11 +112,23 @@ namespace UI
             // pnlHeaderMedewerkers
             // 
             this.pnlHeaderMedewerkers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.pnlHeaderMedewerkers.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.pnlHeaderMedewerkers.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderMedewerkers.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
             this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
             this.pnlHeaderMedewerkers.TabIndex = 18;
+            // 
+            // pcbx_LogoChapooAfrekenenMain
+            // 
+            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(16, 12);
+            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(137, 73);
+            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 5;
+            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
             // btnToonMenuDrank
             // 
@@ -224,7 +239,7 @@ namespace UI
             this.btnMenuAanpassen.Name = "btnMenuAanpassen";
             this.btnMenuAanpassen.Size = new System.Drawing.Size(148, 53);
             this.btnMenuAanpassen.TabIndex = 24;
-            this.btnMenuAanpassen.Text = "Menu aanpassen";
+            this.btnMenuAanpassen.Text = "Menu Aanpassen";
             this.btnMenuAanpassen.UseVisualStyleBackColor = false;
             this.btnMenuAanpassen.Click += new System.EventHandler(this.btnMenuAanpassen_Click);
             // 
@@ -236,7 +251,7 @@ namespace UI
             this.btnMenuItemVerwijderen.Name = "btnMenuItemVerwijderen";
             this.btnMenuItemVerwijderen.Size = new System.Drawing.Size(160, 53);
             this.btnMenuItemVerwijderen.TabIndex = 25;
-            this.btnMenuItemVerwijderen.Text = "Menu item Verwijderen";
+            this.btnMenuItemVerwijderen.Text = "Menu-item Verwijderen";
             this.btnMenuItemVerwijderen.UseVisualStyleBackColor = false;
             this.btnMenuItemVerwijderen.Click += new System.EventHandler(this.btnMenuItemVerwijderen_Click);
             // 
@@ -248,7 +263,7 @@ namespace UI
             this.btnMenuItemToevoegen.Name = "btnMenuItemToevoegen";
             this.btnMenuItemToevoegen.Size = new System.Drawing.Size(148, 53);
             this.btnMenuItemToevoegen.TabIndex = 26;
-            this.btnMenuItemToevoegen.Text = "Menu item Tevoegen";
+            this.btnMenuItemToevoegen.Text = "Menu-item Toevoegen";
             this.btnMenuItemToevoegen.UseVisualStyleBackColor = false;
             this.btnMenuItemToevoegen.Click += new System.EventHandler(this.btnMenuItemToevoegen_Click);
             // 
@@ -746,6 +761,8 @@ namespace UI
             this.Controls.Add(this.lblMenuHeader);
             this.Name = "Menu_Main";
             this.Text = "Menu_Main";
+            this.pnlHeaderMedewerkers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.pnlMenuAanpassen.ResumeLayout(false);
             this.pnlMenuAanpassen.PerformLayout();
@@ -820,5 +837,6 @@ namespace UI
         private System.Windows.Forms.Button btnMenuToevoegenExit;
         private System.Windows.Forms.Button btnMenuVerwijderenExit;
         private System.Windows.Forms.CheckBox ckbMenuAanpassenAlcohol;
+        private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
     }
 }

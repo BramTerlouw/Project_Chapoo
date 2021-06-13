@@ -35,6 +35,8 @@ namespace UI
             this.txtLoginID = new System.Windows.Forms.TextBox();
             this.txtLoginWachtwoord = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.pcbx_LogoChapoo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapoo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeaderMedewerkers
@@ -95,11 +97,23 @@ namespace UI
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // pcbx_LogoChapoo
+            // 
+            this.pcbx_LogoChapoo.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapoo.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapoo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapoo.Location = new System.Drawing.Point(305, 12);
+            this.pcbx_LogoChapoo.Name = "pcbx_LogoChapoo";
+            this.pcbx_LogoChapoo.Size = new System.Drawing.Size(402, 203);
+            this.pcbx_LogoChapoo.TabIndex = 4;
+            this.pcbx_LogoChapoo.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 628);
+            this.Controls.Add(this.pcbx_LogoChapoo);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtLoginWachtwoord);
             this.Controls.Add(this.txtLoginID);
@@ -108,6 +122,7 @@ namespace UI
             this.Controls.Add(this.pnlHeaderMedewerkers);
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapoo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +136,6 @@ namespace UI
         private System.Windows.Forms.TextBox txtLoginID;
         private System.Windows.Forms.TextBox txtLoginWachtwoord;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox pcbx_LogoChapoo;
     }
 }

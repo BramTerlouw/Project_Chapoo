@@ -36,12 +36,15 @@ namespace UI
             this.btnAdministratie = new System.Windows.Forms.Button();
             this.btnBestellingAfrekenen = new System.Windows.Forms.Button();
             this.btnTafelOverzicht = new System.Windows.Forms.Button();
+            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.pnlHeaderHoofdmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeaderHoofdmenu
             // 
             this.pnlHeaderHoofdmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.pnlHeaderHoofdmenu.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.pnlHeaderHoofdmenu.Controls.Add(this.btnLogOutHoofdMenu);
             this.pnlHeaderHoofdmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderHoofdmenu.Location = new System.Drawing.Point(0, 0);
@@ -121,6 +124,17 @@ namespace UI
             this.btnTafelOverzicht.UseVisualStyleBackColor = false;
             this.btnTafelOverzicht.Click += new System.EventHandler(this.btnTafelOverzicht_Click);
             // 
+            // pcbx_LogoChapooAfrekenenMain
+            // 
+            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(16, 12);
+            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(137, 73);
+            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 6;
+            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
+            // 
             // HoofdMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -135,6 +149,7 @@ namespace UI
             this.Name = "HoofdMenu";
             this.Text = "HoofdMenu";
             this.pnlHeaderHoofdmenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +163,6 @@ namespace UI
         private System.Windows.Forms.Button btnAdministratie;
         private System.Windows.Forms.Button btnBestellingAfrekenen;
         private System.Windows.Forms.Button btnTafelOverzicht;
+        private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
     }
 }

@@ -19,7 +19,7 @@ namespace DAL_Chapoo
             sqlParameters[0] = new SqlParameter("@BestellingDatum", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff"));
             sqlParameters[1] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
             sqlParameters[2] = new SqlParameter("@TafelID", bestelling.TafelID);
-            sqlParameters[3] = new SqlParameter("@MedewerkerID", 3);
+            sqlParameters[3] = new SqlParameter("@MedewerkerID", 2);
             sqlParameters[4] = new SqlParameter("@Status", bestelling.Status);
             sqlParameters[5] = new SqlParameter("@BTW", bestelling.BTW);
             ExecuteEditQuery(query, sqlParameters);
@@ -46,7 +46,7 @@ namespace DAL_Chapoo
         //Haal een lijst van alle bestellingen op uit de DB
         public List<Bestelling> Db_Get_All_Bestellingen()
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status FROM Bestelling ORDER BY BestellingID DESC";
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status, BTW FROM Bestelling WHERE [Status] != 'afgerond' ORDER BY BestellingID DESC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -74,7 +74,7 @@ namespace DAL_Chapoo
         public List<Bestelling> Db_Get_Eet_Orders(string status)
         {
             DateTime dag = DateTime.Today.Date;
-            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
+            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort NOT LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@Status", status);
             sqlParameters[1] = new SqlParameter("@dag", dag);
@@ -84,7 +84,7 @@ namespace DAL_Chapoo
         public List<Bestelling> Db_Get_Drink_Orders(string status)
         {
             DateTime dag = DateTime.Today.Date;
-            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
+            string query = "SELECT DISTINCT B.BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling AS B JOIN BestellingRegel AS BR ON B.BestellingID = BR.BestellingID WHERE [Status] = @Status AND BestellingDatum > @dag AND BR.MenuItemID IN (SELECT MenuItemID FROM MenuItem WHERE Soort LIKE '%Drank%')";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@Status", status);
             sqlParameters[1] = new SqlParameter("@dag", dag);
@@ -102,7 +102,7 @@ namespace DAL_Chapoo
 
         public Bestelling Db_Get_Order_By_ID(int selectedOrderNr)
         {
-            string query = "SELECT BestellingID, BestellingDatum, TafelID, MedewerkerID, BestellingSubTotaal, TafelID, MedewerkerID, [Status] FROM Bestelling WHERE BestellingID = @BestellingID";
+            string query = "SELECT BestellingID, BestellingDatum, TafelID, MedewerkerID, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE BestellingID = @BestellingID";
             SqlParameter[] sqlParameters = new SqlParameter[1];
             sqlParameters[0] = new SqlParameter("@BestellingID", selectedOrderNr);
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
@@ -138,7 +138,9 @@ namespace DAL_Chapoo
                     BestellingSubtotaal = (double)dr["BestellingSubTotaal"],
                     TafelID = (int)dr["TafelID"],
                     MedewerkerID = (int)dr["MedewerkerID"],
-                    Status = (string)dr["Status"]
+                    Status = (string)dr["Status"],
+                    BTW = (double)dr["BTW"]
+                    
                 }; 
                 bestellingLijst.Add(bestelling);
             }

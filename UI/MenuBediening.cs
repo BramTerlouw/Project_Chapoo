@@ -1422,7 +1422,7 @@ namespace UI
         // Opmerking toevoegen
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
         {
-            if (LSV_BestellingOverzicht.SelectedItems.Count == 1 && TXTBOX_Opmerking != null)
+            if (LSV_BestellingOverzicht.SelectedItems.Count == 1 && TXTBOX_Opmerking.Text != "")
             {
                 // id ophalen
                 Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();

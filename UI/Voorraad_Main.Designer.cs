@@ -29,7 +29,7 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVoorraadTerug = new System.Windows.Forms.Button();
             this.dgv_Voorraad = new System.Windows.Forms.DataGridView();
@@ -39,6 +39,7 @@ namespace UI
             this.btnFilterEten = new System.Windows.Forms.Button();
             this.btnFilterDrinken = new System.Windows.Forms.Button();
             this.pnlVoorraadAanpassen = new System.Windows.Forms.Panel();
+            this.cmdAanpassenID = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lblPnlHeaderAanpassen = new System.Windows.Forms.Label();
             this.txtAanpassenAantal = new System.Windows.Forms.TextBox();
@@ -55,10 +56,12 @@ namespace UI
             this.btnFilterVoorraadpnl = new System.Windows.Forms.Button();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
             this.btnRefreshVoorraad = new System.Windows.Forms.Button();
-            this.cmdAanpassenID = new System.Windows.Forms.ComboBox();
+            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Voorraad)).BeginInit();
             this.pnlVoorraadAanpassen.SuspendLayout();
             this.pnlFilterVoorraad.SuspendLayout();
+            this.pnlHeaderMedewerkers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,14 +92,14 @@ namespace UI
             this.dgv_Voorraad.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Voorraad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Voorraad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Voorraad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Voorraad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Voorraad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
@@ -165,6 +168,15 @@ namespace UI
             this.pnlVoorraadAanpassen.Name = "pnlVoorraadAanpassen";
             this.pnlVoorraadAanpassen.Size = new System.Drawing.Size(320, 303);
             this.pnlVoorraadAanpassen.TabIndex = 6;
+            // 
+            // cmdAanpassenID
+            // 
+            this.cmdAanpassenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmdAanpassenID.FormattingEnabled = true;
+            this.cmdAanpassenID.Location = new System.Drawing.Point(39, 115);
+            this.cmdAanpassenID.Name = "cmdAanpassenID";
+            this.cmdAanpassenID.Size = new System.Drawing.Size(222, 23);
+            this.cmdAanpassenID.TabIndex = 11;
             // 
             // button1
             // 
@@ -309,6 +321,7 @@ namespace UI
             // pnlHeaderMedewerkers
             // 
             this.pnlHeaderMedewerkers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.pnlHeaderMedewerkers.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.pnlHeaderMedewerkers.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderMedewerkers.Location = new System.Drawing.Point(0, 0);
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
@@ -327,14 +340,16 @@ namespace UI
             this.btnRefreshVoorraad.UseVisualStyleBackColor = false;
             this.btnRefreshVoorraad.Click += new System.EventHandler(this.btnRefreshVoorraad_Click);
             // 
-            // cmdAanpassenID
+            // pcbx_LogoChapooAfrekenenMain
             // 
-            this.cmdAanpassenID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmdAanpassenID.FormattingEnabled = true;
-            this.cmdAanpassenID.Location = new System.Drawing.Point(39, 115);
-            this.cmdAanpassenID.Name = "cmdAanpassenID";
-            this.cmdAanpassenID.Size = new System.Drawing.Size(222, 23);
-            this.cmdAanpassenID.TabIndex = 11;
+            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(16, 12);
+            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(137, 73);
+            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 4;
+            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
             // Voorraad_Main
             // 
@@ -360,6 +375,8 @@ namespace UI
             this.pnlVoorraadAanpassen.PerformLayout();
             this.pnlFilterVoorraad.ResumeLayout(false);
             this.pnlFilterVoorraad.PerformLayout();
+            this.pnlHeaderMedewerkers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +410,6 @@ namespace UI
         private System.Windows.Forms.Panel pnlHeaderMedewerkers;
         private System.Windows.Forms.Button btnRefreshVoorraad;
         private System.Windows.Forms.ComboBox cmdAanpassenID;
+        private System.Windows.Forms.PictureBox pcbx_LogoChapooAfrekenenMain;
     }
 }

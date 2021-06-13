@@ -48,9 +48,10 @@ namespace UI
                 DialogResult msbResult = MessageBox.Show("U staat op het punt voor deze tafel af te rekenen. \nWeet u dit zeker?", "Afrekenen", MessageBoxButtons.YesNo);
                 if (msbResult == DialogResult.Yes)
                 {
-                    int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[0].Text);
+                    int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[1].Text);
 
                     bestellingService.UpdateOrderStatusAfgerond(BestellingID);
+                  
                 }
             }
             else
@@ -68,17 +69,18 @@ namespace UI
                 DialogResult msbResult = MessageBox.Show("U staat op het punt voor deze tafel een bon aan te maken. \nWeet u dit zeker?", "Bon maken", MessageBoxButtons.YesNo);
                 if (msbResult == DialogResult.Yes)
                 {
-                    int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[0].Text);
+                    int BestellingID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[1].Text);
                     int TafelID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].Text);
                     float fooi = Convert.ToSingle(nup_FooiBedragGeven.Value);
                     string bedrag = lst_BestellingPerTafel.SelectedItems[0].SubItems[4].Text;
+                    double BTW = double.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[5].Text);
                     double SubTotaalbedrag = double.Parse(bedrag);
-                    double Totaalbedrag = SubTotaalbedrag + fooi;
+                    double Totaalbedrag = SubTotaalbedrag + fooi + BTW;
                     string betaalmethode = cmbx_BetaalMethode.Text;
 
                     string opmerking = rtb_OpmerkingPlaatsen.Text;
                     DateTime OpmerkingDatumTijd = DateTime.Now;
-                    int medewerkerID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[1].Text);
+                    int medewerkerID = int.Parse(lst_BestellingPerTafel.SelectedItems[0].SubItems[2].Text);
 
                     bonService.Insert_Bon(BestellingID, TafelID, Totaalbedrag, fooi, betaalmethode);
 
@@ -105,8 +107,7 @@ namespace UI
         //Vul de listview
         private void FillListView_BestellingPerTafel()
         {
-            string datumVandaag = DateTime.Now.ToString("dd-MM-yyyy");
-            DatumVandaag = Convert.ToDateTime(datumVandaag);
+            DatumVandaag = DateTime.Today.Date;          
             List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID, DatumVandaag);
 
             lst_BestellingPerTafel.Items.Clear();

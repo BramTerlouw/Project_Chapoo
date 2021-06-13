@@ -41,8 +41,7 @@ namespace UI
         //Vul de listview
         private void FillListView_BestellingPerTafel()
         {
-            string datumVandaag = DateTime.Now.ToString("dd-MM-yyyy");
-            DatumVandaag = Convert.ToDateTime(datumVandaag);
+            DatumVandaag = DateTime.Today.Date;
 
             List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID, DatumVandaag);
 

@@ -30,6 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             this.pnl_AfrekenenPerTafel = new System.Windows.Forms.Panel();
+            this.lbl_Opmerking = new System.Windows.Forms.Label();
+            this.rtb_OpmerkingPlaatsen = new System.Windows.Forms.RichTextBox();
             this.lbl_BetaalMehode = new System.Windows.Forms.Label();
             this.cmbx_BetaalMethode = new System.Windows.Forms.ComboBox();
             this.nup_FooiBedragGeven = new System.Windows.Forms.NumericUpDown();
@@ -47,8 +49,6 @@ namespace UI
             this.btn_AfrekenenConfirm = new System.Windows.Forms.Button();
             this.btn_MaakBon = new System.Windows.Forms.Button();
             this.btn_Annuleren = new System.Windows.Forms.Button();
-            this.rtb_OpmerkingPlaatsen = new System.Windows.Forms.RichTextBox();
-            this.lbl_Opmerking = new System.Windows.Forms.Label();
             this.pnl_AfrekenenPerTafel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_FooiBedragGeven)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
@@ -66,10 +66,30 @@ namespace UI
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lst_BestellingPerTafel);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_GekozenTafel);
             this.pnl_AfrekenenPerTafel.Controls.Add(this.lbl_AfrekenenTitle);
-            this.pnl_AfrekenenPerTafel.Location = new System.Drawing.Point(0, 51);
+            this.pnl_AfrekenenPerTafel.Location = new System.Drawing.Point(0, 57);
             this.pnl_AfrekenenPerTafel.Name = "pnl_AfrekenenPerTafel";
             this.pnl_AfrekenenPerTafel.Size = new System.Drawing.Size(498, 465);
             this.pnl_AfrekenenPerTafel.TabIndex = 0;
+            // 
+            // lbl_Opmerking
+            // 
+            this.lbl_Opmerking.AutoSize = true;
+            this.lbl_Opmerking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Opmerking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
+            this.lbl_Opmerking.Location = new System.Drawing.Point(205, 356);
+            this.lbl_Opmerking.Name = "lbl_Opmerking";
+            this.lbl_Opmerking.Size = new System.Drawing.Size(96, 21);
+            this.lbl_Opmerking.TabIndex = 12;
+            this.lbl_Opmerking.Text = "Opmerking";
+            this.lbl_Opmerking.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // rtb_OpmerkingPlaatsen
+            // 
+            this.rtb_OpmerkingPlaatsen.Location = new System.Drawing.Point(205, 380);
+            this.rtb_OpmerkingPlaatsen.Name = "rtb_OpmerkingPlaatsen";
+            this.rtb_OpmerkingPlaatsen.Size = new System.Drawing.Size(100, 68);
+            this.rtb_OpmerkingPlaatsen.TabIndex = 11;
+            this.rtb_OpmerkingPlaatsen.Text = "";
             // 
             // lbl_BetaalMehode
             // 
@@ -197,7 +217,7 @@ namespace UI
             this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(12, 2);
             this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
-            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(100, 58);
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(83, 49);
             this.pcbx_LogoChapooAfrekenenMain.TabIndex = 4;
             this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
@@ -238,26 +258,6 @@ namespace UI
             this.btn_Annuleren.Text = "Annuleren";
             this.btn_Annuleren.UseVisualStyleBackColor = false;
             this.btn_Annuleren.Click += new System.EventHandler(this.btn_Annuleren_Click);
-            // 
-            // rtb_OpmerkingPlaatsen
-            // 
-            this.rtb_OpmerkingPlaatsen.Location = new System.Drawing.Point(205, 380);
-            this.rtb_OpmerkingPlaatsen.Name = "rtb_OpmerkingPlaatsen";
-            this.rtb_OpmerkingPlaatsen.Size = new System.Drawing.Size(100, 68);
-            this.rtb_OpmerkingPlaatsen.TabIndex = 11;
-            this.rtb_OpmerkingPlaatsen.Text = "";
-            // 
-            // lbl_Opmerking
-            // 
-            this.lbl_Opmerking.AutoSize = true;
-            this.lbl_Opmerking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Opmerking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
-            this.lbl_Opmerking.Location = new System.Drawing.Point(205, 356);
-            this.lbl_Opmerking.Name = "lbl_Opmerking";
-            this.lbl_Opmerking.Size = new System.Drawing.Size(96, 21);
-            this.lbl_Opmerking.TabIndex = 12;
-            this.lbl_Opmerking.Text = "Opmerking";
-            this.lbl_Opmerking.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Afrekenen_PerTafel
             // 
