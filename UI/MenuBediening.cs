@@ -1422,103 +1422,124 @@ namespace UI
         // Opmerking toevoegen
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
         {
-            // id ophalen
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
-            // regel ophalen
-            bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
-
-            DialogResult msbresult = MessageBox.Show("Opmerking toevoegen?", "Opmerking toevoegen", MessageBoxButtons.YesNo);
-            if (msbresult == DialogResult.Yes)
+            if (LSV_BestellingOverzicht.SelectedItems.Count == 1 && TXTBOX_Opmerking != null)
             {
-                // Opmerking uit textbox halen
-                bestellingRegel.Opmerking = TXTBOX_Opmerking.Text.ToString();
+                // id ophalen
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
+                // regel ophalen
+                bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
-                // data meegeven naar "opmerking toevoegen aan bestelling" methode in service laag
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                bestellingRegel_Service.Db_OpmerkingToevoegen(bestellingRegel);
+                DialogResult msbresult = MessageBox.Show("Opmerking toevoegen?", "Opmerking toevoegen", MessageBoxButtons.YesNo);
+                if (msbresult == DialogResult.Yes)
+                {
+                    // Opmerking uit textbox halen
+                    bestellingRegel.Opmerking = TXTBOX_Opmerking.Text.ToString();
 
-                // Bestelling aanmaken
+                    // data meegeven naar "opmerking toevoegen aan bestelling" methode in service laag
+                    BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                    bestellingRegel_Service.Db_OpmerkingToevoegen(bestellingRegel);
+
+                    // Bestelling aanmaken
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een bestelling en vul dan een opmerking in alstublieft!", "Fout bij opmerking toevoegen", MessageBoxButtons.OK);
             }
         }
 
         // Bestelde item verwijderen
         private void BTN_BestelItemVerwijderen_Click_1(object sender, EventArgs e)
         {
-            // id ophalen
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
-
-            VoorraadItemService voorraadItemService = new VoorraadItemService();
-            Model_Chapoo.Bestelling Bestelling = new Bestelling();
-
-            // regel ophalen
-            bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
-
-            // Bereken prijs
-            //double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
-            //Bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
-            //Bestelling.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text);
-
-            DialogResult msbresult = MessageBox.Show("item verwijderen?", "Item verwijderen", MessageBoxButtons.YesNo);
-            if (msbresult == DialogResult.Yes)
+            if (LSV_BestellingOverzicht.SelectedItems.Count == 1)
             {
-                // ID en regel meegeven naar "Item verwijderen" methode in service laag
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+                // id ophalen
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
+
+                VoorraadItemService voorraadItemService = new VoorraadItemService();
+                Model_Chapoo.Bestelling Bestelling = new Bestelling();
+
+                // regel ophalen
+                bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
+
+                // Bereken prijs
+                //double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
+                //Bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
+                //Bestelling.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text);
+
+                DialogResult msbresult = MessageBox.Show("item verwijderen?", "Item verwijderen", MessageBoxButtons.YesNo);
+                if (msbresult == DialogResult.Yes)
+                {
+                    // ID en regel meegeven naar "Item verwijderen" methode in service laag
+                    BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                    bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+                }
+                FullRowSelect();
+                // Fill bestellingoverzicht listview with a list of bestellingen
+                Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
+                List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
+
+                // Clear the listview and fill it
+                LSV_BestellingOverzicht.Items.Clear();
+
+                foreach (BestellingRegel m in bestellingRegels)
+                {
+                    ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
+                    bestelling.Tag = m;
+                    bestelling.SubItems.Add(m.RegelNR.ToString());
+                    bestelling.SubItems.Add(m.MenuItemID.ToString());
+                    bestelling.SubItems.Add(m.Aantal.ToString());
+                    LSV_BestellingOverzicht.Items.Add(bestelling);
+                }
             }
-            FullRowSelect();
-            // Fill bestellingoverzicht listview with a list of bestellingen
-            Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
-            List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
-
-            // Clear the listview and fill it
-            LSV_BestellingOverzicht.Items.Clear();
-
-            foreach (BestellingRegel m in bestellingRegels)
+            else
             {
-                ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
-                bestelling.Tag = m;
-                bestelling.SubItems.Add(m.RegelNR.ToString());
-                bestelling.SubItems.Add(m.MenuItemID.ToString());
-                bestelling.SubItems.Add(m.Aantal.ToString());
-                LSV_BestellingOverzicht.Items.Add(bestelling);
+                MessageBox.Show("Selecteer eerst een bestelling alstublieft!", "Fout bij bestelling verwijderen", MessageBoxButtons.OK);
             }
         }
 
         // Bestelde item wijzigen
         private void BTN_BestelItemWijzigen_Click(object sender, EventArgs e)
         {
-            // id ophalen
-            Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-            bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
-
-            // regel ophalen
-            bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
-
-            // aantal ophalen
-            bestellingRegel.Aantal = int.Parse(NUP_BestellingOverzicht.Value.ToString());
-
-            // ID en regel meegeven naar "Item wijzigen" methode in service laag
-            BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-            bestellingRegel_Service.Db_WijzigBestelling(bestellingRegel);
-
-            FullRowSelect();
-            // Fill bestellingoverzicht listview with a list of bestellingen
-            Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
-            List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
-
-            // Clear the listview and fill it
-            LSV_BestellingOverzicht.Items.Clear();
-
-            foreach (BestellingRegel m in bestellingRegels)
+            if (LSV_BestellingOverzicht.SelectedItems.Count == 1)
             {
-                ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
-                bestelling.Tag = m;
-                bestelling.SubItems.Add(m.RegelNR.ToString());
-                bestelling.SubItems.Add(m.MenuItemID.ToString());
-                bestelling.SubItems.Add(m.Aantal.ToString());
-                LSV_BestellingOverzicht.Items.Add(bestelling);
+                // id ophalen
+                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
+
+                // regel ophalen
+                bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
+
+                // aantal ophalen
+                bestellingRegel.Aantal = int.Parse(NUP_BestellingOverzicht.Value.ToString());
+
+                // ID en regel meegeven naar "Item wijzigen" methode in service laag
+                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
+                bestellingRegel_Service.Db_WijzigBestelling(bestellingRegel);
+
+                FullRowSelect();
+                // Fill bestellingoverzicht listview with a list of bestellingen
+                Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
+                List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
+
+                // Clear the listview and fill it
+                LSV_BestellingOverzicht.Items.Clear();
+
+                foreach (BestellingRegel m in bestellingRegels)
+                {
+                    ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
+                    bestelling.Tag = m;
+                    bestelling.SubItems.Add(m.RegelNR.ToString());
+                    bestelling.SubItems.Add(m.MenuItemID.ToString());
+                    bestelling.SubItems.Add(m.Aantal.ToString());
+                    LSV_BestellingOverzicht.Items.Add(bestelling);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecteer eerst een bestelling alstublieft!", "Fout bij bestelling wijzigen", MessageBoxButtons.OK);
             }
         }
 
