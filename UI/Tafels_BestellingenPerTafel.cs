@@ -18,6 +18,7 @@ namespace UI
         private Tafels_Main _tafelsMain;
         private Medewerker _medewerker;
         private Bestelling_Service bestellingService;
+        private DateTime DatumVandaag { get; set; }
         private int TafelID { get; set; }
 
         //constructor
@@ -40,7 +41,10 @@ namespace UI
         //Vul de listview
         private void FillListView_BestellingPerTafel()
         {
-            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID);
+            string datumVandaag = DateTime.Now.ToString("dd-MM-yyyy");
+            DatumVandaag = Convert.ToDateTime(datumVandaag);
+
+            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID, DatumVandaag);
 
             lst_BestellingPerTafel.Items.Clear();
 

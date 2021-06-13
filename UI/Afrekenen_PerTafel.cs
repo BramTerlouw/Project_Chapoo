@@ -11,6 +11,7 @@ namespace UI
     {
         //fields
         private int TafelID { get; set; }
+        private DateTime DatumVandaag { get; set; }
         Bestelling_Service bestellingService;
         Bon_Service bonService;
         Opmerking_Service opmerkingService;
@@ -103,8 +104,10 @@ namespace UI
 
         //Vul de listview
         private void FillListView_BestellingPerTafel()
-        {      
-            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID);
+        {
+            string datumVandaag = DateTime.Now.ToString("dd-MM-yyyy");
+            DatumVandaag = Convert.ToDateTime(datumVandaag);
+            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID, DatumVandaag);
 
             lst_BestellingPerTafel.Items.Clear();
 
@@ -115,8 +118,8 @@ namespace UI
                 Bestelling.SubItems.Add(bestelling.BestellingID.ToString());
                 Bestelling.SubItems.Add(bestelling.MedewerkerID.ToString());
                 Bestelling.SubItems.Add(bestelling.Status);
-                Bestelling.SubItems.Add(bestelling.BestellingSubtotaal.ToString());
-                Bestelling.SubItems.Add(bestelling.BTW.ToString());
+                Bestelling.SubItems.Add(bestelling.BestellingSubtotaal.ToString("0.00"));
+                Bestelling.SubItems.Add(bestelling.BTW.ToString("0.00"));
 
                 lst_BestellingPerTafel.Items.Add(Bestelling);
             }

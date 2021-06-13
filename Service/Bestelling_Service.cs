@@ -10,9 +10,9 @@ namespace Service_Chapoo
         private Bestelling_DAO _bestelling_DAO = new Bestelling_DAO();
 
         //Haal een lijst op met alle bestellingen van de gegeven tafel
-        public List<Bestelling> GetOrdersPerTable(int TafelID)
+        public List<Bestelling> GetOrdersPerTable(int TafelID, DateTime DatumVandaag)
         {
-            return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID);
+            return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID, DatumVandaag);
         }
 
         public void UpdateSubtotaal(Bestelling bestelling)
