@@ -19,8 +19,8 @@ namespace Service_Chapoo
         {
             _bestelling_DAO.Db_Update_Subtotaal(bestelling);
         }
-        //Zet de status van de bestelling met het gegeven bestellingID op 'afgerond'
 
+        //Zet de status van de bestelling met het gegeven bestellingID op 'afgerond'
         public void UpdateOrderStatusAfgerond(int BestellingID)
         {
             _bestelling_DAO.Db_Update_OrderStatus_Afgerond(BestellingID);
