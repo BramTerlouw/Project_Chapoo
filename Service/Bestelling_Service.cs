@@ -15,6 +15,11 @@ namespace Service_Chapoo
             return _bestelling_DAO.Db_Get_Orders_Per_Table(TafelID, DatumVandaag);
         }
 
+        public List<Bestelling> GetOrdersPerTableTableView(int TafelID, DateTime DatumVandaag)
+        {
+            return _bestelling_DAO.Db_Get_Orders_Per_Table_TableView(TafelID, DatumVandaag);
+        }
+
         public void UpdateSubtotaal(Bestelling bestelling)
         {
             _bestelling_DAO.Db_Update_Subtotaal(bestelling);
