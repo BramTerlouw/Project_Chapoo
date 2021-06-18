@@ -32,6 +32,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeaderMedewerkers = new System.Windows.Forms.Panel();
+            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.btnTerugHoofdMenu = new System.Windows.Forms.Button();
             this.lbl_Locatie = new System.Windows.Forms.Label();
@@ -52,13 +53,12 @@ namespace UI
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Keuze_Bar = new System.Windows.Forms.Button();
             this.btn_Keuze_Keuken = new System.Windows.Forms.Button();
-            this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
             this.pnlHeaderMedewerkers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_Bestellingen)).BeginInit();
             this.pnl_Keuken_Open_Gereed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_BestellingDetails)).BeginInit();
             this.pnl_Keuze.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeaderMedewerkers
@@ -70,18 +70,31 @@ namespace UI
             this.pnlHeaderMedewerkers.Controls.Add(this.lbl_Locatie);
             this.pnlHeaderMedewerkers.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeaderMedewerkers.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeaderMedewerkers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlHeaderMedewerkers.Name = "pnlHeaderMedewerkers";
-            this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1064, 100);
+            this.pnlHeaderMedewerkers.Size = new System.Drawing.Size(1216, 133);
             this.pnlHeaderMedewerkers.TabIndex = 19;
+            // 
+            // pcbx_LogoChapooAfrekenenMain
+            // 
+            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
+            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(18, 16);
+            this.pcbx_LogoChapooAfrekenenMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
+            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(157, 97);
+            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 6;
+            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(407, 24);
+            this.lblTime.Location = new System.Drawing.Point(465, 32);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(99, 46);
+            this.lblTime.Size = new System.Drawing.Size(126, 57);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "00:00";
             // 
@@ -89,9 +102,10 @@ namespace UI
             // 
             this.btnTerugHoofdMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(139)))), ((int)(((byte)(255)))));
             this.btnTerugHoofdMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerugHoofdMenu.Location = new System.Drawing.Point(925, 24);
+            this.btnTerugHoofdMenu.Location = new System.Drawing.Point(1057, 32);
+            this.btnTerugHoofdMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTerugHoofdMenu.Name = "btnTerugHoofdMenu";
-            this.btnTerugHoofdMenu.Size = new System.Drawing.Size(108, 38);
+            this.btnTerugHoofdMenu.Size = new System.Drawing.Size(123, 51);
             this.btnTerugHoofdMenu.TabIndex = 4;
             this.btnTerugHoofdMenu.Text = "Terug";
             this.btnTerugHoofdMenu.UseVisualStyleBackColor = false;
@@ -102,9 +116,9 @@ namespace UI
             this.lbl_Locatie.AutoSize = true;
             this.lbl_Locatie.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Locatie.ForeColor = System.Drawing.Color.White;
-            this.lbl_Locatie.Location = new System.Drawing.Point(558, 24);
+            this.lbl_Locatie.Location = new System.Drawing.Point(638, 32);
             this.lbl_Locatie.Name = "lbl_Locatie";
-            this.lbl_Locatie.Size = new System.Drawing.Size(131, 46);
+            this.lbl_Locatie.Size = new System.Drawing.Size(161, 57);
             this.lbl_Locatie.TabIndex = 0;
             this.lbl_Locatie.Text = "Keuken";
             // 
@@ -130,7 +144,8 @@ namespace UI
             this.ColumnTijd});
             this.dgv_Keuken_Bestellingen.EnableHeadersVisualStyles = false;
             this.dgv_Keuken_Bestellingen.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_Keuken_Bestellingen.Location = new System.Drawing.Point(0, 161);
+            this.dgv_Keuken_Bestellingen.Location = new System.Drawing.Point(0, 215);
+            this.dgv_Keuken_Bestellingen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_Keuken_Bestellingen.MultiSelect = false;
             this.dgv_Keuken_Bestellingen.Name = "dgv_Keuken_Bestellingen";
             this.dgv_Keuken_Bestellingen.ReadOnly = true;
@@ -138,7 +153,7 @@ namespace UI
             this.dgv_Keuken_Bestellingen.RowHeadersWidth = 51;
             this.dgv_Keuken_Bestellingen.RowTemplate.Height = 25;
             this.dgv_Keuken_Bestellingen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Keuken_Bestellingen.Size = new System.Drawing.Size(532, 465);
+            this.dgv_Keuken_Bestellingen.Size = new System.Drawing.Size(608, 620);
             this.dgv_Keuken_Bestellingen.TabIndex = 20;
             this.dgv_Keuken_Bestellingen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Keuken_Bestellingen_CellContentClick);
             // 
@@ -170,17 +185,19 @@ namespace UI
             // 
             this.pnl_Keuken_Open_Gereed.Controls.Add(this.btn_Keuken_Gereed);
             this.pnl_Keuken_Open_Gereed.Controls.Add(this.btn_Keuken_Openstaand);
-            this.pnl_Keuken_Open_Gereed.Location = new System.Drawing.Point(0, 99);
+            this.pnl_Keuken_Open_Gereed.Location = new System.Drawing.Point(0, 132);
+            this.pnl_Keuken_Open_Gereed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Keuken_Open_Gereed.Name = "pnl_Keuken_Open_Gereed";
-            this.pnl_Keuken_Open_Gereed.Size = new System.Drawing.Size(1064, 63);
+            this.pnl_Keuken_Open_Gereed.Size = new System.Drawing.Size(1216, 84);
             this.pnl_Keuken_Open_Gereed.TabIndex = 21;
             // 
             // btn_Keuken_Gereed
             // 
             this.btn_Keuken_Gereed.BackColor = System.Drawing.Color.White;
-            this.btn_Keuken_Gereed.Location = new System.Drawing.Point(532, 0);
+            this.btn_Keuken_Gereed.Location = new System.Drawing.Point(608, 0);
+            this.btn_Keuken_Gereed.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuken_Gereed.Name = "btn_Keuken_Gereed";
-            this.btn_Keuken_Gereed.Size = new System.Drawing.Size(532, 63);
+            this.btn_Keuken_Gereed.Size = new System.Drawing.Size(608, 84);
             this.btn_Keuken_Gereed.TabIndex = 1;
             this.btn_Keuken_Gereed.Text = "Gereed";
             this.btn_Keuken_Gereed.UseVisualStyleBackColor = false;
@@ -190,8 +207,9 @@ namespace UI
             // 
             this.btn_Keuken_Openstaand.BackColor = System.Drawing.Color.White;
             this.btn_Keuken_Openstaand.Location = new System.Drawing.Point(0, 0);
+            this.btn_Keuken_Openstaand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuken_Openstaand.Name = "btn_Keuken_Openstaand";
-            this.btn_Keuken_Openstaand.Size = new System.Drawing.Size(532, 63);
+            this.btn_Keuken_Openstaand.Size = new System.Drawing.Size(608, 84);
             this.btn_Keuken_Openstaand.TabIndex = 0;
             this.btn_Keuken_Openstaand.Text = "Openstaand";
             this.btn_Keuken_Openstaand.UseVisualStyleBackColor = false;
@@ -218,12 +236,13 @@ namespace UI
             this.col_Opmerkingen});
             this.dgv_Keuken_BestellingDetails.EnableHeadersVisualStyles = false;
             this.dgv_Keuken_BestellingDetails.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_Keuken_BestellingDetails.Location = new System.Drawing.Point(532, 161);
+            this.dgv_Keuken_BestellingDetails.Location = new System.Drawing.Point(608, 215);
+            this.dgv_Keuken_BestellingDetails.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgv_Keuken_BestellingDetails.Name = "dgv_Keuken_BestellingDetails";
             this.dgv_Keuken_BestellingDetails.RowHeadersVisible = false;
             this.dgv_Keuken_BestellingDetails.RowHeadersWidth = 51;
             this.dgv_Keuken_BestellingDetails.RowTemplate.Height = 25;
-            this.dgv_Keuken_BestellingDetails.Size = new System.Drawing.Size(532, 396);
+            this.dgv_Keuken_BestellingDetails.Size = new System.Drawing.Size(608, 528);
             this.dgv_Keuken_BestellingDetails.TabIndex = 22;
             // 
             // col_Aantal
@@ -249,9 +268,10 @@ namespace UI
             // 
             // btn_Keuken_Bestelling_Afmelden
             // 
-            this.btn_Keuken_Bestelling_Afmelden.Location = new System.Drawing.Point(908, 569);
+            this.btn_Keuken_Bestelling_Afmelden.Location = new System.Drawing.Point(1038, 759);
+            this.btn_Keuken_Bestelling_Afmelden.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuken_Bestelling_Afmelden.Name = "btn_Keuken_Bestelling_Afmelden";
-            this.btn_Keuken_Bestelling_Afmelden.Size = new System.Drawing.Size(144, 47);
+            this.btn_Keuken_Bestelling_Afmelden.Size = new System.Drawing.Size(165, 63);
             this.btn_Keuken_Bestelling_Afmelden.TabIndex = 23;
             this.btn_Keuken_Bestelling_Afmelden.Text = "Gereed Melden";
             this.btn_Keuken_Bestelling_Afmelden.UseVisualStyleBackColor = true;
@@ -259,9 +279,10 @@ namespace UI
             // 
             // btn_Keuken_Details_Sluiten
             // 
-            this.btn_Keuken_Details_Sluiten.Location = new System.Drawing.Point(538, 569);
+            this.btn_Keuken_Details_Sluiten.Location = new System.Drawing.Point(615, 759);
+            this.btn_Keuken_Details_Sluiten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuken_Details_Sluiten.Name = "btn_Keuken_Details_Sluiten";
-            this.btn_Keuken_Details_Sluiten.Size = new System.Drawing.Size(144, 47);
+            this.btn_Keuken_Details_Sluiten.Size = new System.Drawing.Size(165, 63);
             this.btn_Keuken_Details_Sluiten.TabIndex = 24;
             this.btn_Keuken_Details_Sluiten.Text = "Sluiten";
             this.btn_Keuken_Details_Sluiten.UseVisualStyleBackColor = true;
@@ -272,26 +293,28 @@ namespace UI
             this.pnl_Keuze.Controls.Add(this.label1);
             this.pnl_Keuze.Controls.Add(this.btn_Keuze_Bar);
             this.pnl_Keuze.Controls.Add(this.btn_Keuze_Keuken);
-            this.pnl_Keuze.Location = new System.Drawing.Point(3, 102);
+            this.pnl_Keuze.Location = new System.Drawing.Point(3, 136);
+            this.pnl_Keuze.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Keuze.Name = "pnl_Keuze";
-            this.pnl_Keuze.Size = new System.Drawing.Size(1058, 305);
+            this.pnl_Keuze.Size = new System.Drawing.Size(1209, 407);
             this.pnl_Keuze.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(482, 81);
+            this.label1.Location = new System.Drawing.Point(551, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
+            this.label1.Size = new System.Drawing.Size(115, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Maak een keuze";
             // 
             // btn_Keuze_Bar
             // 
             this.btn_Keuze_Bar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Keuze_Bar.Location = new System.Drawing.Point(555, 160);
+            this.btn_Keuze_Bar.Location = new System.Drawing.Point(634, 213);
+            this.btn_Keuze_Bar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuze_Bar.Name = "btn_Keuze_Bar";
-            this.btn_Keuze_Bar.Size = new System.Drawing.Size(76, 43);
+            this.btn_Keuze_Bar.Size = new System.Drawing.Size(87, 57);
             this.btn_Keuze_Bar.TabIndex = 1;
             this.btn_Keuze_Bar.Text = "Bar";
             this.btn_Keuze_Bar.UseVisualStyleBackColor = true;
@@ -300,31 +323,21 @@ namespace UI
             // btn_Keuze_Keuken
             // 
             this.btn_Keuze_Keuken.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Keuze_Keuken.Location = new System.Drawing.Point(416, 160);
+            this.btn_Keuze_Keuken.Location = new System.Drawing.Point(475, 213);
+            this.btn_Keuze_Keuken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Keuze_Keuken.Name = "btn_Keuze_Keuken";
-            this.btn_Keuze_Keuken.Size = new System.Drawing.Size(87, 43);
+            this.btn_Keuze_Keuken.Size = new System.Drawing.Size(113, 57);
             this.btn_Keuze_Keuken.TabIndex = 0;
             this.btn_Keuze_Keuken.Text = "Keuken";
             this.btn_Keuze_Keuken.UseVisualStyleBackColor = true;
             this.btn_Keuze_Keuken.Click += new System.EventHandler(this.btn_Keuze_Keuken_Click);
             // 
-            // pcbx_LogoChapooAfrekenenMain
-            // 
-            this.pcbx_LogoChapooAfrekenenMain.BackColor = System.Drawing.Color.White;
-            this.pcbx_LogoChapooAfrekenenMain.BackgroundImage = global::UI.Properties.Resources.Chapoo_Logo;
-            this.pcbx_LogoChapooAfrekenenMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbx_LogoChapooAfrekenenMain.Location = new System.Drawing.Point(16, 12);
-            this.pcbx_LogoChapooAfrekenenMain.Name = "pcbx_LogoChapooAfrekenenMain";
-            this.pcbx_LogoChapooAfrekenenMain.Size = new System.Drawing.Size(137, 73);
-            this.pcbx_LogoChapooAfrekenenMain.TabIndex = 6;
-            this.pcbx_LogoChapooAfrekenenMain.TabStop = false;
-            // 
             // Keuken_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1064, 628);
+            this.ClientSize = new System.Drawing.Size(1216, 837);
             this.Controls.Add(this.pnl_Keuze);
             this.Controls.Add(this.btn_Keuken_Details_Sluiten);
             this.Controls.Add(this.btn_Keuken_Bestelling_Afmelden);
@@ -332,16 +345,17 @@ namespace UI
             this.Controls.Add(this.pnl_Keuken_Open_Gereed);
             this.Controls.Add(this.dgv_Keuken_Bestellingen);
             this.Controls.Add(this.pnlHeaderMedewerkers);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Keuken_Main";
             this.Text = "Keuken";
             this.pnlHeaderMedewerkers.ResumeLayout(false);
             this.pnlHeaderMedewerkers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_Bestellingen)).EndInit();
             this.pnl_Keuken_Open_Gereed.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Keuken_BestellingDetails)).EndInit();
             this.pnl_Keuze.ResumeLayout(false);
             this.pnl_Keuze.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbx_LogoChapooAfrekenenMain)).EndInit();
             this.ResumeLayout(false);
 
         }
