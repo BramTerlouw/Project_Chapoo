@@ -39,11 +39,24 @@ namespace DAL_Chapoo
 
         public List<Tafel> Db_Get_All_tafels()
         {
-            string query = "SELECT TafelID, Aantal_Stoelen, Status FROM Tafel";
+            string query = "SELECT TafelID FROM Tafel WHERE Status = 'bezet'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
-            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }
+        private List<Tafel> ReadTable(DataTable dataTable)
+        {
+            List<Tafel> tafelLijst = new List<Tafel>();
 
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Tafel tafel = new Tafel()
+                {
+                    TafelID = (int)dr["TafelID"]
+                };
+                tafelLijst.Add(tafel);
+            }
+            return tafelLijst;
+        }
         //Lees de resultaten van de query en sla op in list
         private List<Tafel> ReadTables(DataTable dataTable)
         {

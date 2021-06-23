@@ -174,8 +174,6 @@ namespace UI
             this.LBL_BestellingAanmaken = new System.Windows.Forms.Label();
             this.LSV_BestellingAanmaken = new System.Windows.Forms.ListView();
             this.columnHeader35 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader36 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader37 = new System.Windows.Forms.ColumnHeader();
             this.BTN_BestellingAanmaken = new System.Windows.Forms.Button();
             this.BTN_Hoofdmenu = new System.Windows.Forms.Button();
             this.pcbx_LogoChapooAfrekenenMain = new System.Windows.Forms.PictureBox();
@@ -1503,9 +1501,7 @@ namespace UI
             // LSV_BestellingAanmaken
             // 
             this.LSV_BestellingAanmaken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37});
+            this.columnHeader35});
             this.LSV_BestellingAanmaken.FullRowSelect = true;
             this.LSV_BestellingAanmaken.HideSelection = false;
             this.LSV_BestellingAanmaken.Location = new System.Drawing.Point(38, 73);
@@ -1518,14 +1514,6 @@ namespace UI
             // columnHeader35
             // 
             this.columnHeader35.Text = "Tafel";
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "Aantal stoelen";
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "Status";
             // 
             // BTN_BestellingAanmaken
             // 
@@ -1566,13 +1554,13 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(443, 561);
+            this.Controls.Add(this.PNL_BestellingMaken);
             this.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.Controls.Add(this.PNL_Hardlopers);
             this.Controls.Add(this.BTN_Hoofdmenu);
             this.Controls.Add(this.PNL_BevestigBestelling);
             this.Controls.Add(this.PNL_Voorgerechten);
             this.Controls.Add(this.PNL_Wijn);
-            this.Controls.Add(this.PNL_BestellingMaken);
             this.Controls.Add(this.PNL_Tussengerechten);
             this.Controls.Add(this.PNL_Hoofdgerechten);
             this.Controls.Add(this.PNL_Nagerechten);
@@ -1748,8 +1736,6 @@ namespace UI
         private System.Windows.Forms.ListView LSV_BestellingAanmaken;
         private System.Windows.Forms.Button BTN_BestellingAanmaken;
         private System.Windows.Forms.ColumnHeader columnHeader35;
-        private System.Windows.Forms.ColumnHeader columnHeader36;
-        private System.Windows.Forms.ColumnHeader columnHeader37;
         private System.Windows.Forms.ListView LSV_VoorgerechtenTafel;
         private System.Windows.Forms.ColumnHeader columnHeader62;
         private System.Windows.Forms.ColumnHeader columnHeader63;

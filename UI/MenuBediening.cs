@@ -16,7 +16,7 @@ namespace UI
         private Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
         private Service_Chapoo.MenuKaartService menuKaartService = new Service_Chapoo.MenuKaartService();
         private VoorraadItemService voorraadItemService = new VoorraadItemService();
-
+        private Service_Chapoo.Tafel_Service tafel_Service = new Service_Chapoo.Tafel_Service();
 
         public MenuBediening(HoofdMenu menu, Medewerker medewerker)
         {
@@ -83,28 +83,12 @@ namespace UI
         private void MenuBediening_Load(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_MenuStart.Hide();
-            BTN_Terug.Hide();
-            BTN_Bevestig.Hide();
+            HidePanels();
             // Show start
             PNL_BestellingMaken.Show();
 
             FullRowSelect();
             // Fill tafel listview with a list of tables
-            Service_Chapoo.Tafel_Service tafel_Service = new Service_Chapoo.Tafel_Service();
             List<Tafel> tafels = tafel_Service.GetTafels();
 
             // Clear the listview and fill it
@@ -113,9 +97,6 @@ namespace UI
             foreach (Tafel T in tafels)
             {
                 ListViewItem taf = new ListViewItem(T.TafelID.ToString());
-                taf.Tag = T;
-                taf.SubItems.Add(T.AantalStoelen.ToString());
-                taf.SubItems.Add(T.Status);
                 LSV_BestellingAanmaken.Items.Add(taf);
             }
         }
