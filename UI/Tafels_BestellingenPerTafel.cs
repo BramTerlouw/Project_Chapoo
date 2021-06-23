@@ -43,7 +43,7 @@ namespace UI
         {
             DatumVandaag = DateTime.Today.Date;
 
-            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTable(TafelID, DatumVandaag);
+            List<Bestelling> bestellingPerTafel = bestellingService.GetOrdersPerTableTableView(TafelID, DatumVandaag);
 
             lst_BestellingPerTafel.Items.Clear();
 

@@ -45,7 +45,16 @@ namespace DAL_Chapoo
         //Haal alle bestellingen uit de database van de gegeven tafel
         public List<Bestelling> Db_Get_Orders_Per_Table(int TafelID, DateTime DatumVandaag)
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE TafelID = @TafelID AND [Status] = 'gereed'"; //AND BestellingDatum = @DatumVandaag
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE TafelID = @TafelID AND [Status] = 'gereed' AND BestellingDatum > @DatumVandaag";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@TafelID", TafelID);
+            sqlParameters[1] = new SqlParameter("@DatumVandaag", DatumVandaag);
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public List<Bestelling> Db_Get_Orders_Per_Table_TableView(int TafelID, DateTime DatumVandaag)
+        {
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, [Status], BTW FROM Bestelling WHERE TafelID = @TafelID AND BestellingDatum > @DatumVandaag AND [Status] = 'bezig' OR [Status] = 'gereed'";
             SqlParameter[] sqlParameters = new SqlParameter[2];
             sqlParameters[0] = new SqlParameter("@TafelID", TafelID);
             sqlParameters[1] = new SqlParameter("@DatumVandaag", DatumVandaag);
