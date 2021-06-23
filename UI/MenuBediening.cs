@@ -10,12 +10,45 @@ namespace UI
     {
         private Medewerker _medewerker;
         private HoofdMenu _menu;
+        private Bestelling_Service bestelling_Service = new Bestelling_Service();
+        private BestellingRegel_Service BestellingRegel_Service = new BestellingRegel_Service();
+        private Model_Chapoo.Bestelling bestelling = new Bestelling();
+        private Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+        private Service_Chapoo.MenuKaartService menuKaartService = new Service_Chapoo.MenuKaartService();
+        private VoorraadItemService voorraadItemService = new VoorraadItemService();
+
+
         public MenuBediening(HoofdMenu menu, Medewerker medewerker)
         {
             InitializeComponent();
             this._medewerker = medewerker;
             this._menu = menu;
         }
+
+
+        // Hide alle panels 
+        void HidePanels()
+        {
+            PNL_Bier.Hide();
+            PNL_Frisdrank.Hide();
+            PNL_GedeDrank.Hide();
+            PNL_Hardlopers.Hide();
+            PNL_Hoofdgerechten.Hide();
+            PNL_KoffieThee.Hide();
+            PNL_Nagerechten.Hide();
+            PNL_Tussengerechten.Hide();
+            PNL_Voorgerechten.Hide();
+            PNL_Wijn.Hide();
+            PNL_GerechtenMenu.Hide();
+            PNL_DrankenMenu.Hide();
+            PNL_BevestigBestelling.Hide();
+            PNL_BestellingMaken.Hide();
+            PNL_MenuStart.Hide();
+
+            BTN_Terug.Hide();
+            BTN_Bevestig.Hide();
+        }
+
 
         // Fullrowselect method
         void FullRowSelect()
@@ -31,7 +64,21 @@ namespace UI
             LSV_Tussengerechten.FullRowSelect = true;
             LSV_Voorgerechten.FullRowSelect = true;
             LSV_Wijn.FullRowSelect = true;
+
+            LSV_VoorgerechtenTafel.FullRowSelect = true;
+            LSV_TussengerechtenTafel.FullRowSelect = true;
+            LSV_HoofdgerechtTafel.FullRowSelect = true;
+            LSV_NagerechtTafel.FullRowSelect = true;
+            LSV_FrisdrankTafel.FullRowSelect = true;
+            LSV_BierTafel.FullRowSelect = true;
+            LSV_GedeTafel.FullRowSelect = true;
+            LSV_HardlopersTafel.FullRowSelect = true;
+            LSV_KoffieTheeTafel.FullRowSelect = true;
+            LSV_WijnTafel.FullRowSelect = true; 
         }
+
+
+
 
         private void MenuBediening_Load(object sender, EventArgs e)
         {
@@ -73,37 +120,26 @@ namespace UI
             }
         }
 
+
+
+
         // Bestelling aanmaken
         private void BTN_BestellingAanmaken_Click(object sender, EventArgs e)
         {
             if (LSV_BestellingAanmaken.SelectedItems.Count == 1)
             {
                 // Hide other panels
-                PNL_Bier.Hide();
-                PNL_Frisdrank.Hide();
-                PNL_GedeDrank.Hide();
-                PNL_Hardlopers.Hide();
-                PNL_Hoofdgerechten.Hide();
-                PNL_KoffieThee.Hide();
-                PNL_Nagerechten.Hide();
-                PNL_Tussengerechten.Hide();
-                PNL_Voorgerechten.Hide();
-                PNL_Wijn.Hide();
-                PNL_GerechtenMenu.Hide();
-                PNL_DrankenMenu.Hide();
-                PNL_BevestigBestelling.Hide();
-                PNL_BestellingMaken.Hide();
+                HidePanels();
 
                 // Show start
                 PNL_MenuStart.Show();
 
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
+                // Maak bestelling aan
                 bestelling.BestellingSubtotaal = 0;
                 bestelling.TafelID = int.Parse(LSV_BestellingAanmaken.SelectedItems[0].Text.ToString());
                 bestelling.Status = "bezig";
 
+                // Geef data door aan service laag
                 bestelling_Service.Db_VoegBestellingToe(bestelling);
             }
             else
@@ -113,37 +149,32 @@ namespace UI
             
         }
 
+
+
+
         // Hardlopers menu
         private void BTN_Hardlopers_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show menu hardlopers
-            BTN_Terug.Show();
             PNL_Hardlopers.Show();
+
+            // Show buttons
+            BTN_Terug.Show();
             BTN_Bevestig.Show();
+
+            // FullrowSelect
             FullRowSelect();
-            // Fill hardlopers listview with a list of hardlopers
-            Service_Chapoo.MenuKaartService menuKaartService = new Service_Chapoo.MenuKaartService();
+
+            // Haal lijst uit service laag
             List<MenukaartItem> hardlopers = menuKaartService.GetHardlopers();
 
-            // Clear the listview and fill it
+            // Clear the listview
             LSV_Hardlopers.Items.Clear();
 
+            // Fill lisview met hardlopers
             foreach (MenukaartItem m in hardlopers)
             {
                 ListViewItem Hardlopers = new ListViewItem(m.Id.ToString());
@@ -153,13 +184,13 @@ namespace UI
                 LSV_Hardlopers.Items.Add(Hardlopers);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_HardlopersTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -170,84 +201,61 @@ namespace UI
 
         }
 
-        // Gerechten menu
+
+
+        // Gerechten overzicht
         private void BTN_Gerechten_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show menu gerechten
             PNL_GerechtenMenu.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
         }
 
+
+        // Dranken overzicht
         private void BTN_Dranken_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show menu dranken
             PNL_DrankenMenu.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
         }
 
+
+        // Voorgerechten menu
         private void BTN_Voorgerechten_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show Voorgerechten
             PNL_Voorgerechten.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill voorgerechten listview with a list of voorgerechten
-            Service_Chapoo.MenuKaartService Voorgerechten_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> Voorgerechten = Voorgerechten_Service.GetVoorgerecht();
 
-            // Clear the listview and fill it
+            // Haal lijst uit service laag
+            List<MenukaartItem> Voorgerechten = menuKaartService.GetVoorgerecht();
+
+            // Clear the listview 
             LSV_Voorgerechten.Items.Clear();
 
+            // Fill listview met voorgerechten
             foreach (MenukaartItem m in Voorgerechten)
             {
                 ListViewItem Vgerechten = new ListViewItem(m.Id.ToString());
@@ -258,13 +266,13 @@ namespace UI
             }
         
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_VoorgerechtenTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -274,35 +282,31 @@ namespace UI
             }
         }
 
+
+
+        // Tussengerechten menu
         private void BTN_Tussengerechten_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show tussengerechten
             PNL_Tussengerechten.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill tussengerechten listview with a list of tussengerechten
-            Service_Chapoo.MenuKaartService tussengerechten_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> Tussengerechten = tussengerechten_Service.GetTussengerecht();
-            // Clear the listview and fill it
+
+            // Haal lijst uit service laag
+            List<MenukaartItem> Tussengerechten = menuKaartService.GetTussengerecht();
+
+            // Clear the listview 
             LSV_Tussengerechten.Items.Clear();
 
+            // Fill listview met tussengerechten
             foreach (MenukaartItem m in Tussengerechten)
             {
                 ListViewItem tusgerechten = new ListViewItem(m.Id.ToString());
@@ -312,13 +316,13 @@ namespace UI
                 LSV_Tussengerechten.Items.Add(tusgerechten);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_TussengerechtenTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -328,36 +332,30 @@ namespace UI
             }
         }
 
+
+        // Hoofdgerechten menu
         private void BTN_Hoofdgerechten_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show hoofdgerechten
             PNL_Hoofdgerechten.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill hoofdgerechten listview with a list of hoofdgerechten
-            Service_Chapoo.MenuKaartService Hoofdgerechten_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> hoofdgerechten = Hoofdgerechten_Service.GetHoofdgerecht();
 
-            // Clear the listview and fill it
+            // Haal lijst uit service laag
+            List<MenukaartItem> hoofdgerechten = menuKaartService.GetHoofdgerecht();
+
+            // Clear the listview 
             LSV_Hoofdgerechten.Items.Clear();
 
+            // Fill listview met hoofdgerechten
             foreach (MenukaartItem m in hoofdgerechten)
             {
                 ListViewItem Hoofdgerechten = new ListViewItem(m.Id.ToString());
@@ -367,13 +365,13 @@ namespace UI
                 LSV_Hoofdgerechten.Items.Add(Hoofdgerechten);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_HoofdgerechtTafel.Items.Clear();
 
+            // Fill listview
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -383,36 +381,30 @@ namespace UI
             }
         }
 
+
+        // Nagerechten menu
         private void BTN_Nagerecht_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show nagerechten
             PNL_Nagerechten.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill nagerechten listview with a list of nagerechten
-            Service_Chapoo.MenuKaartService Nagerecht_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> Nagerecht = Nagerecht_Service.GetNagerecht();
 
-            // Clear the listview and fill it
+            // Haal lijst uit service laag
+            List<MenukaartItem> Nagerecht = menuKaartService.GetNagerecht();
+
+            // Clear the listview 
             LSV_Nagerechten.Items.Clear();
 
+            // Fill listview met nagerechten
             foreach (MenukaartItem m in Nagerecht)
             {
                 ListViewItem nagerecht = new ListViewItem(m.Id.ToString());
@@ -422,13 +414,13 @@ namespace UI
                 LSV_Nagerechten.Items.Add(nagerecht);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_NagerechtTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -438,36 +430,31 @@ namespace UI
             }
         }
 
-        // Dranken menu
+
+
+        // Frisdrank menu
         private void BTN_Frisdrank_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_GedeDrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show frisdrank
             PNL_Frisdrank.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill Frisdrank listview with a list of Frisdrank
-            Service_Chapoo.MenuKaartService fridrank_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> frisdrank = fridrank_Service.GetFrisdrank();
 
-            // Clear the listview and fill it
+            // Haal lijst uit service laag
+            List<MenukaartItem> frisdrank = menuKaartService.GetFrisdrank();
+
+            // Clear the listview 
             LSV_Frisdrank.Items.Clear();
+
+            // Fill listview met frisdrank
             foreach (MenukaartItem m in frisdrank)
             {
                 ListViewItem Frisdrank = new ListViewItem(m.Id.ToString());
@@ -477,13 +464,13 @@ namespace UI
                 LSV_Frisdrank.Items.Add(Frisdrank);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst op uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_FrisdrankTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -493,36 +480,30 @@ namespace UI
             }
         }
 
+
+        // Warme dranken
         private void BTN_KoffieThee_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show koffie en thee
             PNL_KoffieThee.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
-            // Fill koffie en thee listview with a list of koffie en thee
-            Service_Chapoo.MenuKaartService koffiethee_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> koffiethee = koffiethee_Service.GetKoffieThee();
-
+            // FullRowSelect
             FullRowSelect();
-            // Clear the listview and fill it
+
+            // Haal lijst uit service laag
+            List<MenukaartItem> koffiethee = menuKaartService.GetKoffieThee();
+
+            // Clear the listview 
             LSV_KoffieThee.Items.Clear();
 
+            // Fill listview met warme dranken
             foreach (MenukaartItem m in koffiethee)
             {
                 ListViewItem KoffieThee = new ListViewItem(m.Id.ToString());
@@ -532,13 +513,13 @@ namespace UI
                 LSV_KoffieThee.Items.Add(KoffieThee);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_KoffieTheeTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -548,36 +529,30 @@ namespace UI
             }
         }
 
+
+        // Bier menu
         private void BTN_Bier_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show bier
             PNL_Bier.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
-            // Fill bier listview with a list of bier
-            Service_Chapoo.MenuKaartService bier_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> bier = bier_Service.GetBier();
-
+            // FullRowSelect
             FullRowSelect();
-            // Clear the listview and fill it
+
+            // Haal lijst uit service laag
+            List<MenukaartItem> bier = menuKaartService.GetBier();
+
+            // Clear the listview 
             LSV_Bier.Items.Clear();
 
+            // Fill listview met bier
             foreach (MenukaartItem m in bier)
             {
                 ListViewItem Bier = new ListViewItem(m.Id.ToString());
@@ -587,13 +562,13 @@ namespace UI
                 LSV_Bier.Items.Add(Bier);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_BierTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -603,36 +578,30 @@ namespace UI
             }
         }
 
+
+        // Wijn menu
         private void BTN_Wijn_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show wijn
             PNL_Wijn.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
-            // Fill wijn listview with a list of wijn
-            Service_Chapoo.MenuKaartService wijn_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> wijn = wijn_Service.GetWijn();
-
+            // Fullrowselect
             FullRowSelect();
-            // Clear the listview and fill it
+
+            // Haal lijst uit service laag
+            List<MenukaartItem> wijn = menuKaartService.GetWijn();
+
+            // Clear the listview 
             LSV_Wijn.Items.Clear();
 
+            // Fill listview met wijn
             foreach (MenukaartItem m in wijn)
             {
                 ListViewItem Wijn = new ListViewItem(m.Id.ToString());
@@ -642,13 +611,13 @@ namespace UI
                 LSV_Wijn.Items.Add(Wijn);
             }
 
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_WijnTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -658,36 +627,30 @@ namespace UI
             }
         }
 
+
+        // Gedestileerde dranken menu
         private void BTN_GedeDrank_Click_1(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Frisdrank.Hide();
-            PNL_Wijn.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Bier.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show Gedestileerde drank
             PNL_GedeDrank.Show();
+
+            // Show buttons
             BTN_Terug.Show();
             BTN_Bevestig.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill GedeDrank listview with a list of GedeDrank
-            Service_Chapoo.MenuKaartService gededrank_Service = new Service_Chapoo.MenuKaartService();
-            List<MenukaartItem> gededrank = gededrank_Service.GetGedeDrink();
 
-            // Clear the listview and fill it
+            // Haal list uit service laag
+            List<MenukaartItem> gededrank = menuKaartService.GetGedeDrink();
+
+            // Clear the listview 
             LSV_GedeDrank.Items.Clear();
 
+            // Fill listview met gedestileerde drank
             foreach (MenukaartItem m in gededrank)
             {
                 ListViewItem GedeDrank = new ListViewItem(m.Id.ToString());
@@ -696,13 +659,14 @@ namespace UI
                 GedeDrank.SubItems.Add(m.Prijs.ToString());
                 LSV_GedeDrank.Items.Add(GedeDrank);
             }
-            // Fill with bestellingen
-            Service_Chapoo.Bestelling_Service bestelling_Service = new Service_Chapoo.Bestelling_Service();
+
+            // Haal lijst uit service laag
             List<Bestelling> bestellingen = bestelling_Service.GetBestellingen();
 
-            // Clear the listview and fill it
+            // Clear the listview 
             LSV_GedeTafel.Items.Clear();
 
+            // Fill listview met bestellingen
             foreach (Bestelling b in bestellingen)
             {
                 ListViewItem best = new ListViewItem(b.BestellingID.ToString());
@@ -713,60 +677,40 @@ namespace UI
 
         }
 
-        // Terug Bevestigen Uitloggen
+
+
+        // Terug Knop
         private void BTN_Terug_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_BestellingMaken.Hide();
+            HidePanels();
+
             // Show start
             PNL_MenuStart.Show();
             BTN_Bevestig.Show();
-
         }
 
+
+        // Bestelling bevestigen
         private void BTN_Bevestig_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_MenuStart.Hide();
-            PNL_BestellingMaken.Hide();
-            BTN_Bevestig.Hide();
+            HidePanels();
+
             // Show bestelling
             PNL_BevestigBestelling.Show();
             BTN_Terug.Show();
 
+            // FullRowSelect
             FullRowSelect();
-            // Fill bestellingoverzicht listview with a list of bestellingen
-            Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
-            List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
 
-            // Clear the listview and fill it
+            // Haal lijst uit servicelaag
+            List<BestellingRegel> bestellingRegels = BestellingRegel_Service.Db_GetBestellingen();
+
+            // Clear the listview 
             LSV_BestellingOverzicht.Items.Clear();
 
+            // Fill listview met bestelling
             foreach (BestellingRegel m in bestellingRegels)
             {
                 ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
@@ -777,58 +721,28 @@ namespace UI
                 LSV_BestellingOverzicht.Items.Add(bestelling);
             }
         }
-        private void BTN_Loguit_Click(object sender, EventArgs e)
-        {
-            // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_MenuStart.Hide();
-            // Show start
-            PNL_BestellingMaken.Show();
 
-        }
 
         // Items toevoegen aan bestelling
         private void BTN_HardlopersPlus_Click(object sender, EventArgs e)
         {
             if (LSV_HardlopersTafel.SelectedItems.Count == 1 && LSV_Hardlopers.SelectedItems.Count == 1)
             {
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-
-                // Haal alles op
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_HardlopersTafel.SelectedItems[0].Text);
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR 
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
-                string menuitemid = (LSV_Hardlopers.SelectedItems[0].Text);
-                bestellingRegel.MenuItemID = int.Parse(menuitemid);
-                //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
+                // MenuItem 
+                bestellingRegel.MenuItemID = int.Parse((LSV_Hardlopers.SelectedItems[0].Text));
 
-                // Aantal uit nup
+                // Aantal
                 bestellingRegel.Aantal = int.Parse(NUP_Hardlopers.Value.ToString());
 
+                // Check voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
 
                 // Bereken prijs 
@@ -844,9 +758,13 @@ namespace UI
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voegbestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+                        
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -870,31 +788,21 @@ namespace UI
         {
             if (LSV_VoorgerechtenTafel.SelectedItems.Count == 1 && LSV_Voorgerechten.SelectedItems.Count == 1)
             {
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-
-                // Haal alles op
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // Bestelling ID
                 bestellingRegel.BestellingID = int.Parse(LSV_VoorgerechtenTafel.SelectedItems[0].Text);
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR 
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
-                string menuitemid = (LSV_Voorgerechten.SelectedItems[0].Text);
-                bestellingRegel.MenuItemID = int.Parse(menuitemid);
-                //bestellingRegel.MenuItemID = int.Parse(LSV_Voorgerechten.SelectedItems[0].Text);
+                // MenuItem 
+                bestellingRegel.MenuItemID = int.Parse((LSV_Voorgerechten.SelectedItems[0].Text));
 
-                // Aantal uit nup
+                // Aantal 
                 bestellingRegel.Aantal = int.Parse(NUP_Voorgerechten.Value.ToString());
 
+                // Voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
 
                 // Bereken prijs
@@ -910,9 +818,13 @@ namespace UI
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -936,28 +848,23 @@ namespace UI
         {
             if (LSV_Tussengerechten.SelectedItems.Count == 1 && LSV_TussengerechtenTafel.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_TussengerechtenTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR 
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem
                 bestellingRegel.MenuItemID = int.Parse(LSV_Tussengerechten.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal 
                 bestellingRegel.Aantal = int.Parse(NUP_Tussengerechten.Value.ToString());
 
+                // Voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Tussengerechten.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -967,13 +874,17 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -997,28 +908,23 @@ namespace UI
         {
             if (LSV_HoofdgerechtTafel.SelectedItems.Count == 1 && LSV_Hoofdgerechten.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_HoofdgerechtTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR 
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem 
                 bestellingRegel.MenuItemID = int.Parse(LSV_Hoofdgerechten.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal 
                 bestellingRegel.Aantal = int.Parse(NUP_Hoofdgerechten.Value.ToString());
 
+                // Bereken voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Hoofdgerechten.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1032,9 +938,13 @@ namespace UI
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voegbestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1058,28 +968,23 @@ namespace UI
         {
             if (LSV_NagerechtTafel.SelectedItems.Count == 1 && LSV_Nagerechten.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_NagerechtTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem 
                 bestellingRegel.MenuItemID = int.Parse(LSV_Nagerechten.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal 
                 bestellingRegel.Aantal = int.Parse(NUP_Nagerechten.Value.ToString());
 
+                // Bereken voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Nagerechten.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1089,12 +994,15 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
@@ -1119,28 +1027,23 @@ namespace UI
         {
             if (LSV_FrisdrankTafel.SelectedItems.Count == 1 && LSV_Frisdrank.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_FrisdrankTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem
                 bestellingRegel.MenuItemID = int.Parse(LSV_Frisdrank.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal
                 bestellingRegel.Aantal = int.Parse(NUP_Frisdrank.Value.ToString());
 
+                // Voorraad berekenen
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Frisdrank.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1150,12 +1053,15 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
@@ -1180,28 +1086,23 @@ namespace UI
         {
             if (LSV_KoffieTheeTafel.SelectedItems.Count == 1 && LSV_KoffieThee.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_KoffieTheeTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem 
                 bestellingRegel.MenuItemID = int.Parse(LSV_KoffieThee.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal
                 bestellingRegel.Aantal = int.Parse(NUP_KoffieThee.Value.ToString());
 
+                // Bereken voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_KoffieThee.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1211,13 +1112,17 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1241,28 +1146,23 @@ namespace UI
         {
             if (LSV_BierTafel.SelectedItems.Count == 1 && LSV_Bier.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_BierTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem 
                 bestellingRegel.MenuItemID = int.Parse(LSV_Bier.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal
                 bestellingRegel.Aantal = int.Parse(NUP_Bier.Value.ToString());
 
+                // Bereken voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Bier.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1272,13 +1172,17 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling toe
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig stock
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
+
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
                     else
@@ -1302,28 +1206,23 @@ namespace UI
         {
             if (LSV_WijnTafel.SelectedItems.Count == 1 && LSV_Wijn.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_WijnTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR 
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
 
-                // MenuItem uit lsv
+                // MenuItem 
                 bestellingRegel.MenuItemID = int.Parse(LSV_Wijn.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal
                 bestellingRegel.Aantal = int.Parse(NUP_Wijn.Value.ToString());
 
+                // Voorraad berekenen
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_Wijn.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1333,12 +1232,15 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Voeg bestelling
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        // Wijzig voorraad
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
+                        // Update subtotaal
                         bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
                     }
@@ -1363,27 +1265,23 @@ namespace UI
         {
             if (LSV_GedeTafel.SelectedItems.Count == 1 && LSV_GedeDrank.SelectedItems.Count == 1)
             {
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Bestelling_Service bestelling_Service = new Bestelling_Service();
-                Model_Chapoo.Bestelling bestelling = new Bestelling();
-
-                // Bestelling id uit lsv tafel
+                // BestellingID
                 bestellingRegel.BestellingID = int.Parse(LSV_GedeTafel.SelectedItems[0].Text.ToString());
 
-                // RegelNR via COUNT
-                int RegelNummer = bestellingRegel_Service.DB_TelRegels(bestellingRegel);
+                // RegelNR
+                int RegelNummer = BestellingRegel_Service.DB_TelRegels(bestellingRegel);
                 bestellingRegel.RegelNR = RegelNummer + 1;
-                // MenuItem uit lsv
+
+                // MenuItem
                 bestellingRegel.MenuItemID = int.Parse(LSV_GedeDrank.SelectedItems[0].Text.ToString());
 
-                // Aantal uit nup
+                // Aantal 
                 bestellingRegel.Aantal = int.Parse(NUP_GedeDrank.Value.ToString());
 
+                // Bereken voorraad
                 int voorraad = voorraadItemService.CheckVoorraad(bestellingRegel);
-
                 int voorraadMinBestelling = (voorraad - bestellingRegel.Aantal);
+
                 // Bereken prijs
                 double prijs = double.Parse(LSV_GedeDrank.SelectedItems[0].SubItems[2].Text);
                 bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
@@ -1393,11 +1291,11 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.12;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
-                        bestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
+                        BestellingRegel_Service.Db_VoegBestellingToe(bestellingRegel);
                         voorraadItemService.WijzigStockNaOrder(bestellingRegel);
                         bestelling_Service.UpdateSubtotaal(bestelling);
                         MessageBox.Show("Item is toegevoegd aan bestelling!");
@@ -1419,14 +1317,16 @@ namespace UI
             
         }
 
+
+
         // Opmerking toevoegen
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
         {
             if (LSV_BestellingOverzicht.SelectedItems.Count == 1 && TXTBOX_Opmerking.Text != "")
             {
-                // id ophalen
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
+                // ID ophalen 
                 bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
+
                 // regel ophalen
                 bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
@@ -1437,10 +1337,8 @@ namespace UI
                     bestellingRegel.Opmerking = TXTBOX_Opmerking.Text.ToString();
 
                     // data meegeven naar "opmerking toevoegen aan bestelling" methode in service laag
-                    BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                    bestellingRegel_Service.Db_OpmerkingToevoegen(bestellingRegel);
+                    BestellingRegel_Service.Db_OpmerkingToevoegen(bestellingRegel);
 
-                    // Bestelling aanmaken
                 }
             }
             else
@@ -1449,37 +1347,31 @@ namespace UI
             }
         }
 
+
+
         // Bestelde item verwijderen
         private void BTN_BestelItemVerwijderen_Click_1(object sender, EventArgs e)
         {
             if (LSV_BestellingOverzicht.SelectedItems.Count == 1)
             {
                 // id ophalen
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
 
-                VoorraadItemService voorraadItemService = new VoorraadItemService();
-                Model_Chapoo.Bestelling Bestelling = new Bestelling();
 
                 // regel ophalen
                 bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
-                // Bereken prijs
-                //double prijs = double.Parse(LSV_Hardlopers.SelectedItems[0].SubItems[2].Text);
-                //Bestelling.BestellingSubtotaal = bestellingRegel.Aantal * prijs;
-                //Bestelling.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text);
-
+                
                 DialogResult msbresult = MessageBox.Show("item verwijderen?", "Item verwijderen", MessageBoxButtons.YesNo);
                 if (msbresult == DialogResult.Yes)
                 {
-                    // ID en regel meegeven naar "Item verwijderen" methode in service laag
-                    BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                    bestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+                    BestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
                 }
+
                 FullRowSelect();
+
                 // Fill bestellingoverzicht listview with a list of bestellingen
-                Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
-                List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
+                List<BestellingRegel> bestellingRegels = BestellingRegel_Service.Db_GetBestellingen();
 
                 // Clear the listview and fill it
                 LSV_BestellingOverzicht.Items.Clear();
@@ -1500,13 +1392,14 @@ namespace UI
             }
         }
 
+
+
         // Bestelde item wijzigen
         private void BTN_BestelItemWijzigen_Click(object sender, EventArgs e)
         {
             if (LSV_BestellingOverzicht.SelectedItems.Count == 1)
             {
                 // id ophalen
-                Model_Chapoo.BestellingRegel bestellingRegel = new BestellingRegel();
                 bestellingRegel.BestellingID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].Text.ToString());
 
                 // regel ophalen
@@ -1516,13 +1409,11 @@ namespace UI
                 bestellingRegel.Aantal = int.Parse(NUP_BestellingOverzicht.Value.ToString());
 
                 // ID en regel meegeven naar "Item wijzigen" methode in service laag
-                BestellingRegel_Service bestellingRegel_Service = new BestellingRegel_Service();
-                bestellingRegel_Service.Db_WijzigBestelling(bestellingRegel);
+                BestellingRegel_Service.Db_WijzigBestelling(bestellingRegel);
 
                 FullRowSelect();
                 // Fill bestellingoverzicht listview with a list of bestellingen
-                Service_Chapoo.BestellingRegel_Service bestelling_Service = new Service_Chapoo.BestellingRegel_Service();
-                List<BestellingRegel> bestellingRegels = bestelling_Service.Db_GetBestellingen();
+                List<BestellingRegel> bestellingRegels = BestellingRegel_Service.Db_GetBestellingen();
 
                 // Clear the listview and fill it
                 LSV_BestellingOverzicht.Items.Clear();
@@ -1543,31 +1434,21 @@ namespace UI
             }
         }
 
+
+
+
         // terug naar bestelling aanmaken
         private void BTN_NieuweBestelling_Click(object sender, EventArgs e)
         {
             // Hide other panels
-            PNL_Bier.Hide();
-            PNL_Frisdrank.Hide();
-            PNL_GedeDrank.Hide();
-            PNL_Hardlopers.Hide();
-            PNL_Hoofdgerechten.Hide();
-            PNL_KoffieThee.Hide();
-            PNL_Nagerechten.Hide();
-            PNL_Tussengerechten.Hide();
-            PNL_Voorgerechten.Hide();
-            PNL_Wijn.Hide();
-            PNL_GerechtenMenu.Hide();
-            PNL_DrankenMenu.Hide();
-            PNL_BevestigBestelling.Hide();
-            PNL_MenuStart.Hide();
-            BTN_Terug.Hide();
-            BTN_Bevestig.Hide();
+            HidePanels();
             // Show start
             PNL_BestellingMaken.Show();
         }
         
 
+
+        // Terug naar hoofdmenu
         private void BTN_Hoofdmenu_Click(object sender, EventArgs e)
         {
             this.Close();

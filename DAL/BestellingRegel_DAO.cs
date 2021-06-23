@@ -80,7 +80,7 @@ namespace DAL_Chapoo
         }
         public List<BestellingRegel> Db_Get_All_bestellingen()
         {
-            string query = "SELECT BestellingID, RegelNR, MenuItemID, Aantal FROM BestellingRegel ORDER BY BestellingID DESC, RegelNR ASC";
+            string query = "SELECT BestellingID, RegelNR, BestellingRegel.MenuItemID, Naam, Aantal FROM BestellingRegel JOIN MenuItem ON BestellingRegel.MenuItemID = MenuItem.MenuItemID ORDER BY BestellingID DESC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTable(ExecuteSelectQuery(query, sqlParameters));
         }

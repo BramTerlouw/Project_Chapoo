@@ -35,15 +35,6 @@ namespace DAL_Chapoo
             sqlParameters[2] = new SqlParameter("@BTW", bestelling.BTW);
             ExecuteEditQuery(query, sqlParameters);
         }
-        public void Db_Update_SubtotaalMin(Bestelling bestelling)
-        {
-            string query = "UPDATE Bestelling SET [BestellingSubTotaal] = BestellingSubTotaal - @BestellingSubTotaal WHERE BestellingID = @OrderID";
-            SqlParameter[] sqlParameters = new SqlParameter[2];
-            sqlParameters[0] = new SqlParameter("@BestellingSubTotaal", bestelling.BestellingSubtotaal);
-            sqlParameters[1] = new SqlParameter("@OrderID", bestelling.BestellingID);
-            ExecuteEditQuery(query, sqlParameters);
-        }
-        //Haal een lijst van alle bestellingen op uit de DB
         public List<Bestelling> Db_Get_All_Bestellingen()
         {
             string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status, BTW FROM Bestelling WHERE [Status] != 'afgerond' ORDER BY BestellingID DESC";
