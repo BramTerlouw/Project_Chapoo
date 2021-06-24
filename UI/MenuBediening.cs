@@ -88,7 +88,8 @@ namespace UI
             PNL_BestellingMaken.Show();
 
             FullRowSelect();
-            // Fill tafel listview with a list of tables
+
+            // Haal lijst met tafels uit service laag
             List<Tafel> tafels = tafel_Service.GetTafels();
 
             // Clear the listview and fill it
@@ -120,7 +121,7 @@ namespace UI
                 bestelling.TafelID = int.Parse(LSV_BestellingAanmaken.SelectedItems[0].Text.ToString());
                 bestelling.Status = "bezig";
 
-                // Geef data door aan service laag
+                // Geef door aan service laag
                 bestelling_Service.Db_VoegBestellingToe(bestelling);
             }
             else
@@ -672,38 +673,7 @@ namespace UI
         }
 
 
-        // Bestelling bevestigen
-        private void BTN_Bevestig_Click(object sender, EventArgs e)
-        {
-            // Hide other panels
-            HidePanels();
-
-            // Show bestelling
-            PNL_BevestigBestelling.Show();
-            BTN_Terug.Show();
-
-            // FullRowSelect
-            FullRowSelect();
-
-            // Haal lijst uit servicelaag
-            List<BestellingRegel> bestellingRegels = BestellingRegel_Service.Db_GetBestellingen();
-
-            // Clear the listview 
-            LSV_BestellingOverzicht.Items.Clear();
-
-            // Fill listview met bestelling
-            foreach (BestellingRegel m in bestellingRegels)
-            {
-                ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
-                bestelling.Tag = m;
-                bestelling.SubItems.Add(m.RegelNR.ToString());
-                bestelling.SubItems.Add(m.MenuItemID.ToString());
-                bestelling.SubItems.Add(m.Aantal.ToString());
-                LSV_BestellingOverzicht.Items.Add(bestelling);
-            }
-        }
-
-
+   
         // Items toevoegen aan bestelling
         private void BTN_HardlopersPlus_Click(object sender, EventArgs e)
         {
@@ -795,7 +765,7 @@ namespace UI
                 bestelling.BTW = bestelling.BestellingSubtotaal * 0.09;
 
                 // Geef de variable mee naar methode in service laag
-                if (voorraadMinBestelling > 0)
+                if (voorraadMinBestelling >= 0)
                 {
                     if (bestellingRegel.Aantal > 0)
                     {
@@ -1298,7 +1268,36 @@ namespace UI
             
         }
 
+        // Bestelling bevestigen
+        private void BTN_Bevestig_Click(object sender, EventArgs e)
+        {
+            // Hide other panels
+            HidePanels();
 
+            // Show bestelling
+            PNL_BevestigBestelling.Show();
+            BTN_Terug.Show();
+
+            // FullRowSelect
+            FullRowSelect();
+
+            // Haal lijst uit servicelaag
+            List<BestellingRegel> bestellingRegels = BestellingRegel_Service.Db_GetBestellingen();
+
+            // Clear the listview 
+            LSV_BestellingOverzicht.Items.Clear();
+
+            // Fill listview met bestelling
+            foreach (BestellingRegel m in bestellingRegels)
+            {
+                ListViewItem bestelling = new ListViewItem(m.BestellingID.ToString());
+                bestelling.Tag = m;
+                bestelling.SubItems.Add(m.RegelNR.ToString());
+                bestelling.SubItems.Add(m.MenuItemID.ToString());
+                bestelling.SubItems.Add(m.Aantal.ToString());
+                LSV_BestellingOverzicht.Items.Add(bestelling);
+            }
+        }
 
         // Opmerking toevoegen
         private void BTN_BestellingBevestigen_Click(object sender, EventArgs e)
@@ -1342,11 +1341,17 @@ namespace UI
                 // regel ophalen
                 bestellingRegel.RegelNR = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[1].Text.ToString());
 
-                
+                // menuitem ophalen
+                bestellingRegel.MenuItemID = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[2].Text.ToString());
+
+                // Aantal ophalen
+                bestellingRegel.Aantal = int.Parse(LSV_BestellingOverzicht.SelectedItems[0].SubItems[3].Text.ToString());
+
                 DialogResult msbresult = MessageBox.Show("item verwijderen?", "Item verwijderen", MessageBoxButtons.YesNo);
                 if (msbresult == DialogResult.Yes)
                 {
                     BestellingRegel_Service.Db_VerwijderBestelling(bestellingRegel);
+                    voorraadItemService.WijzigVoorraadPlus(bestellingRegel);
                 }
 
                 FullRowSelect();

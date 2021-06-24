@@ -47,6 +47,10 @@ namespace Service_Chapoo
         {
             _dao.Db_WijzigVoorraadNaBestelling(bestellingRegel);
         }
+        public void WijzigVoorraadPlus(BestellingRegel bestellingRegel)
+        {
+            _dao.Db_WijzigVoorraadPlus(bestellingRegel);
+        }
         public int CheckVoorraad(BestellingRegel bestellingRegel)
         {
           return  _dao.Db_CheckVoorraad(bestellingRegel);

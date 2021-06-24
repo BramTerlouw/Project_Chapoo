@@ -1554,11 +1554,11 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(42)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(443, 561);
+            this.Controls.Add(this.PNL_BevestigBestelling);
             this.Controls.Add(this.PNL_BestellingMaken);
             this.Controls.Add(this.pcbx_LogoChapooAfrekenenMain);
             this.Controls.Add(this.PNL_Hardlopers);
             this.Controls.Add(this.BTN_Hoofdmenu);
-            this.Controls.Add(this.PNL_BevestigBestelling);
             this.Controls.Add(this.PNL_Voorgerechten);
             this.Controls.Add(this.PNL_Wijn);
             this.Controls.Add(this.PNL_Tussengerechten);

@@ -95,5 +95,13 @@ namespace DAL_Chapoo
             sqlParameters[1] = new SqlParameter("@MenuItemID", bestellingRegel.MenuItemID);
             ExecuteEditQuery(query, sqlParameters);
         }
+        public void Db_WijzigVoorraadPlus(BestellingRegel bestellingRegel)
+        {
+            string query = "UPDATE Voorraad SET Aantal = Aantal + @Aantal WHERE MenuItemID = @MenuItemID";
+            SqlParameter[] sqlParameters = new SqlParameter[2];
+            sqlParameters[0] = new SqlParameter("@Aantal", bestellingRegel.Aantal);
+            sqlParameters[1] = new SqlParameter("@MenuItemID", bestellingRegel.MenuItemID);
+            ExecuteEditQuery(query, sqlParameters);
+        }
     }
 }

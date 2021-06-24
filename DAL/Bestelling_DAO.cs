@@ -37,7 +37,7 @@ namespace DAL_Chapoo
         }
         public List<Bestelling> Db_Get_All_Bestellingen()
         {
-            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status, BTW FROM Bestelling WHERE [Status] != 'afgerond' ORDER BY BestellingID DESC";
+            string query = "SELECT BestellingID, BestellingDatum, BestellingSubTotaal, TafelID, MedewerkerID, Status, BTW FROM Bestelling WHERE [Status] = 'bezig' ORDER BY BestellingID DESC";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
